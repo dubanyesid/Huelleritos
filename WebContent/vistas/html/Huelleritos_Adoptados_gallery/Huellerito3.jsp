@@ -1,13 +1,13 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Huellerito1</title>
+    <title>Huellerito3</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
@@ -101,7 +101,7 @@
         </div>
     </header>
 
-   
+ 
 
     <!-- Cuerpo formulario Adoptar aqui -->
     <br><br><br>
@@ -235,7 +235,6 @@
     <br><br>
 <!-- otros animales / final -->
 
-
 <div class="contact_anipat anipat_bg_1">
     <div class="container">
         <div class="row justify-content-center">
@@ -247,6 +246,7 @@
         </div>
     </div>
 </div>
+
 
     <!-- footer_Inicio  -->
     <footer class="footer">

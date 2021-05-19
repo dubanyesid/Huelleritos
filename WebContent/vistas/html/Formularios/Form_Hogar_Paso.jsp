@@ -1,5 +1,6 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8">
@@ -85,7 +86,7 @@
                                         <li><a href="../../html/Adopta.html">Adopta</a></li>
                                         <li><a href="../../html/Apadrinar.html">Apadrina</a></li>
                                         <li><a href="../../html/Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="../../html/La_Fundacion.html">La fundaciÃ³n</a></li>
+                                        <li><a href="../../html/La_Fundacion.html">La fundación</a></li>
                                         <li><a href="../../html/Noticias.html">Noticias</a></li>
                                         <a href="../../html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
@@ -109,7 +110,7 @@
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
                             <h3><span>Formulario</span> <br>Hogar De Paso</h3>
-                            <p>Â¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
+                            <p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
                            
                         </div>
                     </div>
@@ -176,19 +177,19 @@
                         <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su trabajo actual">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Â¿Cuantos adultos viven en tu casa?</label>
+                        <label for="formGroupExampleInput2">¿Cuantos adultos viven en tu casa?</label>
                         <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el numero de personas que viven contigo">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Â¿Cuantos niÃ±os viven en tu casa?</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el numero de niÃ±os que viven contigo">
+                        <label for="formGroupExampleInput2">¿Cuantos niños viven en tu casa?</label>
+                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el numero de niños que viven contigo">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Â¿Que edades tienen los niÃ±os?</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la edad de los niÃ±os">
+                        <label for="formGroupExampleInput2">¿Que edades tienen los niños?</label>
+                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la edad de los niños">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Â¿Nombre del animal en que estas interesado?</label>
+                        <label for="formGroupExampleInput2">¿Nombre del animal en que estas interesado?</label>
                         <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el nombre del peludito">
                     </div>
                     <div class="form-group">
@@ -200,11 +201,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Â¿Has tenido un animal antes?</label>
+                        <label for="exampleFormControlTextarea1">¿Has tenido un animal antes?</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Â¿Por que quieres adoptar un animal?</label>
+                        <label for="exampleFormControlTextarea1">¿Por que quieres adoptar un animal?</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <button class="btn btn-dark" type="submit">Enviar</button>
