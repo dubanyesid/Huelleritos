@@ -1,10 +1,12 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dona Aqui</title>
+    <title>Huelleritos</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,7 +87,7 @@
                                         <li><a href="Adopta.html">Adopta</a></li>
                                         <li><a href="Apadrinar.html">Apadrina</a></li>
                                         <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.html">La fundaciÃ³n</a></li>
+                                        <li><a href="La_Fundacion.html">La fundación</a></li>
                                         <li><a href="Noticias.html">Noticias</a></li>
                                         <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
@@ -108,38 +110,60 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Â¿Quieres Donar?</span></h3>
-                            <p>"En Cucuta existen aproximadamente 12 mil animales entre perros y gatos abandonados en las calles" Â¡Ayudanos con lo que puedas!</p>
-                            <a href="" class="boxed-btn4">Dona</a>
+                            <h3><span>Nuestros </span> <br>Peludos</h3>
+                            <p>¡conoce a nuestros hermosos peluditos! </p>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog8.png" alt="">
+                <img src="../img/banner/dog1.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo Dona aqui -->
+    <!-- Cuerpo Hogar de paso aqui -->
     <br><br><br>
-    
-    <div class="row">
-        <div class="col-sm-7">
-            <dl ><dt>Todos los peluditos que rescatamos dia a dia nos representan un trabajo constante y fuerte, para poder ofrecerles un buen futuro necesitamos la mayor ayuda posible para que huelleritos pueda crecer y ayudar cada dia mas a los miles de animales que se encuentran por las calles sin hogar.</dt></dl>
-            <dl><dt>Las ayudas que son necesarias en la fundacion son:</dt><dd> Medicina <br> Comida</dd></dl>
-               
-        </div>
-        <div class="col-sm-5">
-            <h2 class="centro">Consignacion Bancaria</h2><br>
-            <h4 class="centro"><b>Bancolombia - 03117636650
-                <br><br>Nequi - 3117636650
-                <br><br>Daviplata - 3135707240</b>
-            </h4>
+
+    <hr class="potaxio">
+    <!-- <h1 class="centro">Nuestros Peludos</h1> -->
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        
+                        <a href="../html/Huelleritos_Adultos.html"><button type="button" class="btn btn-dark btn-lg btn-block">ADULTOS <br>12 perros</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="../html/Huelleritos_Cachorros.html"><button type="button" class="btn btn-dark btn-lg btn-block">CACHORROS <br>11 perros</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="../html/Huelleritos_Adoptados.html"><button type="button" class="btn btn-dark btn-lg btn-block">FELIZMENTE ADOPTADOS <br>40 perros</button></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- Cuerpo Dona Aqui / Final -->
+    <br><br>
+    <!-- Cuerpo Hogar de paso / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -147,7 +171,7 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>Â¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por qué ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">

@@ -1,10 +1,12 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Huelleritos Adoptados</title>
+    <title>Dona Aqui</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -108,89 +110,38 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Nuestros Peludos</span> <br> Adoptados</h3>
-                            <p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
-                           
+                            <h3><span>¿Quieres Donar?</span></h3>
+                            <p>"En Cucuta existen aproximadamente 12 mil animales entre perros y gatos abandonados en las calles" ¡Ayudanos con lo que puedas!</p>
+                            <a href="" class="boxed-btn4">Dona</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog.png" alt="">
+                <img src="../img/banner/dog8.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo Huelleritos Adoptados aqui -->
+    <!-- Cuerpo Dona aqui -->
     <br><br><br>
-
-    <h1 class="centro">Adoptados</h1>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito1.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito2.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito3.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
+    
+    <div class="row">
+        <div class="col-sm-7">
+            <dl ><dt>Todos los peluditos que rescatamos dia a dia nos representan un trabajo constante y fuerte, para poder ofrecerles un buen futuro necesitamos la mayor ayuda posible para que huelleritos pueda crecer y ayudar cada dia mas a los miles de animales que se encuentran por las calles sin hogar.</dt></dl>
+            <dl><dt>Las ayudas que son necesarias en la fundacion son:</dt><dd> Medicina <br> Comida</dd></dl>
+               
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito4.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito5.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito6.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
+        <div class="col-sm-5">
+            <h2 class="centro">Consignacion Bancaria</h2><br>
+            <h4 class="centro"><b>Bancolombia - 03117636650
+                <br><br>Nequi - 3117636650
+                <br><br>Daviplata - 3135707240</b>
+            </h4>
         </div>
     </div>
-    <br><br>
-    
-    <!-- Cuerpo Huelleritos Adoptados / Final -->
+    <!-- Cuerpo Dona Aqui / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">

@@ -1,10 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html class="no-js" lang="es">
 
 <head>
-    <meta charset="utf-8">
+      <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hogar de Paso</title>
+    <title>Adopta</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -108,54 +110,99 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>¿Deseas Ser Hogar De Paso?</span></h3>
+                            <h3><span>Pensando</span> En Adoptar</h3>
+                            <p> "¿ESTAS BUSCANDO UN PELUDITO? AQUI PODRAS INFORMARTE! "</p>
                             
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog5.png" alt="">
+                <img src="../img/banner/dog2.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo Hogar de paso aqui -->
+    <!-- Cuerpo adopta -->
     <br><br><br>
     
     <div class="container">
-        
-        <h2 class="centro">¿Que Se Debe Tener En Cuenta?</h2>
-        <hr>
-        <br>
-       <!--  <h2>Debes tener en cuenta lo siguiente</h2> -->
-        <p><b>1.</b> Debes ser mayor de edad.</p>
-        <p><b>2.</b> Debes contar con espacio, tiempo, disposicion y sobre todo, amor por los animales.</p>
-        <p><b>3.</b> Debes completar el formulario de inscripcion. En el te pediremos datos basicos que nos permitiran realizar un filtro.</p>
-        <p><b>4.</b> Analizarmeos tu inscripcion y si cumples con las condiciones, te estaremos contactando.</p>
-        <p><b>5.</b> De resultar seleccionado, nuevamente te contactaremos para darte la bienvenida a la fundacion huelleritos.</p>
+        <h1 class="centro">¿Quieres Adoptar?</h1>
 
-        <br><br>
-        
         <div class="row">
-            <div class="col-sm-6">
-                <h2>Incribete Para Ser Hogar De Paso</h2><br>
-              
-                <h4>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en hogar de paso para uno de nuestros animalitos.</h4><br>
-                <div class="centro">
-                    <a href="Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark">INSCRIPCION HOGAR DE PASO</button></a>
-                </div>
-            </div>
             <div class="col-sm-6 centro">
-                
-                <img src="https://mascotass.com/wp-content/uploads/2011/07/Perro-Tosa-Inu.png" class="img-fluid" alt="Responsive image">
+                <br>
+                <p>TU BUSCAS UN PELUDITO</p>
+                <br>
+                <h2>En Huelleritos tenemos a muchos buscando un hogar</h2>
+                <br>
+                <p>Nos alegra saber que estas pensando en adoptar, todos nuestros peludos estan a la espera de una familia y son entregados en optimas condiciones de salud a adoptantes responsables y amorosos.</p>
             </div>
+
+            <div class="col-sm-6 centro">
+                <br>
+                <img src="https://vecol.com.co/wp-content/uploads/2020/07/Dise%C3%B1o-sin-t%C3%ADtulo-2020-07-14T155653.473.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h2>¿Cual es el proceso para adoptar un animal de la fundacion?</h2>
+        <p><b>1.</b> Escoger el perrito o gatito que deseas adoptar teniendo en cuenta el espacio que dispones, su edad y tamaño.</p>
+        <p><b>2.</b> Diligencie el formulario de adopcion. Los datos ingresados seran verificados por funcionarios de la fundacion (Esta verificacion tarda de 2 a 3 dias calendario). Si no sigues en el proceso te enviaremos un correo electronico informandote.</p>
+        <p><b>3.</b> Si tu formulario es aprobado, te llamaremos para darte las instrucciones para la visitar domiciliaria.</p>
+        <p><b>4.</b> Revisaremos tu solicitud y si todo esta en orden nos contactaremos para coordinar el dia en que el peludito que escogiste llegue a tu casa.</p>
+        <p><b>5.</b> Eventualmente se te visitara para confirmar que el peludito se encuentra en buenas condiciones.</p>
+
+        <h2 class="centro">¿Estas List@?</h2>
+        <div class="centro">
+            <a href="Formularios/Form_Adopta.html" target="blank" ><button type="button" class="btn btn-dark">FORMULARIO DE ADOPCION</button></a>
+        </div>
+        <br>
+    </div>
+
+    <div class="container-fluid adopta">
+        <br><br>
+        <div class="container">
+            <h2 class="centro">Peluditos adoptados</h2>
+            <p class="centro">Estos son los peludos que han encontrado humanos con un corazon enorme y que ahora disfrutan de la vida que se merecen</p>
+            <br>
+            <div class="row">
+                <div class="col-sm-3 centro">
+                    <img src="https://minuevomejoramigo.com/wp-content/uploads/2021/02/parchis-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
+                    <h3>Cosmo - Adoptado</h3>
+                    <p>xxx</p>
+                </div>
+                <div class="col-sm-3 centro">
+                    <img src="https://ivoft.com/wp-content/uploads/2016/06/gafas-perro-Dakota-300x300.png" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
+                    <h3>Lulu - Adoptado</h3>
+                    <p>xxx</p>
+                </div>
+                <div class="col-sm-3 centro">
+                    <img src="https://www.vitake.net/wp-content/uploads/2015/04/ny8-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
+                    <h3>Pancho - Adoptado</h3>
+                    <p>xxx</p>
+                </div>
+                <div class="col-sm-3 centro">
+                    <img src="https://www.rastreator.com/wp-content/uploads/19-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
+                    <h3>Casper - Adoptado</h3>
+                    <p>xxx</p>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="centro">
+            <button type="button" class="btn btn-outline-dark">Ver Mas</button>
         </div>
 
         <br><br>
     </div>
-    <!-- Cuerpo Hogar de paso / Final -->
+
+    <!-- Cuerpo adopta / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -163,12 +210,12 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por qué ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
                             <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
-                            <p>Or  <a href="#">+57 3177636650</a></p>
+                            <p>-<a href="#">+57 3177636650</a></p>
                         </div>
                     </div>
                 </div>

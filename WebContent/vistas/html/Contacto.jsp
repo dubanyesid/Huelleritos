@@ -1,10 +1,12 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Huelleritos</title>
+    <title>Contacto</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,86 +103,91 @@
         </div>
     </header>
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider slider_bg_1 d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6">
-                        <div class="slider_text">
-                            <h3><span>Nuestros </span> <br>Peludos</h3>
-                            <p>¡conoce a nuestros hermosos peluditos! </p>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog1.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-
-    <!-- Cuerpo Hogar de paso aqui -->
-    <br><br><br>
-
-    <hr class="potaxio">
-    <!-- <h1 class="centro">Nuestros Peludos</h1> -->
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        
-                        <a href="../html/Huelleritos_Adultos.html"><button type="button" class="btn btn-dark btn-lg btn-block">ADULTOS <br>12 perros</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="../html/Huelleritos_Cachorros.html"><button type="button" class="btn btn-dark btn-lg btn-block">CACHORROS <br>11 perros</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="../html/Huelleritos_Adoptados.html"><button type="button" class="btn btn-dark btn-lg btn-block">FELIZMENTE ADOPTADOS <br>40 perros</button></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <br><br>
-    <!-- Cuerpo Hogar de paso / Final -->
-
+    <!-- bradcam_area_start -->
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>¿Por Que ir con Huelleritos?</h3>
-                            <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
+                            <h3>Contacto</h3>
+                            
                         </div>
-                        <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
-                            <p>Or  <a href="#">+57 3177636650</a></p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
+    <!-- bradcam_area_end -->
+
+    <!-- Contacto -->
+    <!-- ================ contact section start ================= -->
+    <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Pongase en Contacto Con Nosotros</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su mensaje'" placeholder=" Ingrese su mensaje"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Ingrese su Nombre">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su Email'" placeholder="Ingrese su Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su Asunto'" placeholder="Ingrese su Asunto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button button-contactForm boxed-btn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>Huelleritos</h3>
+                                <p>Cucuta, N. Santander</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+57 3177636650</h3>
+                                <p>Lunes a Sabado 7am to 7pm</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>Huelleritos@gmail.com</h3>
+                                <p>Envianos un Correo Electronico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ================ contact section end ================= -->
+    <!-- Contacto / Final -->
 
     <!-- footer_Inicio  -->
     <footer class="footer">
@@ -228,7 +235,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="../img/Huelleritos.png" alt="">
+                                    <img src="img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                             <p class="address_text">

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+ pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -197,7 +200,45 @@
     <hr class="potaxio">
     <!-- Cuerpo formulario Adoptar / Final -->
 
-   <div class="contact_anipat anipat_bg_1">
+    <!-- otros animales / inicio -->
+
+    <div class="container">
+        <h2>Otros animales</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../index.html"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+<!-- otros animales / final -->
+
+<div class="contact_anipat anipat_bg_1">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">

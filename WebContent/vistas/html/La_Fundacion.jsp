@@ -1,10 +1,13 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Adopta</title>
+    <title>La Fundacion</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,7 +88,7 @@
                                         <li><a href="Adopta.html">Adopta</a></li>
                                         <li><a href="Apadrinar.html">Apadrina</a></li>
                                         <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.html">La fundaciÃ³n</a></li>
+                                        <li><a href="La_Fundacion.html">La fundación</a></li>
                                         <li><a href="Noticias.html">Noticias</a></li>
                                         <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
@@ -108,99 +111,81 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Pensando</span> En Adoptar</h3>
-                            <p> "Â¿ESTAS BUSCANDO UN PELUDITO? AQUI PODRAS INFORMARTE! "</p>
-                            
+                            <h3><span>Fundación</span><br>Huelleritos </h3>
+                            <p> La Fundacion Huelleritos es una organizacion sin animo de lucro que busca dar hogar, rehabilitar y dar en adopcion a perros que son rescatados en estado de maltrato.</p>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog2.png" alt="">
+                <img src="../img/banner/dog6.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo adopta -->
+    <!-- Cuerpo La Fundacion aqui -->
     <br><br><br>
-    
-    <div class="container">
-        <h1 class="centro">Â¿Quieres Adoptar?</h1>
 
+    <div class="container">
+        <hr class="potaxio"> <br>
+       
         <div class="row">
             <div class="col-sm-6 centro">
-                <br>
-                <p>TU BUSCAS UN PELUDITO</p>
-                <br>
-                <h2>En Huelleritos tenemos a muchos buscando un hogar</h2>
-                <br>
-                <p>Nos alegra saber que estas pensando en adoptar, todos nuestros peludos estan a la espera de una familia y son entregados en optimas condiciones de salud a adoptantes responsables y amorosos.</p>
+                <h2>Historia</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
-            <div class="col-sm-6 centro">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="https://www.consumer.es/wp-content/uploads/2019/07/img_sentarse-perro-300x300.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="https://www.consumer.es/wp-content/uploads/2019/07/img_perros-se-masturban1-300x300.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
                 <br>
-                <img src="https://vecol.com.co/wp-content/uploads/2020/07/Dise%C3%B1o-sin-t%C3%ADtulo-2020-07-14T155653.473.png" class="img-fluid" alt="Responsive image">
+                <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1000/https://naturalchoice.ec/wp-content/uploads/2020/01/header-1.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        <br><br>
+        <h2 class="centro">Trabajando en pro de los animales<br> Nuestra mision <hr></h2>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-6 centro">
+                <h3>LO QUE HACEMOS</h3>
+                <p>Los animales que llegan a la fundacion reciben atencion veterinaria completa, incluyendo esterilizacion, vacunacion, desparacitacion y cualquier tratamiento necesario para garantizar su bienestar hasta que logremos encontrarle un hogar que los cuide de por vida</p>
+
+                <img src="https://static.affinity-petcare.com/advance/cdn/farfuture/FnciLwPxwEfGjMY3DnH1maXtV9f366_gvdlJfqxw2SI/drupal-cache:qnut8e/sites/default/files/styles/article-list/public/field/image/perro-cansado.jpg?itok=jfmn1FS6" class="img-fluid" alt="Responsive image">
+                <h5>Category 1</h5>
+                <a href="">Learn more</a>
+            </div>
+            <div class="col-sm-6 centro">
+                <h3>LO QUE QUEREMOS</h3>
+                <p>Promover la sensibilizacion colectiva fomentando la esterilizacion, respeto a la vida, el no al matrato animal y la adopcion responsable. Soñamos con convertirnos en una organizacion lider en la proteccion y preservacion de los animales que son victimar del maltrato y la indiferencia</p>
+
+                <img src="https://static.affinity-petcare.com/advance/cdn/farfuture/4-WmoVwzUNsivsjEFj2sR5VsjUTBfk5N5hOelOXbV_0/drupal-cache:qo7uxl/sites/default/files/styles/article-list/public/field/image/mi_perro_se_ha_hecho_dano_en_una_pata_1_opt.jpg?itok=lFF31X0u" class="img-fluid" alt="Responsive image">
+                <h5>Category 2</h5>
+                <a href="">Learn more</a>
             </div>
         </div>
     </div>
-
     <br>
 
-    <div class="container">
-        <h2>Â¿Cual es el proceso para adoptar un animal de la fundacion?</h2>
-        <p><b>1.</b> Escoger el perrito o gatito que deseas adoptar teniendo en cuenta el espacio que dispones, su edad y tamaÃ±o.</p>
-        <p><b>2.</b> Diligencie el formulario de adopcion. Los datos ingresados seran verificados por funcionarios de la fundacion (Esta verificacion tarda de 2 a 3 dias calendario). Si no sigues en el proceso te enviaremos un correo electronico informandote.</p>
-        <p><b>3.</b> Si tu formulario es aprobado, te llamaremos para darte las instrucciones para la visitar domiciliaria.</p>
-        <p><b>4.</b> Revisaremos tu solicitud y si todo esta en orden nos contactaremos para coordinar el dia en que el peludito que escogiste llegue a tu casa.</p>
-        <p><b>5.</b> Eventualmente se te visitara para confirmar que el peludito se encuentra en buenas condiciones.</p>
-
-        <h2 class="centro">Â¿Estas List@?</h2>
-        <div class="centro">
-            <a href="Formularios/Form_Adopta.html" target="blank" ><button type="button" class="btn btn-dark">FORMULARIO DE ADOPCION</button></a>
-        </div>
-        <br>
-    </div>
-
-    <div class="container-fluid adopta">
-        <br><br>
-        <div class="container">
-            <h2 class="centro">Peluditos adoptados</h2>
-            <p class="centro">Estos son los peludos que han encontrado humanos con un corazon enorme y que ahora disfrutan de la vida que se merecen</p>
-            <br>
-            <div class="row">
-                <div class="col-sm-3 centro">
-                    <img src="https://minuevomejoramigo.com/wp-content/uploads/2021/02/parchis-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
-                    <h3>Cosmo - Adoptado</h3>
-                    <p>xxx</p>
-                </div>
-                <div class="col-sm-3 centro">
-                    <img src="https://ivoft.com/wp-content/uploads/2016/06/gafas-perro-Dakota-300x300.png" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
-                    <h3>Lulu - Adoptado</h3>
-                    <p>xxx</p>
-                </div>
-                <div class="col-sm-3 centro">
-                    <img src="https://www.vitake.net/wp-content/uploads/2015/04/ny8-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
-                    <h3>Pancho - Adoptado</h3>
-                    <p>xxx</p>
-                </div>
-                <div class="col-sm-3 centro">
-                    <img src="https://www.rastreator.com/wp-content/uploads/19-300x300.jpg" class="img-fluid rounded-circle" alt="Responsive image Cinque Terre">
-                    <h3>Casper - Adoptado</h3>
-                    <p>xxx</p>
-                </div>
-                <br>
-            </div>
-        </div>
-
-        <div class="centro">
-            <button type="button" class="btn btn-outline-dark">Ver Mas</button>
-        </div>
-
-        <br><br>
-    </div>
-
-    <!-- Cuerpo adopta / Final -->
+    
+    <!-- Cuerpo La Fundacion / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -208,7 +193,7 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>Â¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por qué ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">

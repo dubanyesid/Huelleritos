@@ -1,10 +1,12 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Huelleritos Adultos</title>
+    <title>Noticias</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,7 +87,7 @@
                                         <li><a href="Adopta.html">Adopta</a></li>
                                         <li><a href="Apadrinar.html">Apadrina</a></li>
                                         <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.html">La fundaciÃ³n</a></li>
+                                        <li><a href="La_Fundacion.html">La fundación</a></li>
                                         <li><a href="Noticias.html">Noticias</a></li>
                                         <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
@@ -108,88 +110,142 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Nuestros Peludos</span> <br> Adultos</h3>
-                            
+                            <h3><span>Noticias y Eventos</span></h3>
+                            <p>Enterate de las nuevas noticias y eventos de nuestra fundacion.</p>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog.png" alt="">
+                <img src="../img/banner/dog7.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo Huelleritos Adultos aqui -->
+    <!-- Cuerpo Noticias aqui -->
     <br><br><br>
 
-    <h1 class="centro">Adultos<hr></h1>
-    <br>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito1.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
+        <h1 class="centro">Nuevos Eventos <hr></h1>
+        <div id="carouselExampleControl" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://pbs.twimg.com/media/EaFXY5pWkAEGjsM.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jornada de esterilizacion</h5>
+                                    <p>Informacion sobre el evento</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://tuttofreddo.ec/wp-content/uploads/2019/05/novedades-pg-web.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gran rifa</h5>
+                                    <p>Informacion sobre el evento</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://tienda.noel.com.co/wp-content/uploads/2020/09/Noel-finas-rellena-chocolate.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Venta de galletas pro fondos</h5>
+                                    <p>Informacion sobre el evento</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito2.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
+                <div class="carousel-item">
+                    
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito3.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
+                <div class="carousel-item">             
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/breaking-news-live-abstract-red-blue-banner-white-text-dark-background-technology-business-tv-vector-illustration-105537370.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo de la Noticia</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito4.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito5.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito6.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
+            <a class="carousel-control-prev" href="#carouselExampleControl" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControl" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
     <br><br>
-    
-    <!-- Cuerpo Huelleritos Adultos / Final -->
+    <!-- Cuerpo Noticias / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -197,7 +253,7 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>Â¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por Que ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">

@@ -1,10 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
+      <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>La Fundacion</title>
+    <title>Apadrina</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -108,81 +108,53 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Fundación</span><br>Huelleritos </h3>
-                            <p> La Fundacion Huelleritos es una organizacion sin animo de lucro que busca dar hogar, rehabilitar y dar en adopcion a perros que son rescatados en estado de maltrato.</p>
-                           
+                            <h3><span>Apadrina</span> <br> Un Peludito</h3>
+                            <p>¡Ayudanos con uno de nuestros hermosos peluditos!</p>
+                            
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog6.png" alt="">
+                <img src="../img/banner/dog4.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo La Fundacion aqui -->
+    <!-- Cuerpo Apadrinar -->
     <br><br><br>
-
-    <div class="container">
-        <hr class="potaxio"> <br>
-       
-        <div class="row">
-            <div class="col-sm-6 centro">
-                <h2>Historia</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img src="https://www.consumer.es/wp-content/uploads/2019/07/img_sentarse-perro-300x300.jpg" class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="https://www.consumer.es/wp-content/uploads/2019/07/img_perros-se-masturban1-300x300.jpg" class="img-fluid" alt="Responsive image">
-                    </div>
-                </div>
-                <br>
-                <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1000/https://naturalchoice.ec/wp-content/uploads/2020/01/header-1.jpg" class="img-fluid" alt="Responsive image">
-            </div>
-        </div>
-        <br><br>
-        <h2 class="centro">Trabajando en pro de los animales<br> Nuestra mision <hr></h2>
-        <br><br>
-        <div class="row">
-            <div class="col-sm-6 centro">
-                <h3>LO QUE HACEMOS</h3>
-                <p>Los animales que llegan a la fundacion reciben atencion veterinaria completa, incluyendo esterilizacion, vacunacion, desparacitacion y cualquier tratamiento necesario para garantizar su bienestar hasta que logremos encontrarle un hogar que los cuide de por vida</p>
-
-                <img src="https://static.affinity-petcare.com/advance/cdn/farfuture/FnciLwPxwEfGjMY3DnH1maXtV9f366_gvdlJfqxw2SI/drupal-cache:qnut8e/sites/default/files/styles/article-list/public/field/image/perro-cansado.jpg?itok=jfmn1FS6" class="img-fluid" alt="Responsive image">
-                <h5>Category 1</h5>
-                <a href="">Learn more</a>
-            </div>
-            <div class="col-sm-6 centro">
-                <h3>LO QUE QUEREMOS</h3>
-                <p>Promover la sensibilizacion colectiva fomentando la esterilizacion, respeto a la vida, el no al matrato animal y la adopcion responsable. Soñamos con convertirnos en una organizacion lider en la proteccion y preservacion de los animales que son victimar del maltrato y la indiferencia</p>
-
-                <img src="https://static.affinity-petcare.com/advance/cdn/farfuture/4-WmoVwzUNsivsjEFj2sR5VsjUTBfk5N5hOelOXbV_0/drupal-cache:qo7uxl/sites/default/files/styles/article-list/public/field/image/mi_perro_se_ha_hecho_dano_en_una_pata_1_opt.jpg?itok=lFF31X0u" class="img-fluid" alt="Responsive image">
-                <h5>Category 2</h5>
-                <a href="">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <br>
-
     
-    <!-- Cuerpo La Fundacion / Final -->
+    <div class="container">
+        <h1 class="centro">¿Deseas apadrinar un peludito?</h1>
+        <br>
+        <h2>Debes tener en cuenta lo siguiente</h2>
+        <p><b>1.</b></p>
+        <p><b>2.</b></p>
+        <p><b>3.</b></p>
+        <p><b>4.</b></p>
+        <p><b>5.</b></p>
+
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>INSCRIBETE</h2>
+                <h3>Apadrina un peludito</h3>
+                <h3>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en padrino para un animalito.</h3>
+                <div class="centro">
+                    <a href="Formularios/Form_Apadrinar.html" target="blank" ><button type="button" class="btn btn-dark">INSCRIPCION PARA SER PADRINO</button></a>
+                </div>
+            </div>
+            <div class="col-sm-6 centro">
+                
+                <img src="https://nitropack.soyunperro.com/wp-content/uploads/2017/11/acariciar-perro.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+
+        <br><br>
+    </div>
+    <!-- Cuerpo Apadrinar / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -190,7 +162,7 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por qué ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">

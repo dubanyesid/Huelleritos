@@ -1,10 +1,13 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Apadrina</title>
+    <title>Huelleritos Cachorros</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -108,53 +111,88 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Apadrina</span> <br> Un Peludito</h3>
-                            <p>¡Ayudanos con uno de nuestros hermosos peluditos!</p>
-                            
+                            <h3><span>Nuestros Peludos</span> <br> Cachorros</h3>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../img/banner/dog4.png" alt="">
+                <img src="../img/banner/dog.png" alt="">
             </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
-    <!-- Cuerpo Apadrinar -->
+    <!-- Cuerpo Huelleritos Cachorros aqui -->
     <br><br><br>
-    
-    <div class="container">
-        <h1 class="centro">¿Deseas apadrinar un peludito?</h1>
-        <br>
-        <h2>Debes tener en cuenta lo siguiente</h2>
-        <p><b>1.</b></p>
-        <p><b>2.</b></p>
-        <p><b>3.</b></p>
-        <p><b>4.</b></p>
-        <p><b>5.</b></p>
 
-        <br><br>
-        
+    <h1 class="centro">Cachorritos</h1>
+    <br>
+    <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <h2>INSCRIBETE</h2>
-                <h3>Apadrina un peludito</h3>
-                <h3>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en padrino para un animalito.</h3>
-                <div class="centro">
-                    <a href="Formularios/Form_Apadrinar.html" target="blank" ><button type="button" class="btn btn-dark">INSCRIPCION PARA SER PADRINO</button></a>
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito1.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 centro">
-                
-                <img src="https://nitropack.soyunperro.com/wp-content/uploads/2017/11/acariciar-perro.jpg" class="img-fluid" alt="Responsive image">
-            </div>
-        </div>
 
-        <br><br>
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito2.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito3.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito4.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito5.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card centro">
+                    <a href="../html/Huelleritos_Cachorros_gallery/Huellerito6.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre del animal</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <!-- Cuerpo Apadrinar / Final -->
+    <br><br>
+    
+    <!-- Cuerpo Huelleritos Cachorros / Final -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">

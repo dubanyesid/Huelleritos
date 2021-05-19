@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Contacto</title>
+    <title>Hogar de Paso</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,91 +103,80 @@
         </div>
     </header>
 
-    <!-- bradcam_area_start -->
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider slider_bg_1 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="slider_text">
+                            <h3><span>¿Deseas Ser Hogar De Paso?</span></h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dog_thumb d-none d-lg-block">
+                <img src="../img/banner/dog5.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- Cuerpo Hogar de paso aqui -->
+    <br><br><br>
+    
+    <div class="container">
+        
+        <h2 class="centro">¿Que Se Debe Tener En Cuenta?</h2>
+        <hr>
+        <br>
+       <!--  <h2>Debes tener en cuenta lo siguiente</h2> -->
+        <p><b>1.</b> Debes ser mayor de edad.</p>
+        <p><b>2.</b> Debes contar con espacio, tiempo, disposicion y sobre todo, amor por los animales.</p>
+        <p><b>3.</b> Debes completar el formulario de inscripcion. En el te pediremos datos basicos que nos permitiran realizar un filtro.</p>
+        <p><b>4.</b> Analizarmeos tu inscripcion y si cumples con las condiciones, te estaremos contactando.</p>
+        <p><b>5.</b> De resultar seleccionado, nuevamente te contactaremos para darte la bienvenida a la fundacion huelleritos.</p>
+
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Incribete Para Ser Hogar De Paso</h2><br>
+              
+                <h4>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en hogar de paso para uno de nuestros animalitos.</h4><br>
+                <div class="centro">
+                    <a href="Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark">INSCRIPCION HOGAR DE PASO</button></a>
+                </div>
+            </div>
+            <div class="col-sm-6 centro">
+                
+                <img src="https://mascotass.com/wp-content/uploads/2011/07/Perro-Tosa-Inu.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+
+        <br><br>
+    </div>
+    <!-- Cuerpo Hogar de paso / Final -->
+
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>Contacto</h3>
-                            
+                            <h3>¿Por qué ir con Huelleritos?</h3>
+                            <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
-                        
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
+                            <p>Or  <a href="#">+57 3177636650</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    
-    <!-- bradcam_area_end -->
-
-    <!-- Contacto -->
-    <!-- ================ contact section start ================= -->
-    <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="contact-title">Pongase en Contacto Con Nosotros</h2>
-                    </div>
-                    <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su mensaje'" placeholder=" Ingrese su mensaje"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Ingrese su Nombre">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su Email'" placeholder="Ingrese su Email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su Asunto'" placeholder="Ingrese su Asunto">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-3 offset-lg-1">
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-home"></i></span>
-                            <div class="media-body">
-                                <h3>Huelleritos</h3>
-                                <p>Cucuta, N. Santander</p>
-                            </div>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-                            <div class="media-body">
-                                <h3>+57 3177636650</h3>
-                                <p>Lunes a Sabado 7am to 7pm</p>
-                            </div>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-email"></i></span>
-                            <div class="media-body">
-                                <h3>Huelleritos@gmail.com</h3>
-                                <p>Envianos un Correo Electronico</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- ================ contact section end ================= -->
-    <!-- Contacto / Final -->
 
     <!-- footer_Inicio  -->
     <footer class="footer">
@@ -233,7 +224,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="img/Huelleritos.png" alt="">
+                                    <img src="../img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                             <p class="address_text">

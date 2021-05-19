@@ -1,8 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+ pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="es">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Huellerito1</title>
     <meta name="description" content="">
@@ -115,19 +118,19 @@
                     <div class="d-flex">
                         <div class="card">
                             <div class="d-flex flex-column thumbnails">
-                                <!-- imagen pequeña1 -->
+                                <!-- imagen pequeÃ±a1 -->
                                 <div id="f1" class="tb tb-active">
                                     <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/a5/d8/dd/a5d8ddffb8675680ac9f46cb035bd494.jpg"> 
                                 </div>
-                                <!-- imagen pequeña2 -->
+                                <!-- imagen pequeÃ±a2 -->
                                 <div id="f2" class="tb">
                                     <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/4a/ab/db/4aabdbdf057fd1918e1f4925250a1db8.jpg"> 
                                 </div>
-                                <!-- imagen pequeña3 -->
+                                <!-- imagen pequeÃ±a3 -->
                                 <div id="f3" class="tb">
                                     <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/e1/20/60/e12060df758477020c519f73ff896ad5.jpg">
                                 </div>
-                                <!-- imagen pequeña4 -->
+                                <!-- imagen pequeÃ±a4 -->
                                 <div id="f4" class="tb">
                                     <img class="thumbnail-img fit-image" src="https://thepitbullworldassociation.files.wordpress.com/2017/02/img_4455.jpg">
                                 </div>
@@ -185,7 +188,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-6">
             <div class="container">
-                <a href="#demo" data-toggle="collapse"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Informacion Adicional ↓</button></a>
+                <a href="#demo" data-toggle="collapse"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Informacion Adicional â</button></a>
                 <div id="demo" class="collapse">
                     <p><b>Vacunas:</b> xxxxx</p>
                     <p><b>Enfermedad:</b> xxxxx</p>
