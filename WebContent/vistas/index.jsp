@@ -1,4 +1,7 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
 <html class="no-js" lang="zxx">
 
 <head>
@@ -85,7 +88,7 @@
                                         <li><a href="html/Adopta.html">Adopta</a></li>
                                         <li><a href="html/Apadrinar.html">Apadrina</a></li>
                                         <li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="html/La_Fundacion.html">La fundaciÃ³n</a></li>
+                                        <li><a href="html/La_Fundacion.html">La fundación</a></li>
                                         <li><a href="html/Noticias.html">Noticias</a></li>
                                         <a href="html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
@@ -108,8 +111,8 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
-                            <h3><span>Huelleritos</span> <br> CÃºcuta</h3>
-                            <p>Â¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
+                            <h3><span>Huelleritos</span> <br> Cúcuta</h3>
+                            <p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
                             <a href="html/Contacto.html" class="boxed-btn4">Contactanos</a>
                         </div>
                     </div>
@@ -406,7 +409,7 @@
                 <div class="col-lg-8">
                     <div class="contact_text text-center">
                         <div class="section_title text-center">
-                            <h3>Â¿Por Que ir con Huelleritos?</h3>
+                            <h3>¿Por Que ir con Huelleritos?</h3>
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
