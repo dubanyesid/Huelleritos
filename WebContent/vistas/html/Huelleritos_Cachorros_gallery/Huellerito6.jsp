@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -101,7 +103,7 @@
         </div>
     </header>
 
-   
+    
 
     <!-- Cuerpo formulario Adoptar aqui -->
     <br><br><br>
@@ -234,6 +236,7 @@
     </div>
     <br><br>
 <!-- otros animales / final -->
+
 
 <div class="contact_anipat anipat_bg_1">
     <div class="container">

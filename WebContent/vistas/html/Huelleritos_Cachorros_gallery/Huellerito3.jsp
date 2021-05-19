@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -101,7 +103,7 @@
         </div>
     </header>
 
-    
+   
 
     <!-- Cuerpo formulario Adoptar aqui -->
     <br><br><br>
@@ -196,7 +198,8 @@
     <br><br>
     <hr class="potaxio">
     <!-- Cuerpo formulario Adoptar / Final -->
- <!-- otros animales / inicio -->
+
+     <!-- otros animales / inicio -->
 
     <div class="container">
         <h2>Otros animales</h2>

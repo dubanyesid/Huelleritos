@@ -1,8 +1,14 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Huellerito1</title>
     <meta name="description" content="">
@@ -197,7 +203,7 @@
     <hr class="potaxio">
     <!-- Cuerpo formulario Adoptar / Final -->
 
-    <!-- otros animales / inicio -->
+     <!-- otros animales / inicio -->
 
     <div class="container">
         <h2>Otros animales</h2>

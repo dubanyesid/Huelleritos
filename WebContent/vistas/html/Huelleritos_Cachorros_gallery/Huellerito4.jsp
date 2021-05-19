@@ -1,7 +1,10 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
+	<meta charset="ISO-8859-1">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Huellerito1</title>
@@ -101,7 +104,7 @@
         </div>
     </header>
 
-   
+    
 
     <!-- Cuerpo formulario Adoptar aqui -->
     <br><br><br>
@@ -196,8 +199,7 @@
     <br><br>
     <hr class="potaxio">
     <!-- Cuerpo formulario Adoptar / Final -->
-
-   <!-- otros animales / inicio -->
+ <!-- otros animales / inicio -->
 
     <div class="container">
         <h2>Otros animales</h2>
@@ -234,7 +236,6 @@
     </div>
     <br><br>
 <!-- otros animales / final -->
-
 
 <div class="contact_anipat anipat_bg_1">
     <div class="container">
