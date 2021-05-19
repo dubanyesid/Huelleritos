@@ -1,0 +1,122 @@
+
+
+h1 h2 h3 h4 h5{
+	font-family:  Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+
+p {
+	font-family:  Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;	
+}
+
+.btn-dark {
+    color: ##eea2ff;
+    background-color: #eea2ff;
+    border-color: #eea2ff;
+}
+
+.btn-dark:hover{
+    background-color: white;
+    border-color: #eea2ff;
+    color: black;
+}
+
+
+.centro{
+    text-align: center;
+}
+
+.derecha{
+    text-align: right;
+}
+
+.izquierda{
+    text-align: left;
+}
+
+
+hr{
+height:2px;
+width:20%;
+border-width:0;
+color:#E3E0DF;
+background-color:#E3E0DF;
+}
+
+
+.potaxio{
+    height:2px;
+    width:80%;
+    border-width:0;
+    color:#E3E0DF;
+    background-color:#E3E0DF;
+}
+
+/*galeria*/
+
+/*.card {
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}*/
+
+fieldset.active {
+    display: block !important
+}
+
+fieldset {
+    display: none
+}
+
+.pic0 {
+    width: 300px;
+    height: 400px;
+    margin-left: 85px;
+    margin-right: auto;
+    display: block
+}
+
+.product-pic {
+    padding-left: auto;
+    padding-right: auto;
+    width: 100%
+}
+
+.thumbnails {
+    position: absolute
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.tb {
+    width: 62px;
+    height: 62px;
+    border: 1px solid grey;
+    margin: 2px;
+    opacity: 0.4;
+    cursor: pointer
+}
+
+.tb-active {
+    opacity: 1
+}
+
+.thumbnail-img {
+    width: 60px;
+    height: 60px
+}
+
+@media screen and (max-width: 768px) {
+    .pic0 {
+        width: 250px;
+        height: 350px
+    }
+}
+
+.adopta{
+    background-color: #E3E0DF;
+}
