@@ -88,7 +88,7 @@ public class AdministradorServlet extends HttpServlet {
 		String imagen = request.getParameter("imagen");
 		String titulo = request.getParameter("titulo");
 		
-		//NoticiaEvidencia newNoticiaEvidencia = new NoticiaEvidencia(idNoticiaEvidencia,descripcion, imagen, titulo);
+		NoticiaEvidencia newNoticiaEvidencia = new NoticiaEvidencia(idNoticiaEvidencia,descripcion, imagen, titulo);
 		//response.sendRedirect("list");
 	}
 
