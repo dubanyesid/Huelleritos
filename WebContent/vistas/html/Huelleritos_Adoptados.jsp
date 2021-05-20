@@ -73,7 +73,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../index.html">
+                                <a href="../index.jsp">
                                     <img src="../img/Huelleritos.png" alt="">
                                 </a>
                             </div>
@@ -82,14 +82,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../index.html">Inicio</a></li>
-                                        <li><a href="Huelleritos.html">Huelleritos</a></li>
-                                        <li><a href="Adopta.html">Adopta</a></li>
-                                        <li><a href="Apadrinar.html">Apadrina</a></li>
-                                        <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.html">La fundación</a></li>
-                                        <li><a href="Noticias.html">Noticias</a></li>
-                                        <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="../index.jsp">Inicio</a></li>
+                                        <li><a href="Huelleritos.jsp">Huelleritos</a></li>
+                                        <li><a href="Adopta.jsp">Adopta</a></li>
+                                        <li><a href="Apadrinar.jsp">Apadrina</a></li>
+                                        <li><a href="Hogar_Paso.jsp">Hogar de paso</a></li>                            
+                                        <li><a href="La_Fundacion.jsp">La fundación</a></li>
+                                        <li><a href="Noticias.jsp">Noticias</a></li>
+                                        <a href="Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -133,7 +133,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito1.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito1.jsp" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -142,7 +142,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito2.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito2.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -151,7 +151,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito3.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito3.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -163,7 +163,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito4.html" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito4.jsp" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -172,7 +172,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito5.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito5.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -181,7 +181,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito6.html" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../html/Huelleritos_Adoptados_gallery/Huellerito6.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -204,7 +204,7 @@
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
+                            <a href="Contacto.jsp" class="boxed-btn4">Contactanos</a>
                             <p>Or  <a href="#">+57 3177636650</a></p>
                         </div>
                     </div>

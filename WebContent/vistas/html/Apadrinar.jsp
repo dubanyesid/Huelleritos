@@ -71,7 +71,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../index.html">
+                                <a href="../index.jsp">
                                     <img src="../img/Huelleritos.png" alt="">
                                 </a>
                             </div>
@@ -80,14 +80,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../index.html">Inicio</a></li>
-                                        <li><a href="Huelleritos.html">Huelleritos</a></li>
-                                        <li><a href="Adopta.html">Adopta</a></li>
-                                        <li><a href="Apadrinar.html">Apadrina</a></li>
-                                        <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.html">La fundación</a></li>
-                                        <li><a href="Noticias.html">Noticias</a></li>
-                                        <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="../index.jsp">Inicio</a></li>
+                                        <li><a href="Huelleritos.jsp">Huelleritos</a></li>
+                                        <li><a href="Adopta.jsp">Adopta</a></li>
+                                        <li><a href="Apadrinar.jsp">Apadrina</a></li>
+                                        <li><a href="Hogar_Paso.jsp">Hogar de paso</a></li>                            
+                                        <li><a href="La_Fundacion.jsp">La fundación</a></li>
+                                        <li><a href="Noticias.jsp">Noticias</a></li>
+                                        <a href="Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -143,7 +143,7 @@
                 <h3>Apadrina un peludito</h3>
                 <h3>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en padrino para un animalito.</h3>
                 <div class="centro">
-                    <a href="Formularios/Form_Apadrinar.html" target="blank" ><button type="button" class="btn btn-dark">INSCRIPCION PARA SER PADRINO</button></a>
+                    <a href="Formularios/Form_Apadrinar.jsp" target="blank" ><button type="button" class="btn btn-dark">INSCRIPCION PARA SER PADRINO</button></a>
                 </div>
             </div>
             <div class="col-sm-6 centro">
@@ -166,7 +166,7 @@
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
+                            <a href="Contacto.jsp" class="boxed-btn4">Contactanos</a>
                             <p>Or  <a href="#">+57 3177636650</a></p>
                         </div>
                     </div>
