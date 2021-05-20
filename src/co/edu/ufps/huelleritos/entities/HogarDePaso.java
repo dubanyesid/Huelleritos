@@ -19,6 +19,10 @@ public class HogarDePaso implements Serializable {
 
 	private String direccion;
 
+	//bi-directional one-to-one association to Usuario
+	@OneToOne
+	private Usuario usuario;
+
 	//bi-directional many-to-one association to Formulario
 	@ManyToOne
 	private Formulario formulario;
@@ -27,10 +31,6 @@ public class HogarDePaso implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="codigo_seguimiento")
 	private SeguimientoAnimal seguimientoAnimal;
-
-	//bi-directional one-to-one association to Usuario
-	@OneToOne
-	private Usuario usuario;
 
 	public HogarDePaso() {
 	}
@@ -51,6 +51,14 @@ public class HogarDePaso implements Serializable {
 		this.direccion = direccion;
 	}
 
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Formulario getFormulario() {
 		return this.formulario;
 	}
@@ -65,14 +73,6 @@ public class HogarDePaso implements Serializable {
 
 	public void setSeguimientoAnimal(SeguimientoAnimal seguimientoAnimal) {
 		this.seguimientoAnimal = seguimientoAnimal;
-	}
-
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 }
