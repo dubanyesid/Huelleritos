@@ -71,7 +71,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../../index.html">
+                                <a href="../../index.jsp">
                                     <img src="../../img/Huelleritos.png" alt="">
                                 </a>
                             </div>
@@ -80,14 +80,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../../index.html">Inicio</a></li>
-                                        <li><a href="../../html/Huelleritos.html">Huelleritos</a></li>
-                                        <li><a href="../../html/Adopta.html">Adopta</a></li>
-                                        <li><a href="../../html/Apadrinar.html">Apadrina</a></li>
-                                        <li><a href="../../html/Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="../../html/La_Fundacion.html">La fundación</a></li>
-                                        <li><a href="../../html/Noticias.html">Noticias</a></li>
-                                        <a href="../../html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="../../index.jsp">Inicio</a></li>
+                                        <li><a href="../../html/Huelleritos.jsp">Huelleritos</a></li>
+                                        <li><a href="../../html/Adopta.jsp">Adopta</a></li>
+                                        <li><a href="../../html/Apadrinar.jsp">Apadrina</a></li>
+                                        <li><a href="../../html/Hogar_Paso.jsp">Hogar de paso</a></li>                            
+                                        <li><a href="../../html/La_Fundacion.jsp">La fundación</a></li>
+                                        <li><a href="../../html/Noticias.jsp">Noticias</a></li>
+                                        <a href="../../html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -174,9 +174,9 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="../Formularios/Form_Adopta.html" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
-            <a href="../Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
-            <a href="../Formularios/Form_Apadrinar.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Apadrina</button></a>
+            <a href="../Formularios/Form_Adopta.jsp" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
+            <a href="../Formularios/Form_Hogar_Paso.jsp" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
+            <a href="../Formularios/Form_Apadrinar.jsp" target="blank"><button type="button" class="btn btn-dark btn-lg ">Apadrina</button></a>
         </div>
         <div class="col-sm-3"></div>
     </div>
@@ -205,7 +205,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <a href="../index.jsp"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -214,7 +214,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../index.jsp"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -223,7 +223,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <a href="../index.jsp"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
