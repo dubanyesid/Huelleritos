@@ -71,10 +71,10 @@ public class Conexion <T> {
 		
 	}
 	
-	public void delete(T obj){
+	public void delete(T id){
 		try {
 			em.getTransaction().begin();
-			em.remove(obj);
+			em.remove(id);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
