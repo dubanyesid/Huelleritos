@@ -38,6 +38,17 @@ public class SeguimientoAnimal implements Serializable {
 
 	public SeguimientoAnimal() {
 	}
+	
+	public SeguimientoAnimal(int codigoSeguimiento, Date fecha, String foto, String observacion, String video,
+			Animal animal) {
+		super();
+		this.codigoSeguimiento = codigoSeguimiento;
+		this.fecha = fecha;
+		this.foto = foto;
+		this.observacion = observacion;
+		this.video = video;
+		this.animal = animal;
+	}
 
 	public int getCodigoSeguimiento() {
 		return this.codigoSeguimiento;

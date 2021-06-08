@@ -30,6 +30,15 @@ public class FormularioAnimal implements Serializable {
 
 	public FormularioAnimal() {
 	}
+	
+	public FormularioAnimal(int idFormularioAnimal, Animal animal, Formulario formulario) {
+		super();
+		this.idFormularioAnimal = idFormularioAnimal;
+		this.animal = animal;
+		this.formulario = formulario;
+	}
+
+
 
 	public int getIdFormularioAnimal() {
 		return this.idFormularioAnimal;

@@ -35,6 +35,17 @@ public class FormularioPregunta implements Serializable {
 
 	public FormularioPregunta() {
 	}
+	
+
+	public FormularioPregunta(int idFormularioPregunta, Formulario formulario, Opcion opcion, Pregunta pregunta) {
+		super();
+		this.idFormularioPregunta = idFormularioPregunta;
+		this.formulario = formulario;
+		this.opcion = opcion;
+		this.pregunta = pregunta;
+	}
+
+
 
 	public int getIdFormularioPregunta() {
 		return this.idFormularioPregunta;
