@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,10 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-
-@NamedQueries({ @NamedQuery(name = "Vacuna.getMaxID", query = "Select max(v.codigoVacuna) as maxid from Vacuna v"),
-	@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM Vacuna v") })
-
+@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM Vacuna v")
 public class Vacuna implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -31,22 +26,10 @@ public class Vacuna implements Serializable {
 
 	//bi-directional many-to-one association to VacunaHistorial
 	@OneToMany(mappedBy="vacuna")
-	private List<VacunaHistorial> vacunaHistorials = new ArrayList();
+	private List<VacunaHistorial> vacunaHistorials;
 
 	public Vacuna() {
 	}
-	
-	public Vacuna(String codigoVacuna, String descripcion, String nombreVacuna) {
-		super();
-		this.codigoVacuna = codigoVacuna;
-		this.descripcion = descripcion;
-		this.nombreVacuna = nombreVacuna;
-	}
-
-
-
-
-
 
 	public String getCodigoVacuna() {
 		return this.codigoVacuna;

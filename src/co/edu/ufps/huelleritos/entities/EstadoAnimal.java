@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,13 +22,7 @@ public class EstadoAnimal implements Serializable {
 
 	//bi-directional many-to-one association to Animal
 	@OneToMany(mappedBy="estadoAnimalBean")
-	private List<Animal> animals = new ArrayList();
-
-	public EstadoAnimal(int id, String descripcion) {
-		super();
-		this.id = id;
-		this.descripcion = descripcion;
-	}
+	private List<Animal> animals;
 
 	public EstadoAnimal() {
 	}

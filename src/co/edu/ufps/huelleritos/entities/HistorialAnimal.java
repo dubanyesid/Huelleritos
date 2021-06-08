@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,38 +21,24 @@ public class HistorialAnimal implements Serializable {
 
 	private String observaciones;
 
+	//bi-directional many-to-one association to EnfermedadHistorial
+	@OneToMany(mappedBy="historialAnimal")
+	private List<EnfermedadHistorial> enfermedadHistorials;
+
 	//bi-directional many-to-one association to Animal
-	@OneToMany(mappedBy="historialAnimal")
-	private List<Animal> animals = new ArrayList();
+	@ManyToOne
+	@JoinColumn(name="codigo_animal")
+	private Animal animal;
 
-	//bi-directional many-to-many association to Enfermedad
-	@ManyToMany
-	@JoinTable(
-		name="enfermedad_historial"
-		, joinColumns={
-			@JoinColumn(name="id_historial")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="codigo_enfermedad")
-			}
-		)
-	private List<Enfermedad> enfermedads = new ArrayList();
-
-	//bi-directional many-to-one association to OperacionesHistorial
+	//bi-directional many-to-one association to OperacionesAnimal
 	@OneToMany(mappedBy="historialAnimal")
-	private List<OperacionesHistorial> operacionesHistorials = new ArrayList();
+	private List<OperacionesAnimal> operacionesAnimals;
 
 	//bi-directional many-to-one association to VacunaHistorial
 	@OneToMany(mappedBy="historialAnimal")
-	private List<VacunaHistorial> vacunaHistorials = new ArrayList();
+	private List<VacunaHistorial> vacunaHistorials;
 
 	public HistorialAnimal() {
-	}
-	
-	public HistorialAnimal(int idHistorialAnimal, String observaciones) {
-		super();
-		this.idHistorialAnimal = idHistorialAnimal;
-		this.observaciones = observaciones;
 	}
 
 	public int getIdHistorialAnimal() {
@@ -73,56 +57,56 @@ public class HistorialAnimal implements Serializable {
 		this.observaciones = observaciones;
 	}
 
-	public List<Animal> getAnimals() {
-		return this.animals;
+	public List<EnfermedadHistorial> getEnfermedadHistorials() {
+		return this.enfermedadHistorials;
 	}
 
-	public void setAnimals(List<Animal> animals) {
-		this.animals = animals;
+	public void setEnfermedadHistorials(List<EnfermedadHistorial> enfermedadHistorials) {
+		this.enfermedadHistorials = enfermedadHistorials;
 	}
 
-	public Animal addAnimal(Animal animal) {
-		getAnimals().add(animal);
-		animal.setHistorialAnimal(this);
+	public EnfermedadHistorial addEnfermedadHistorial(EnfermedadHistorial enfermedadHistorial) {
+		getEnfermedadHistorials().add(enfermedadHistorial);
+		enfermedadHistorial.setHistorialAnimal(this);
 
-		return animal;
+		return enfermedadHistorial;
 	}
 
-	public Animal removeAnimal(Animal animal) {
-		getAnimals().remove(animal);
-		animal.setHistorialAnimal(null);
+	public EnfermedadHistorial removeEnfermedadHistorial(EnfermedadHistorial enfermedadHistorial) {
+		getEnfermedadHistorials().remove(enfermedadHistorial);
+		enfermedadHistorial.setHistorialAnimal(null);
 
-		return animal;
+		return enfermedadHistorial;
 	}
 
-	public List<Enfermedad> getEnfermedads() {
-		return this.enfermedads;
+	public Animal getAnimal() {
+		return this.animal;
 	}
 
-	public void setEnfermedads(List<Enfermedad> enfermedads) {
-		this.enfermedads = enfermedads;
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
 	}
 
-	public List<OperacionesHistorial> getOperacionesHistorials() {
-		return this.operacionesHistorials;
+	public List<OperacionesAnimal> getOperacionesAnimals() {
+		return this.operacionesAnimals;
 	}
 
-	public void setOperacionesHistorials(List<OperacionesHistorial> operacionesHistorials) {
-		this.operacionesHistorials = operacionesHistorials;
+	public void setOperacionesAnimals(List<OperacionesAnimal> operacionesAnimals) {
+		this.operacionesAnimals = operacionesAnimals;
 	}
 
-	public OperacionesHistorial addOperacionesHistorial(OperacionesHistorial operacionesHistorial) {
-		getOperacionesHistorials().add(operacionesHistorial);
-		operacionesHistorial.setHistorialAnimal(this);
+	public OperacionesAnimal addOperacionesAnimal(OperacionesAnimal operacionesAnimal) {
+		getOperacionesAnimals().add(operacionesAnimal);
+		operacionesAnimal.setHistorialAnimal(this);
 
-		return operacionesHistorial;
+		return operacionesAnimal;
 	}
 
-	public OperacionesHistorial removeOperacionesHistorial(OperacionesHistorial operacionesHistorial) {
-		getOperacionesHistorials().remove(operacionesHistorial);
-		operacionesHistorial.setHistorialAnimal(null);
+	public OperacionesAnimal removeOperacionesAnimal(OperacionesAnimal operacionesAnimal) {
+		getOperacionesAnimals().remove(operacionesAnimal);
+		operacionesAnimal.setHistorialAnimal(null);
 
-		return operacionesHistorial;
+		return operacionesAnimal;
 	}
 
 	public List<VacunaHistorial> getVacunaHistorials() {

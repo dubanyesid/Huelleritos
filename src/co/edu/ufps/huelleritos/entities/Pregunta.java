@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,13 +22,13 @@ public class Pregunta implements Serializable {
 
 	private String texto;
 
-	//bi-directional many-to-many association to Formulario
-	@ManyToMany(mappedBy="preguntas")
-	private List<Formulario> formularios = new ArrayList();
+	//bi-directional many-to-one association to FormularioPregunta
+	@OneToMany(mappedBy="pregunta")
+	private List<FormularioPregunta> formularioPreguntas;
 
 	//bi-directional many-to-one association to Opcion
 	@OneToMany(mappedBy="pregunta")
-	private List<Opcion> opcions = new ArrayList();
+	private List<Opcion> opcions;
 
 	//bi-directional many-to-one association to Encuesta
 	@ManyToOne
@@ -39,15 +37,6 @@ public class Pregunta implements Serializable {
 
 	public Pregunta() {
 	}
-
-	public Pregunta(int idPregunta, int estado, String texto, Encuesta encuesta) {
-		super();
-		this.idPregunta = idPregunta;
-		this.estado = estado;
-		this.texto = texto;
-		this.encuesta = encuesta;
-	}
-
 
 	public int getIdPregunta() {
 		return this.idPregunta;
@@ -73,12 +62,26 @@ public class Pregunta implements Serializable {
 		this.texto = texto;
 	}
 
-	public List<Formulario> getFormularios() {
-		return this.formularios;
+	public List<FormularioPregunta> getFormularioPreguntas() {
+		return this.formularioPreguntas;
 	}
 
-	public void setFormularios(List<Formulario> formularios) {
-		this.formularios = formularios;
+	public void setFormularioPreguntas(List<FormularioPregunta> formularioPreguntas) {
+		this.formularioPreguntas = formularioPreguntas;
+	}
+
+	public FormularioPregunta addFormularioPregunta(FormularioPregunta formularioPregunta) {
+		getFormularioPreguntas().add(formularioPregunta);
+		formularioPregunta.setPregunta(this);
+
+		return formularioPregunta;
+	}
+
+	public FormularioPregunta removeFormularioPregunta(FormularioPregunta formularioPregunta) {
+		getFormularioPreguntas().remove(formularioPregunta);
+		formularioPregunta.setPregunta(null);
+
+		return formularioPregunta;
 	}
 
 	public List<Opcion> getOpcions() {

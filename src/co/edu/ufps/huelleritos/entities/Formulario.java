@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +21,8 @@ public class Formulario implements Serializable {
 
 	private String apellido;
 
+	private String cedula;
+
 	private String celular;
 
 	private String correo;
@@ -34,39 +34,18 @@ public class Formulario implements Serializable {
 
 	private String telefono;
 
-	//bi-directional many-to-one association to Adoptante
+	//bi-directional many-to-one association to Usuario
+	@ManyToOne
+	@JoinColumn(name="usuario")
+	private Usuario usuarioBean;
+
+	//bi-directional many-to-one association to FormularioAnimal
 	@OneToMany(mappedBy="formulario")
-	private List<Adoptante> adoptantes = new ArrayList();
+	private List<FormularioAnimal> formularioAnimals;
 
-	//bi-directional many-to-many association to Pregunta
-	@ManyToMany
-	@JoinTable(
-		name="formulario_pregunta"
-		, joinColumns={
-			@JoinColumn(name="id_formulario")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="id_pregunta")
-			}
-		)
-	private List<Pregunta> preguntas = new ArrayList();
-
-	//bi-directional many-to-one association to HogarDePaso
+	//bi-directional many-to-one association to FormularioPregunta
 	@OneToMany(mappedBy="formulario")
-	private List<HogarDePaso> hogarDePasos = new ArrayList();
-
-	
-	public Formulario(int idFormulario, String apellido, String celular, String correo, Date fecha, String nombre,
-			String telefono) {
-		super();
-		this.idFormulario = idFormulario;
-		this.apellido = apellido;
-		this.celular = celular;
-		this.correo = correo;
-		this.fecha = fecha;
-		this.nombre = nombre;
-		this.telefono = telefono;
-	}
+	private List<FormularioPregunta> formularioPreguntas;
 
 	public Formulario() {
 	}
@@ -85,6 +64,14 @@ public class Formulario implements Serializable {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+
+	public String getCedula() {
+		return this.cedula;
+	}
+
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
 	}
 
 	public String getCelular() {
@@ -127,56 +114,56 @@ public class Formulario implements Serializable {
 		this.telefono = telefono;
 	}
 
-	public List<Adoptante> getAdoptantes() {
-		return this.adoptantes;
+	public Usuario getUsuarioBean() {
+		return this.usuarioBean;
 	}
 
-	public void setAdoptantes(List<Adoptante> adoptantes) {
-		this.adoptantes = adoptantes;
+	public void setUsuarioBean(Usuario usuarioBean) {
+		this.usuarioBean = usuarioBean;
 	}
 
-	public Adoptante addAdoptante(Adoptante adoptante) {
-		getAdoptantes().add(adoptante);
-		adoptante.setFormulario(this);
-
-		return adoptante;
+	public List<FormularioAnimal> getFormularioAnimals() {
+		return this.formularioAnimals;
 	}
 
-	public Adoptante removeAdoptante(Adoptante adoptante) {
-		getAdoptantes().remove(adoptante);
-		adoptante.setFormulario(null);
-
-		return adoptante;
+	public void setFormularioAnimals(List<FormularioAnimal> formularioAnimals) {
+		this.formularioAnimals = formularioAnimals;
 	}
 
-	public List<Pregunta> getPreguntas() {
-		return this.preguntas;
+	public FormularioAnimal addFormularioAnimal(FormularioAnimal formularioAnimal) {
+		getFormularioAnimals().add(formularioAnimal);
+		formularioAnimal.setFormulario(this);
+
+		return formularioAnimal;
 	}
 
-	public void setPreguntas(List<Pregunta> preguntas) {
-		this.preguntas = preguntas;
+	public FormularioAnimal removeFormularioAnimal(FormularioAnimal formularioAnimal) {
+		getFormularioAnimals().remove(formularioAnimal);
+		formularioAnimal.setFormulario(null);
+
+		return formularioAnimal;
 	}
 
-	public List<HogarDePaso> getHogarDePasos() {
-		return this.hogarDePasos;
+	public List<FormularioPregunta> getFormularioPreguntas() {
+		return this.formularioPreguntas;
 	}
 
-	public void setHogarDePasos(List<HogarDePaso> hogarDePasos) {
-		this.hogarDePasos = hogarDePasos;
+	public void setFormularioPreguntas(List<FormularioPregunta> formularioPreguntas) {
+		this.formularioPreguntas = formularioPreguntas;
 	}
 
-	public HogarDePaso addHogarDePaso(HogarDePaso hogarDePaso) {
-		getHogarDePasos().add(hogarDePaso);
-		hogarDePaso.setFormulario(this);
+	public FormularioPregunta addFormularioPregunta(FormularioPregunta formularioPregunta) {
+		getFormularioPreguntas().add(formularioPregunta);
+		formularioPregunta.setFormulario(this);
 
-		return hogarDePaso;
+		return formularioPregunta;
 	}
 
-	public HogarDePaso removeHogarDePaso(HogarDePaso hogarDePaso) {
-		getHogarDePasos().remove(hogarDePaso);
-		hogarDePaso.setFormulario(null);
+	public FormularioPregunta removeFormularioPregunta(FormularioPregunta formularioPregunta) {
+		getFormularioPreguntas().remove(formularioPregunta);
+		formularioPregunta.setFormulario(null);
 
-		return hogarDePaso;
+		return formularioPregunta;
 	}
 
 }
