@@ -111,7 +111,7 @@
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
                             <h3><span>Noticias y Evidencias</span></h3>
-                            <p>Enterate de las nuevas noticias y eventos de nuestra fundacion.</p>
+                            <p>Enterate de nuestras evidencias y noticias de nuestra fundacion.</p>
                            
                         </div>
                     </div>
@@ -128,7 +128,7 @@
     <br><br><br>
 
     <div class="container">
-        <h1 class="centro">Nuevos Eventos <hr></h1>
+        <h1 class="centro">Nuevas Evidencias <hr></h1>
         <div id="carouselExampleControl" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
 
@@ -257,7 +257,7 @@
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
+                            <a href="Contacto.jsp" class="boxed-btn4">Contactanos</a>
                             <p>Or  <a href="#">+57 3177636650</a></p>
                         </div>
                     </div>

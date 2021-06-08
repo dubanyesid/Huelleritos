@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 
     <head>
 
@@ -7,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Formulario Animal</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -92,59 +93,91 @@
 
 			<!-- Content -->
 			<div class="content mt-5">
-					
-					<!-- open sidebar menu -->
-					<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
-	                    <i class="fas fa-align-left"></i> <span>Menu</span>
-	                </a>
-				<div class="container">
-					<div class="col-md-4 m-2">
-						<h1>Donaciones</h1>
-						<button type="button" class="btn btn-dark">Reporte</button>
-					</div>
-					
-					<div class="row justify-content-center justify-content-md-start">
-					<table class="table table-bordered">
-						<thead class="table-dark">
-							<tr>
-								<th scope="col">ID</th>
-								<th scope="col">NOMBRE</th>
-								<th scope="col">FECHA</th>
-								<th scope="col">CANTIDAD</th>
-								<th scope="col">ESTADO</th>
-								<th scope="col">IMAGEN</th>
-							</tr>
-						</thead>
-						<tbody >
-							<tr>
-								<th scope="row">1</th>
-								<td>value</td>
-								<td>value</td>
-								<td>value</td>
-								<td>value</td>
-								<td>value</td>
-							</tr>
-							
-						</tbody>
-					</table>
+			
+				<!-- open sidebar menu -->
+				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
+                    <i class="fas fa-align-left"></i> <span>Menu</span>
+                </a>
+			<div class="container">
+				<div>
+					<h1>
+						DATOS DEL ANIMAL
+					</h1>
 				</div>
-				</div>
-			        	
-			        <!-- Footer -->
-			        <footer class="footer-container">
-			
-				        <div class="container">
-				        	<div class="row">
-			
-			                    <div class="col">
-			                    	&copy; Huelleritos todos los derechos reservados.
-			                    </div>
-			
-			                </div>
-				        </div>
-			
-			        </footer>
-		        
+						<form>
+		        <div class="form-row">
+		            <div class="form-group col-md-4">
+		                <label for="nombre">Nombre</label>
+		                <input type="text" name="nombre" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">            
+		                <label for="tipo-animal">Tipo Animal</label>
+		                <input type="text" name="tipo-animal" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="fecha">Fecha de ingreso</label>
+		                <input type="date" name="fecha" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="sexo">Sexo</label>
+		                <select name="sexo" id="tasking" class="form-control">
+		                    <option value="" selected>Selecione</option>
+		                    <option value="value1">Masculino</option>
+		                    <option value="value1">Femenino</option>
+		                </select>
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="raza">Raza</label>
+		                <input type="text" name="raza" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="edad">Edad</label>
+		                <input type="number" name="edad" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="peso">Peso</label>
+		                <input type="number" name="peso" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="color">Color</label>
+		                <input type="text" name="color" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="estado">Estado</label>
+		                <input type="text" name="estado" class="form-control">
+		            </div>
+		            <div class="form-group col-md-4">
+		                <label for="descripcion">Descripción</label>
+		                <textarea class="form-control" id="descripcion" rows="3"></textarea>
+		            </div>
+		            <div class="form-group col-md-4">
+		            	<label for="imagen">Imagen</label>
+		            	<button type="button" class="btn btn-dark form-control">Subir imagen</button>
+		            </div>
+		        </div> <!-- cierre de form-row -->
+		        <!-- dejo fuera a submit -->
+		        <div class="form-group">
+		            <input type="submit" value="Guardar" class="btn btn-dark">
+		        </div>
+		    </form>
+			</div>
+
+		        	
+		        <!-- Footer -->
+		        <footer class="footer-container">
+		
+			        <div class="container">
+			        	<div class="row">
+		
+		                    <div class="col">
+		                    	&copy; Huelleritos todos los derechos reservados.
+		                    </div>
+		
+		                </div>
+			        </div>
+		
+		        </footer>
+	        
 	        </div>
 	        <!-- End content -->
         

@@ -1,5 +1,7 @@
-<!doctype html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html lang="es">
 
     <head>
 
@@ -7,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Noticia</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -100,149 +102,49 @@
 			<div class="container">
 				<div>
 					<h1>
-						SOLICITUD #
+						Nueva Noticia
 					</h1>
 				</div>
 						<form>
-							<h2>Datos familiares</h2>
+							
 					        <form>
 
 							  <div class="form-group row">
-							    <div class="col-sm-2">
-							    	¿Haz tenido mascotas anteriormente?
+							    <label for="" class="col-sm-7 col-form-label">Titulo</label>
+							    <div class="col-sm-5">
+							      <input type="text" class="form-control" id="">
+							    </div>
+							  </div>
+
+							  
+							    <div class="form-group row">
+					                <label for="descripcion" class="col-sm-7 col-form-label">Descripci�n</label>
+					                <div class="col-sm-5">
+					                	<textarea class="form-control" id="descripcion" rows="3"></textarea>
+					            	</div>
+					            </div>
+							  </div>
+
+							  <div class="form-group row">
+							   	<div class="container mt-5">
+									  <h3 class="text-center">Subir imagen</h3>
+									  <div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
+									  <form method="post" enctype="multipart/form-data">
+									    <div class="form-group">
+									      <label><strong>Subir</strong></label>
+									      <div class="custom-file">
+									        <input type="file" name="files[]" multiple class="custom-file-input form-control" id="customFile">
+									        <label class="custom-file-label" for="customFile">Elegir archivo</label>
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <button type="button" name="upload" value="upload" id="upload" class="btn btn-block btn-dark"><i class="fa fa-fw fa-upload"></i> Subir</button>
+									    </div>
+									  </form>
+									</div>
+							   		</div>
 								</div>
-							    <div class="col-sm-2">
-							      <select name="mascota-anterior" id="tasking" class="form-control">
-					                    <option value="" selected>Selecione</option>
-					                    <option value="value1">SI</option>
-					                    <option value="value1">NO</option>
-					               </select>
-							    </div>
-							    <div class="col-sm-8">
-							      <div class="form-check">
-								    <label class="form-check-label">
-								      ¿Cuáles? <input class="col-sm-4 col-form-label" type="text"> 
-								    </label>
-							      </div>
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="inputEmail3" class="col-sm-7 col-form-label">
-							    	¿Qué pasó con ellos?
-								</label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" >
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Dónde duermen/dormian las mascotas?
-								</label>
-							    <div class="col-sm-5">
-							      <input type="number" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Cómo reprendes a los animales cuando tienen malos comportamientos?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Tienen/tenían las vacunas al día?
-							    </label>
-							    <div class="col-sm-5">
-							      <select name="vacuna" id="tasking" class="form-control">
-					                    <option value="" selected>Selecione</option>
-					                    <option value="value1">SI</option>
-					                    <option value="value1">NO</option>
-					               </select>
-							    </div>
-							  </div>
-
-
-							  <h2>Sobre la adopción</h2>
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Qué mascota deseas adoptar?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	En caso de ser arrendada¿Cuánto tiempo pasará sola la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="inputEmail3">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Por qué deseas adoptar?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <div class="col-sm-2">
-							    	¿Estas dispuesto a cuidar del la mascota cuando esta envejezca?
-								</div>
-							    <div class="col-sm-2">
-							      <select name="cuidar" id="tasking" class="form-control">
-					                    <option value="" selected>Selecione</option>
-					                    <option value="value1">SI</option>
-					                    <option value="value1">NO</option>
-					               </select>
-							    </div>
-							    <div class="col-sm-8">
-							      <div class="form-check">
-								    <label class="form-check-label">
-								      ¿Por qué? <input class="col-sm-4 col-form-label" type="text"> 
-								    </label>
-							      </div>
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Dónde dormirá la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Cuanto tiempo pasará sola la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Quién cubrirá los gastos de la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
-							    </div>
-							  </div>
-
+							  
 
 							  
 							</form>
@@ -277,6 +179,29 @@
         <!-- End wrapper -->
 
         <!-- Javascript -->
+
+        <!--Javascriptbotonimagen-->
+        <script>
+        	$(document).ready(function() {
+			  $('input[type="file"]').on("change", function() {
+			    let filenames = [];
+			    let files = this.files;
+			    if (files.length > 1) {
+			      filenames.push("Total Files (" + files.length + ")");
+			    } else {
+			      for (let i in files) {
+			        if (files.hasOwnProperty(i)) {
+			          filenames.push(files[i].name);
+			        }
+			      }
+			    }
+			    $(this)
+			      .next(".custom-file-label")
+			      .html(filenames.join(","));
+				  });
+				});	
+        </script>
+
 		<script src="assets/js/jquery-3.3.1.min.js"></script>
 		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

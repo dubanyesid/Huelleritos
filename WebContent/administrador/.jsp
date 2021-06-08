@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -7,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Inicio Administrador</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -100,69 +102,30 @@
 			<div class="container">
 				<div>
 					<h1>
-						HISTORIAL CLINICO
+						SOLICITUD #
 					</h1>
 				</div>
-						<form>
-					        <div class="form-row">
-					            <div class="form-group col-md-3">
-					                <label for="codigo">Código</label>
-					                <input type="text" name="codigo" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">            
-					                <label for="nombre">Nombre</label>
-					                <input type="text" name="nombre" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="tipo">tipo</label>
-					                <input type="text" name="tipo" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="fecha">Fecha</label>
-					                <input type="date" name="fecha" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="raza">Raza</label>
-					                <input type="text" name="raza" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="edad">Edad</label>
-					                <input type="number" name="edad" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="peso">Peso</label>
-					                <input type="number" name="peso" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="color">Color</label>
-					                <input type="text" name="color" class="form-control">
-					            </div>
-					            <div class="form-group col-md-4">
-		                			<label for="descripcion">Descripción</label>
-		                			<textarea class="form-control" id="descripcion" rows="3"></textarea>
-		            			</div>
-		            				<div class="col-md-10">
-		            					<h2>
-		            					Enfermedades
-		            				</h2>
-		            				</div>
-		            				
-					                <div class="form-group col-md-4">
-						                <label for="nombre">Nombre</label>
-						                <input type="text" name="nombre" class="form-control">
-					            	</div>
-					            	<div class="form-group col-md-4">
-						                <label for="medicina">Medicina</label>
-						                <input type="text" name="medicina" class="form-control">
-					            	</div>
-		            			
-					            
-					        </div> <!-- cierre de form-row -->
-					        <!-- dejo fuera a submit -->
-					        <div class="form-group">
-					            <input type="submit" value="Guardar" class="btn btn-dark">
-					        </div>
-					    </form>
+				<div class="card-columns">
+					<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Solicitudes de adoptantes</h5>
+						    <button type="button" class="btn btn-dark"><span class="badge">7</span></button>
+						  </div>
+					</div>
+					<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Solicitudes de hogares de paso</h5>
+						    <button type="button" class="btn btn-dark"><span class="badge">7</span></button>
+						  </div>
+					</div>
+					<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Seguimiento</h5>
+						    <button type="button" class="btn btn-dark"><span class="badge">7</span></button>
+						  </div>
+					</div>
+				</div>
+
 			</div>
 
 		        	

@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -7,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Lista de Solicitudes</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -103,92 +105,36 @@
 						SOLICITUD #
 					</h1>
 				</div>
-						<form>
-					        <div class="form-row">
-					            <div class="form-group col-md-3">
-					                <label for="fecha">Fecha</label>
-					                <input type="text" name="fecha" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">            
-					                <label for="nombre">Nombre</label>
-					                <input type="text" name="nombre" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="apellido">Apellido</label>
-					                <input type="text" name="apellido" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="cedula">No.Cédula</label>
-					                <input type="text" name="cedula" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="correo">Correo</label>
-					                <input type="email" name="correo" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="fecha-nacimiento">Fecha de nacimiento</label>
-					                <input type="date" name="fecha-nacimiento" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="barrio">Barrio de residencia</label>
-					                <input type="number" name="barrio" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="direccion">Dirección</label>
-					                <input type="text" name="direccion" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-		                			<label for="telefono">Teléfono</label>
-		                			<input type="number" class="form-control" name="telefono"></input>
-		            			</div>
-		            			<div class="form-group col-md-3">
-		                			<label for="trabajo-actual">Trabajo actual</label>
-		                			<input type="text" class="form-control" name="trabajo-actual"></input>
-		            			</div>
-		            			<div class="form-group col-md-3">
-					                <label for="numero-adultos">¿Cuántos adultos viven en tu casa?</label>
-					                <input type="number" name="numero-adultos" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="numero-niños">¿Cuántos niños viven en tu casa?</label>
-					                <input type="number" name="numero-niños" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="edad-ninos">¿Qué edad tienen los niños?</label>
-					                <input type="text" name="edad-ninos" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="animal-interesado">Nombre del animal interesado</label>
-					                <input type="text" name="animal-interesado" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="tipo-animal">Tipo de animal</label>
-					                <input type="text" name="tipo-animal" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="tenido-animal">¿Haz tenido un animal antes?</label>
-					                <select name="tenido-animal" id="tasking" class="form-control">
-					                    <option value="si">SI</option>
-					                    <option value="no" selected>NO</option>
-					                </select>
-					            </div>
-					            <div class="form-group col-md-4">
-					                <label for="descripcion">¿Por qué quieres adoptar un animal?</label>
-					                <textarea class="form-control" id="descripcion" rows="3"></textarea>
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="estado">Estado</label>
-					                <select name="estado" id="tasking" class="form-control">
-					                    <option value="si">SI</option>
-					                    <option value="no" selected>NO</option>
-					                </select>
-					            </div>
-					        </div> <!-- cierre de form-row -->
-					        <!-- dejo fuera a submit -->
-					        <div class="form-group">
-					            <input type="submit" value="Guardar" class="btn btn-dark">
-					        </div>
-					    </form>
+				<div class="card-columns">
+					<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Solicitud #</h5>
+						    <label class="card-subtitle  text-muted">Nombre:</label>
+						    <p class="card-text">Cosmo.</p>
+						    <label class="card-subtitle  text-muted">Estado:</label>
+						    <p class="card-text">En espera.</p>
+						  </div>
+					</div>
+<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Solicitud #</h5>
+						    <label class="card-subtitle  text-muted">Nombre:</label>
+						    <p class="card-text">Cosmo.</p>
+						    <label class="card-subtitle  text-muted">Estado:</label>
+						    <p class="card-text">En espera.</p>
+						  </div>
+					</div>
+					<div class="card">
+						  <div class="card-body">
+						    <h5 class="card-title">Solicitud #</h5>
+						    <label class="card-subtitle  text-muted">Nombre:</label>
+						    <p class="card-text">Cosmo.</p>
+						    <label class="card-subtitle  text-muted">Estado:</label>
+						    <p class="card-text">En espera.</p>
+						  </div>
+					</div>
+				</div>
+
 			</div>
 
 		        	
