@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,14 +30,26 @@ public class SeguimientoAnimal implements Serializable {
 
 	//bi-directional many-to-one association to Adoptante
 	@OneToMany(mappedBy="seguimientoAnimal")
-	private List<Adoptante> adoptantes;
+	private List<Adoptante> adoptantes = new ArrayList();
 
 	//bi-directional many-to-one association to HogarDePaso
 	@OneToMany(mappedBy="seguimientoAnimal")
-	private List<HogarDePaso> hogarDePasos;
+	private List<HogarDePaso> hogarDePasos = new ArrayList();
 
 	public SeguimientoAnimal() {
 	}
+	
+	
+
+	public SeguimientoAnimal(int codigoSeguimiento, String foto, String observacion, String video) {
+		super();
+		this.codigoSeguimiento = codigoSeguimiento;
+		this.foto = foto;
+		this.observacion = observacion;
+		this.video = video;
+	}
+
+
 
 	public int getCodigoSeguimiento() {
 		return this.codigoSeguimiento;

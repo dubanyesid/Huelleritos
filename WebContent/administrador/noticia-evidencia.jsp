@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import ="co.edu.ufps.huelleritos.entities.*" %>
+<%@ page import ="co.edu.ufps.huelleritos.dao.*" %>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +12,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Noticia</title>
+        <title>Noticia Evidencia</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">

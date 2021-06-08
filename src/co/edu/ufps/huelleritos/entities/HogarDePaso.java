@@ -34,6 +34,16 @@ public class HogarDePaso implements Serializable {
 
 	public HogarDePaso() {
 	}
+	
+	public HogarDePaso(int usuario_DNI, String direccion, Usuario usuario, Formulario formulario,
+			SeguimientoAnimal seguimientoAnimal) {
+		super();
+		this.usuario_DNI = usuario_DNI;
+		this.direccion = direccion;
+		this.usuario = usuario;
+		this.formulario = formulario;
+		this.seguimientoAnimal = seguimientoAnimal;
+	}
 
 	public int getUsuario_DNI() {
 		return this.usuario_DNI;

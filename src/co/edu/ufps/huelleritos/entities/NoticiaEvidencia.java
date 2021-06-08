@@ -35,6 +35,17 @@ public class NoticiaEvidencia implements Serializable {
 	}
 	
 
+	public NoticiaEvidencia(int idNoticiaEvidencia, String descripcion, String imagen, String titulo,
+			Administrador administrador) {
+		super();
+		this.idNoticiaEvidencia = idNoticiaEvidencia;
+		this.descripcion = descripcion;
+		this.imagen = imagen;
+		this.titulo = titulo;
+		this.administrador = administrador;
+	}
+
+
 	public NoticiaEvidencia(int idNoticiaEvidencia, String descripcion, String imagen, String titulo) {
 		super();
 		this.idNoticiaEvidencia = idNoticiaEvidencia;

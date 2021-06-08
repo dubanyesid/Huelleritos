@@ -73,6 +73,33 @@ public class Animal implements Serializable {
 
 	public Animal() {
 	}
+	
+	
+
+	public Animal(int codigoAnimal, String color, String descripcion, int edad, Date fechaIngreso, String imagenAnimal,
+			String nombreAnimal, String peso, String raza, String sexo, Adoptante adoptante,
+			EstadoAnimal estadoAnimalBean, Guarderia guarderia, HistorialAnimal historialAnimal, Prioridad prioridad,
+			TipoAnimal tipoAnimal) {
+		super();
+		this.codigoAnimal = codigoAnimal;
+		this.color = color;
+		this.descripcion = descripcion;
+		this.edad = edad;
+		this.fechaIngreso = fechaIngreso;
+		this.imagenAnimal = imagenAnimal;
+		this.nombreAnimal = nombreAnimal;
+		this.peso = peso;
+		this.raza = raza;
+		this.sexo = sexo;
+		this.adoptante = adoptante;
+		this.estadoAnimalBean = estadoAnimalBean;
+		this.guarderia = guarderia;
+		this.historialAnimal = historialAnimal;
+		this.prioridad = prioridad;
+		this.tipoAnimal = tipoAnimal;
+	}
+
+
 
 	public int getCodigoAnimal() {
 		return this.codigoAnimal;

@@ -30,6 +30,15 @@ public class Opcion implements Serializable {
 
 	public Opcion() {
 	}
+	
+	public Opcion(int idOpcion, int estado, int peso, String texto, Pregunta pregunta) {
+		super();
+		this.idOpcion = idOpcion;
+		this.estado = estado;
+		this.peso = peso;
+		this.texto = texto;
+		this.pregunta = pregunta;
+	}
 
 	public int getIdOpcion() {
 		return this.idOpcion;

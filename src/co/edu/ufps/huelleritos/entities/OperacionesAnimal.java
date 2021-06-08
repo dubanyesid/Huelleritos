@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,9 +26,15 @@ public class OperacionesAnimal implements Serializable {
 
 	//bi-directional many-to-one association to OperacionesHistorial
 	@OneToMany(mappedBy="operacionesAnimal")
-	private List<OperacionesHistorial> operacionesHistorials;
+	private List<OperacionesHistorial> operacionesHistorials = new ArrayList();
 
 	public OperacionesAnimal() {
+	}
+	
+	public OperacionesAnimal(int idOperacionesAnimal, String nombreOperacion) {
+		super();
+		this.idOperacionesAnimal = idOperacionesAnimal;
+		this.nombreOperacion = nombreOperacion;
 	}
 
 	public int getIdOperacionesAnimal() {

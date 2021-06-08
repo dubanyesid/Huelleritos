@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,14 +28,21 @@ public class Administrador implements Serializable {
 
 	//bi-directional many-to-one association to NoticiaEvento
 	@OneToMany(mappedBy="administrador")
-	private List<NoticiaEvento> noticiaEventos;
+	private List<NoticiaEvento> noticiaEventos = new ArrayList();
 
 	//bi-directional many-to-one association to NoticiaEvidencia
 	@OneToMany(mappedBy="administrador")
-	private List<NoticiaEvidencia> noticiaEvidencias;
+	private List<NoticiaEvidencia> noticiaEvidencias = new ArrayList();
 
 	public Administrador() {
 	}
+	
+	public Administrador(int idAdministrador, Usuario usuario) {
+		super();
+		this.idAdministrador = idAdministrador;
+		this.usuario = usuario;
+	}
+
 
 	public int getIdAdministrador() {
 		return this.idAdministrador;

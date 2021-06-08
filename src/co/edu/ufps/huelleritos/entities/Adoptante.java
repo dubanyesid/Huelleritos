@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,9 +38,19 @@ public class Adoptante implements Serializable {
 
 	//bi-directional many-to-one association to Animal
 	@OneToMany(mappedBy="adoptante")
-	private List<Animal> animals;
+	private List<Animal> animals = new ArrayList();
 
 	public Adoptante() {
+	}
+	
+	public Adoptante(int usuario_DNI, String estado, Formulario formulario, SeguimientoAnimal seguimientoAnimal,
+			Usuario usuario) {
+		super();
+		this.usuario_DNI = usuario_DNI;
+		this.estado = estado;
+		this.formulario = formulario;
+		this.seguimientoAnimal = seguimientoAnimal;
+		this.usuario = usuario;
 	}
 
 	public int getUsuario_DNI() {

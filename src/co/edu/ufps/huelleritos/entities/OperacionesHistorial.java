@@ -38,6 +38,18 @@ public class OperacionesHistorial implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_operaciones_animal")
 	private OperacionesAnimal operacionesAnimal;
+	
+
+	public OperacionesHistorial(int id, Date fechaOperacion, Date fechaRecuperacion, String observaciones,
+			HistorialAnimal historialAnimal, OperacionesAnimal operacionesAnimal) {
+		super();
+		this.id = id;
+		this.fechaOperacion = fechaOperacion;
+		this.fechaRecuperacion = fechaRecuperacion;
+		this.observaciones = observaciones;
+		this.historialAnimal = historialAnimal;
+		this.operacionesAnimal = operacionesAnimal;
+	}
 
 	public OperacionesHistorial() {
 	}

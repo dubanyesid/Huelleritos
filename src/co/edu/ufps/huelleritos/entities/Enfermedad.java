@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,7 +30,16 @@ public class Enfermedad implements Serializable {
 
 	//bi-directional many-to-many association to HistorialAnimal
 	@ManyToMany(mappedBy="enfermedads")
-	private List<HistorialAnimal> historialAnimals;
+	private List<HistorialAnimal> historialAnimals = new ArrayList();
+
+	
+	public Enfermedad(int codigoEnfermedad, String descripcion, String nombreEnfermedad, String tratamientoEnfermedad) {
+		super();
+		this.codigoEnfermedad = codigoEnfermedad;
+		this.descripcion = descripcion;
+		this.nombreEnfermedad = nombreEnfermedad;
+		this.tratamientoEnfermedad = tratamientoEnfermedad;
+	}
 
 	public Enfermedad() {
 	}
