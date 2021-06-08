@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -7,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Lista Animales</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -92,65 +94,63 @@
 
 			<!-- Content -->
 			<div class="content mt-5">
+					
+					<!-- open sidebar menu -->
+					<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
+	                    <i class="fas fa-align-left"></i> <span>Menu</span>
+	                </a>
+				<div class="container">
+					<div class="col-md-4 m-2">
+						<h1>Lista de Animales</h1>
+						<button type="button" class="btn btn-dark">Agregar Animal</button>
+					</div>
+					
+					<div class="row justify-content-center justify-content-md-start">
+					<table class="table table-bordered">
+						<thead class="table-dark">
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">NOMBRE</th>
+								<th scope="col">TIPO ANIMAL</th>
+								<th scope="col">EDAD</th>
+								<th scope="col">ESTADO</th>
+								<th scope="col">HISTORIA CLINICA</th>
+								<th scope="col">INFORMACIÓN</th>
+								<th scope="col">ACCIONES</th>
+							</tr>
+						</thead>
+						<tbody >
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>value</td>
+								<td>value</td>
+								<td><button type="button" class="btn btn-dark">Historial</button></td>
+								<td><button type="button" class="btn btn-dark">Editar</button></td>
+								<td><button type="button" class="btn btn-dark">Eliminar</button></td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+				</div>
+			        	
+			        <!-- Footer -->
+			        <footer class="footer-container">
 			
-				<!-- open sidebar menu -->
-				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
-                    <i class="fas fa-align-left"></i> <span>Menu</span>
-                </a>
-			<div class="container">
-				<div>
-					<h1>
-						SOLICITUD #
-					</h1>
-				</div>
-				<div class="card-columns">
-					<div class="card">
-						  <div class="card-body">
-						    <h5 class="card-title">Solicitud #</h5>
-						    <label class="card-subtitle  text-muted">Nombre:</label>
-						    <p class="card-text">Cosmo.</p>
-						    <label class="card-subtitle  text-muted">Estado:</label>
-						    <p class="card-text">En espera.</p>
-						  </div>
-					</div>
-<div class="card">
-						  <div class="card-body">
-						    <h5 class="card-title">Solicitud #</h5>
-						    <label class="card-subtitle  text-muted">Nombre:</label>
-						    <p class="card-text">Cosmo.</p>
-						    <label class="card-subtitle  text-muted">Estado:</label>
-						    <p class="card-text">En espera.</p>
-						  </div>
-					</div>
-					<div class="card">
-						  <div class="card-body">
-						    <h5 class="card-title">Solicitud #</h5>
-						    <label class="card-subtitle  text-muted">Nombre:</label>
-						    <p class="card-text">Cosmo.</p>
-						    <label class="card-subtitle  text-muted">Estado:</label>
-						    <p class="card-text">En espera.</p>
-						  </div>
-					</div>
-				</div>
-
-			</div>
-
-		        	
-		        <!-- Footer -->
-		        <footer class="footer-container">
-		
-			        <div class="container">
-			        	<div class="row">
-		
-		                    <div class="col">
-		                    	&copy; Huelleritos todos los derechos reservados.
-		                    </div>
-		
-		                </div>
-			        </div>
-		
-		        </footer>
-	        
+				        <div class="container">
+				        	<div class="row">
+			
+			                    <div class="col">
+			                    	&copy; Huelleritos todos los derechos reservados.
+			                    </div>
+			
+			                </div>
+				        </div>
+			
+			        </footer>
+		        
 	        </div>
 	        <!-- End content -->
         

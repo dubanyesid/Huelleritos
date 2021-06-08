@@ -73,7 +73,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../index.jsp">
+                                <a href="../index.html">
                                     <img src="../img/Huelleritos.png" alt="">
                                 </a>
                             </div>
@@ -82,14 +82,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../index.jsp">Inicio</a></li>
-                                        <li><a href="Huelleritos.jsp">Huelleritos</a></li>
-                                        <li><a href="Adopta.jsp">Adopta</a></li>
-                                        <li><a href="Apadrinar.jsp">Apadrina</a></li>
-                                        <li><a href="Hogar_Paso.jsp">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.jsp">La fundación</a></li>
-                                        <li><a href="Noticias.jsp">Noticias</a></li>
-                                        <a href="Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="../index.html">Inicio</a></li>
+                                        <li><a href="Huelleritos.html">Huelleritos</a></li>
+                                        <li><a href="Adopta.html">Adopta</a></li>
+                                        <li><a href="Apadrinar.html">Apadrina</a></li>
+                                        <li><a href="Hogar_Paso.html">Hogar de paso</a></li>                            
+                                        <li><a href="La_Fundacion.html">La fundación</a></li>
+                                        <li><a href="Noticias.html">Noticias</a></li>
+                                        <a href="Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -112,7 +112,8 @@
                         <div class="slider_text">
                             <h3><span>¿Quieres Donar?</span></h3>
                             <p>"En Cucuta existen aproximadamente 12 mil animales entre perros y gatos abandonados en las calles" ¡Ayudanos con lo que puedas!</p>
-                            <a href="" class="boxed-btn4">Dona</a>
+                            <a href="https://biz.payulatam.com/B0d48db79A5CE74"><img src="https://i.ibb.co/KjpLjQx/50-000.png"></a>  
+                       <a href="https://biz.payulatam.com/B0d48db08B64C85"><img src="https://i.ibb.co/8860Rx4/10-000.png"></a>
                         </div>
                     </div>
                 </div>
@@ -127,20 +128,7 @@
     <!-- Cuerpo Dona aqui -->
     <br><br><br>
     
-    <div class="row">
-        <div class="col-sm-7">
-            <dl ><dt>Todos los peluditos que rescatamos dia a dia nos representan un trabajo constante y fuerte, para poder ofrecerles un buen futuro necesitamos la mayor ayuda posible para que huelleritos pueda crecer y ayudar cada dia mas a los miles de animales que se encuentran por las calles sin hogar.</dt></dl>
-            <dl><dt>Las ayudas que son necesarias en la fundacion son:</dt><dd> Medicina <br> Comida</dd></dl>
-               
-        </div>
-        <div class="col-sm-5">
-            <h2 class="centro">Consignacion Bancaria</h2><br>
-            <h4 class="centro"><b>Bancolombia - 03117636650
-                <br><br>Nequi - 3117636650
-                <br><br>Daviplata - 3135707240</b>
-            </h4>
-        </div>
-    </div>
+    
     <!-- Cuerpo Dona Aqui / Final -->
 
     <div class="contact_anipat anipat_bg_1">
@@ -153,7 +141,7 @@
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="Contacto.jsp" class="boxed-btn4">Contactanos</a>
+                            <a href="Contacto.html" class="boxed-btn4">Contactanos</a>
                             <p>Or  <a href="#">+57 3177636650</a></p>
                         </div>
                     </div>
