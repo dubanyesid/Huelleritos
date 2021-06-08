@@ -34,6 +34,14 @@ public class NoticiaEvento implements Serializable {
 	public NoticiaEvento() {
 	}
 
+	public NoticiaEvento(int idNoticiaEvento, String descripcion, String imgane, String titulo) {
+		super();
+		this.idNoticiaEvento = idNoticiaEvento;
+		this.descripcion = descripcion;
+		this.imgane = imgane;
+		this.titulo = titulo;
+	}
+
 	public int getIdNoticiaEvento() {
 		return this.idNoticiaEvento;
 	}
