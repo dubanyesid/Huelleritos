@@ -39,6 +39,18 @@ public class EnfermedadHistorial implements Serializable {
 
 	public EnfermedadHistorial() {
 	}
+	
+	public EnfermedadHistorial(int idEnfermedadHistorial, Date fechaFin, Date fechaInicio, Enfermedad enfermedad,
+			HistorialAnimal historialAnimal) {
+		super();
+		this.idEnfermedadHistorial = idEnfermedadHistorial;
+		this.fechaFin = fechaFin;
+		this.fechaInicio = fechaInicio;
+		this.enfermedad = enfermedad;
+		this.historialAnimal = historialAnimal;
+	}
+
+
 
 	public int getIdEnfermedadHistorial() {
 		return this.idEnfermedadHistorial;

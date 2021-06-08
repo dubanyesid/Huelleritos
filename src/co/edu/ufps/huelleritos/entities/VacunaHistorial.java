@@ -35,6 +35,15 @@ public class VacunaHistorial implements Serializable {
 
 	public VacunaHistorial() {
 	}
+	
+	public VacunaHistorial(int idVacunaHistorial, Date fechaVacunacion, HistorialAnimal historialAnimal,
+			Vacuna vacuna) {
+		super();
+		this.idVacunaHistorial = idVacunaHistorial;
+		this.fechaVacunacion = fechaVacunacion;
+		this.historialAnimal = historialAnimal;
+		this.vacuna = vacuna;
+	}
 
 	public int getIdVacunaHistorial() {
 		return this.idVacunaHistorial;

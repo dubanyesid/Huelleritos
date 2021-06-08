@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,10 +28,20 @@ public class Guarderia implements Serializable {
 
 	//bi-directional many-to-one association to Animal
 	@OneToMany(mappedBy="guarderia")
-	private List<Animal> animals;
+	private List<Animal> animals = new ArrayList();
 
 	public Guarderia() {
 	}
+	
+	public Guarderia(String nombreGuarderia, String direccion, double mensualidad, String telefono) {
+		super();
+		this.nombreGuarderia = nombreGuarderia;
+		this.direccion = direccion;
+		this.mensualidad = mensualidad;
+		this.telefono = telefono;
+	}
+
+
 
 	public String getNombreGuarderia() {
 		return this.nombreGuarderia;
