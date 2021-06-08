@@ -11,32 +11,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.edu.ufps.huelleritos.dao.NoticiaEvidenciaDAO;
+import co.edu.ufps.huelleritos.dao.NoticiaEventoDAO;
+import co.edu.ufps.huelleritos.entities.NoticiaEvento;
 import co.edu.ufps.huelleritos.entities.NoticiaEvidencia;
 
 /**
- * Servlet implementation class NoticiaEvidenciaController
+ * Servlet implementation class NoticiaEventoController
  */
-@WebServlet("/NoticiaEvidenciaController")
-public class NoticiaEvidenciaController extends HttpServlet {
+@WebServlet("/NoticiaEventoController")
+public class NoticiaEventoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	NoticiaEvidenciaDAO noticiaEvidenciaDAO;
+	NoticiaEventoDAO noticiaEventoDAO;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public NoticiaEventoController() {
+        super();
+        noticiaEventoDAO = new NoticiaEventoDAO();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public NoticiaEvidenciaController() {
-		super();
-		// TODO Auto-generated constructor stub
-		noticiaEvidenciaDAO = new NoticiaEvidenciaDAO();
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		System.out.println(action);
@@ -70,75 +69,71 @@ public class NoticiaEvidenciaController extends HttpServlet {
 		} catch (SQLException e) {
 			e.getStackTrace();
 		}
-
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Servlet Noticia Evidencia");
+		System.out.println("Servlet Noticia Evento");
 		doGet(request, response);
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// mostrar(request, response);
-		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("administrador/noticia-evidencia.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../WebContent/administrador/noticia.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void registrar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 
-		Integer id = noticiaEvidenciaDAO.getMaxId();
+		Integer id = noticiaEventoDAO.getMaxId();
 
-		NoticiaEvidencia ne = new NoticiaEvidencia(id + 1, request.getParameter("titulo"),
-				request.getParameter("descripcion"), request.getParameter("imagen"));
-		noticiaEvidenciaDAO.insert(ne);
+		NoticiaEvento nev = new NoticiaEvento(id + 1, request.getParameter("titulo"),
+				request.getParameter("descripcion"), request.getParameter("imagen"), );
+		noticiaEventoDAO.insert(nev);
 		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("administrador/noticia-evidencia.jsp");
+				.getRequestDispatcher("../WebContent/administrador/noticia-.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void nuevo(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("administrador/noticia-evidencia.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../WebContent/administrador/noticia.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void mostrar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("vistas/NoticiasEvidencias.jsp");
-		List<NoticiaEvidencia> list = noticiaEvidenciaDAO.list();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../WebContent/vistas/NoticiasEvidencias.jsp");
+		List<NoticiaEvento> list = noticiaEventoDAO.list();
 		request.setAttribute("lista", list);
 		dispatcher.forward(request, response);
 	}
 
 	private void showEditor(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		NoticiaEvidencia ne = noticiaEvidenciaDAO.find(Integer.parseInt(request.getParameter("id")));
-		request.setAttribute("noticiaEvidencia", ne);
+		NoticiaEvento nev = noticiaEventoDAO.find(Integer.parseInt(request.getParameter("id")));
+		request.setAttribute("noticiaEvidencia", nev);
 
-		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("administrador/noticia-evidencia.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../WebContent/administrador/noticia.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void editar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		NoticiaEvidencia ne = new NoticiaEvidencia(Integer.parseInt(request.getParameter("id")),
-				request.getParameter("titulo"), request.getParameter("descripcion"), request.getParameter("imagen"));
-		noticiaEvidenciaDAO.update(ne);
+		NoticiaEvento nev = new NoticiaEvento(Integer.parseInt(request.getParameter("id")),
+				request.getParameter("titulo"), request.getParameter("descripcion"), );
+		noticiaEventoDAO.update(nev);
 		index(request, response);
 	}
 
 	private void eliminar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		NoticiaEvidencia ne = noticiaEvidenciaDAO.find(Integer.parseInt(request.getParameter("id")));
-		noticiaEvidenciaDAO.delete(ne);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("vistas/NoticiasEvidencias.jsp");
+		NoticiaEvento nev = noticiaEventoDAO.find(Integer.parseInt(request.getParameter("id")));
+		noticiaEventoDAO.delete(nev);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../WebContent/vistas/noticia.jsp");
 		dispatcher.forward(request, response);
 
 	}

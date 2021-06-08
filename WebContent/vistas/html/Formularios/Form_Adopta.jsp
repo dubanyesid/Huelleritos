@@ -554,7 +554,7 @@
                                 <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                             </div>
                             <div class="contact_btn d-flex align-items-center justify-content-center">
-                                <a href="../../html/Contacto.html" class="boxed-btn4">Contactanos</a>
+                                <a href="../../html/Contacto.jsp" class="boxed-btn4">Contactanos</a>
                                 <p>Or  <a href="#">+57 3177636650</a></p>
                             </div>
                         </div>
