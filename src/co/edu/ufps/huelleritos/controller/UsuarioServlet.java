@@ -93,9 +93,9 @@ public class UsuarioServlet extends HttpServlet {
 
 	private void registrar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {		
-		Usuario us = new Usuario(Integer.parseInt(request.getParameter("dni")), request.getParameter("nombre"), request.getParameter("apellido"),
-				request.getParameter("contraseña"), request.getParameter("correo"), request.getParameter("telefono"));
-		usuarioDAO.insert(us);
+		//Usuario us = new Usuario(Integer.parseInt(request.getParameter("dni")), request.getParameter("nombre"), request.getParameter("apellido"),
+		//		request.getParameter("contraseña"), request.getParameter("correo"), request.getParameter("telefono"));
+		//usuarioDAO.insert(us);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("indexUsuarios.jsp");
 		dispatcher.forward(request, response);
 	}

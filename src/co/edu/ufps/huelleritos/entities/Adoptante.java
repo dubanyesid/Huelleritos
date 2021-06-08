@@ -2,7 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -10,43 +9,37 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = "Adoptante.getMaxID", query = "Select max(a.usuario_DNI) as maxid from Adoptante a"),
-	@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM Adoptante a") })
+@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM Adoptante a")
 public class Adoptante implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int usuario_DNI;
+	private String usuario;
 
 	private String estado;
 
-	//bi-directional many-to-one association to Formulario
-	@ManyToOne
-	@JoinColumn(name="id_formulario")
-	private Formulario formulario;
-
-	//bi-directional many-to-one association to SeguimientoAnimal
-	@ManyToOne
-	@JoinColumn(name="codigo_seguimiento")
-	private SeguimientoAnimal seguimientoAnimal;
-
 	//bi-directional one-to-one association to Usuario
 	@OneToOne
-	private Usuario usuario;
-
-	//bi-directional many-to-one association to Animal
-	@OneToMany(mappedBy="adoptante")
-	private List<Animal> animals;
+	@JoinColumn(name="usuario")
+	private Usuario usuarioBean;
 
 	public Adoptante() {
 	}
-
-	public int getUsuario_DNI() {
-		return this.usuario_DNI;
+	
+	public Adoptante(String usuario, String estado, Usuario usuarioBean) {
+		super();
+		this.usuario = usuario;
+		this.estado = estado;
+		this.usuarioBean = usuarioBean;
 	}
 
-	public void setUsuario_DNI(int usuario_DNI) {
-		this.usuario_DNI = usuario_DNI;
+
+	public String getUsuario() {
+		return this.usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getEstado() {
@@ -57,50 +50,12 @@ public class Adoptante implements Serializable {
 		this.estado = estado;
 	}
 
-	public Formulario getFormulario() {
-		return this.formulario;
+	public Usuario getUsuarioBean() {
+		return this.usuarioBean;
 	}
 
-	public void setFormulario(Formulario formulario) {
-		this.formulario = formulario;
-	}
-
-	public SeguimientoAnimal getSeguimientoAnimal() {
-		return this.seguimientoAnimal;
-	}
-
-	public void setSeguimientoAnimal(SeguimientoAnimal seguimientoAnimal) {
-		this.seguimientoAnimal = seguimientoAnimal;
-	}
-
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public List<Animal> getAnimals() {
-		return this.animals;
-	}
-
-	public void setAnimals(List<Animal> animals) {
-		this.animals = animals;
-	}
-
-	public Animal addAnimal(Animal animal) {
-		getAnimals().add(animal);
-		animal.setAdoptante(this);
-
-		return animal;
-	}
-
-	public Animal removeAnimal(Animal animal) {
-		getAnimals().remove(animal);
-		animal.setAdoptante(null);
-
-		return animal;
+	public void setUsuarioBean(Usuario usuarioBean) {
+		this.usuarioBean = usuarioBean;
 	}
 
 }

@@ -6,25 +6,28 @@
 		<class>co.edu.ufps.huelleritos.entities.Animal</class>
 		<class>co.edu.ufps.huelleritos.entities.Encuesta</class>
 		<class>co.edu.ufps.huelleritos.entities.Enfermedad</class>
+		<class>co.edu.ufps.huelleritos.entities.EnfermedadHistorial</class>
 		<class>co.edu.ufps.huelleritos.entities.EstadoAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.Formulario</class>
+		<class>co.edu.ufps.huelleritos.entities.FormularioAnimal</class>
+		<class>co.edu.ufps.huelleritos.entities.FormularioPregunta</class>
 		<class>co.edu.ufps.huelleritos.entities.Guarderia</class>
 		<class>co.edu.ufps.huelleritos.entities.HistorialAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.HogarDePaso</class>
+		<class>co.edu.ufps.huelleritos.entities.Noticia</class>
 		<class>co.edu.ufps.huelleritos.entities.NoticiaEvento</class>
-		<class>co.edu.ufps.huelleritos.entities.NoticiaEvidencia</class>
 		<class>co.edu.ufps.huelleritos.entities.Opcion</class>
 		<class>co.edu.ufps.huelleritos.entities.OperacionesAnimal</class>
-		<class>co.edu.ufps.huelleritos.entities.OperacionesHistorial</class>
 		<class>co.edu.ufps.huelleritos.entities.Pregunta</class>
 		<class>co.edu.ufps.huelleritos.entities.Prioridad</class>
 		<class>co.edu.ufps.huelleritos.entities.SeguimientoAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.TipoAnimal</class>
+		<class>co.edu.ufps.huelleritos.entities.TipoNoticia</class>
 		<class>co.edu.ufps.huelleritos.entities.Usuario</class>
 		<class>co.edu.ufps.huelleritos.entities.Vacuna</class>
 		<class>co.edu.ufps.huelleritos.entities.VacunaHistorial</class>
 	<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/huelleritos"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/u603952219_huelleritos"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

@@ -12,6 +12,11 @@ import javax.persistence.*;
 @Table(name="noticia_evento")
 @NamedQuery(name="NoticiaEvento.findAll", query="SELECT n FROM NoticiaEvento n")
 public class NoticiaEvento implements Serializable {
+	
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

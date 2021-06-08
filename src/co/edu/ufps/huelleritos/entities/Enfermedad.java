@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,7 +18,7 @@ public class Enfermedad implements Serializable {
 
 	@Id
 	@Column(name="codigo_enfermedad")
-	private int codigoEnfermedad;
+	private String codigoEnfermedad;
 
 	private String descripcion;
 
@@ -26,18 +28,28 @@ public class Enfermedad implements Serializable {
 	@Column(name="tratamiento_enfermedad")
 	private String tratamientoEnfermedad;
 
-	//bi-directional many-to-many association to HistorialAnimal
-	@ManyToMany(mappedBy="enfermedads")
-	private List<HistorialAnimal> historialAnimals;
+	//bi-directional many-to-one association to EnfermedadHistorial
+	@OneToMany(mappedBy="enfermedad")
+	private List<EnfermedadHistorial> enfermedadHistorials  = new ArrayList();
 
 	public Enfermedad() {
 	}
+	
+	public Enfermedad(String codigoEnfermedad, String descripcion, String nombreEnfermedad,
+			String tratamientoEnfermedad) {
+		super();
+		this.codigoEnfermedad = codigoEnfermedad;
+		this.descripcion = descripcion;
+		this.nombreEnfermedad = nombreEnfermedad;
+		this.tratamientoEnfermedad = tratamientoEnfermedad;
+	}
 
-	public int getCodigoEnfermedad() {
+
+	public String getCodigoEnfermedad() {
 		return this.codigoEnfermedad;
 	}
 
-	public void setCodigoEnfermedad(int codigoEnfermedad) {
+	public void setCodigoEnfermedad(String codigoEnfermedad) {
 		this.codigoEnfermedad = codigoEnfermedad;
 	}
 
@@ -65,12 +77,26 @@ public class Enfermedad implements Serializable {
 		this.tratamientoEnfermedad = tratamientoEnfermedad;
 	}
 
-	public List<HistorialAnimal> getHistorialAnimals() {
-		return this.historialAnimals;
+	public List<EnfermedadHistorial> getEnfermedadHistorials() {
+		return this.enfermedadHistorials;
 	}
 
-	public void setHistorialAnimals(List<HistorialAnimal> historialAnimals) {
-		this.historialAnimals = historialAnimals;
+	public void setEnfermedadHistorials(List<EnfermedadHistorial> enfermedadHistorials) {
+		this.enfermedadHistorials = enfermedadHistorials;
+	}
+
+	public EnfermedadHistorial addEnfermedadHistorial(EnfermedadHistorial enfermedadHistorial) {
+		getEnfermedadHistorials().add(enfermedadHistorial);
+		enfermedadHistorial.setEnfermedad(this);
+
+		return enfermedadHistorial;
+	}
+
+	public EnfermedadHistorial removeEnfermedadHistorial(EnfermedadHistorial enfermedadHistorial) {
+		getEnfermedadHistorials().remove(enfermedadHistorial);
+		enfermedadHistorial.setEnfermedad(null);
+
+		return enfermedadHistorial;
 	}
 
 }

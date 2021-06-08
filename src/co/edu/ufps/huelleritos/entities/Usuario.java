@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,64 +12,48 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = "Usuario.getMaxID", query = "Select max(u.dni) as maxid from Usuario u"),
-	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u") })
-
+@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int dni;
-
-	private String apellido;
+	private String usuario;
 
 	private String contraseña;
 
-	private String correo;
-
-	private String nombre;
-
-	private String telefono;
-
 	//bi-directional many-to-one association to Administrador
-	@OneToMany(mappedBy="usuario")
-	private List<Administrador> administradors;
+	@OneToMany(mappedBy="usuarioBean")
+	private List<Administrador> administradors = new ArrayList();
 
 	//bi-directional one-to-one association to Adoptante
-	@OneToOne(mappedBy="usuario")
+	@OneToOne(mappedBy="usuarioBean")
 	private Adoptante adoptante;
 
+	//bi-directional many-to-one association to Formulario
+	@OneToMany(mappedBy="usuarioBean")
+	private List<Formulario> formularios = new ArrayList();
+
 	//bi-directional one-to-one association to HogarDePaso
-	@OneToOne(mappedBy="usuario")
+	@OneToOne(mappedBy="usuarioBean")
 	private HogarDePaso hogarDePaso;
 
 	public Usuario() {
 	}
-	
-	public Usuario(int dni, String nombre, String apellido, String contraseña, String correo, String telefono) {
+
+	public Usuario(String usuario, String contraseña, Adoptante adoptante, HogarDePaso hogarDePaso) {
 		super();
-		this.dni = dni;
-		this.apellido = apellido;
+		this.usuario = usuario;
 		this.contraseña = contraseña;
-		this.correo = correo;
-		this.nombre = nombre;
-		this.telefono = telefono;
+		this.adoptante = adoptante;
+		this.hogarDePaso = hogarDePaso;
 	}
 
-	public int getDni() {
-		return this.dni;
+	public String getUsuario() {
+		return this.usuario;
 	}
 
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-
-	public String getApellido() {
-		return this.apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getContraseña() {
@@ -76,30 +62,6 @@ public class Usuario implements Serializable {
 
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
-	}
-
-	public String getCorreo() {
-		return this.correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getTelefono() {
-		return this.telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
 	}
 
 	public List<Administrador> getAdministradors() {
@@ -112,14 +74,14 @@ public class Usuario implements Serializable {
 
 	public Administrador addAdministrador(Administrador administrador) {
 		getAdministradors().add(administrador);
-		administrador.setUsuario(this);
+		administrador.setUsuarioBean(this);
 
 		return administrador;
 	}
 
 	public Administrador removeAdministrador(Administrador administrador) {
 		getAdministradors().remove(administrador);
-		administrador.setUsuario(null);
+		administrador.setUsuarioBean(null);
 
 		return administrador;
 	}
@@ -130,6 +92,28 @@ public class Usuario implements Serializable {
 
 	public void setAdoptante(Adoptante adoptante) {
 		this.adoptante = adoptante;
+	}
+
+	public List<Formulario> getFormularios() {
+		return this.formularios;
+	}
+
+	public void setFormularios(List<Formulario> formularios) {
+		this.formularios = formularios;
+	}
+
+	public Formulario addFormulario(Formulario formulario) {
+		getFormularios().add(formulario);
+		formulario.setUsuarioBean(this);
+
+		return formulario;
+	}
+
+	public Formulario removeFormulario(Formulario formulario) {
+		getFormularios().remove(formulario);
+		formulario.setUsuarioBean(null);
+
+		return formulario;
 	}
 
 	public HogarDePaso getHogarDePaso() {

@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,7 +17,6 @@ public class Prioridad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_prioridad")
 	private int idPrioridad;
 
@@ -23,9 +24,15 @@ public class Prioridad implements Serializable {
 
 	//bi-directional many-to-one association to Animal
 	@OneToMany(mappedBy="prioridad")
-	private List<Animal> animals;
+	private List<Animal> animals = new ArrayList();
 
 	public Prioridad() {
+	}
+	
+	public Prioridad(int idPrioridad, String prioridad) {
+		super();
+		this.idPrioridad = idPrioridad;
+		this.prioridad = prioridad;
 	}
 
 	public int getIdPrioridad() {

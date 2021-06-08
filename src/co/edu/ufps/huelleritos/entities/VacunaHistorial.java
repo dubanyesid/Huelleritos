@@ -16,8 +16,8 @@ public class VacunaHistorial implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_vacunahistorial")
-	private int idVacunahistorial;
+	@Column(name="id_vacuna_historial")
+	private int idVacunaHistorial;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_vacunacion")
@@ -35,13 +35,22 @@ public class VacunaHistorial implements Serializable {
 
 	public VacunaHistorial() {
 	}
-
-	public int getIdVacunahistorial() {
-		return this.idVacunahistorial;
+	
+	public VacunaHistorial(int idVacunaHistorial, Date fechaVacunacion, HistorialAnimal historialAnimal,
+			Vacuna vacuna) {
+		super();
+		this.idVacunaHistorial = idVacunaHistorial;
+		this.fechaVacunacion = fechaVacunacion;
+		this.historialAnimal = historialAnimal;
+		this.vacuna = vacuna;
 	}
 
-	public void setIdVacunahistorial(int idVacunahistorial) {
-		this.idVacunahistorial = idVacunahistorial;
+	public int getIdVacunaHistorial() {
+		return this.idVacunaHistorial;
+	}
+
+	public void setIdVacunaHistorial(int idVacunaHistorial) {
+		this.idVacunaHistorial = idVacunaHistorial;
 	}
 
 	public Date getFechaVacunacion() {

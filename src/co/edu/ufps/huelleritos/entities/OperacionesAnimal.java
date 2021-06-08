@@ -2,7 +2,7 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 
 /**
@@ -19,15 +19,39 @@ public class OperacionesAnimal implements Serializable {
 	@Column(name="id_operaciones_animal")
 	private int idOperacionesAnimal;
 
+	@Temporal(TemporalType.DATE)
+	@Column(name="fecha_operacion")
+	private Date fechaOperacion;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="fecha_recuperacion")
+	private Date fechaRecuperacion;
+
 	@Column(name="nombre_operacion")
 	private String nombreOperacion;
 
-	//bi-directional many-to-one association to OperacionesHistorial
-	@OneToMany(mappedBy="operacionesAnimal")
-	private List<OperacionesHistorial> operacionesHistorials;
+	private String observaciones;
+
+	//bi-directional many-to-one association to HistorialAnimal
+	@ManyToOne
+	@JoinColumn(name="id_historial_animal")
+	private HistorialAnimal historialAnimal;
 
 	public OperacionesAnimal() {
 	}
+	
+	public OperacionesAnimal(int idOperacionesAnimal, Date fechaOperacion, Date fechaRecuperacion,
+			String nombreOperacion, String observaciones, HistorialAnimal historialAnimal) {
+		super();
+		this.idOperacionesAnimal = idOperacionesAnimal;
+		this.fechaOperacion = fechaOperacion;
+		this.fechaRecuperacion = fechaRecuperacion;
+		this.nombreOperacion = nombreOperacion;
+		this.observaciones = observaciones;
+		this.historialAnimal = historialAnimal;
+	}
+
+
 
 	public int getIdOperacionesAnimal() {
 		return this.idOperacionesAnimal;
@@ -35,6 +59,22 @@ public class OperacionesAnimal implements Serializable {
 
 	public void setIdOperacionesAnimal(int idOperacionesAnimal) {
 		this.idOperacionesAnimal = idOperacionesAnimal;
+	}
+
+	public Date getFechaOperacion() {
+		return this.fechaOperacion;
+	}
+
+	public void setFechaOperacion(Date fechaOperacion) {
+		this.fechaOperacion = fechaOperacion;
+	}
+
+	public Date getFechaRecuperacion() {
+		return this.fechaRecuperacion;
+	}
+
+	public void setFechaRecuperacion(Date fechaRecuperacion) {
+		this.fechaRecuperacion = fechaRecuperacion;
 	}
 
 	public String getNombreOperacion() {
@@ -45,26 +85,20 @@ public class OperacionesAnimal implements Serializable {
 		this.nombreOperacion = nombreOperacion;
 	}
 
-	public List<OperacionesHistorial> getOperacionesHistorials() {
-		return this.operacionesHistorials;
+	public String getObservaciones() {
+		return this.observaciones;
 	}
 
-	public void setOperacionesHistorials(List<OperacionesHistorial> operacionesHistorials) {
-		this.operacionesHistorials = operacionesHistorials;
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
 	}
 
-	public OperacionesHistorial addOperacionesHistorial(OperacionesHistorial operacionesHistorial) {
-		getOperacionesHistorials().add(operacionesHistorial);
-		operacionesHistorial.setOperacionesAnimal(this);
-
-		return operacionesHistorial;
+	public HistorialAnimal getHistorialAnimal() {
+		return this.historialAnimal;
 	}
 
-	public OperacionesHistorial removeOperacionesHistorial(OperacionesHistorial operacionesHistorial) {
-		getOperacionesHistorials().remove(operacionesHistorial);
-		operacionesHistorial.setOperacionesAnimal(null);
-
-		return operacionesHistorial;
+	public void setHistorialAnimal(HistorialAnimal historialAnimal) {
+		this.historialAnimal = historialAnimal;
 	}
 
 }

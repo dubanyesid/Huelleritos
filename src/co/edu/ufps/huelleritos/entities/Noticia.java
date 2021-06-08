@@ -5,23 +5,22 @@ import javax.persistence.*;
 
 
 /**
- * The persistent class for the noticia_evidencia database table.
+ * The persistent class for the noticia database table.
  * 
  */
 @Entity
-@Table(name="noticia_evidencia")
-@NamedQuery(name="NoticiaEvidencia.findAll", query="SELECT n FROM NoticiaEvidencia n")
-public class NoticiaEvidencia implements Serializable {
+@NamedQuery(name="Noticia.findAll", query="SELECT n FROM Noticia n")
+public class Noticia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_noticia_evidencia")
-	private int idNoticiaEvidencia;
+	@Column(name="id_noticia")
+	private int idNoticia;
 
 	@Lob
 	private String descripcion;
 
+	@Lob
 	private String imagen;
 
 	private String titulo;
@@ -31,25 +30,33 @@ public class NoticiaEvidencia implements Serializable {
 	@JoinColumn(name="id_administrador")
 	private Administrador administrador;
 
-	public NoticiaEvidencia() {
+	//bi-directional many-to-one association to TipoNoticia
+	@ManyToOne
+	@JoinColumn(name="idtipo_noticia")
+	private TipoNoticia tipoNoticia;
+
+	public Noticia() {
 	}
 	
-
-	public NoticiaEvidencia(int idNoticiaEvidencia, String descripcion, String imagen, String titulo) {
+	
+	public Noticia(int idNoticia, String descripcion, String imagen, String titulo, Administrador administrador,
+			TipoNoticia tipoNoticia) {
 		super();
-		this.idNoticiaEvidencia = idNoticiaEvidencia;
+		this.idNoticia = idNoticia;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.titulo = titulo;
+		this.administrador = administrador;
+		this.tipoNoticia = tipoNoticia;
 	}
 
 
-	public int getIdNoticiaEvidencia() {
-		return this.idNoticiaEvidencia;
+	public int getIdNoticia() {
+		return this.idNoticia;
 	}
 
-	public void setIdNoticiaEvidencia(int idNoticiaEvidencia) {
-		this.idNoticiaEvidencia = idNoticiaEvidencia;
+	public void setIdNoticia(int idNoticia) {
+		this.idNoticia = idNoticia;
 	}
 
 	public String getDescripcion() {
@@ -82,6 +89,14 @@ public class NoticiaEvidencia implements Serializable {
 
 	public void setAdministrador(Administrador administrador) {
 		this.administrador = administrador;
+	}
+
+	public TipoNoticia getTipoNoticia() {
+		return this.tipoNoticia;
+	}
+
+	public void setTipoNoticia(TipoNoticia tipoNoticia) {
+		this.tipoNoticia = tipoNoticia;
 	}
 
 }

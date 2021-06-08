@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,9 +12,7 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = "Administrador.getMaxID", query = "Select max(a.idAdministrador) as maxid from Administrador a"),
-	@NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a") })
-
+@NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a")
 public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -22,17 +22,20 @@ public class Administrador implements Serializable {
 
 	//bi-directional many-to-one association to Usuario
 	@ManyToOne
-	private Usuario usuario;
+	@JoinColumn(name="usuario")
+	private Usuario usuarioBean;
 
-	//bi-directional many-to-one association to NoticiaEvento
+	//bi-directional many-to-one association to Noticia
 	@OneToMany(mappedBy="administrador")
-	private List<NoticiaEvento> noticiaEventos;
-
-	//bi-directional many-to-one association to NoticiaEvidencia
-	@OneToMany(mappedBy="administrador")
-	private List<NoticiaEvidencia> noticiaEvidencias;
+	private List<Noticia> noticias = new ArrayList();
 
 	public Administrador() {
+	}
+	
+	public Administrador(int idAdministrador, Usuario usuarioBean) {
+		super();
+		this.idAdministrador = idAdministrador;
+		this.usuarioBean = usuarioBean;
 	}
 
 	public int getIdAdministrador() {
@@ -43,56 +46,34 @@ public class Administrador implements Serializable {
 		this.idAdministrador = idAdministrador;
 	}
 
-	public Usuario getUsuario() {
-		return this.usuario;
+	public Usuario getUsuarioBean() {
+		return this.usuarioBean;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuarioBean(Usuario usuarioBean) {
+		this.usuarioBean = usuarioBean;
 	}
 
-	public List<NoticiaEvento> getNoticiaEventos() {
-		return this.noticiaEventos;
+	public List<Noticia> getNoticias() {
+		return this.noticias;
 	}
 
-	public void setNoticiaEventos(List<NoticiaEvento> noticiaEventos) {
-		this.noticiaEventos = noticiaEventos;
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
 	}
 
-	public NoticiaEvento addNoticiaEvento(NoticiaEvento noticiaEvento) {
-		getNoticiaEventos().add(noticiaEvento);
-		noticiaEvento.setAdministrador(this);
+	public Noticia addNoticia(Noticia noticia) {
+		getNoticias().add(noticia);
+		noticia.setAdministrador(this);
 
-		return noticiaEvento;
+		return noticia;
 	}
 
-	public NoticiaEvento removeNoticiaEvento(NoticiaEvento noticiaEvento) {
-		getNoticiaEventos().remove(noticiaEvento);
-		noticiaEvento.setAdministrador(null);
+	public Noticia removeNoticia(Noticia noticia) {
+		getNoticias().remove(noticia);
+		noticia.setAdministrador(null);
 
-		return noticiaEvento;
-	}
-
-	public List<NoticiaEvidencia> getNoticiaEvidencias() {
-		return this.noticiaEvidencias;
-	}
-
-	public void setNoticiaEvidencias(List<NoticiaEvidencia> noticiaEvidencias) {
-		this.noticiaEvidencias = noticiaEvidencias;
-	}
-
-	public NoticiaEvidencia addNoticiaEvidencia(NoticiaEvidencia noticiaEvidencia) {
-		getNoticiaEvidencias().add(noticiaEvidencia);
-		noticiaEvidencia.setAdministrador(this);
-
-		return noticiaEvidencia;
-	}
-
-	public NoticiaEvidencia removeNoticiaEvidencia(NoticiaEvidencia noticiaEvidencia) {
-		getNoticiaEvidencias().remove(noticiaEvidencia);
-		noticiaEvidencia.setAdministrador(null);
-
-		return noticiaEvidencia;
+		return noticia;
 	}
 
 }

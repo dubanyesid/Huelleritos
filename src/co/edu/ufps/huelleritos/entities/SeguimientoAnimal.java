@@ -2,7 +2,7 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 
 /**
@@ -19,22 +19,35 @@ public class SeguimientoAnimal implements Serializable {
 	@Column(name="codigo_seguimiento")
 	private int codigoSeguimiento;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date fecha;
+
+	@Lob
 	private String foto;
 
 	@Lob
 	private String observacion;
 
+	@Lob
 	private String video;
 
-	//bi-directional many-to-one association to Adoptante
-	@OneToMany(mappedBy="seguimientoAnimal")
-	private List<Adoptante> adoptantes;
-
-	//bi-directional many-to-one association to HogarDePaso
-	@OneToMany(mappedBy="seguimientoAnimal")
-	private List<HogarDePaso> hogarDePasos;
+	//bi-directional many-to-one association to Animal
+	@ManyToOne
+	@JoinColumn(name="codigo_animal")
+	private Animal animal;
 
 	public SeguimientoAnimal() {
+	}
+	
+	public SeguimientoAnimal(int codigoSeguimiento, Date fecha, String foto, String observacion, String video,
+			Animal animal) {
+		super();
+		this.codigoSeguimiento = codigoSeguimiento;
+		this.fecha = fecha;
+		this.foto = foto;
+		this.observacion = observacion;
+		this.video = video;
+		this.animal = animal;
 	}
 
 	public int getCodigoSeguimiento() {
@@ -43,6 +56,14 @@ public class SeguimientoAnimal implements Serializable {
 
 	public void setCodigoSeguimiento(int codigoSeguimiento) {
 		this.codigoSeguimiento = codigoSeguimiento;
+	}
+
+	public Date getFecha() {
+		return this.fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public String getFoto() {
@@ -69,48 +90,12 @@ public class SeguimientoAnimal implements Serializable {
 		this.video = video;
 	}
 
-	public List<Adoptante> getAdoptantes() {
-		return this.adoptantes;
+	public Animal getAnimal() {
+		return this.animal;
 	}
 
-	public void setAdoptantes(List<Adoptante> adoptantes) {
-		this.adoptantes = adoptantes;
-	}
-
-	public Adoptante addAdoptante(Adoptante adoptante) {
-		getAdoptantes().add(adoptante);
-		adoptante.setSeguimientoAnimal(this);
-
-		return adoptante;
-	}
-
-	public Adoptante removeAdoptante(Adoptante adoptante) {
-		getAdoptantes().remove(adoptante);
-		adoptante.setSeguimientoAnimal(null);
-
-		return adoptante;
-	}
-
-	public List<HogarDePaso> getHogarDePasos() {
-		return this.hogarDePasos;
-	}
-
-	public void setHogarDePasos(List<HogarDePaso> hogarDePasos) {
-		this.hogarDePasos = hogarDePasos;
-	}
-
-	public HogarDePaso addHogarDePaso(HogarDePaso hogarDePaso) {
-		getHogarDePasos().add(hogarDePaso);
-		hogarDePaso.setSeguimientoAnimal(this);
-
-		return hogarDePaso;
-	}
-
-	public HogarDePaso removeHogarDePaso(HogarDePaso hogarDePaso) {
-		getHogarDePasos().remove(hogarDePaso);
-		hogarDePaso.setSeguimientoAnimal(null);
-
-		return hogarDePaso;
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
 	}
 
 }
