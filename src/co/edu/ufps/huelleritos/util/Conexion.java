@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery; 
 
-public class Conexion <T> {
+public abstract class Conexion <T> {
 	private Class<T> c;
 	private static EntityManager em = null;
 	
@@ -33,8 +33,8 @@ public class Conexion <T> {
 		return em;
 	}
 	
-	public <E> T find(E id){
-		T object = (T) em.find(c, id);
+	public <E> T find(E primary){
+		T object = (T) em.find(c, primary);
 		return object;
 	}
 	
@@ -83,5 +83,10 @@ public class Conexion <T> {
 		}
 		
 	}
+	
+	 public Integer getMaxId() {
+		 Integer maxId = (Integer) em.createNamedQuery(c.getSimpleName()+".getMaxID", c).getSingleResult();
+		 return maxId + 1;
+	 }
 
 }

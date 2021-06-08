@@ -10,7 +10,9 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a")
+@NamedQueries({ @NamedQuery(name = "Administrador.getMaxID", query = "Select max(a.idAdministrador) as maxid from Administrador a"),
+	@NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a") })
+
 public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;
 

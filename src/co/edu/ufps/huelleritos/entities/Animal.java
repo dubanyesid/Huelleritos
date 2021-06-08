@@ -10,7 +10,8 @@ import java.util.Date;
  * 
  */
 @Entity
-@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a")
+@NamedQueries({ @NamedQuery(name = "Animal.getMaxID", query = "Select max(a.codigoAnimal) as maxid from Animal a"),
+	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a") })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
 

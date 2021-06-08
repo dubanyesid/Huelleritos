@@ -10,7 +10,8 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM Adoptante a")
+@NamedQueries({ @NamedQuery(name = "Adoptante.getMaxID", query = "Select max(a.usuario_DNI) as maxid from Adoptante a"),
+	@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM Adoptante a") })
 public class Adoptante implements Serializable {
 	private static final long serialVersionUID = 1L;
 

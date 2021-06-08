@@ -10,7 +10,10 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM Vacuna v")
+
+@NamedQueries({ @NamedQuery(name = "Vacuna.getMaxID", query = "Select max(v.codigoVacuna) as maxid from Vacuna v"),
+	@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM Vacuna v") })
+
 public class Vacuna implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -10,7 +10,9 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@NamedQueries({ @NamedQuery(name = "Usuario.getMaxID", query = "Select max(u.dni) as maxid from Usuario u"),
+	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u") })
+
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -40,6 +42,16 @@ public class Usuario implements Serializable {
 	private HogarDePaso hogarDePaso;
 
 	public Usuario() {
+	}
+	
+	public Usuario(int dni, String nombre, String apellido, String contraseña, String correo, String telefono) {
+		super();
+		this.dni = dni;
+		this.apellido = apellido;
+		this.contraseña = contraseña;
+		this.correo = correo;
+		this.nombre = nombre;
+		this.telefono = telefono;
 	}
 
 	public int getDni() {
