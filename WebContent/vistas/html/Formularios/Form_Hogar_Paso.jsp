@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
@@ -127,108 +128,420 @@
     <br><br><br>
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                
-                <h2 class="centro">DILIGENCIAR FORMULARIO<hr class="potaxio"></h2>  
-                <form>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Fecha</label>
-                        <input type="date" required class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Ciudad</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Ciudad">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Nombre</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Apellido</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su apellido">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Numero de Cedula</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su cedula">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Correo Electronico</label>
-                        <input type="email" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su correo electronico">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Fecha de Nacimiento</label>
-                        <input type="date" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su fecha de nacimiento">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Barrio de residencia</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Barrio">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Direccion de Residencia</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su direccion">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Telefono</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su numero de telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Trabajo Actual</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su trabajo actual">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">¿Cuantos adultos viven en tu casa?</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el numero de personas que viven contigo">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">¿Cuantos niños viven en tu casa?</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el numero de niños que viven contigo">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">¿Que edades tienen los niños?</label>
-                        <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la edad de los niños">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">¿Nombre del animal en que estas interesado?</label>
-                        <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el nombre del peludito">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Tipo de animal</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Perro</option>
-                            <option>Gato</option>
-                        </select>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2 class="centro">DILIGENCIAR FORMULARIO<hr class="potaxio"></h2>
+                    <form>
+                        <h3 class="titulos">Datos personales:</h3>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Nombre</label>
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Nombre">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Edad</label>
+                            <input type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su edad">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Ocupacion</label>
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Ocupacion">
+                        </div> 
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Direccion de Residencia</label>
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su direccion">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Email</label>
+                            <input type="email" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su correo electrónico">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Teléfono</label>
+                            <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Telefono">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Celular</label>
+                            <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Celular">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Fecha</label>
+                            <input type="date" required class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Cédula</label>
+                            <input type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su cédula">
+                        </div> 
+
+                        <!-- Datos familiares y de Vivienda-->
+                        <br>
+
+                        <h3 class="titulos">Datos familiares y de Vivienda:</h3>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">Número de personas que viven en el hogar</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Solo vivo yo</option>
+                                    <option value="1">2 a 4 personas</option>
+                                    <option value="1">Más de cuatro personas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Tiene niños en casa? (Si la respuesta es si, responda la siguiente pregunta)</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">Edades de los niños</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">1 a 6 años</option>
+                                    <option value="1">6 a 9 años</option>
+                                    <option value="1">Mayor de 9 años</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Todos están de acuerdo en la tenencia de la mascota?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿La vivienda es propia?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">En caso de ser arrendada, ¿los arrendatarios están de acuerdo en la tenencia de animales?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                    <option value="1">No aplica</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Sobre Mascotas del hogar -->
+
+                        <br><br>
+
+                        <h3 class="titulos">Sobre Mascotas del hogar</h3>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Tienes mascotas?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Cuáles? Perro, gato, aves, peces, tortuga, otro?</label>
+                            <br>
+                            <div class="container">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">perro y/o gato</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">aves</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">peces</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">tortuga</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">otros</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">NO APLICA</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Conviven con más animales?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                    <option value="1">No aplica</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Dónde duermen las mascotas?</label>
+                            <br>
+                            <div class="container">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Conmigo en la cama (o cualquier otro familiar)</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">En la sala</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En el patio</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En su propia cama</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En cualquier parte de la casa</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Por fuera de la casa</label>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Cómo reprendes a los animales cuando tienen malos comportamientos?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Encerrando el animal en el patio o en un cuarto</option>
+                                    <option value="1">Gritándole</option>
+                                    <option value="1">Dejándolo sin comida</option>
+                                    <option value="1">Pegándole con un periódico</option>
+                                    <option value="1">Pegándole con una sandalia</option>
+                                    <option value="1">Pegándole con otro objeto</option>
+                                    <option value="1">Llamándole la atención y castigandolo</option> 
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Tienen/tenían las vacunas al día?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Están bien de salud?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">En caso de estar enfermos, ¿Qué padecen?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Algún virus como rabia, moquillo y/o parvovirus</option>
+                                    <option value="1">Alguna discapacidad</option>
+                                    <option value="1">Enfermedad terminal</option>
+                                    <option value="1">Alguna enfermedad hereditaria</option>
+                                    <option value="1">Alguna enfermedad contagiosa</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <!-- Sobre el Hogar de paso -->
+
+                        <h3 class="titulos">Sobre el Hogar de paso</h3>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">¿A qué mascota desea brindar hogar de paso?</label>
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el nombre del peludito">
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Por qué deseas dar hogar de paso?</label>
+                            <br>
+                            <div class="container">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Porque quiero ayudar a los animales</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Porque tengo los recursos  para ayudar al animal</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Porque tengo el espacio para ayudar al animal</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Porque me siento solo/a y me haría compañía</label>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Estás dispuest@ a cuidar de él/ella y brindarle la atención necesaria?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Tienes la capacidad para dar medicinas sin problema a la mascota?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Tienes paciencia para cuidar de un animal enfermo?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Cuánto tiempo pasará sola la mascota al día?</label>
+                            <div class="default-select" id="default-select">
+                                <select>
+                                    <option value="1">De 1 a 2 horas</option>
+                                    <option value="1">De 2 a 4 horas</option>
+                                    <option value="1">De 4 a 6 horas</option>
+                                    <option value="1">De 6 a 7 horas</option>
+                                    <option value="1">Más de 8 horas</option>
+                                    <option value="1">Siempre estaría conmigo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="single-element-widget mt-30">
+                            <label for="formGroupExampleInput2">¿Dónde dormirá la mascota?</label>
+                            <br>
+                            <div class="container">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Conmigo en la cama (o cualquier otro familiar)</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En la sala</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En el patio</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En su propia cama</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En cualquier parte de la casa</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Por fuera de la casa</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <button class="btn btn-dark" type="submit">Enviar</button>
+                    </form>
+                    <br>
+                </div>
+
+                <div class="col-sm-6 centro">
+                    <h2>CONTACTO<hr class="potaxio"></h2>
+                    <div class="row centro">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-2">
+                            <img src="../../img/logocontacto.png" width="70" height="70" alt="">
+                        </div>
+                        <div class="col-sm-2">
+                            <p>3177636650</p>
+                            <p>3135707240</p>
+                        </div>
+                        <div class="col-sm-4"></div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">¿Has tenido un animal antes?</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">¿Por que quieres adoptar un animal?</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button class="btn btn-dark" type="submit">Enviar</button>
-                </form>
-                <br>
-            </div>
-
-            <div class="col-sm-6 centro">
-            <h2>CONTACTO<hr class="potaxio"></h2>
-            <div class="row centro">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-2">
-                    <img src="../../img/logocontacto.png" width="70" height="70" alt="">
                 </div>
-                <div class="col-sm-2">
-                    <p>3177636650</p>
-                    <p>3135707240</p>
-                </div>
-                <div class="col-sm-4"></div>
             </div>
-            
-        </div>
-        </div>
 
     </div>
     <!-- Cuerpo formulario Hogar de Paso / Final -->

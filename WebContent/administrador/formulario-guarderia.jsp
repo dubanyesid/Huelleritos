@@ -122,6 +122,7 @@
 		                <label for="fecha">Mensualidad</label>
 		                <input type="date" name="mensualidad" class="form-control">
 		            </div>
+		            
 		        <div class="form-group">
 		            <input type="submit" value="Guardar" class="btn btn-dark">
 		        </div>
