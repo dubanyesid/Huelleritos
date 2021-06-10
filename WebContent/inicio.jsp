@@ -127,7 +127,45 @@
 		</div>
 	</div>
 	<!-- slider_area_end -->
+<%!private String itemCaruselAnimalHtml(Animal a) {
+		String html = "";
+		if (a != null) {
+			html = "<div class='col-sm-4'>";
+			html += "  <div class='card centro'>";
+			html += " <img class='card-img-top' src='https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg' alt='Card image cap'>";
+			html += " <div class='card-body'>";
+			html += " <h5 class='card-title'>Edad : " + a.getEdad() + " años</h5>";
+			html += " <h4>" + a.getNombreAnimal() + "</h4>";
+			html += " <p class='card-text'>" + a.getDescripcion() + "</p>";
+			html += " <a href='PerfilHuellerito?codigo="+a.getCodigoAnimal()+"' class='genric-btn primary circle'>Conoce Mas</a>";
+			html += "</div></div></div>";
+		}
 
+		return html;
+	}
+	
+private String caruselAnimalHtml(List<Animal>animales){
+	String items = "";
+	if (animales != null && animales.size() > 0) {
+		
+		for (Integer i = 0; i < animales.size(); i += 3) {
+			String activo = i == 0 ? "active" : "";
+			items += "<div class='carousel-item " + activo + "'><div class='row'>";
+			for (Integer j = i; j < i + 3; j++) {
+		Animal uno = j<animales.size()? animales.get(j):null;
+
+		items += itemCaruselAnimalHtml(uno);
+
+			}
+			items += "</div></div>";
+			
+		}
+
+	}
+	return items;
+}
+	
+	%>
 <br>
 	<br>
 	<br>
@@ -143,28 +181,8 @@
 				
 				<%
 				List<Animal> animales = (List<Animal>) request.getAttribute("animalesPrioridad");
-				if (animales != null && animales.size() > 0) {
-					String items = "";
-					for (Integer i = 0; i < animales.size(); i += 3) {
-						String activo = i == 0 ? "active" : "";
-						items += "<div class='carousel-item " + activo + "'><div class='row'>";
-						for (Integer j = i; j < i + 3; j++) {
-					Animal uno = j<animales.size()? animales.get(j):null;
-
-					items += itemHtmlCarusel(uno);
-
-						}
-						items += "</div></div>";
-						/*Animal uno=animales.get(i);
-						Animal dos=i+1<animales.size() ? animales.get(i+1):null;
-						Animal tres=i+1<animales.size() ? animales.get(i+2):null;
-						items+="<div class='carousel-item "+activo+"'>";
-						items+=itemHtmlCarusel(uno);
-						items+="</div>";*/
-
-					}
-out.append(items);
-				}
+				out.append(caruselAnimalHtml(animales));
+				
 				%>
 				
 			</div>
@@ -195,46 +213,10 @@ out.append(items);
 		<div id="carouselExampleControls" class="carousel slide"
 			data-ride="carousel">
 			<div class="carousel-inner">
-				<%!private String itemHtmlCarusel(Animal a) {
-		String html = "";
-		if (a != null) {
-			html = "<div class='col-sm-4'>";
-			html += "  <div class='card centro'>";
-			html += " <img class='card-img-top' src='https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg' alt='Card image cap'>";
-			html += " <div class='card-body'>";
-			html += " <h5 class='card-title'>Edad : " + a.getEdad() + " años</h5>";
-			html += " <h4>" + a.getNombreAnimal() + "</h4>";
-			html += " <p class='card-text'>" + a.getDescripcion() + "</p>";
-			html += " <a href='PerfilHuellerito?codigo="+a.getCodigoAnimal()+"' class='genric-btn primary circle'>Conoce Mas</a>";
-			html += "</div></div></div>";
-		}
-
-		return html;
-	}%>
+				
 				<%
 				List<Animal> animalesAdopcion = (List<Animal>) request.getAttribute("animalesAdopcion");
-				if (animales != null && animalesAdopcion.size() > 0) {
-					String items = "";
-					for (Integer i = 0; i < animalesAdopcion.size(); i += 3) {
-						String activo = i == 0 ? "active" : "";
-						items += "<div class='carousel-item " + activo + "'><div class='row'>";
-						for (Integer j = i; j < i + 3; j++) {
-					Animal uno = j<animalesAdopcion.size()? animalesAdopcion.get(j):null;
-
-					items += itemHtmlCarusel(uno);
-
-						}
-						items += "</div></div>";
-						/*Animal uno=animales.get(i);
-						Animal dos=i+1<animales.size() ? animales.get(i+1):null;
-						Animal tres=i+1<animales.size() ? animales.get(i+2):null;
-						items+="<div class='carousel-item "+activo+"'>";
-						items+=itemHtmlCarusel(uno);
-						items+="</div>";*/
-
-					}
-out.append(items);
-				}
+				out.append(caruselAnimalHtml(animalesAdopcion));
 				%>
 				<!-- 
                 <div class="carousel-item active">                   
