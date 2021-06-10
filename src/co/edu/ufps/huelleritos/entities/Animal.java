@@ -13,7 +13,11 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a")
+@NamedQueries({
+	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
+	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
+	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'")
+})
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -288,6 +292,16 @@ public class Animal implements Serializable {
 		seguimientoAnimal.setAnimal(null);
 
 		return seguimientoAnimal;
+	}
+
+	@Override
+	public String toString() {
+		return "Animal [codigoAnimal=" + codigoAnimal + ", color=" + color + ", descripcion=" + descripcion + ", edad="
+				+ edad + ", fechaIngreso=" + fechaIngreso + ", imagenAnimal=" + imagenAnimal + ", nombreAnimal="
+				+ nombreAnimal + ", peso=" + peso + ", raza=" + raza + ", sexo=" + sexo + ", usuario_DNI=" + usuario_DNI
+				+ ", estadoAnimalBean=" + estadoAnimalBean + ", guarderia=" + guarderia + ", prioridad=" + prioridad
+				+ ", tipoAnimal=" + tipoAnimal + ", formularioAnimals=" + formularioAnimals + ", historialAnimals="
+				+ historialAnimals + ", seguimientoAnimals=" + seguimientoAnimals + "]";
 	}
 
 }

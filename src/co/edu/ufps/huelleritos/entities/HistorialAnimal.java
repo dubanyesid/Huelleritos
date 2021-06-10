@@ -140,4 +140,9 @@ public class HistorialAnimal implements Serializable {
 		return vacunaHistorial;
 	}
 
+	@Override
+	public String toString() {
+		return "observaciones historia animal : "+observaciones;
+	}
+
 }
