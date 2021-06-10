@@ -15,6 +15,7 @@
 		<class>co.edu.ufps.huelleritos.entities.HistorialAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.HogarDePaso</class>
 		<class>co.edu.ufps.huelleritos.entities.Noticia</class>
+		<class>co.edu.ufps.huelleritos.entities.NoticiaEvento</class>
 		<class>co.edu.ufps.huelleritos.entities.Opcion</class>
 		<class>co.edu.ufps.huelleritos.entities.OperacionesAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.Pregunta</class>
