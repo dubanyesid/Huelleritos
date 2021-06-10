@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,16 +26,9 @@ public class Vacuna implements Serializable {
 
 	//bi-directional many-to-one association to VacunaHistorial
 	@OneToMany(mappedBy="vacuna")
-	private List<VacunaHistorial> vacunaHistorials = new ArrayList();
+	private List<VacunaHistorial> vacunaHistorials;
 
 	public Vacuna() {
-	}
-	
-	public Vacuna(String codigoVacuna, String descripcion, String nombreVacuna) {
-		super();
-		this.codigoVacuna = codigoVacuna;
-		this.descripcion = descripcion;
-		this.nombreVacuna = nombreVacuna;
 	}
 
 	public String getCodigoVacuna() {

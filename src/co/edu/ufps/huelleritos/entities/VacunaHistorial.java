@@ -16,6 +16,7 @@ public class VacunaHistorial implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_vacuna_historial")
 	private int idVacunaHistorial;
 
@@ -34,15 +35,6 @@ public class VacunaHistorial implements Serializable {
 	private Vacuna vacuna;
 
 	public VacunaHistorial() {
-	}
-	
-	public VacunaHistorial(int idVacunaHistorial, Date fechaVacunacion, HistorialAnimal historialAnimal,
-			Vacuna vacuna) {
-		super();
-		this.idVacunaHistorial = idVacunaHistorial;
-		this.fechaVacunacion = fechaVacunacion;
-		this.historialAnimal = historialAnimal;
-		this.vacuna = vacuna;
 	}
 
 	public int getIdVacunaHistorial() {

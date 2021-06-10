@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,30 +16,25 @@ public class TipoNoticia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="idtipo_noticia")
-	private int idtipoNoticia;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_tipo_noticia")
+	private int idTipoNoticia;
 
 	private String tipo;
 
 	//bi-directional many-to-one association to Noticia
 	@OneToMany(mappedBy="tipoNoticia")
-	private List<Noticia> noticias = new ArrayList();
+	private List<Noticia> noticias;
 
 	public TipoNoticia() {
 	}
-	
-	public TipoNoticia(int idtipoNoticia, String tipo) {
-		super();
-		this.idtipoNoticia = idtipoNoticia;
-		this.tipo = tipo;
+
+	public int getIdTipoNoticia() {
+		return this.idTipoNoticia;
 	}
 
-	public int getIdtipoNoticia() {
-		return this.idtipoNoticia;
-	}
-
-	public void setIdtipoNoticia(int idtipoNoticia) {
-		this.idtipoNoticia = idtipoNoticia;
+	public void setIdTipoNoticia(int idTipoNoticia) {
+		this.idTipoNoticia = idTipoNoticia;
 	}
 
 	public String getTipo() {

@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +16,7 @@ public class Formulario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_formulario")
 	private int idFormulario;
 
@@ -43,30 +42,14 @@ public class Formulario implements Serializable {
 
 	//bi-directional many-to-one association to FormularioAnimal
 	@OneToMany(mappedBy="formulario")
-	private List<FormularioAnimal> formularioAnimals = new ArrayList();
+	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to FormularioPregunta
 	@OneToMany(mappedBy="formulario")
-	private List<FormularioPregunta> formularioPreguntas = new ArrayList();
+	private List<FormularioPregunta> formularioPreguntas;
 
 	public Formulario() {
 	}
-	
-	public Formulario(int idFormulario, String apellido, String cedula, String celular, String correo, Date fecha,
-			String nombre, String telefono, Usuario usuarioBean) {
-		super();
-		this.idFormulario = idFormulario;
-		this.apellido = apellido;
-		this.cedula = cedula;
-		this.celular = celular;
-		this.correo = correo;
-		this.fecha = fecha;
-		this.nombre = nombre;
-		this.telefono = telefono;
-		this.usuarioBean = usuarioBean;
-	}
-
-
 
 	public int getIdFormulario() {
 		return this.idFormulario;

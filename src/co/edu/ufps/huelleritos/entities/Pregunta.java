@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,11 +24,11 @@ public class Pregunta implements Serializable {
 
 	//bi-directional many-to-one association to FormularioPregunta
 	@OneToMany(mappedBy="pregunta")
-	private List<FormularioPregunta> formularioPreguntas = new ArrayList();
+	private List<FormularioPregunta> formularioPreguntas;
 
 	//bi-directional many-to-one association to Opcion
 	@OneToMany(mappedBy="pregunta")
-	private List<Opcion> opcions =  new ArrayList();
+	private List<Opcion> opcions;
 
 	//bi-directional many-to-one association to Encuesta
 	@ManyToOne
@@ -38,14 +36,6 @@ public class Pregunta implements Serializable {
 	private Encuesta encuesta;
 
 	public Pregunta() {
-	}
-	
-	public Pregunta(int idPregunta, int estado, String texto, Encuesta encuesta) {
-		super();
-		this.idPregunta = idPregunta;
-		this.estado = estado;
-		this.texto = texto;
-		this.encuesta = encuesta;
 	}
 
 	public int getIdPregunta() {

@@ -16,6 +16,7 @@ public class OperacionesAnimal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_operaciones_animal")
 	private int idOperacionesAnimal;
 
@@ -39,19 +40,6 @@ public class OperacionesAnimal implements Serializable {
 
 	public OperacionesAnimal() {
 	}
-	
-	public OperacionesAnimal(int idOperacionesAnimal, Date fechaOperacion, Date fechaRecuperacion,
-			String nombreOperacion, String observaciones, HistorialAnimal historialAnimal) {
-		super();
-		this.idOperacionesAnimal = idOperacionesAnimal;
-		this.fechaOperacion = fechaOperacion;
-		this.fechaRecuperacion = fechaRecuperacion;
-		this.nombreOperacion = nombreOperacion;
-		this.observaciones = observaciones;
-		this.historialAnimal = historialAnimal;
-	}
-
-
 
 	public int getIdOperacionesAnimal() {
 		return this.idOperacionesAnimal;

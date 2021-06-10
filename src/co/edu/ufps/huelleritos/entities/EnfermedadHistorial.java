@@ -16,6 +16,7 @@ public class EnfermedadHistorial implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_enfermedad_historial")
 	private int idEnfermedadHistorial;
 
@@ -39,18 +40,6 @@ public class EnfermedadHistorial implements Serializable {
 
 	public EnfermedadHistorial() {
 	}
-	
-	public EnfermedadHistorial(int idEnfermedadHistorial, Date fechaFin, Date fechaInicio, Enfermedad enfermedad,
-			HistorialAnimal historialAnimal) {
-		super();
-		this.idEnfermedadHistorial = idEnfermedadHistorial;
-		this.fechaFin = fechaFin;
-		this.fechaInicio = fechaInicio;
-		this.enfermedad = enfermedad;
-		this.historialAnimal = historialAnimal;
-	}
-
-
 
 	public int getIdEnfermedadHistorial() {
 		return this.idEnfermedadHistorial;
