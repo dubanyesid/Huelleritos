@@ -5,8 +5,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,22 +32,11 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
-    </head>
+ </head>
 
     <body>
     
-    <%
-    
-    HttpSession ses = request.getSession();
-    
-    if(ses.getAttribute("administrador")==null && ses.getAttribute("nivel")==null){
-    	response.sendRedirect("administrador/login.jsp");
-    }
-    
-    
-    
-    %>
+  
     
     
     	<div>
@@ -154,10 +142,13 @@
 									    <div class="form-group">
 									      <label><strong>Subir</strong></label>
 									      <div class="custom-file">
-									        <input type="file" name="files[]" multiple class="custom-file-input form-control" id="customFile">
-									        <label class="custom-file-label" for="customFile">Elegir archivo</label>
+									      <input id="in-url" hidden="true" value="" required="required">
+									        <input placeholder="asdasd"  type="file" name="files[]" multiple class="custom-file-input form-control" id="img-uploader">
+									        <label class="custom-file-label" for="customFile" id="lblarchivo">Elegir archivo</label>
 									      </div>
 									    </div>
+									     <progress id="img-upload-bar" value="0" max="100" style="width: 100%"></progress>
+                                   
 									    <div class="form-group">
 									      <button type="button" name="upload" value="upload" id="upload" class="btn btn-block btn-dark"><i class="fa fa-fw fa-upload"></i> Subir</button>
 									    </div>
@@ -222,7 +213,7 @@
 				  });
 				});	
         </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script> 
 		<script src="assets/js/jquery-3.3.1.min.js"></script>
 		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -232,7 +223,7 @@
         <script src="assets/js/jquery.waypoints.min.js"></script>
         <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-
+        <script src="js/cargarImagen.js "></script>
     </body>
 
 </html>

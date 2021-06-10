@@ -175,8 +175,13 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
 %>
         <div class="col-sm-4"><br>
             <h2><%=a.getNombreAnimal() %></h2>
-            <p>Sexo: <%=a.getSexo() %></p>
-            <p><%=a.getDescripcion() %></p>
+            <p>Sexo: xxxx</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <a href="Formularios/Form_Adopta.html" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
             <a href="Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
             <a href="Formularios/Form_Apadrinar.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Apadrina</button></a>
