@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.edu.ufps.huelleritos.dao.AnimalDAO;
+import co.edu.ufps.huelleritos.entities.Animal;
+
 /**
  * Servlet implementation class PerfilHuellerito
  */
@@ -37,8 +40,21 @@ public class PerfilHuellerito extends HttpServlet {
 
 
 		String codigo = request.getParameter("codigo");
-		response.getWriter().append(codigo);
 		System.out.println(codigo);
+		if(codigo==null) {
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
+		}
+		AnimalDAO animalDAO = new AnimalDAO();		
+		Animal animalBuscado = animalDAO.find(Integer.parseInt(codigo));
+		if(animalBuscado==null) {
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
+		}
+		request.setAttribute("perfilAnimal", animalBuscado);
+		request.getRequestDispatcher("/html/Huelleritos_Adultos_gallery/Huellerito1.jsp").include(request, response);
+		System.out.println(codigo);
+		
 		
 	}
 

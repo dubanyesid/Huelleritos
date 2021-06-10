@@ -17,6 +17,7 @@ import java.util.List;
 	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
 	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
 	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'")
+	
 })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;

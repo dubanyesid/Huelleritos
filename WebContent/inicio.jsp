@@ -205,7 +205,7 @@ out.append(items);
 			html += " <h5 class='card-title'>Edad : " + a.getEdad() + " años</h5>";
 			html += " <h4>" + a.getNombreAnimal() + "</h4>";
 			html += " <p class='card-text'>" + a.getDescripcion() + "</p>";
-			html += " <a href='#' class='genric-btn primary circle'>Conoce Mas</a>";
+			html += " <a href='PerfilHuellerito?codigo="+a.getCodigoAnimal()+"' class='genric-btn primary circle'>Conoce Mas</a>";
 			html += "</div></div></div>";
 		}
 

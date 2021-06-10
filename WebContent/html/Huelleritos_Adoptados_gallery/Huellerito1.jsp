@@ -14,8 +14,8 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../css/magnific-popup.css">
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/themify-icons.css">
@@ -80,7 +80,7 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../../index.jsp">Inicio</a></li>
+                                        <li><a  href="index.jsp">Inicio</a></li>
                                         <li><a href="../../html/Huelleritos.jsp">Huelleritos</a></li>
                                         <li><a href="../../html/Adopta.jsp">Adopta</a></li>
                                         <li><a href="../../html/Apadrinar.jsp">Apadrina</a></li>

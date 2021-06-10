@@ -1,3 +1,4 @@
+<%@page import="co.edu.ufps.huelleritos.entities.Animal"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -17,19 +18,19 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../css/magnific-popup.css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../css/themify-icons.css">
-    <link rel="stylesheet" href="../../css/nice-select.css">
-    <link rel="stylesheet" href="../../css/flaticon.css">
-    <link rel="stylesheet" href="../../css/gijgo.css">
-    <link rel="stylesheet" href="../../css/animate.css">
-    <link rel="stylesheet" href="../../css/slicknav.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/cssdenosotros.css">
-    <link rel="stylesheet" href="../../css/huelleritos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssdenosotros.css">
+    <link rel="stylesheet" href="css/huelleritos.css">
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -74,8 +75,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../../index.html">
-                                    <img src="../../img/Huelleritos.png" alt="">
+                                <a href="index.html">
+                                    <img src="img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -83,14 +84,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../../index.html">Inicio</a></li>
-                                        <li><a href="../../html/Huelleritos.html">Huelleritos</a></li>
-                                        <li><a href="../../html/Adopta.html">Adopta</a></li>
-                                        <li><a href="../../html/Apadrinar.html">Apadrina</a></li>
-                                        <li><a href="../../html/Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="../../html/La_Fundacion.html">La fundación</a></li>
-                                        <li><a href="../../html/Noticias.html">Noticias</a></li>
-                                        <a href="../../html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="index.html">Inicio</a></li>
+                                        <li><a href="html/Huelleritos.html">Huelleritos</a></li>
+                                        <li><a href="html/Adopta.html">Adopta</a></li>
+                                        <li><a href="html/Apadrinar.html">Apadrina</a></li>
+                                        <li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>                            
+                                        <li><a href="html/La_Fundacion.html">La fundación</a></li>
+                                        <li><a href="html/Noticias.html">Noticias</a></li>
+                                        <a href="html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -168,8 +169,12 @@
             </div>
         </div>
 
+<%
+Animal a = (Animal)request.getAttribute("perfilAnimal");
+
+%>
         <div class="col-sm-4"><br>
-            <h2>Nombre del Animal</h2>
+            <h2><%=a.getNombreAnimal() %></h2>
             <p>Sexo: xxxx</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -177,9 +182,9 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="../Formularios/Form_Adopta.html" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
-            <a href="../Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
-            <a href="../Formularios/Form_Apadrinar.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Apadrina</button></a>
+            <a href="Formularios/Form_Adopta.html" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
+            <a href="Formularios/Form_Hogar_Paso.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
+            <a href="Formularios/Form_Apadrinar.html" target="blank"><button type="button" class="btn btn-dark btn-lg ">Apadrina</button></a>
         </div>
         <div class="col-sm-3"></div>
     </div>
@@ -208,7 +213,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
+                    <a href="index.html"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -217,7 +222,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
+                    <a href="index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -226,7 +231,7 @@
 
             <div class="col-sm-4">
                 <div class="card centro">
-                    <a href="../index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
+                    <a href="index.html"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title">Nombre del animal</h5>
                     </div>
@@ -296,7 +301,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="../../img/Huelleritos.png" alt="">
+                                    <img src="img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                             <p class="address_text">
@@ -347,34 +352,34 @@
 
 
     <!-- JS here -->
-    <script src="../../js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="../../js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../../js/popper.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/owl.carousel.min.js"></script>
-    <script src="../../js/isotope.pkgd.min.js"></script>
-    <script src="../../js/ajax-form.js"></script>
-    <script src="../../js/waypoints.min.js"></script>
-    <script src="../../js/jquery.counterup.min.js"></script>
-    <script src="../../js/imagesloaded.pkgd.min.js"></script>
-    <script src="../../js/scrollIt.js"></script>
-    <script src="../../js/jquery.scrollUp.min.js"></script>
-    <script src="../../js/wow.min.js"></script>
-    <script src="../../js/nice-select.min.js"></script>
-    <script src="../../js/jquery.slicknav.min.js"></script>
-    <script src="../../js/jquery.magnific-popup.min.js"></script>
-    <script src="../../js/plugins.js"></script>
-    <script src="../../js/gijgo.min.js"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
     <!--contact js-->
-    <script src="../../js/contact.js"></script>
-    <script src="../../js/jquery.ajaxchimp.min.js"></script>
-    <script src="../../js/jquery.form.js"></script>
-    <script src="../../js/jquery.validate.min.js"></script>
-    <script src="../../js/mail-script.js"></script>
-    <script src="../../js/javascript.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/javascript.js"></script>
 
 
-    <script src="../../js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
