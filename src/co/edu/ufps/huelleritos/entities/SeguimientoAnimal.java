@@ -17,7 +17,7 @@ public class SeguimientoAnimal implements Serializable {
 
 	@Id
 	@Column(name="codigo_seguimiento")
-	private int codigoSeguimiento;
+	private String codigoSeguimiento;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fecha;
@@ -38,23 +38,12 @@ public class SeguimientoAnimal implements Serializable {
 
 	public SeguimientoAnimal() {
 	}
-	
-	public SeguimientoAnimal(int codigoSeguimiento, Date fecha, String foto, String observacion, String video,
-			Animal animal) {
-		super();
-		this.codigoSeguimiento = codigoSeguimiento;
-		this.fecha = fecha;
-		this.foto = foto;
-		this.observacion = observacion;
-		this.video = video;
-		this.animal = animal;
-	}
 
-	public int getCodigoSeguimiento() {
+	public String getCodigoSeguimiento() {
 		return this.codigoSeguimiento;
 	}
 
-	public void setCodigoSeguimiento(int codigoSeguimiento) {
+	public void setCodigoSeguimiento(String codigoSeguimiento) {
 		this.codigoSeguimiento = codigoSeguimiento;
 	}
 

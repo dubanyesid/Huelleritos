@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,13 +11,17 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a")
+@NamedQueries({
+	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
+	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
+	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'")
+})
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="codigo_animal")
-	private int codigoAnimal;
+	private String codigoAnimal;
 
 	private String color;
 
@@ -44,8 +46,6 @@ public class Animal implements Serializable {
 
 	private String sexo;
 
-	private int usuario_DNI;
-
 	//bi-directional many-to-one association to EstadoAnimal
 	@ManyToOne
 	@JoinColumn(name="estado_animal")
@@ -68,47 +68,24 @@ public class Animal implements Serializable {
 
 	//bi-directional many-to-one association to FormularioAnimal
 	@OneToMany(mappedBy="animal")
-	private List<FormularioAnimal> formularioAnimals = new ArrayList();
+	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to HistorialAnimal
 	@OneToMany(mappedBy="animal")
-	private List<HistorialAnimal> historialAnimals = new ArrayList();
+	private List<HistorialAnimal> historialAnimals;
 
 	//bi-directional many-to-one association to SeguimientoAnimal
 	@OneToMany(mappedBy="animal")
-	private List<SeguimientoAnimal> seguimientoAnimals = new ArrayList();
+	private List<SeguimientoAnimal> seguimientoAnimals;
 
 	public Animal() {
 	}
-	
-	public Animal(int codigoAnimal, String color, String descripcion, int edad, Date fechaIngreso, String imagenAnimal,
-			String nombreAnimal, String peso, String raza, String sexo, int usuario_DNI, EstadoAnimal estadoAnimalBean,
-			Guarderia guarderia, Prioridad prioridad, TipoAnimal tipoAnimal) {
-		super();
-		this.codigoAnimal = codigoAnimal;
-		this.color = color;
-		this.descripcion = descripcion;
-		this.edad = edad;
-		this.fechaIngreso = fechaIngreso;
-		this.imagenAnimal = imagenAnimal;
-		this.nombreAnimal = nombreAnimal;
-		this.peso = peso;
-		this.raza = raza;
-		this.sexo = sexo;
-		this.usuario_DNI = usuario_DNI;
-		this.estadoAnimalBean = estadoAnimalBean;
-		this.guarderia = guarderia;
-		this.prioridad = prioridad;
-		this.tipoAnimal = tipoAnimal;
-	}
 
-
-
-	public int getCodigoAnimal() {
+	public String getCodigoAnimal() {
 		return this.codigoAnimal;
 	}
 
-	public void setCodigoAnimal(int codigoAnimal) {
+	public void setCodigoAnimal(String codigoAnimal) {
 		this.codigoAnimal = codigoAnimal;
 	}
 
@@ -182,14 +159,6 @@ public class Animal implements Serializable {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}
-
-	public int getUsuario_DNI() {
-		return this.usuario_DNI;
-	}
-
-	public void setUsuario_DNI(int usuario_DNI) {
-		this.usuario_DNI = usuario_DNI;
 	}
 
 	public EstadoAnimal getEstadoAnimalBean() {

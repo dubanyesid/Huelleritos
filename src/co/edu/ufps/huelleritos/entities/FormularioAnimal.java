@@ -15,6 +15,7 @@ public class FormularioAnimal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_formulario_animal")
 	private int idFormularioAnimal;
 
@@ -30,15 +31,6 @@ public class FormularioAnimal implements Serializable {
 
 	public FormularioAnimal() {
 	}
-	
-	public FormularioAnimal(int idFormularioAnimal, Animal animal, Formulario formulario) {
-		super();
-		this.idFormularioAnimal = idFormularioAnimal;
-		this.animal = animal;
-		this.formulario = formulario;
-	}
-
-
 
 	public int getIdFormularioAnimal() {
 		return this.idFormularioAnimal;

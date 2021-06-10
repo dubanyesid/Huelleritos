@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,21 +16,16 @@ public class TipoAnimal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	private String descripcion;
 
 	//bi-directional many-to-one association to Animal
 	@OneToMany(mappedBy="tipoAnimal")
-	private List<Animal> animals = new ArrayList();
+	private List<Animal> animals;
 
 	public TipoAnimal() {
-	}
-	
-	public TipoAnimal(int id, String descripcion) {
-		super();
-		this.id = id;
-		this.descripcion = descripcion;
 	}
 
 	public int getId() {

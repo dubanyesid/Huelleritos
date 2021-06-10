@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,7 +21,7 @@ public class Usuario implements Serializable {
 
 	//bi-directional many-to-one association to Administrador
 	@OneToMany(mappedBy="usuarioBean")
-	private List<Administrador> administradors = new ArrayList();
+	private List<Administrador> administradors;
 
 	//bi-directional one-to-one association to Adoptante
 	@OneToOne(mappedBy="usuarioBean")
@@ -31,21 +29,13 @@ public class Usuario implements Serializable {
 
 	//bi-directional many-to-one association to Formulario
 	@OneToMany(mappedBy="usuarioBean")
-	private List<Formulario> formularios = new ArrayList();
+	private List<Formulario> formularios;
 
 	//bi-directional one-to-one association to HogarDePaso
 	@OneToOne(mappedBy="usuarioBean")
 	private HogarDePaso hogarDePaso;
 
 	public Usuario() {
-	}
-
-	public Usuario(String usuario, String contraseña, Adoptante adoptante, HogarDePaso hogarDePaso) {
-		super();
-		this.usuario = usuario;
-		this.contraseña = contraseña;
-		this.adoptante = adoptante;
-		this.hogarDePaso = hogarDePaso;
 	}
 
 	public String getUsuario() {

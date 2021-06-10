@@ -2,8 +2,6 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,6 +15,7 @@ public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_administrador")
 	private int idAdministrador;
 
@@ -27,15 +26,9 @@ public class Administrador implements Serializable {
 
 	//bi-directional many-to-one association to Noticia
 	@OneToMany(mappedBy="administrador")
-	private List<Noticia> noticias = new ArrayList();
+	private List<Noticia> noticias;
 
 	public Administrador() {
-	}
-	
-	public Administrador(int idAdministrador, Usuario usuarioBean) {
-		super();
-		this.idAdministrador = idAdministrador;
-		this.usuarioBean = usuarioBean;
 	}
 
 	public int getIdAdministrador() {
