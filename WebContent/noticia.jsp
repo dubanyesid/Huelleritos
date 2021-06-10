@@ -1,3 +1,10 @@
+<%@page import="co.edu.ufps.huelleritos.entities.*"%>
+<%@page import="co.edu.ufps.huelleritos.dao.*"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -30,6 +37,20 @@
     </head>
 
     <body>
+    
+    <%
+    
+    HttpSession ses = request.getSession();
+    
+    if(ses.getAttribute("administrador")==null && ses.getAttribute("nivel")==null){
+    	response.sendRedirect("administrador/login.jsp");
+    }
+    
+    
+    
+    %>
+    
+    
     	<div>
 			<!--Navbar-->
 			<nav class="navbar navbar-dark  bg-dark">

@@ -86,15 +86,16 @@ public class UsuarioServlet extends HttpServlet {
 
 	private void index(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		// mostrar(request, response);
+		mostrar(request, response);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("indexUsuarios.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void registrar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {		
-		//Usuario cl = new Usuario(dni, nombre, apellido, contraseña, correo, telefono);
-		//usuarioDAO.insert(cl);
+		//Usuario us = new Usuario(Integer.parseInt(request.getParameter("dni")), request.getParameter("nombre"), request.getParameter("apellido"),
+		//		request.getParameter("contraseña"), request.getParameter("correo"), request.getParameter("telefono"));
+		//usuarioDAO.insert(us);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("indexUsuarios.jsp");
 		dispatcher.forward(request, response);
 	}

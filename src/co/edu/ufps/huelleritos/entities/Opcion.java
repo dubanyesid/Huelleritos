@@ -98,4 +98,10 @@ public class Opcion implements Serializable {
 		this.pregunta = pregunta;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Opcion [idOpcion=" + idOpcion;
+	}
+
 }

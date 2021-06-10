@@ -77,6 +77,13 @@ public class Pregunta implements Serializable {
 		return formularioPregunta;
 	}
 
+	@Override
+	public String toString() {
+		return "Pregunta [idPregunta=" + idPregunta + ", estado=" + estado + ", texto=" + texto
+				+ ", formularioPreguntas=" + formularioPreguntas + ", opcions=" + opcions + ", encuesta=" + encuesta
+				+ "]";
+	}
+
 	public FormularioPregunta removeFormularioPregunta(FormularioPregunta formularioPregunta) {
 		getFormularioPreguntas().remove(formularioPregunta);
 		formularioPregunta.setPregunta(null);

@@ -27,7 +27,7 @@ public abstract class Conexion <T> {
 	
 	public static EntityManager getEm(){
 		if ( em == null ) {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("ORM");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("HuelleritosAPI");
             em = emf.createEntityManager();
         }
 		return em;
@@ -44,6 +44,9 @@ public abstract class Conexion <T> {
 		return lista;
 	}
 	
+	public Class<T> getC(){
+		return c;
+	} 
 	
 	public void insert(T obj){
 		try {
@@ -89,4 +92,6 @@ public abstract class Conexion <T> {
 		 return maxId + 1;
 	 }
 
+	 
+	 
 }
