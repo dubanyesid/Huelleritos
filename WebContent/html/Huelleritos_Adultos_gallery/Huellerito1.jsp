@@ -1,3 +1,8 @@
+<%@page import="co.edu.ufps.huelleritos.entities.EnfermedadHistorial"%>
+<%@page import="co.edu.ufps.huelleritos.entities.VacunaHistorial"%>
+<%@page import="co.edu.ufps.huelleritos.entities.Vacuna"%>
+<%@page import="co.edu.ufps.huelleritos.entities.HistorialAnimal"%>
+<%@page import="java.util.List"%>
 <%@page import="co.edu.ufps.huelleritos.entities.Animal"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  pageEncoding="UTF-8"%>
@@ -109,7 +114,10 @@
 
     <!-- Cuerpo formulario Adoptar aqui -->
     <br><br><br>
+<%
+Animal a = (Animal)request.getAttribute("perfilAnimal");
 
+%>
     <div class="row">
         <div class="col-sm-1"></div>
 
@@ -121,58 +129,24 @@
                             <div class="d-flex flex-column thumbnails">
                                 <!-- imagen pequeÃ±a1 -->
                                 <div id="f1" class="tb tb-active">
-                                    <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/a5/d8/dd/a5d8ddffb8675680ac9f46cb035bd494.jpg"> 
+                                    <img class="thumbnail-img fit-image" src="<%=a.getImagenAnimal()%>"> 
                                 </div>
-                                <!-- imagen pequeÃ±a2 -->
-                                <div id="f2" class="tb">
-                                    <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/4a/ab/db/4aabdbdf057fd1918e1f4925250a1db8.jpg"> 
-                                </div>
-                                <!-- imagen pequeÃ±a3 -->
-                                <div id="f3" class="tb">
-                                    <img class="thumbnail-img fit-image" src="https://i.pinimg.com/originals/e1/20/60/e12060df758477020c519f73ff896ad5.jpg">
-                                </div>
-                                <!-- imagen pequeÃ±a4 -->
-                                <div id="f4" class="tb">
-                                    <img class="thumbnail-img fit-image" src="https://thepitbullworldassociation.files.wordpress.com/2017/02/img_4455.jpg">
-                                </div>
+                               
                             </div>
                             <!-- imagen Grande1 -->
                             <fieldset id="f11" class="active">
                                 <div class="product-pic"> 
-                                    <img class="pic0" src="https://i.pinimg.com/originals/a5/d8/dd/a5d8ddffb8675680ac9f46cb035bd494.jpg">
+                                    <img class="pic0" src="<%=a.getImagenAnimal()%>">
                                 </div>
                             </fieldset>
 
-                            <!-- imagen Grande2 -->
-                            <fieldset id="f21" class="">
-                                <div class="product-pic">
-                                    <img class="pic0" src="https://i.pinimg.com/originals/4a/ab/db/4aabdbdf057fd1918e1f4925250a1db8.jpg">
-                                </div>
-                            </fieldset>
-
-                            <!-- imagen Grande3 -->
-                            <fieldset id="f31" class="">
-                                <div class="product-pic">
-                                    <img class="pic0" src="https://i.pinimg.com/originals/e1/20/60/e12060df758477020c519f73ff896ad5.jpg">
-                                </div>
-                            </fieldset>
-
-                            <!-- imagen Grande4 -->
-                            <fieldset id="f41" class="">
-                                <div class="product-pic">
-                                    <img class="pic0" src="https://thepitbullworldassociation.files.wordpress.com/2017/02/img_4455.jpg">
-                                </div>
-                            </fieldset>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-<%
-Animal a = (Animal)request.getAttribute("perfilAnimal");
 
-%>
         <div class="col-sm-4"><br>
             <h2><%=a.getNombreAnimal() %></h2>
             <p>Sexo: <%=a.getSexo() %></p>
@@ -190,8 +164,34 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
             <div class="container">
                 <a href="#demo" data-toggle="collapse"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Informacion Adicional â</button></a>
                 <div id="demo" class="collapse">
-                    <p><b>Vacunas:</b> xxxxx</p>
-                    <p><b>Enfermedad:</b> xxxxx</p>
+                    <p style="margin-top: 10px;font-size: 28px"><b>Vacunas:</b> </p>
+                    <ol>
+                    <%
+                    List<HistorialAnimal> historiaAnimal= a.getHistorialAnimals();
+                    List<VacunaHistorial>vacunas =historiaAnimal.get(0).getVacunaHistorials();
+                 	
+                    for(int i =0 ; i<vacunas.size();i++){%>
+                    	 <li><p style="font-size: 24px"><b><%=i+1 %>.</b> <%=vacunas.get(i).getVacuna().getNombreVacuna() %> - <b>Fecha</b> : <%=vacunas.get(i).getFechaVacunacion() %></p></li>
+                    	 <%
+                    }
+                   
+                    %>
+                    </ol>
+
+
+  <p style="margin-top: 10px;font-size: 28px"><b>Enfermedades:</b> </p>
+                    <ol>
+                    <%                  
+                 List<EnfermedadHistorial>enfermedades = historiaAnimal.get(0).getEnfermedadHistorials();
+                    
+                    for(int i =0 ; i<enfermedades.size();i++){%>
+                    	 <li><p style="font-size: 24px"><b><%=i+1 %>.</b> <%=enfermedades.get(i).getEnfermedad().getNombreEnfermedad()%> <br><b >Fecha inicio: </b> : <%=enfermedades.get(i).getFechaInicio() %><br>
+                    	 <%=enfermedades.get(i).getFechaFin()==null ? "":"<b>Fecha fin: </b>"+enfermedades.get(i).getFechaFin() %></p></li>
+                    	 <%
+                    }
+                   
+                    %>
+                    </ol>
                 </div>
             </div>
         </div>

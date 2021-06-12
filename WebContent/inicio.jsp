@@ -132,7 +132,7 @@
 		if (a != null) {
 			html = "<div class='col-sm-4'>";
 			html += "  <div class='card centro'>";
-			html += " <img class='card-img-top' src='https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg' alt='Card image cap'>";
+			html += " <img class='card-img-top' src='"+a.getImagenAnimal()+"' alt='Card image cap'>";
 			html += " <div class='card-body'>";
 			html += " <h5 class='card-title'>Edad : " + a.getEdad() + " años</h5>";
 			html += " <h4>" + a.getNombreAnimal() + "</h4>";

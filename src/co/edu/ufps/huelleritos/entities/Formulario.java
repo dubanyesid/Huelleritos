@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -41,11 +43,11 @@ public class Formulario implements Serializable {
 	private Usuario usuarioBean;
 
 	//bi-directional many-to-one association to FormularioAnimal
-	@OneToMany(mappedBy="formulario")
+	@OneToMany(mappedBy="formulario",cascade = CascadeType.PERSIST)
 	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to FormularioPregunta
-	@OneToMany(mappedBy="formulario")
+	@OneToMany(mappedBy="formulario",cascade = CascadeType.PERSIST)
 	private List<FormularioPregunta> formularioPreguntas;
 
 	public Formulario() {
@@ -101,6 +103,20 @@ public class Formulario implements Serializable {
 
 	public String getNombre() {
 		return this.nombre;
+	}
+
+	public Formulario(String apellido, String cedula, String celular, String correo, Date fecha, String nombre,
+			String telefono) {
+		super();
+		this.apellido = apellido;
+		this.cedula = cedula;
+		this.celular = celular;
+		this.correo = correo;
+		this.fecha = fecha;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.formularioPreguntas = new ArrayList<FormularioPregunta>();
+		this.formularioAnimals=new ArrayList<FormularioAnimal>();
 	}
 
 	public void setNombre(String nombre) {

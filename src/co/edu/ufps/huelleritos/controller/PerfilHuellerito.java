@@ -46,14 +46,13 @@ public class PerfilHuellerito extends HttpServlet {
 			return;
 		}
 		AnimalDAO animalDAO = new AnimalDAO();		
-		Animal animalBuscado = animalDAO.find(Integer.parseInt(codigo));
+		Animal animalBuscado = animalDAO.find(codigo);
 		if(animalBuscado==null) {
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
 		request.setAttribute("perfilAnimal", animalBuscado);
 		request.getRequestDispatcher("/html/Huelleritos_Adultos_gallery/Huellerito1.jsp").include(request, response);
-		System.out.println(codigo);
 		
 		
 	}

@@ -10,7 +10,9 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Pregunta.findAll", query="SELECT p FROM Pregunta p")
+@NamedQueries({@NamedQuery(name="Pregunta.findAll", query="SELECT p FROM Pregunta p"),
+	@NamedQuery(name="Pregunta.findAdopta", query="SELECT p FROM Pregunta p WHERE p.encuesta.idEncuesta=1 "),
+	@NamedQuery(name="Pregunta.findHogar", query="SELECT p FROM Pregunta p where p.encuesta.idEncuesta=2" )})
 public class Pregunta implements Serializable {
 	private static final long serialVersionUID = 1L;
 

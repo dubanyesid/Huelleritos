@@ -1,9 +1,5 @@
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import ="co.edu.ufps.huelleritos.entities.*" %>
-<%@ page import ="co.edu.ufps.huelleritos.dao.*" %>
-<%@ page import ="java.util.List" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -77,7 +73,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.jsp">
+                                    <a href="index.html">
                                         <img src="img/Huelleritos.png" alt="">
                                     </a>
                                 </div>
@@ -86,14 +82,14 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a  href="index.jsp">Inicio</a></li>
-                                            <li><a href="html/Huelleritos.jsp">Huelleritos</a></li>
-                                            <li><a href="html/Adopta.jsp">Adopta</a></li>
-                                            <li><a href="html/Apadrinar.jsp">Apadrina</a></li>
-                                            <li><a href="html/Hogar_Paso.jsp">Hogar de paso</a></li>                            
-                                            <li><a href="html/La_Fundacion.jsp">La fundación</a></li>
-                                            <li><a href="html/Noticias.jsp">Noticias</a></li>
-                                            <a href="html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                            <li><a  href="index.html">Inicio</a></li>
+                                            <li><a href="html/Huelleritos.html">Huelleritos</a></li>
+                                            <li><a href="html/Adopta.html">Adopta</a></li>
+                                            <li><a href="html/Apadrinar.html">Apadrina</a></li>
+                                            <li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>                            
+                                            <li><a href="html/La_Fundacion.html">La fundación</a></li>
+                                            <li><a href="html/Noticias.html">Noticias</a></li>
+                                            <a href="html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                         </ul>
                                     </nav>
                                 </div>
@@ -135,84 +131,76 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h2 class="centro">DILIGENCIAR FORMULARIO<hr class="potaxio"></h2>
-                    <form method="post" action="Adoptar/Enviar">
+                    <form>
                         <h3 class="titulos">Datos personales:</h3>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Nombre</label>
-                            <input name="nombre" type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Nombre">
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Nombre">
                         </div>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Apellido</label>
-                            <input name="apellido" type="text" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su Apellido">
+                            <label for="formGroupExampleInput">Edad</label>
+                            <input type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su edad">
                         </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ocupacion</label>
-                            <input name="ocupacion" type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Ocupacion">
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Ocupacion">
                         </div> 
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Direccion de Residencia</label>
-                            <input name="direccion" type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su direccion">
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su direccion">
                         </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Email</label>
-                            <input name="correo" type="email" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su correo electrónico">
+                            <input type="email" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su correo electrónico">
                         </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Teléfono</label>
-                            <input name="telefono" type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Telefono">
+                            <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Telefono">
                         </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Celular</label>
-                            <input name="celular" type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Celular">
-                        </div>                       
+                            <input type="number" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Celular">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Fecha</label>
+                            <input type="date" required class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput">Cédula</label>
-                            <input name="cedula" type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su cédula">
+                            <input type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su cédula">
                         </div> 
 
                         <!-- DATOS FAMILIARES-->
                         <br>
- 
+
                         <h3 class="titulos">Datos familiares:</h3>
 
- 						<% 
- 						List<Pregunta> preguntas = (ArrayList<Pregunta>)request.getAttribute("preguntas");
- 						Pregunta[] p = (Pregunta[])preguntas.toArray(new Pregunta[preguntas.size()]);
- 						List<Animal> animales = (ArrayList<Animal>)request.getAttribute("animales");
- 						%>
-
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[0].getTexto() %></label>
+                            <label for="formGroupExampleInput2">Número de personas que viven en el hogar</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                
-                                <%
-                                for(Opcion o:p[0].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[0].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-                               <% }%>
-                                
+                                <select>
+                                    <option value="1-1">Solo vivo yo</option>
+                                    <option value="1-2">2 a 4 personas</option>
+                                    <option value="1-3">Más de cuatro personas</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[1].getTexto() %> (Si la respuesta es si, responda la siguiente pregunta)</label>
+                            <label for="formGroupExampleInput2">¿Tiene niños en casa? (Si la respuesta es si, responda la siguiente pregunta)</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% 
-                                for(Opcion o:p[1].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[1].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-                               <% }%>
+                                <select>
+                                    <option value="2-4">Si</option>
+                                    <option value="2-5">No</option>
                                 </select>
                             </div>
                         </div>
@@ -220,15 +208,13 @@
                         <br>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[2].getTexto() %> de los niños</label>
+                            <label for="formGroupExampleInput2">Edades de los niños</label>
                             <div class="default-select" id="default-select">
-                                
-                                <% %>
-                                <select name="preguntas">
-                                     <% for(Opcion o:p[2].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[2].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-                               		<% }%>
+                                <select>
+                                    <option value="3">1 a 6 años</option>
+                                    <option value="3">6 a 9 años</option>
+                                    <option value="3">Mayor de 9 años</option>
+                                    <option value="3">No Aplica</option>
                                 </select>
                             </div>
                         </div>
@@ -236,13 +222,11 @@
                         <br>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[3].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Todos están de acuerdo en la tenencia de la mascota?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                 <% for(Opcion o:p[3].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[3].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-                               	 <% }%>
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
@@ -251,52 +235,45 @@
 
                         <h3 class="titulos">Datos de la vivienda:</h3>
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[4].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿La vivienda es propia?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                 <% for(Opcion o:p[4].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[4].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[5].getTexto() %></label>
+                            <label for="formGroupExampleInput2">En caso de ser arrendada, ¿los arrendatarios están de acuerdo en la tenencia de animales?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[5].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[5].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                    
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
+                                    <option value="1">No aplica</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[6].getTexto() %></label>
+                            <label for="formGroupExampleInput2">En caso de mudarse, ¿llevarías a la mascota contigo?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[6].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[6].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                    
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[7].getTexto() %></label>
+                            <label for="formGroupExampleInput2">En caso de una ruptura en tu familia (divorcio o fallecimiento) ¿Qué pasaría con la mascota?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[7].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[7].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                    
+                                <select>
+                                    <option value="1">Le dejo mi mascota a otro miembro de la familia. </option>
+                                    <option value="1">Le dejo la mascota a mi pareja.</option>
+                                    <option value="1">La mascota se queda conmigo.</option>
+                                    <option value="1">Doy en adopción la mascota.</option>
+                                    <option value="1">Vendo la mascota.</option>
                                 </select>
                             </div>
                         </div>
@@ -307,83 +284,122 @@
                         <h3 class="titulos">Sobre Mascotas anteriores</h3>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[8].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Has tenido mascotas anteriormente?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[8].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[8].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[9].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Cuáles? Perro, gato, aves, peces, tortuga, otro?</label>
                             <br>
                             <div class="container">
-                                 <%
-                             for(Opcion o:p[9].getOpcions()){
-                           	 %>
-                           	<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio"   name="radio<%=p[9].getIdPregunta() %>" id="inlineRadio<%=p[9].getIdPregunta() %>" value="<%=p[9].getIdPregunta()+"-"+o.getIdOpcion()%>">
-                                    <label class="form-check-label" for="inlineRadio<%=p[9].getIdPregunta() %>"><%=o.getTexto() %></label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">perro y/o gato</label>
                                 </div>
                                 <br>
-							<%}%> 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">aves</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">peces</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">tortuga</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">otros</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">NO APLICA</label>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[10].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Qué pasó con ellos?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[10].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[10].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                    
+                                <select>
+                                    <option value="1">Los di en adopción</option>
+                                    <option value="1">Los regalé</option>
+                                    <option value="1">Fallecieron</option>
+                                    <option value="1">Se me perdieron</option>
+                                    <option value="1">Todavía están conmigo</option>
                                 </select>
                             </div>
                         </div>
                         
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[11].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Dónde dormían las mascotas?</label>
                             <br>
                             <div class="container">
-                               <%
-                             for(Opcion o:p[11].getOpcions()){
-                           	 %>
-                           	<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="radio<%=p[11].getIdPregunta() %>" id="inlineRadio<%=p[11].getIdPregunta() %>" value="<%=p[11].getIdPregunta()+"-"+o.getIdOpcion()%>">
-                                    <label class="form-check-label" for="inlineRadio<%=p[11].getIdPregunta() %>"><%=o.getTexto() %></label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Conmigo en la cama (o cualquier otro familiar)</label>
                                 </div>
                                 <br>
-							<%}%> 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">En la sala</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En el patio</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En su propia cama</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En cualquier parte de la casa</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Por fuera de la casa</label>
+                                </div>
+                                <br>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[12].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Cómo reprendes a los animales cuando tienen malos comportamientos?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[12].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[12].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                   
+                                <select>
+                                    <option value="1">Encerrando el animal en el patio o en un cuarto</option>
+                                    <option value="1">Gritándole</option>
+                                    <option value="1">Dejándolo sin comida</option>
+                                    <option value="1">Pegándole con un periódico</option>
+                                    <option value="1">Pegándole con una sandalia</option>
+                                    <option value="1">Pegándole con otro objeto</option>
+                                    <option value="1">Llamándole la atención y castigandolo</option> 
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[13].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Tienen/tenían las vacunas al día?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[13].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[13].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
@@ -395,91 +411,110 @@
                         <h3 class="titulos">Sobre la Adopcion</h3>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput2"><%=p[14].getTexto() %></label>
-                             <br>
-                             <div class="default-select" id="default-select">
-                            <select name="animal">
-                            <!-- <input type="text" required class="form-control" name="animal"  placeholder="Ingrese el nombre del peludito"> -->
-                            <%
-                            %>
-                             <% for(Animal a:animales){
-                                	 %>
-                                	<option value="<%=a.getCodigoAnimal()%>"><%=a.getNombreAnimal()%></option>
-								<%}%>
-                            <%
-                            %>
-                            </select>
-                            </div>
+                            <label for="formGroupExampleInput2">¿Qué mascota deseas adoptar?</label>
+                            <input type="text" required class="form-control" id="formGroupExampleInput2" placeholder="Ingrese el nombre del peludito">
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[15].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Por qué deseas adoptarl@?</label>
                             <br>
                             <div class="container">
-                            <%
-                             for(Opcion o:p[15].getOpcions()){
-                           	 %>
-                           	<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="radio<%=p[15].getIdPregunta() %>" id="inlineRadio<%=p[15].getIdPregunta() %>" value="<%=p[15].getIdPregunta()+"-"+o.getIdOpcion()%>">
-                                    <label class="form-check-label" for="inlineRadio<%=p[15].getIdPregunta() %>"><%=o.getTexto() %></label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Porque me siento solo/a y me haría compañía</label>
                                 </div>
                                 <br>
-							<%}%>                          
-                               
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Porque quiero ayudar al animal</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Siempre quise tener un animal</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En cualquier parte de la casa</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Porque mis hijos quieren un animal</label>
+                                </div>
+                                <br>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[16].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Estás dispuest@ a cuidar de él/ella cuando esté viejo?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[16].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[16].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-
+                                <select>
+                                    <option value="1">Si</option>
+                                    <option value="1">No</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[17].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Dónde dormirá la mascota?</label>
                             <br>
                             <div class="container">
-                                 <%
-                             for(Opcion o:p[17].getOpcions()){
-                           	 %>
-                           	<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="radio<%=p[17].getIdPregunta() %>" id="inlineRadio<%=p[17].getIdPregunta() %>" value="<%=p[17].getIdPregunta()+"-"+o.getIdOpcion()%>">
-                                    <label class="form-check-label" for="inlineRadio<%=p[17].getIdPregunta() %>"><%=o.getTexto() %></label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Conmigo en la cama (o cualquier otro familiar)</label>
                                 </div>
                                 <br>
-							<%}%> 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En la sala</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En el patio</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En su propia cama</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">En cualquier parte de la casa</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Por fuera de la casa</label>
+                                </div>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[18].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Cuánto tiempo pasará sola la mascota diariamente?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[18].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[18].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                    
+                                <select>
+                                    <option value="1">De 1 a 2 horas</option>
+                                    <option value="1">De 2 a 4 horas</option>
+                                    <option value="1">De 4 a 6 horas</option>
+                                    <option value="1">De 6 a 7 horas</option>
+                                    <option value="1">Más de 8 horas</option>
+                                    <option value="1">Siempre estaría conmigo</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="single-element-widget mt-30">
-                            <label for="formGroupExampleInput2"><%=p[19].getTexto() %></label>
+                            <label for="formGroupExampleInput2">¿Quién cubrirá los gastos de la mascota?</label>
                             <div class="default-select" id="default-select">
-                                <select name="preguntas">
-                                <% for(Opcion o:p[19].getOpcions()){
-                                	 %>
-                                	<option value="<%=p[19].getIdPregunta()+"-"+o.getIdOpcion()%>"><%=o.getTexto()%></option>
-								<%}%>
-                                   
+                                <select>
+                                    <option value="1">Yo (como dueño/a)</option>
+                                    <option value="1">Mis papás</option>
+                                    <option value="1">Mi pareja</option>
+                                    <option value="1">Otro miembro de la familia</option>
                                 </select>
                             </div>
                         </div>
