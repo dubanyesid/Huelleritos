@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Bootstrap 4 Template with Sidebar Menu</title>
+        <title>Huelleritos</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
@@ -52,33 +52,34 @@
 				</div>
 				
 				
-					<h3><a href="index.html"> Logo</a></h3>
+					<h3><img src="assets/img/Huelleritos.png"></h3>
 				
 				
 				<ul class="list-unstyled menu-elements" >
-					<li class="active">
-						<a class="scroll-link" href="#top-content"></i>Inicio</a>
+					<li>
+						<a  href="inicioAdmin.jsp">Inicio</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-1"></i>Animales</a>
+						<a  href="lista-animales.jsp">Animales</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-2"></i>Donaciones</a>
+						<a href="donaciones.jsp">Donaciones</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-5"></i>Seguimiento</a>
+						<a href="seguimiento-animal.jsp">Seguimiento</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Solicitudes Adopcion</a>
+						<a href="solicitud-adoptante.jsp">Solicitudes Adopcion</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Solicitudes Hogares de Paso</a>
+						<a  href="solicitud-hogar-paso.jsp">Solicitudes Hogares de Paso</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Noticias y Eventos</a>
+						<a  href="noticia.jsp">Noticias y Eventos</a>
 					</li>
 					
 				</ul>
+				
 				
 				
 				<div class="dark-light-buttons">
