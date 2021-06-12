@@ -15,10 +15,6 @@ import java.util.List;
 	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
 	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
 	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'")
-<<<<<<< HEAD
-=======
-	
->>>>>>> 5bcae7bbf695b01b5295dabd4341f877ad7dd930
 })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -267,7 +263,7 @@ public class Animal implements Serializable {
 	public String toString() {
 		return "Animal [codigoAnimal=" + codigoAnimal + ", color=" + color + ", descripcion=" + descripcion + ", edad="
 				+ edad + ", fechaIngreso=" + fechaIngreso + ", imagenAnimal=" + imagenAnimal + ", nombreAnimal="
-				+ nombreAnimal + ", peso=" + peso + ", raza=" + raza + ", sexo=" + sexo + ", usuario_DNI=" + usuario_DNI
+				+ nombreAnimal + ", peso=" + peso + ", raza=" + raza + ", sexo=" + sexo +""
 				+ ", estadoAnimalBean=" + estadoAnimalBean + ", guarderia=" + guarderia + ", prioridad=" + prioridad
 				+ ", tipoAnimal=" + tipoAnimal + ", formularioAnimals=" + formularioAnimals + ", historialAnimals="
 				+ historialAnimals + ", seguimientoAnimals=" + seguimientoAnimals + "]";

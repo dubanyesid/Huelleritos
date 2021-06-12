@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" href="../assets/css/animate.css">
-        <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/media-queries.css">
+        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.png">
@@ -52,33 +52,34 @@
 				</div>
 				
 				
-					<h3><a href="index.html"> Logo</a></h3>
+					<h3><img src="assets/img/Huelleritos.png"></h3>
 				
 				
 				<ul class="list-unstyled menu-elements" >
-					<li class="active">
-						<a class="scroll-link" href="#top-content"></i>Inicio</a>
+					<li>
+						<a  href="inicioAdmin.jsp">Inicio</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-1"></i>Animales</a>
+						<a  href="lista-animales.jsp">Animales</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-2"></i>Donaciones</a>
+						<a href="donaciones.jsp">Donaciones</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-5"></i>Seguimiento</a>
+						<a href="seguimiento-animal.jsp">Seguimiento</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Solicitudes Adopcion</a>
+						<a href="solicitud-adoptante.jsp">Solicitudes Adopcion</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Solicitudes Hogares de Paso</a>
+						<a  href="solicitud-hogar-paso.jsp">Solicitudes Hogares de Paso</a>
 					</li>
 					<li>
-						<a class="scroll-link" href="#section-6"></i>Noticias y Eventos</a>
+						<a  href="noticia.jsp">Noticias y Eventos</a>
 					</li>
 					
 				</ul>
+				
 				
 				
 				<div class="dark-light-buttons">
