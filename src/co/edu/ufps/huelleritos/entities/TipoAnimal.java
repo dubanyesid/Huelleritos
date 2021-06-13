@@ -28,6 +28,9 @@ public class TipoAnimal implements Serializable {
 	public TipoAnimal() {
 	}
 
+	public TipoAnimal(String descripcion) {
+		this.descripcion=descripcion;
+	}
 	public int getId() {
 		return this.id;
 	}

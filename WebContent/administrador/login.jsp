@@ -25,7 +25,7 @@
      
       <div class="container-login">
         <div class="wrap-login">
-            <form class="login-form validate-form" id="formLogin" action="" method="post">
+            <form class="login-form validate-form" id="formLoginn" action="Login/Log" method="post">
                 <span class="login-form-title">LOGIN</span>
                 
                 <div class="wrap-input100" data-validate = "Usuario incorrecto">
@@ -38,10 +38,10 @@
                     <span class="focus-efecto"></span>
                 </div>
                  <div class="wrap-input100" >
-                <select name="">
-                <option value="Administrador">Administrador</option>
-                <option value="Hogar_Paso" selected>Hogar de Paso</option>
-                <option value="Adoptante">Adoptante</option>
+                <select name="tipo">
+                <option value="admin">Administrador</option>
+                <option value="hogar" selected>Hogar de Paso</option>
+                <option value="adoptante">Adoptante</option>
                 </select>
     </div>
                 

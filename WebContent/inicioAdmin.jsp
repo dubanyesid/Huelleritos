@@ -60,7 +60,7 @@
 						<a  href="inicioAdmin.jsp">Inicio</a>
 					</li>
 					<li>
-						<a  href="lista-animales.jsp">Animales</a>
+						<a  href="admin/animal/listar">Animales</a>
 					</li>
 					<li>
 						<a href="donaciones.jsp">Donaciones</a>

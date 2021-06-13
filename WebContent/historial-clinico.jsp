@@ -15,17 +15,19 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
-
+        <link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="../../assets/css/animate.css">
+        <link rel="stylesheet" href="../../assets/css/estilos.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/media-queries.css">
+        
+        
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
 
@@ -41,7 +43,7 @@
     	</div>    	
 
 		<!-- Wrapper -->
-    	<div class="wrapper">
+    	
 
 			<!-- Sidebar -->
 			<nav class="sidebar">
@@ -52,7 +54,7 @@
 				</div>
 				
 				
-					<h3><img src="assets/img/Huelleritos.png"></h3>
+					<h3><img src="../../assets/img/Huelleritos.png"></h3>
 				
 				
 				<ul class="list-unstyled menu-elements" >
@@ -89,84 +91,210 @@
 			<!-- End sidebar -->
 			
 			<!-- Dark overlay -->
-    		<div class="overlay"></div>
+    		
 
 			<!-- Content -->
-			<div class="content mt-5">
+			
 			
 				<!-- open sidebar menu -->
 				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
                     <i class="fas fa-align-left"></i> <span>Menu</span>
                 </a>
-			<div class="container">
-				<div>
-					<h1>
-						HISTORIAL CLINICO
-					</h1>
-				</div>
-						<form>
-					        <div class="form-row">
-					            <div class="form-group col-md-3">
-					                <label for="codigo">Código</label>
-					                <input type="text" name="codigo" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">            
-					                <label for="nombre">Nombre</label>
-					                <input type="text" name="nombre" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="tipo">tipo</label>
-					                <input type="text" name="tipo" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="fecha">Fecha</label>
-					                <input type="date" name="fecha" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="raza">Raza</label>
-					                <input type="text" name="raza" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="edad">Edad</label>
-					                <input type="number" name="edad" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="peso">Peso</label>
-					                <input type="number" name="peso" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">
-					                <label for="color">Color</label>
-					                <input type="text" name="color" class="form-control">
-					            </div>
-					            <div class="form-group col-md-4">
-		                			<label for="descripcion">Descripción</label>
-		                			<textarea class="form-control" id="descripcion" rows="3"></textarea>
-		            			</div>
-		            				<div class="col-md-10">
-		            					<h2>
-		            					Enfermedades
-		            				</h2>
-		            				</div>
-		            				
-					                <div class="form-group col-md-4">
-						                <label for="nombre">Nombre</label>
-						                <input type="text" name="nombre" class="form-control">
-					            	</div>
-					            	<div class="form-group col-md-4">
-						                <label for="medicina">Medicina</label>
-						                <input type="text" name="medicina" class="form-control">
-					            	</div>
-		            			
-					            
-					        </div> <!-- cierre de form-row -->
-					        <!-- dejo fuera a submit -->
-					        <div class="form-group">
-					            <input type="submit" value="Guardar" class="btn btn-dark">
-					        </div>
-					    </form>
-			</div>
+               			 <h1><strong>HISTORIAL CLINICO #</strong></h1>
+		        		<h3><strong>ID ANIMAL #</strong></h3>
+		        	<div class="container">
 
-		        	
+        <h1 class="text-left" style=""><strong>VACUNACIÓN</strong></h1><br>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" action="#">
+                    <ul class="contact-form">
+                        <li>
+                            <div ><h6>NOMBRE</h6>
+                            	<select name="">
+  								<option value="value1" selected></option>
+  								<option value="value2" >Value 2</option>
+  								<option value="value3">Value 3</option>
+								</select>
+                              
+                            </div>
+
+                            <div><h6>DESCIPCION</h6>
+                                <input name="descripcion" placeholder="Escribe Descripcion" required="required" size="8" type="text" />
+                            </div>
+                        </li>
+
+                        <li>
+                            <div ><h6>FECHA</h6>
+                                <input name="date" placeholder="Escribe la Fecha" required="required" size="8" type="date" />
+                            </div>
+   <li>
+   
+                            <div class="col-md-12">
+                                <button type="submit">
+                    ELIMINAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>	
+                            
+                        <li>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    EDITAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    AGREGAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div><br><br><br>
+         <h1 class="text-left" style=""><strong>OPERACIONES</strong></h1><br>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" action="#">
+                    <ul class="contact-form">
+                        <li>
+                            <div ><h6> NOMBRE</h6>
+                            	<select name="">
+  								<option value="value1" selected></option>
+  								<option value="value2" >Value 2</option>
+  								<option value="value3">Value 3</option>
+								</select>
+                              
+                            </div>
+
+                            
+                        </li>
+
+                        <li>
+                        	 <div ><h6>FECHA DE OPERACION</h6>
+                                <input name="date" placeholder="Escribe Fecha Operacion" required="required" size="8" type="date" />
+                            </div>
+                            <div ><h6>FECHA DE RECUPERACION</h6>
+                                <input name="date" placeholder="Escribe Fecha Recuperacion	" required="required" size="8" type="date" />
+                            </div>
+                            <div ><h6>OBSERVACIONES</h6>
+                                <textarea name="date" placeholder="Escribe Observaciones" required="required" size="8" type="date" ></textarea>
+                            </div>
+   <li>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    ELIMINAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>	
+                            
+                        <li>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    EDITAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div><div class="col-md-12">
+                                <button type="submit">
+                    AGREGAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    <br><br><br>
+         <h1 class="text-left" style=""><strong>ENFERMEDADES</strong></h1><br>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" action="#">
+                    <ul class="contact-form">
+                        <li>
+                            <div ><h6>NOMBRE</h6>
+                            	<select name="">
+  								<option value="value1" selected></option>
+  								<option value="value2" >Value 2</option>
+  								<option value="value3">Value 3</option>
+								</select>
+                              
+                            </div>
+
+                            
+                        </li>
+
+                        <li>
+                        	 <div ><h6>TRATAMIENTO</h6>
+                                <input name="date" placeholder="Escribe El tratamiento" required="required" size="8" type="text" />
+                            </div>
+                            <div ><h6>FECHA DE INICIO</h6>
+                                <input name="date" placeholder="Escribe Fecha Inicio	" required="required" size="8" type="date" />
+                            </div>
+                            <div ><h6>FECHA DE RECUPERACION</h6>
+                                <input name="date" placeholder="Escribe Fecha Recuperacion	" required="required" size="8" type="date" />
+                            </div>
+   <li>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    ELIMINAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>	
+                            
+                        <li>
+                            <div class="col-md-12">
+                                <button type="submit">
+                    EDITAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div><div class="col-md-12">
+                                <button type="submit">
+                    AGREGAR
+                    <span
+                      class="glyphicon glyphicon-arrow-right"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
 		        <!-- Footer -->
 		        <footer class="footer-container">
 		
@@ -182,22 +310,22 @@
 		
 		        </footer>
 	        
-	        </div>
+	        
 	        <!-- End content -->
         
-        </div>
+        
         <!-- End wrapper -->
 
         <!-- Javascript -->
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+		<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+		<script src="../../assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="../../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../../assets/js/wow.min.js"></script>
+        <script src="../../assets/js/jquery.waypoints.min.js"></script>
+        <script src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../../assets/js/scripts.js"></script>
 
     </body>
 

@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +16,8 @@ import java.util.List;
 @NamedQueries({
 	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
 	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
-	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'")
+	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'"),
+	@NamedQuery(name="Animal.findAllAdoptado", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Adoptado'")
 })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -71,7 +74,7 @@ public class Animal implements Serializable {
 	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to HistorialAnimal
-	@OneToMany(mappedBy="animal")
+	@OneToMany(mappedBy="animal",cascade = CascadeType.PERSIST)
 	private List<HistorialAnimal> historialAnimals;
 
 	//bi-directional many-to-one association to SeguimientoAnimal
@@ -81,6 +84,36 @@ public class Animal implements Serializable {
 	public Animal() {
 	}
 
+	
+	public Animal(String codigoAnimal, String color, String descripcion, int edad, Date fechaIngreso,
+			String imagenAnimal, String nombreAnimal, String peso, String raza, String sexo) {
+		super();
+		this.codigoAnimal = codigoAnimal;
+		this.color = color;
+		this.descripcion = descripcion;
+		this.edad = edad;
+		this.fechaIngreso = fechaIngreso;
+		this.imagenAnimal = imagenAnimal;
+		this.nombreAnimal = nombreAnimal;
+		this.peso = peso;
+		this.raza = raza;
+		this.sexo = sexo;
+		
+	}
+
+	public void iniciarHistoria() {
+		this.historialAnimals=new ArrayList<HistorialAnimal>();
+		HistorialAnimal historia=new HistorialAnimal();
+		historia.setAnimal(this);
+		historia.setObservaciones("1-No contiene observaciones");
+		this.historialAnimals.add(historia);
+	}
+
+	public Animal(String codigoAnimal,String nombre,String descripcion) {
+		this.codigoAnimal=codigoAnimal;
+		this.nombreAnimal=nombre;
+		this.tipoAnimal=new TipoAnimal(descripcion);
+	}
 	public String getCodigoAnimal() {
 		return this.codigoAnimal;
 	}

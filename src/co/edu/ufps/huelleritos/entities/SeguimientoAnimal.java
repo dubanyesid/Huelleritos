@@ -11,7 +11,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="seguimiento_animal")
-@NamedQuery(name="SeguimientoAnimal.findAll", query="SELECT s FROM SeguimientoAnimal s")
+@NamedQueries({@NamedQuery(name="SeguimientoAnimal.findAll", query="SELECT s FROM SeguimientoAnimal s"),
+	@NamedQuery(name="SeguimientoAnimal.findByAnimal", query="SELECT s FROM SeguimientoAnimal s join s.animal a where a.codigoAnimal=:codigoAnimal")})
 public class SeguimientoAnimal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
