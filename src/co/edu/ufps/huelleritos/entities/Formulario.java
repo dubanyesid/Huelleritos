@@ -13,7 +13,12 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Formulario.findAll", query="SELECT f FROM Formulario f")
+@NamedQueries({@NamedQuery(name="Formulario.findAll", query="SELECT f FROM Formulario f"),
+	@NamedQuery(name="Formulario.findAdopcion", query="SELECT f FROM Formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
+			+ " INNER JOIN u.adoptante a ON a.usuarioBean.usuario=u.usuario"),
+	@NamedQuery(name="Formulario.findHogar", query="SELECT f FROM Formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
+			+ " INNER JOIN u.hogarDePaso h ON h.usuarioBean.usuario=u.usuario")})
+
 public class Formulario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -118,6 +123,18 @@ public class Formulario implements Serializable {
 		this.formularioPreguntas = new ArrayList<FormularioPregunta>();
 		this.formularioAnimals=new ArrayList<FormularioAnimal>();
 	}
+	
+	
+
+	public Formulario(Integer idFormulario, String nombre, String apellido, String correo, String celular, Date fecha) {
+		super();
+		this.idFormulario = idFormulario;
+		this.apellido = apellido;
+		this.celular = celular;
+		this.correo = correo;
+		this.fecha = fecha;
+		this.nombre = nombre;
+	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -183,4 +200,13 @@ public class Formulario implements Serializable {
 		return formularioPregunta;
 	}
 
+	@Override
+	public String toString() {
+		return "Formulario [idFormulario=" + idFormulario + ", apellido=" + apellido + ", cedula=" + cedula
+				+ ", celular=" + celular + ", correo=" + correo + ", fecha=" + fecha + ", nombre=" + nombre
+				+ ", telefono=" + telefono + ", usuarioBean=" + usuarioBean + "]";
+	}
+
+	
+	
 }

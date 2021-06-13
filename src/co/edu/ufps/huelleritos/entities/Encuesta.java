@@ -29,6 +29,16 @@ public class Encuesta implements Serializable {
 	public Encuesta() {
 	}
 
+	
+	
+	public Encuesta(Integer idEncuesta, String tipo) {
+		super();
+		this.idEncuesta = idEncuesta;
+		this.tipo = tipo;
+	}
+
+
+
 	public int getIdEncuesta() {
 		return this.idEncuesta;
 	}

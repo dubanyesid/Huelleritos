@@ -108,17 +108,19 @@
 				</div>
 						<form>
 					        <div class="form-row">
-					            <div class="form-group col-md-3">
-					                <label for="fecha">Fecha</label>
-					                <input type="text" name="fecha" class="form-control">
-					            </div>
-					            <div class="form-group col-md-3">            
+					        
+					        <div class="form-group col-md-3">            
 					                <label for="nombre">Nombre</label>
 					                <input type="text" name="nombre" class="form-control">
 					            </div>
+					            
 					            <div class="form-group col-md-3">
 					                <label for="apellido">Apellido</label>
 					                <input type="text" name="apellido" class="form-control">
+					            </div>
+					            <div class="form-group col-md-3">
+					                <label for="fecha">Fecha</label>
+					                <input type="text" name="fecha" class="form-control">
 					            </div>
 					            <div class="form-group col-md-3">
 					                <label for="cedula">No.Cédula</label>
@@ -203,7 +205,7 @@
 							<h2>Datos Familiares y de Vivienda</h2>
 					        <form>
 
-							  <div class="form-group row">
+							  <!-- <div class="form-group row">
 							    <label for="" class="col-sm-7 col-form-label">Número de personas que viven en el hogar</label>
 							    <div class="col-sm-5">
 							      <input type="number" class="form-control" id="">
@@ -247,8 +249,14 @@
 							    <div class="col-sm-5">
 							      <input type="text" class="form-control" id="">
 							    </div>
-							  </div>
-
+							  </div> -->
+							   <div class="form-row">
+					        
+					        <div class="form-group col-md-3">            
+					                <label for="nombre">Nombre</label>
+					                <input type="text" name="nombre" class="form-control">
+					            </div>
+</div>
 
 							  <h2>Sobre las mascotas del hogar</h2>
 					        <form>
