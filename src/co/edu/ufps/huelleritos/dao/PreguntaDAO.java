@@ -28,7 +28,7 @@ public class PreguntaDAO extends Conexion<Pregunta> implements GenericDAO<Pregun
 		return lista;
 	}
 	
-	public List<Puntaje> listPreguntas(Integer idFormulario) {
+	public List<String> listPreguntas(Integer idFormulario) {
 		Query consulta = getEm().createNativeQuery(
 				"select pregunta.texto,opcion.texto from pregunta INNER JOIN formulario_pregunta fpregunta on fpregunta.id_pregunta=pregunta.id_pregunta "
 				+ "INNER JOIN opcion on opcion.id_pregunta=pregunta.id_pregunta and fpregunta.id_opcion=opcion.id_opcion "
@@ -36,12 +36,11 @@ public class PreguntaDAO extends Conexion<Pregunta> implements GenericDAO<Pregun
 				+ "INNER JOIN formulario on fpregunta.id_formulario=formulario.id_formulario where formulario.id_formulario=:id_formulario "
 				+ "order by pregunta.id_pregunta ASC").setParameter("id_formulario", idFormulario);
 		List<Object []> lista = consulta.getResultList();
-		List<Puntaje> listPuntajes =null;
+		List<String> listPuntajes =null;
 		if(lista!=null) {
 			listPuntajes = new ArrayList<>();
 			for(Object [] s:lista) {
-				Formulario f =new Formulario(Integer.parseInt(s[0].toString()),s[1].toString(),s[2].toString(),s[3].toString(),s[4].toString(),(Date)(s[5]));
-				listPuntajes.add(s[0].toString());
+				listPuntajes.add(s[1].toString());
 			}
 		}
 		return listPuntajes;

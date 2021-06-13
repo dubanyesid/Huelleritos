@@ -106,6 +106,8 @@
 						SOLICITUD #
 					</h1>
 				</div>
+				
+				<%List<String> list =request.getAttribute("lista"); %>
 						<form>
 					        <div class="form-row">
 					        
@@ -205,7 +207,7 @@
 							<h2>Datos Familiares y de Vivienda</h2>
 					        <form>
 
-							  <!-- <div class="form-group row">
+							  <div class="form-group row">
 							    <label for="" class="col-sm-7 col-form-label">Número de personas que viven en el hogar</label>
 							    <div class="col-sm-5">
 							      <input type="number" class="form-control" id="">
@@ -249,14 +251,8 @@
 							    <div class="col-sm-5">
 							      <input type="text" class="form-control" id="">
 							    </div>
-							  </div> -->
-							   <div class="form-row">
-					        
-					        <div class="form-group col-md-3">            
-					                <label for="nombre">Nombre</label>
-					                <input type="text" name="nombre" class="form-control">
-					            </div>
-</div>
+							  </div>
+
 
 							  <h2>Sobre las mascotas del hogar</h2>
 					        <form>

@@ -1,3 +1,7 @@
+<%@page import="co.edu.ufps.huelleritos.entities.Prioridad"%>
+<%@page import="co.edu.ufps.huelleritos.entities.Guarderia"%>
+<%@page import="co.edu.ufps.huelleritos.entities.TipoAnimal"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -5,7 +9,7 @@
     <head>
 
 		<!-- Required meta tags -->
-        <meta charset="utf-8">
+        <meta charset="ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <title>Formulario Animal</title>
@@ -14,17 +18,17 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
+        <link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="../../assets/css/animate.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/media-queries.css">
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
 
@@ -50,12 +54,12 @@
 					<i class="fas fa-arrow-left"></i>
 				</div>
 				
-				<h3><img src="assets/img/Huelleritos.png"></h3>
+				<h3><img src="../../assets/img/Huelleritos.png"></h3>
 				
 				
 				<ul class="list-unstyled menu-elements" >
 					<li>
-						<a  href="inicioAdmin.jsp">Inicio</a>
+						<a  href="admin">Inicio</a>
 					</li>
 					<li>
 						<a  href="lista-animales.jsp">Animales</a>
@@ -104,15 +108,34 @@
 						DATOS DEL ANIMAL
 					</h1>
 				</div>
-						<form>
+						<form method="post" action="agregar/enviar">
 		        <div class="form-row">
+		        <div class="form-group col-md-4">
+		                <label for="nombre">Codigo Animal</label>
+		                <input type="text" name="codigo" class="form-control">
+		            </div>
 		            <div class="form-group col-md-4">
 		                <label for="nombre">Nombre</label>
 		                <input type="text" name="nombre" class="form-control">
 		            </div>
+		            
 		            <div class="form-group col-md-4">            
 		                <label for="tipo-animal">Tipo Animal</label>
-		                <input type="text" name="tipo-animal" class="form-control">
+		                <select name="tipo" class="form-control">
+		                <%
+		                List<TipoAnimal>tipoAnimales =(List<TipoAnimal>)request.getAttribute("tipos");
+		                		
+		                		if(tipoAnimales!=null){
+		                			for(TipoAnimal tipoAnimal : tipoAnimales){		                				
+		                		
+		                %>
+		                		<option value="<%=tipoAnimal.getId()%>"><%=tipoAnimal.getDescripcion() %></option>
+		                <%
+		                			}
+		                		}
+		                %>
+		                
+		                </select>
 		            </div>
 		            <div class="form-group col-md-4">
 		                <label for="fecha">Fecha de ingreso</label>
@@ -122,8 +145,8 @@
 		                <label for="sexo">Sexo</label>
 		                <select name="sexo" id="tasking" class="form-control">
 		                    <option value="" selected>Selecione</option>
-		                    <option value="value1">Masculino</option>
-		                    <option value="value1">Femenino</option>
+		                    <option value="Macho">Masculino</option>
+		                    <option value="Hembra">Femenino</option>
 		                </select>
 		            </div>
 		            <div class="form-group col-md-4">
@@ -142,22 +165,83 @@
 		                <label for="color">Color</label>
 		                <input type="text" name="color" class="form-control">
 		            </div>
-		            <div class="form-group col-md-4">
+		           <!--  <div class="form-group col-md-4">
 		                <label for="estado">Estado</label>
 		                <input type="text" name="estado" class="form-control">
+		            </div> -->
+		             <div class="form-group col-md-4">            
+		                <label for="tipo-animal">Guarderia</label>
+		                <select name="guarderia" class="form-control">
+		                <%
+		                List<Guarderia>guarderias =(List<Guarderia>)request.getAttribute("guarderias");
+		                		
+		                		if(guarderias!=null){
+		                			for(Guarderia guarderia : guarderias){		                				
+		                		
+		                %>
+		                		<option value="<%=guarderia.getNombreGuarderia()%>"><%=guarderia.getNombreGuarderia()+" - "+guarderia.getDireccion() %></option>
+		                <%
+		                			}
+		                		}
+		                %>
+		                
+		                </select>
+		            </div>
+		             <div class="form-group col-md-4">            
+		                <label for="tipo-animal">Prioridad</label>
+		                <select name="prioridad" class="form-control">
+		                <%
+		               List<Prioridad>prioridades =(List<Prioridad>)request.getAttribute("prioridades");
+		                		
+		                		if(prioridades!=null){
+		                			for(Prioridad prioridad : prioridades){		                				
+		                		
+		                %>
+		                		<option value="<%=String.valueOf(prioridad.getIdPrioridad())%>"><%=prioridad.getPrioridad() %></option>
+		                <%
+		                			}
+		                		}
+		                %>
+		                
+		                </select>
 		            </div>
 		            <div class="form-group col-md-4">
 		                <label for="descripcion">Descripción</label>
-		                <textarea class="form-control" id="descripcion" rows="3"></textarea>
+		                <textarea name="descripcion" class="form-control" id="descripcion" rows="3"></textarea>
 		            </div>
-		            <div class="form-group col-md-4">
-		            	<label for="imagen">Imagen</label>
-		            	<button type="button" class="btn btn-dark form-control">Subir imagen</button>
-		            </div>
+		           <div class="form-group row">
+				<div class="container ">
+					<h3 class="text-center">Subir evidencia</h3>
+					<div class="col-sm-12  mr-auto ml-auto border p-4">
+
+						<div class="form-group">
+							<label><strong>Subir</strong></label>
+							<div class="custom-file">
+								<input name='archivo' id="in-url" hidden="true" value=""
+									required="required"> <input placeholder="asdasd"
+									type="file" name="files[]" multiple
+									class="custom-file-input form-control" id="img-uploader">
+								<label class="custom-file-label" for="" id="lblArchivo">Elegir
+									archivo</label>
+							</div>
+						</div>
+						<progress id="img-upload-bar" value="0" max="100"
+							style="width: 100%"></progress>
+
+						<div class="form-group">
+							<button type="button" name="upload" value="upload" id="upload"
+								class="btn btn-block btn-dark">
+								<i class="fa fa-fw fa-upload"></i> Subir
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
 		        </div> <!-- cierre de form-row -->
 		        <!-- dejo fuera a submit -->
 		        <div class="form-group">
-		            <input type="submit" value="Guardar" class="btn btn-dark">
+		            <Button type="submit"  class="btn btn-dark">Guardar</Button>
 		        </div>
 		    </form>
 			</div>
@@ -185,16 +269,18 @@
         <!-- End wrapper -->
 
         <!-- Javascript -->
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+         <script
+		src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+		<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+		<script src="../../assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-
+        <script src="../../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../../assets/js/wow.min.js"></script>
+        <script src="../../assets/js/jquery.waypoints.min.js"></script>
+        <script src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../../assets/js/scripts.js"></script>
+ <script src="../../js/cargarImagen.js "></script>
     </body>
 
 </html>

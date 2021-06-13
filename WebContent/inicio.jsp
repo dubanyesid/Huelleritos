@@ -162,13 +162,14 @@ private String caruselAnimalHtml(List<Animal>animales){
 		}
 
 	}
-	return items;
+	return items.equals("") ? "<h1 class='text-center pb-5'>Sin registros</h1>":items;
 }
 	
 	%>
 <br>
 	<br>
 	<br>
+	
 	<h1 class="centro">
 		Huelleritos prioritarios
 		<hr>
@@ -279,6 +280,87 @@ private String caruselAnimalHtml(List<Animal>animales){
 	<br>
 	<!-- Huelleritos en Adopcion / final -->
 
+<!-- Huelleritos Adoptados -->
+	<br>
+	<br>
+	<br>
+	<h1 class="centro">
+		Huelleritos felizmente Adoptados
+		<hr>
+	</h1>
+	<br>
+
+	<div class="container">
+		<div id="carouselExampleControls" class="carousel slide"
+			data-ride="carousel">
+			<div class="carousel-inner">
+				
+				<%
+				List<Animal> animalesAdoptados = (List<Animal>) request.getAttribute("animalesAdoptados");
+				out.append(caruselAnimalHtml(animalesAdoptados));
+				%>
+				
+				
+				<!-- 
+                <div class="carousel-item active">                   
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Edad del animal</h5>
+                                    <h4>Nombre del animal</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Edad del animal</h5>
+                                    <h4>Nombre del animal</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card centro">
+                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Edad del animal</h5>
+                                    <h4>Nombre del animal</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+-->
+			</div>
+
+			<a class="carousel-control-prev" href="#carouselExampleControls"
+				role="button" data-slide="prev"> <span
+				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#carouselExampleControls"
+				role="button" data-slide="next"> <span
+				class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<br>
+	<!-- Huelleritos Adoptados / final -->
 	<!-- Noticias -->
 	<h1 class="centro">
 		Noticias

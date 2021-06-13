@@ -18,9 +18,9 @@ CLOUDINARY_URL=`https://api.cloudinary.com/v1_1/dfxfvf7ka/video/upload`
     }else if(file.type.includes("image")){
 CLOUDINARY_URL=`https://api.cloudinary.com/v1_1/dfxfvf7ka/image/upload`
     }
-    const nombreArchivo=file.name;
-    document.getElementById("lblarchivo").innerHTML=nombreArchivo.length > 20 ? nombreArchivo.substr(0,17)+"...":nombreArchivo;
-
+    const nombreArchivo=file.name.length > 20 ? file.name.substr(0,17)+"...":file.name;
+    console.log(nombreArchivo);
+    document.getElementById("lblArchivo").innerHTML=nombreArchivo
     // Send to cloudianry
   
    

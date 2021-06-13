@@ -2,6 +2,8 @@ package co.edu.ufps.huelleritos.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,7 +12,14 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@NamedQueries({
+	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u"),
+	@NamedQuery(name="Usuario.logAdmin", query="SELECT u FROM Usuario u join u.administradors admin where u.usuario=:usuario and u.contraseña=:contrasenia "),
+	@NamedQuery(name="Usuario.logAdoptante", query="SELECT u FROM Usuario u join u.adoptante adopta where u.usuario=:usuario and u.contraseña=:contrasenia "),
+	@NamedQuery(name="Usuario.logHogar", query="SELECT u FROM Usuario u join u.hogarDePaso hogar where u.usuario=:usuario and u.contraseña=:contrasenia ")
+
+
+})
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -69,6 +78,15 @@ public class Usuario implements Serializable {
 		return administrador;
 	}
 
+	public void IniciarAdministradors() {
+		this.administradors=new ArrayList<Administrador>();
+	}
+	public void IniciarAdoptante() {
+		this.adoptante=new Adoptante();
+	}
+	public void IniciarHogar() {
+		this.hogarDePaso=new HogarDePaso();
+	}
 	public Administrador removeAdministrador(Administrador administrador) {
 		getAdministradors().remove(administrador);
 		administrador.setUsuarioBean(null);

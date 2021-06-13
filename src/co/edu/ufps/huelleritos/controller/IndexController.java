@@ -35,8 +35,10 @@ public class IndexController extends HttpServlet {
 		AnimalDAO animalDAO= new AnimalDAO();		
 		List<Animal>adopcion = animalDAO.listAdopcion();
 		List<Animal>prioridad=animalDAO.listPrioridad();
+		List<Animal>adoptados=animalDAO.listAdoptado();
 		request.setAttribute("animalesAdopcion", adopcion);
 		request.setAttribute("animalesPrioridad", prioridad);
+		request.setAttribute("animalesAdoptados", adoptados);
 		request.getRequestDispatcher("inicio.jsp").forward(request, response);		
 	}
 
