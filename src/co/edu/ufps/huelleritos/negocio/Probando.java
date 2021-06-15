@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import co.edu.ufps.huelleritos.dao.FormularioDAO;
+import co.edu.ufps.huelleritos.dao.*;
 import co.edu.ufps.huelleritos.entities.Formulario;
 
 public class Probando {
@@ -32,10 +32,14 @@ public class Probando {
 		 * p1.getPuntaje().compareTo(p2.getPuntaje()); } });
 		 */
 		
-		List<Puntaje> list = new FormularioDAO().listHogar();
+		String[]list = new PreguntaDAO().listPreguntas(2);
 		
-	
-			System.out.println(list.toString());
+	System.out.println(list.length);
+		String[] datos=null;
+			for(String s:list) {
+				datos=s.split(";");
+				System.out.println("Pregunta: "+datos[0]+", Respuesta: "+datos[1]+"\n");
+			}
 
 		
 

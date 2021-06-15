@@ -56,8 +56,8 @@ public class SolicitudController extends HttpServlet {
 			String id = request.getParameter("id");
 			if (id != null) {
 				Formulario f = formularioDAO.find(Integer.parseInt(id));
-				response.getWriter().append("Id Formulario = " + id + "\nNombre = " + f.getNombre() + "\nUsuario = "
-					);
+				request.setAttribute("formulario", f);
+				request.getRequestDispatcher("/solicitud-adoptante.jsp").forward(request, response);
 				return;
 			}
 			request.setAttribute("mensaje", "La petición enviada es inválida");
