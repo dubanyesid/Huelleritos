@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="co.edu.ufps.huelleritos.entities.*"%>
+<%@page import="co.edu.ufps.huelleritos.dao.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,111 +103,151 @@
                     <i class="fas fa-align-left"></i> <span>Menu</span>
                 </a>
 			<div class="container">
+				<%
+					Formulario f = (Formulario) request.getAttribute("formulario");
+				%>
 				<div>
 					<h1>
-						SOLICITUD #
+						SOLICITUD 
+						<%=f.getIdFormulario()%> - Hogar de Paso	
 					</h1>
 				</div>
-						<form>
-							<h2>Sobre el hogar de paso</h2>
-					        <form>
-
-							  <div class="form-group row">
-							    <label for="inputEmail3" class="col-sm-7 col-form-label">
-							    ¿A qué mascota deseas brindar hogar de paso?</label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="inputEmail3">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="inputEmail3" class="col-sm-7 col-form-label">
-							    	¿Por qué deseas dar hogar de paso?
-								</label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Estas dispuesto a cuidar del animal y brindarle la atención necesaria?
-								</label>
-							    <div class="col-sm-5">
-							      <select name="hogar-paso" id="tasking" class="form-control">
-					                    <option value="" selected>Selecione</option>
-					                    <option value="value1">SI</option>
-					                    <option value="value1">NO</option>
-					               </select>
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Tienes la capacidad de dar medicina sin probklemas a la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Tienes pasiencia de cuidar un animal enfermo?
-							    </label>
-							    <div class="col-sm-5">
-							      <select name="enfermo" id="tasking" class="form-control">
-					                    <option value="" selected>Selecione</option>
-					                    <option value="value1">SI</option>
-					                    <option value="value1">NO</option>
-					               </select>
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Cuánto tiempo pasará sola la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="">
-							    </div>
-							  </div>
-
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">
-							    	¿Dónde dormirá la mascota?
-							    </label>
-							    <div class="col-sm-5">
-							      <input type="email" class="form-control" id="">
-							    </div>
-							  </div>
 
 
-							  
-							</form>
-					        <!-- cierre de form-row -->
-					        <!-- dejo fuera a submit -->
-					        <div class="form-group">
-					            <input type="submit" value="Guardar" class="btn btn-dark">
-					        </div>
-					    </form>
+				<form>
+				<div>
+					<h1>
+						Animal: 
+						<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
+					</h1>
+				</div>
+				<p><strong>Fecha:</strong> <%=f.getFecha().toString().split(" ")[0]%></p>
+					<div class="form-row">
+
+						<div class="form-group col-md-3">
+						
+							<label for="nombre">Nombre</label> <input type="text"
+								value="<%=f.getNombre()%>" class="form-control" disabled>
+						</div>
+
+						<div class="form-group col-md-3">
+							<label for="apellido">Apellido</label> <input type="text"
+								value="<%=f.getApellido()%>" class="form-control" disabled>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="direccion">Email</label> <input type="text"
+								value="<%=f.getCorreo()%>" class="form-control" disabled>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="direccion">Teléfono</label> <input type="text"
+								value="<%=f.getTelefono()%>" class="form-control" disabled>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="celular">Celular</label> <input type="text"
+								value="<%=f.getCelular()%>" class="form-control" disabled>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="cedula">Cédula</label> <input type="text"
+								value="<%=f.getCedula()%>" class="form-control" disabled>
+						</div>
+
+					</div>
+					<!-- cierre de form-row -->
+
+				</form>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div class="container">
+
+				<%
+					String[] list = new PreguntaDAO().listPreguntas(f.getIdFormulario());
+				String[] datos = null;
+				%>
+				<h2>Datos Familiares y de Vivienda</h2>
+
+				<form>
+					<div class="form-row">
+
+						<%
+							for (int i = 0; i < 6; i++) {
+							datos = list[i].split(";");
+						%>
+						<div class="form-group col-md-4">
+							<label for="nombre"><%=datos[0]%></label> <input type="text"
+								value="<%=datos[1]%>" class="form-control" disabled>
+						</div>
+						<%
+							}
+						%>
+					</div>
+					<!-- cierre de form-row -->
+
+				</form>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div class="container">
+				<h2>Sobre mascotas anteriores</h2>
+				<form>
+					<div class="form-row">
+						<%
+							for (int i = 6; i < 14; i++) {
+							datos = list[i].split(";");
+						%>
+						<div class="form-group col-md-4">
+							<label for="nombre"><%=datos[0]%></label> <input type="text"
+								value="<%=datos[1]%>" class="form-control" disabled>
+						</div>
+						<%
+							}
+						%>
+					</div>
+					<!-- cierre de form-row -->
+				</form>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div class="container">
+				<h2>Sobre el hogar de paso</h2>
+				<form>
+					<div class="form-row">
+						<%
+							for (int i = 15; i < 21; i++) {
+							datos = list[i].split(";");
+						%>
+						<div class="form-group col-md-4">
+							<label for="nombre"><%=datos[0]%></label> <input type="text"
+								value="<%=datos[1]%>" class="form-control" disabled>
+						</div>
+						<%
+							}
+						%>
+					</div>
+					<!-- cierre de form-row -->
+				</form>
 			</div>
 
-		        	
-		        <!-- Footer -->
-		        <footer class="footer-container">
-		
-			        <div class="container">
-			        	<div class="row">
-		
-		                    <div class="col">
-		                    	&copy; Huelleritos todos los derechos reservados.
-		                    </div>
-		
-		                </div>
-			        </div>
-		
-		        </footer>
+		</div>
+
+
+
+		<!-- Footer -->
+		<footer class="footer-container">
+
+			<div class="container">
+				<div class="row">
+
+					<div class="col">&copy; Huelleritos todos los derechos
+						reservados.</div>
+
+				</div>
+			</div>
+
+		</footer>
 	        
 	        </div>
 	        <!-- End content -->

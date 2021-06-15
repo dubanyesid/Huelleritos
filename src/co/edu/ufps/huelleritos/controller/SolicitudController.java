@@ -54,17 +54,13 @@ public class SolicitudController extends HttpServlet {
 			request.setAttribute("tipo", "Hogar de Paso");
 		} else {
 			String id = request.getParameter("id");
-			if (id != null) {
-				Formulario f = formularioDAO.find(Integer.parseInt(id));
-				request.setAttribute("formulario", f);
-				request.getRequestDispatcher("/solicitud-adoptante.jsp").forward(request, response);
-				return;
+			String tipo = request.getParameter("tipo");
+
+			if (id != null || tipo != null) {
+				verificarFormulario(request, response,id,tipo);
 			}
-			request.setAttribute("mensaje", "La petición enviada es inválida");
-			request.getRequestDispatcher("/lista-solicitudes.jsp").include(request, response);
-			return;
 		}
-		
+
 		request.setAttribute("puntajes", puntajes);
 		request.getRequestDispatcher("/lista-solicitudes.jsp").include(request, response);
 	}
@@ -94,8 +90,36 @@ public class SolicitudController extends HttpServlet {
 			puntajes.add(p);
 			System.out.println(puntaje);
 		}
-		ordenarPuntajes(request,response,puntajes);
+		ordenarPuntajes(request, response, puntajes);
 		request.setAttribute("puntajes", puntajes);
+	}
+
+	protected void verificarFormulario(HttpServletRequest request, HttpServletResponse response, String id,
+			String tipo) throws ServletException, IOException {
+		Formulario f=null;
+		try {
+			f = formularioDAO.find(Integer.parseInt(id));
+		} catch (NumberFormatException nf) {
+			request.setAttribute("mensaje", "El recurso ingresado es incorrecto");
+			request.getRequestDispatcher("/Error").forward(request, response);
+			return;
+		}
+		verificarTipo(request,response,f,tipo);
+	}
+	
+	protected void verificarTipo(HttpServletRequest request, HttpServletResponse response, Formulario f,
+			String tipo) throws ServletException, IOException {
+		if (tipo.contains("Adopcion")) {
+			request.getRequestDispatcher("/solicitud-adoptante.jsp").forward(request, response);
+		} else if (tipo.contains("Hogar")) {
+			request.getRequestDispatcher("/solicitud-hogar-paso.jsp").forward(request, response);
+		} else {
+			request.setAttribute("mensaje", "El recurso ingresado es incorrecto");
+			request.getRequestDispatcher("/Error").forward(request, response);
+			return;
+		}
+		request.setAttribute("formulario", f);
+		return;
 	}
 
 	protected void ordenarPuntajes(HttpServletRequest request, HttpServletResponse response, List<Puntaje> puntajes)

@@ -129,7 +129,7 @@
 								<td><c:out value="${puntaje.formulario.celular}" /></td>
 								<td><c:out value="${puntaje.formulario.fecha}" /></td>
 								<td><c:out value="${puntaje.puntaje}" /></td>
-								<td><a href="<%=request.getContextPath()%>/Solicitud?id=<c:out value="${puntaje.formulario.idFormulario}"/>" class="btn btn-dark">Respuestas</a></td>
+								<td><a href="<%=request.getContextPath()%>/Solicitud?id=<c:out value="${puntaje.formulario.idFormulario}"/>&tipo=<%=request.getParameter("tipo") %>" class="btn btn-dark">Respuestas</a></td>
 								<td><a href="<%=request.getContextPath()%>/Solicitud?id=<c:out value="${puntaje.formulario.idFormulario}"/>&tipo=<%=request.getParameter("tipo") %>" class="btn btn-dark">Eliminar</a></td>
 							</tr>
 							</c:forEach>

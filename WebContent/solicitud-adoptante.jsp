@@ -111,7 +111,7 @@
 				<div>
 					<h1>
 						SOLICITUD
-						<%=f.getIdFormulario()%>	
+						<%=f.getIdFormulario()%> - Adopción	
 					</h1>
 				</div>
 
