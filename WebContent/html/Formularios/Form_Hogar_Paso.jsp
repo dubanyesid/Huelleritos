@@ -16,19 +16,19 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../css/magnific-popup.css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../css/themify-icons.css">
-    <link rel="stylesheet" href="../../css/nice-select.css">
-    <link rel="stylesheet" href="../../css/flaticon.css">
-    <link rel="stylesheet" href="../../css/gijgo.css">
-    <link rel="stylesheet" href="../../css/animate.css">
-    <link rel="stylesheet" href="../../css/slicknav.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/cssdenosotros.css">
-    <link rel="stylesheet" href="../../css/huelleritos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssdenosotros.css">
+    <link rel="stylesheet" href="css/huelleritos.css">
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -73,8 +73,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../../index.html">
-                                    <img src="../../img/Huelleritos.png" alt="">
+                                <a href="index.html">
+                                    <img src="img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -82,14 +82,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="../../index.html">Inicio</a></li>
-                                        <li><a href="../../html/Huelleritos.html">Huelleritos</a></li>
-                                        <li><a href="../../html/Adopta.html">Adopta</a></li>
-                                        <li><a href="../../html/Apadrinar.html">Apadrina</a></li>
-                                        <li><a href="../../html/Hogar_Paso.html">Hogar de paso</a></li>                            
-                                        <li><a href="../../html/La_Fundacion.html">La fundación</a></li>
-                                        <li><a href="../../html/Noticias.html">Noticias</a></li>
-                                        <a href="../../html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
+                                        <li><a  href="index.html">Inicio</a></li>
+                                        <li><a href="html/Huelleritos.html">Huelleritos</a></li>
+                                        <li><a href="html/Adopta.html">Adopta</a></li>
+                                        <li><a href="html/Apadrinar.html">Apadrina</a></li>
+                                        <li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>                            
+                                        <li><a href="html/La_Fundacion.html">La fundación</a></li>
+                                        <li><a href="html/Noticias.html">Noticias</a></li>
+                                        <a href="html/Dona_aqui.html" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="dog_thumb d-none d-lg-block">
-                <img src="../../img/banner/dog5.png" alt="">
+                <img src="img/banner/dog5.png" alt="">
             </div>
         </div>
     </div>
@@ -531,7 +531,7 @@
                     <div class="row centro">
                         <div class="col-sm-4"></div>
                         <div class="col-sm-2">
-                            <img src="../../img/logocontacto.png" width="70" height="70" alt="">
+                            <img src="img/logocontacto.png" width="70" height="70" alt="">
                         </div>
                         <div class="col-sm-2">
                             <p>3177636650</p>
@@ -556,7 +556,7 @@
                             <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="../../html/Contacto.html" class="boxed-btn4">Contactanos</a>
+                            <a href="html/Contacto.html" class="boxed-btn4">Contactanos</a>
                             <p>Or  <a href="#">+57 3177636650</a></p>
                         </div>
                     </div>
@@ -611,7 +611,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="../../img/Huelleritos.png" alt="">
+                                    <img src="img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                             <p class="address_text">
@@ -662,33 +662,33 @@
 
 
     <!-- JS here -->
-    <script src="../../js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="../../js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../../js/popper.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/owl.carousel.min.js"></script>
-    <script src="../../js/isotope.pkgd.min.js"></script>
-    <script src="../../js/ajax-form.js"></script>
-    <script src="../../js/waypoints.min.js"></script>
-    <script src="../../js/jquery.counterup.min.js"></script>
-    <script src="../../js/imagesloaded.pkgd.min.js"></script>
-    <script src="../../js/scrollIt.js"></script>
-    <script src="../../js/jquery.scrollUp.min.js"></script>
-    <script src="../../js/wow.min.js"></script>
-    <script src="../../js/nice-select.min.js"></script>
-    <script src="../../js/jquery.slicknav.min.js"></script>
-    <script src="../../js/jquery.magnific-popup.min.js"></script>
-    <script src="../../js/plugins.js"></script>
-    <script src="../../js/gijgo.min.js"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
     <!--contact js-->
-    <script src="../../js/contact.js"></script>
-    <script src="../../js/jquery.ajaxchimp.min.js"></script>
-    <script src="../../js/jquery.form.js"></script>
-    <script src="../../js/jquery.validate.min.js"></script>
-    <script src="../../js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
 
 
-    <script src="../../js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',

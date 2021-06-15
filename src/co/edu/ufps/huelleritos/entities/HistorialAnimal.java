@@ -23,7 +23,7 @@ public class HistorialAnimal implements Serializable {
 	private String observaciones;
 
 	//bi-directional many-to-one association to EnfermedadHistorial
-	@OneToMany(mappedBy="historialAnimal")
+	@OneToMany(mappedBy="historialAnimal",cascade = {CascadeType.REMOVE})
 	private List<EnfermedadHistorial> enfermedadHistorials;
 
 	//bi-directional many-to-one association to Animal
@@ -32,11 +32,11 @@ public class HistorialAnimal implements Serializable {
 	private Animal animal;
 
 	//bi-directional many-to-one association to OperacionesAnimal
-	@OneToMany(mappedBy="historialAnimal")
+	@OneToMany(mappedBy="historialAnimal" ,cascade = {CascadeType.REMOVE})
 	private List<OperacionesAnimal> operacionesAnimals;
 
 	//bi-directional many-to-one association to VacunaHistorial
-	@OneToMany(mappedBy="historialAnimal")
+	@OneToMany(mappedBy="historialAnimal" ,cascade = {CascadeType.REMOVE})
 	private List<VacunaHistorial> vacunaHistorials;
 
 	public HistorialAnimal() {

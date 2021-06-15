@@ -47,7 +47,7 @@ public class Formulario implements Serializable {
 	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to FormularioPregunta
-	@OneToMany(mappedBy="formulario",cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="formulario",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	private List<FormularioPregunta> formularioPreguntas;
 
 	public Formulario() {

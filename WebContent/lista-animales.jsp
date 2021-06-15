@@ -58,10 +58,10 @@
 				
 				<ul class="list-unstyled menu-elements" >
 					<li>
-						<a  href="inicioAdmin.jsp">Inicio</a>
+						<a  href="../../admin">Inicio</a>
 					</li>
 					<li>
-						<a  href="lista-animales.jsp">Animales</a>
+						<a  href="listar">Animales</a>
 					</li>
 					<li>
 						<a href="donaciones.jsp">Donaciones</a>
@@ -145,8 +145,8 @@
 								<td><%=animal.getEdad() %></td>
 								<td><%=animal.getEstadoAnimalBean().getDescripcion() %></td>
 								<td><button type="button" onclick="location.href='historial?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Historial</button></td>
-								<td><button type="button" class="btn btn-dark">Editar</button></td>
-								<td><button type="button" class="btn btn-dark">Eliminar</button></td>
+								<td><button type="button" onclick="location.href='editar?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Editar</button></td>
+								<td><button type="button" onclick="location.href='eliminar?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Eliminar</button></td>
 							</tr>
 							<%
 							}

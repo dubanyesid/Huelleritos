@@ -170,10 +170,13 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
                     List<HistorialAnimal> historiaAnimal= a.getHistorialAnimals();
                     List<VacunaHistorial>vacunas =historiaAnimal.get(0).getVacunaHistorials();
                  	
-                    for(int i =0 ; i<vacunas.size();i++){%>
+                    if(vacunas!=null ){
+                    	 for(int i =0 ; i<vacunas.size();i++){%>
                     	 <li><p style="font-size: 24px"><b><%=i+1 %>.</b> <%=vacunas.get(i).getVacuna().getNombreVacuna() %> - <b>Fecha</b> : <%=vacunas.get(i).getFechaVacunacion() %></p></li>
                     	 <%
                     }
+                    }
+                   
                    
                     %>
                     </ol>
@@ -184,10 +187,12 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
                     <%                  
                  List<EnfermedadHistorial>enfermedades = historiaAnimal.get(0).getEnfermedadHistorials();
                     
-                    for(int i =0 ; i<enfermedades.size();i++){%>
-                    	 <li><p style="font-size: 24px"><b><%=i+1 %>.</b> <%=enfermedades.get(i).getEnfermedad().getNombreEnfermedad()%> <br><b >Fecha inicio: </b> : <%=enfermedades.get(i).getFechaInicio() %><br>
-                    	 <%=enfermedades.get(i).getFechaFin()==null ? "":"<b>Fecha fin: </b>"+enfermedades.get(i).getFechaFin() %></p></li>
-                    	 <%
+                    if(enfermedades!=null){
+                    	for(int i =0 ; i<enfermedades.size();i++){%>
+                   	 <li><p style="font-size: 24px"><b><%=i+1 %>.</b> <%=enfermedades.get(i).getEnfermedad().getNombreEnfermedad()%> <br><b >Fecha inicio: </b> : <%=enfermedades.get(i).getFechaInicio() %><br>
+                   	 <%=enfermedades.get(i).getFechaFin()==null ? "":"<b>Fecha fin: </b>"+enfermedades.get(i).getFechaFin() %></p></li>
+                   	 <%
+                   }
                     }
                    
                     %>

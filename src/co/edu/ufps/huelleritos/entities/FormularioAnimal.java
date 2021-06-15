@@ -25,7 +25,7 @@ public class FormularioAnimal implements Serializable {
 	private Animal animal;
 
 	//bi-directional many-to-one association to Formulario
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.REMOVE})
 	@JoinColumn(name="id_formulario")
 	private Formulario formulario;
 
