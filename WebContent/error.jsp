@@ -15,24 +15,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- <link rel="manifest" href="site.webmanifest"> -->
-<link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/img/favicon.png">
+<link rel="shortcut icon" type="image/x-icon"
+	href="<%=request.getContextPath()%>/img/favicon.png">
 
 <!-- Place favicon.ico in the root directory -->
 
 <!-- CSS here -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/magnific-popup.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/themify-icons.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/nice-select.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/flaticon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/gijgo.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/slicknav.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/cssdenosotros.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/huelleritos.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/magnific-popup.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/themify-icons.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/nice-select.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/gijgo.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/slicknav.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/cssdenosotros.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/huelleritos.css">
 
 <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -75,7 +89,8 @@
 					<div class="row align-items-center">
 						<div class="col-xl-2 col-lg-2">
 							<div class="logo">
-								<a href="index.html"> <img src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
+								<a href="index.html"> <img
+									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -113,9 +128,20 @@
 					<div class="col-lg-5 col-md-6">
 						<div class="slider_text">
 							<h3>
-								<span>Error</span> <br>Página no encontrada
+								<span>Error</span> <br>
+								<%
+									String mensaje = "";
+								if ((mensaje = String.valueOf(request.getAttribute("mensaje"))) != null) {
+								%>
+								<%=mensaje%>
+								<%
+									} else {
+								%>Página no encontrada
+								<%
+									}
+								%>
 							</h3>
-							
+
 						</div>
 					</div>
 				</div>
@@ -165,7 +191,8 @@
 					<div class="col-xl-3 col-md-6 col-lg-3 ">
 						<div class="footer_widget">
 							<div class="footer_logo">
-								<a href="#"> <img src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
+								<a href="#"> <img
+									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
 							<p class="address_text"></p>
@@ -216,8 +243,10 @@
 
 
 	<!-- JS here -->
-	<script src="<%=request.getContextPath()%>/js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/vendor/jquery-1.12.4.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/vendor/modernizr-3.5.0.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/vendor/jquery-1.12.4.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
@@ -231,7 +260,8 @@
 	<script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/nice-select.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/jquery.slicknav.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/plugins.js"></script>
 	<script src="<%=request.getContextPath()%>/js/gijgo.min.js"></script>
 	<!--contact js-->
