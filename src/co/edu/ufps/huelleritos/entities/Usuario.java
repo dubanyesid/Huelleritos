@@ -132,4 +132,11 @@ public class Usuario implements Serializable {
 		this.hogarDePaso = hogarDePaso;
 	}
 
+	@Override
+	public String toString() {
+		return "Usuario [usuario=" + usuario + ", contraseña=" + contraseña + "]";
+	}
+	
+	
+
 }

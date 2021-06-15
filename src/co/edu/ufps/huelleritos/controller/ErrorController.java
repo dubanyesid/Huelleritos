@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AdministradorServlet
  */
-@WebServlet("/AdministradorServlet")
-public class AdministradorServlet extends HttpServlet {
+@WebServlet({"/Error", "/Error2"})
+public class ErrorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdministradorServlet() {
-        super();
+    public ErrorController() {
+        
+    	super();
         // TODO Auto-generated constructor stub
     }
 
@@ -26,8 +27,13 @@ public class AdministradorServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String path = request.getServletPath();
+		if(path.contains("/Error2")) {
+			response.sendRedirect(request.getContextPath()+"/Error");
+		}else {
+			request.getRequestDispatcher("/error.jsp").forward(request, response);
+		}
+
 	}
 
 	/**
