@@ -11,7 +11,6 @@ public class EnfermedadDTO {
 	private String fechaFin;
 	
 	public EnfermedadDTO() {
-		s
 	}
 	
 	public EnfermedadDTO(String tratamiento, String fechaInicio, String fechaFin) {
