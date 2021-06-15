@@ -77,7 +77,9 @@
 					<li>
 						<a  href="noticia.jsp">Noticias y Eventos</a>
 					</li>
-					
+					<li>
+						<a  href="logout">Cerrar sesion</a>
+					</li>
 				</ul>
 				
 				

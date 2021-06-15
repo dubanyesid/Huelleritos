@@ -59,6 +59,7 @@ public class UsuarioController extends HttpServlet {
 			showFormLogin(request, response, ubicacion.replace("/Login",""));
 		}else if(ubicacion.contains("logout")) {
 			request.getSession().invalidate();
+			response.sendRedirect(request.getContextPath()+"/Usuario/Login");
 		}
 		
 	}
@@ -133,6 +134,7 @@ public class UsuarioController extends HttpServlet {
 		}else {
 			//REENVIE E IMPRIMA ERROR
 			System.out.println("no existe");
+			response.sendRedirect(request.getContextPath()+"/Usuario/Login");
 		}
 		
 		

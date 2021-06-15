@@ -86,6 +86,17 @@ public abstract class Conexion <T> {
 		}
 		
 	}
+	public void deleteClearCache(T id){
+		try {
+			delete(id);
+			em.clear();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			//em.close();
+		}
+		
+	}
 	
 	 public Integer getMaxId() {
 		 Integer maxId = (Integer) em.createNamedQuery(c.getSimpleName()+".getMaxID", c).getSingleResult();

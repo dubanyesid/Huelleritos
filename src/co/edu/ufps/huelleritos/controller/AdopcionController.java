@@ -30,7 +30,7 @@ import co.edu.ufps.huelleritos.entities.Pregunta;
 /**
  * Servlet implementation class AdopcionController
  */
-@WebServlet({ "/Adoptar", "/HogarDePaso","/Adoptar/Enviar" })
+@WebServlet({ "/Adoptar", "/HogarDePaso","/Adoptar/Enviar","/HogarDePaso/Enviar" })
 public class AdopcionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -73,7 +73,7 @@ public class AdopcionController extends HttpServlet {
 		if (ubicacion.contains("Adoptar")) {
 			this.showFormAdopta(request, response,ubicacion.replace("/Adoptar", ""));
 		} else if (ubicacion.contains("HogarDePaso")) {
-
+			this.showFormHogar(request, response, ubicacion);
 		}
 	}
 
@@ -105,6 +105,36 @@ public class AdopcionController extends HttpServlet {
 		
 		response.sendRedirect(request.getContextPath()+"/Adoptar");
 	}
+	
+	protected void insertarHogar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {		
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String ocupacion = request.getParameter("ocupacion");
+		String direccion = request.getParameter("direccion");
+		String correo = request.getParameter("correo");
+		String telefono = request.getParameter("telefono");
+		String celular = request.getParameter("celular");
+		String cedula = request.getParameter("cedula");	
+		String animal= request.getParameter("animal");
+		Date date = new Date();		
+		String[]preguntas = request.getParameterValues("preguntas"); 
+		Enumeration<String>preguntasParametersNames =  request.getParameterNames();
+		if(nombre==null || apellido==null ||ocupacion==null ||direccion==null ||correo==null ||telefono==null || celular==null || cedula==null
+				|| preguntasParametersNames==null || preguntas==null || animal==null) {
+			//ENVIE A UN ERROR
+			//return;
+		}
+		
+		Formulario formulario = new Formulario(apellido,cedula,celular,correo,date,nombre,telefono);		
+		llenarFormularioPreguntaRadio(preguntasParametersNames, formulario, request);
+		llenarFormularioPreguntaSelect(preguntas, formulario);
+		llenarFormularioAnimal(animal, formulario);
+		formularioDAO.insert(formulario);	
+		
+		response.sendRedirect(request.getContextPath()+"/Adoptar");
+	}
+	
 	
 	protected void llenarFormularioAnimal(String animal,Formulario formulario) {
 		Animal animalBuscado = animalDAO.find(animal);
@@ -151,6 +181,17 @@ public class AdopcionController extends HttpServlet {
 		
    }
 	
+   protected void mostrarFormHogar(HttpServletRequest request,HttpServletResponse response)
+		   throws ServletException, IOException{
+	   List<Pregunta>preguntas=preguntaDAO.listarFormHogarPaso();
+	   List<Animal>animales = animalDAO.list();	   
+	   request.setAttribute("animales", animales);	   
+	   request.setAttribute("preguntas", preguntas);
+	   
+	   request.getRequestDispatcher("html/Formularios/Form_Hogar_Paso.jsp").forward(request, response);
+	   
+   }
+   
    protected void mostrarFormAdopta(HttpServletRequest request,HttpServletResponse response)
 		   throws ServletException, IOException{
 	   List<Pregunta>preguntas=preguntaDAO.listarFormAdopta();
@@ -161,9 +202,22 @@ public class AdopcionController extends HttpServlet {
 	   request.getRequestDispatcher("html/Formularios/Form_Adopta.jsp").forward(request, response);
 	   
    }
-	protected void showFormAdopta(HttpServletRequest request, HttpServletResponse response,String ubicacion)
-			throws ServletException, IOException {
+   
+	protected void showFormHogar(HttpServletRequest request, HttpServletResponse response,String ubicacion)
+			throws ServletException, IOException {		
+		switch(ubicacion) {
+		case "/Enviar":
+			insertarHogar(request, response);
+			break;
+		default:
+			mostrarFormHogar(request,response);
+			break;
+		}
 		
+	}
+	
+	protected void showFormAdopta(HttpServletRequest request, HttpServletResponse response,String ubicacion)
+			throws ServletException, IOException {		
 		switch(ubicacion) {
 		case "/Enviar":
 			insertAdopta(request, response);
@@ -184,4 +238,7 @@ public class AdopcionController extends HttpServlet {
 		doGet(request, response);
 	}
 
+	
+	
+	
 }

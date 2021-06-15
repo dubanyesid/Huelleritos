@@ -70,15 +70,15 @@ public class Animal implements Serializable {
 	private TipoAnimal tipoAnimal;
 
 	//bi-directional many-to-one association to FormularioAnimal
-	@OneToMany(mappedBy="animal")
+	@OneToMany(mappedBy="animal" ,cascade = {CascadeType.REMOVE})
 	private List<FormularioAnimal> formularioAnimals;
 
 	//bi-directional many-to-one association to HistorialAnimal
-	@OneToMany(mappedBy="animal",cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="animal",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	private List<HistorialAnimal> historialAnimals;
 
 	//bi-directional many-to-one association to SeguimientoAnimal
-	@OneToMany(mappedBy="animal")
+	@OneToMany(mappedBy="animal",cascade = {CascadeType.REMOVE})
 	private List<SeguimientoAnimal> seguimientoAnimals;
 
 	public Animal() {

@@ -46,7 +46,10 @@ button:hover {
 }
 
 /*-- contenedor del Login--*/
-
+.login{
+  background-image: url(fuentes/imagen1.gif);
+background-size:cover;
+}
 .container-login {
   width: 100%;  
   min-height: 100vh;
@@ -56,8 +59,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
-  background: linear-gradient(to right, #00dbde, #fc00ff);
+  
+  
 }
 
 .wrap-login {
