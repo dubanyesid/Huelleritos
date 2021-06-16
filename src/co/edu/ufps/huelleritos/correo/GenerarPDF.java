@@ -8,6 +8,8 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Text;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,7 +29,7 @@ public class GenerarPDF {
 
     }
 
-    public void generarPDF(String nombreArchivo) throws FileNotFoundException, IOException, InterruptedException {
+    public void generarPDF(String nombreArchivo, String titulo, String cuerpo) throws FileNotFoundException, IOException, InterruptedException {
 
         FileOutputStream f = new FileOutputStream(nombreArchivo);
         PdfWriter writer = new PdfWriter(f);
@@ -35,17 +37,17 @@ public class GenerarPDF {
 
         Document document = new Document(pdfDoc, PageSize.A1);
         document.setMargins(50, 30, 20, 30);
-        PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
-        PdfFont font1 = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
+        //PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        //PdfFont font1 = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
 
         try {
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-
+        	Paragraph paragraph1 = new Paragraph(titulo);             
+            Paragraph paragraph2 = new Paragraph(cuerpo);              
+            
+            // Adding paragraphs to document       
+            document.add(paragraph1);       
+            document.add(paragraph2);
+            
             document.close();
 
         } catch (Exception ex) {
