@@ -26,6 +26,11 @@ public class HogarDePaso implements Serializable {
 
 	public HogarDePaso() {
 	}
+	
+	public HogarDePaso(String usuario, Usuario usuarioBean) {
+		this.usuario=usuario;
+		this.usuarioBean=usuarioBean;
+	}
 
 	public String getUsuario() {
 		return this.usuario;

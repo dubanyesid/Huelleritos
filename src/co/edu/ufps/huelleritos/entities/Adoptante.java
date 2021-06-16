@@ -26,6 +26,12 @@ public class Adoptante implements Serializable {
 	public Adoptante() {
 	}
 
+	public Adoptante(String usuario, String estado, Usuario usuarioBean) {
+		this.usuario=usuario;
+		this.estado=estado;
+		this.usuarioBean=usuarioBean;
+	}
+	
 	public String getUsuario() {
 		return this.usuario;
 	}
