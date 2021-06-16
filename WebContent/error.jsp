@@ -130,10 +130,9 @@
 							<h3>
 								<span>Error</span> <br>
 								<%
-									String mensaje = "";
-								if ((mensaje = String.valueOf(request.getAttribute("mensaje"))) != null) {
+								if (request.getAttribute("mensaje") != null) {
 								%>
-								<%=mensaje%>
+								<%out.println(request.getAttribute("mensaje"));%>
 								<%
 									} else {
 								%>Página no encontrada
