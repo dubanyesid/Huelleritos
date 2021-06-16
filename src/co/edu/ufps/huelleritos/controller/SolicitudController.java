@@ -99,26 +99,31 @@ public class SolicitudController extends HttpServlet {
 		Formulario f=null;
 		try {
 			f = formularioDAO.find(Integer.parseInt(id));
+			
 		} catch (NumberFormatException nf) {
 			request.setAttribute("mensaje", "El recurso ingresado es incorrecto");
 			request.getRequestDispatcher("/Error").forward(request, response);
 			return;
 		}
+
 		verificarTipo(request,response,f,tipo);
 	}
 	
 	protected void verificarTipo(HttpServletRequest request, HttpServletResponse response, Formulario f,
 			String tipo) throws ServletException, IOException {
+
 		if (tipo.contains("Adopcion")) {
+			request.setAttribute("formulario", f);
 			request.getRequestDispatcher("/solicitud-adoptante.jsp").forward(request, response);
 		} else if (tipo.contains("Hogar")) {
+			request.setAttribute("formulario", f);
 			request.getRequestDispatcher("/solicitud-hogar-paso.jsp").forward(request, response);
 		} else {
 			request.setAttribute("mensaje", "El recurso ingresado es incorrecto");
 			request.getRequestDispatcher("/Error").forward(request, response);
 			return;
 		}
-		request.setAttribute("formulario", f);
+
 		return;
 	}
 
