@@ -21,17 +21,17 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
+        <link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="../../assets/css/animate.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/media-queries.css">
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png">
  </head>
 
     <body>
@@ -61,7 +61,7 @@
 				</div>
 				
 				
-				<h3><img src="assets/img/Huelleritos.png"></h3>
+				<h3><img src="../../assets/img/Huelleritos.png"></h3>
 				
 				
 				<ul class="list-unstyled menu-elements" >
@@ -115,35 +115,51 @@
 						Nueva Noticia
 					</h1>
 				</div>
-						<form>
+						
 							
-					        <form>
+					        <form method="post" action="agregar/enviar">
 
-							  <div class="form-group row">
-							    <label for="" class="col-sm-7 col-form-label">Titulo</label>
+							  <div class="form-group row justify-content-center">
+							    <label for="" class="col-sm-12 col-form-label">Titulo</label>
 							    <div class="col-sm-5">
-							      <input type="text" class="form-control" id="">
+							      <input type="text" name="titulo" class="form-control" id="">
 							    </div>
 							  </div>
 
 							  
-							    <div class="form-group row">
-					                <label for="descripcion" class="col-sm-7 col-form-label">Descripción</label>
+							    <div class="form-group row justify-content-center">
+					                <label for="descripcion" class="col-sm-12 col-form-label">Descripción</label>
 					                <div class="col-sm-5">
-					                	<textarea class="form-control" id="descripcion" rows="3"></textarea>
+					                	<textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
 					            	</div>
 					            </div>
-							  </div>
-
+							  
+  <div class="form-group row justify-content-center">
+					                <label for="descripcion" class="col-sm-12 col-form-label">Descripción</label>
+					                <div class="col-sm-5">
+					                <%List<TipoNoticia> tipoNoticias =(List<TipoNoticia>) request.getAttribute("tipos");
+					                
+					                %>
+					                	<select required name="tipo" class="form-control">
+					                	<option value="">Seleccionar</option>
+					                	<%
+					                	for(TipoNoticia tipo:tipoNoticias){
+					                	%>
+					                	<option value="<%=tipo.getIdTipoNoticia()%>"><%=tipo.getTipo()%></option>
+					                	<%} %>
+					                	</select>
+					            	</div>
+					            </div>
+							
 							  <div class="form-group row">
 							   	<div class="container mt-5">
 									  <h3 class="text-center">Subir imagen</h3>
 									  <div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
-									  <form method="post" enctype="multipart/form-data">
+									  
 									    <div class="form-group">
 									      <label><strong>Subir</strong></label>
 									      <div class="custom-file">
-									      <input id="in-url" hidden="true" value="" required="required">
+									      <input id="in-url" hidden="true" name="imagen" value="" required="required">
 									        <input placeholder="asdasd"  type="file" name="files[]" multiple class="custom-file-input form-control" id="img-uploader">
 									        <label class="custom-file-label" for="customFile" id="lblarchivo">Elegir archivo</label>
 									      </div>
@@ -153,14 +169,14 @@
 									    <div class="form-group">
 									      <button type="button" name="upload" value="upload" id="upload" class="btn btn-block btn-dark"><i class="fa fa-fw fa-upload"></i> Subir</button>
 									    </div>
-									  </form>
+									  
 									</div>
 							   		</div>
 								</div>
 							  
 
 							  
-							</form>
+							
 					        <!-- cierre de form-row -->
 					        <!-- dejo fuera a submit -->
 					        <div class="form-group">
@@ -215,16 +231,16 @@
 				});	
         </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script> 
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+		<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+		<script src="../../assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        <script src="js/cargarImagen.js "></script>
+        <script src="../../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../../assets/js/wow.min.js"></script>
+        <script src="../../assets/js/jquery.waypoints.min.js"></script>
+        <script src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../../assets/js/scripts.js"></script>
+        <script src="../../js/cargarImagen.js "></script>
     </body>
 
 </html>

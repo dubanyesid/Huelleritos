@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the prioridad database table.
  * 
  */
-@Entity
-@NamedQuery(name="Prioridad.findAll", query="SELECT p FROM Prioridad p")
+@Entity(name = "prioridad")
+@NamedQuery(name="Prioridad.findAll", query="SELECT p FROM prioridad p")
 public class Prioridad implements Serializable {
 	private static final long serialVersionUID = 1L;
 

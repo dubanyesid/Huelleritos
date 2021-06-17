@@ -133,7 +133,7 @@
 		if (n != null) {
 			html += "<div class='col-sm-4'>";
 			html += "<div class='card centro'>";
-			html += "<img class='card-img-top' src='https://pbs.twimg.com/media/EaFXY5pWkAEGjsM.png' alt='Card image cap'>";
+			html += "<img class='card-img-top' src='"+n.getImagen()+"' alt='Card image cap'>";
 			html += "<div class='card-body'>";
 			html += "<h5 class='card-title'>" + n.getTitulo() + "</h5>";
 			html += "<p>" + n.getDescripcion() + "</p>";

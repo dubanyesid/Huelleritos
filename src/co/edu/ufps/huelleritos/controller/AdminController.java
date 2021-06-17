@@ -80,7 +80,7 @@ public class AdminController extends HttpServlet {
 		
 		
 		// request.getRequestDispatcher("/inicioAdmin.jsp").include(request, response);
-		response.sendRedirect(request.getContextPath() + "/admin/generarUsuario");
+		//response.sendRedirect(request.getContextPath() + "/admin/generarUsuario");
 
 	}
 
