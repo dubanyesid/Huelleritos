@@ -6,7 +6,6 @@
 package co.edu.ufps.huelleritos.correo;
 
 import java.io.File;
-import java.util.Date;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -30,13 +29,8 @@ import javax.swing.JOptionPane;
  */
 public class EnviarMail {
 
-    /**
-     * @param c
-     * @return
-     */
     public boolean SendMail(Correo c) {
         try {
-
             Properties props = new Properties();
             props.put("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
@@ -60,6 +54,7 @@ public class EnviarMail {
             }
             MimeMultipart m = new MimeMultipart();
             m.addBodyPart(texto);
+            
             if (!c.getRutaArchivo().equals("")) {
                 m.addBodyPart(adjunto);
             System.out.println("e");}
@@ -67,23 +62,16 @@ public class EnviarMail {
             mensaje.setFrom(new InternetAddress(c.getUsuarioCorreo()));
             InternetAddress[] toAddresses = { new InternetAddress(c.getDestino()) };
             mensaje.setRecipients(Message.RecipientType.TO, toAddresses);
-           // mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(c.getDestino()));
+           
+            // mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(c.getDestino()));
             mensaje.setSubject(c.getAdjunto());
             mensaje.setContent(m);
             System.out.println("f");
 			Transport.send(mensaje); 
 
-					/*
-							 * s.getTransport("smtp"); t.connect(c.getUsuarioCorreo(), c.getContrasena());
-							 * System.out.println("g"); t.sendMessage(mensaje, mensaje.getAllRecipients());
-							 */
-					/* t.close(); */
             return true;
 
         } catch (Exception e) {
-
-            System.out.println("Error " + e);
-
             return false;
         }
     }
@@ -109,12 +97,4 @@ public class EnviarMail {
             JOptionPane.showMessageDialog(null, "Mensaje no Enviado");
         }
     }
-    
-    public static void main(String[] args) {
-    	Correo correo =new Correo();
-		EnviarMail em=new EnviarMail();
-		GenerarPDF gp=new GenerarPDF();
-		
-		em.enviar("juandavidsm@ufps.edu.co", "Que paso lk", 1119323413);
-	}
 }
