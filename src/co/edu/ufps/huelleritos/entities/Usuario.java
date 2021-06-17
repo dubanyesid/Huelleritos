@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 	private List<Administrador> administradors;
 
 	//bi-directional one-to-one association to Adoptante
-	@OneToOne(mappedBy="usuarioBean")
+	@OneToOne(mappedBy="usuarioBean",cascade=CascadeType.PERSIST)
 	private Adoptante adoptante;
 
 	//bi-directional many-to-one association to Formulario
@@ -45,6 +45,12 @@ public class Usuario implements Serializable {
 	private HogarDePaso hogarDePaso;
 
 	public Usuario() {
+	}
+	
+	public Usuario(String usuario, String contraseña) {
+		this.usuario=usuario;
+		this.contraseña=contraseña;
+		
 	}
 
 	public String getUsuario() {
@@ -78,6 +84,9 @@ public class Usuario implements Serializable {
 		return administrador;
 	}
 
+	public void iniciarFormularios() {
+		this.formularios=new ArrayList<Formulario>();
+	}
 	public void IniciarAdministradors() {
 		this.administradors=new ArrayList<Administrador>();
 	}

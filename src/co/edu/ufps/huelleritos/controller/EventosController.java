@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class NoticiaController
+ * Servlet implementation class EventosController
  */
-@WebServlet("/NoticiaController")
-public class NoticiaController extends HttpServlet {
+@WebServlet("/EventosController")
+public class EventosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticiaController() {
+    public EventosController() {
         super();
         // TODO Auto-generated constructor stub
     }

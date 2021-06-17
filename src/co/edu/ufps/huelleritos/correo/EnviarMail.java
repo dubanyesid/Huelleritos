@@ -36,45 +36,43 @@ public class EnviarMail {
      */
     public boolean SendMail(Correo c) {
         try {
-        	Properties properties = new Properties();
-            properties.put("mail.smtp.host", "smtp.gmail.com");
-            properties.put("mail.smtp.port", "587");
-            properties.put("mail.smtp.auth", "true");
-            properties.put("mail.smtp.starttls.enable", "true");
+
+            Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.setProperty("mail.smtp.starttls.enable", "true");
+            props.setProperty("mail.smtp.port", "587");
+            props.setProperty("mail.smtp.auth", "true");
             Authenticator auth = new Authenticator() {
                 public PasswordAuthentication getPasswordAuthentication() {
-                	return new PasswordAuthentication("palo1493@gmail.com", "d9a1oo30");
+                    return new PasswordAuthentication(c.getUsuarioCorreo(), c.getContrasena());
                 }
             };
-			/*
-			 * System.out.println("c"); Session s = Session.getDefaultInstance(props, auth);
-			 * BodyPart texto = new MimeBodyPart(); texto.setText(c.getMensaje()); BodyPart
-			 * adjunto = new MimeBodyPart(); if (!c.getRutaArchivo().equals("")) {
-			 * System.out.println("d");adjunto.setDataHandler(new DataHandler(new
-			 * FileDataSource(c.getRutaArchivo())));
-			 * System.out.println(adjunto.getDataHandler());
-			 * adjunto.setFileName(c.getNombreArchivo());
-			 * System.out.println(adjunto.getFileName()); } MimeMultipart m = new
-			 * MimeMultipart(); m.addBodyPart(texto); if (!c.getRutaArchivo().equals("")) {
-			 * m.addBodyPart(adjunto); System.out.println("e");} MimeMessage mensaje = new
-			 * MimeMessage(s); mensaje.setFrom(new InternetAddress("palo1493@gmail.com"));
-			 * mensaje.addRecipient(Message.RecipientType.TO, new
-			 * InternetAddress(c.getDestino())); mensaje.setSubject(c.getAdjunto());
-			 * mensaje.setContent(m); System.out.println("f");
-			 */
-            
-            
-            Session session = Session.getInstance(properties, auth);
-            Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("palo1493@gmail.com"));
-            InternetAddress[] toAddresses = { new InternetAddress("juandavidsm@ufps.edu.co") };
-            msg.setRecipients(Message.RecipientType.TO, toAddresses);
-            msg.setSubject("test2");
-            msg.setSentDate(new Date());
-            msg.setText("mensaje");
-     
-            // sends the e-mail
-            Transport.send(msg);
+            System.out.println("c");
+            Session s = Session.getDefaultInstance(props, auth);
+            BodyPart texto = new MimeBodyPart();
+            texto.setText(c.getMensaje());
+            BodyPart adjunto = new MimeBodyPart();
+            if (!c.getRutaArchivo().equals("")) {
+                System.out.println("d");adjunto.setDataHandler(new DataHandler(new FileDataSource(c.getRutaArchivo())));
+                System.out.println(adjunto.getDataHandler());
+                adjunto.setFileName(c.getNombreArchivo());
+                System.out.println(adjunto.getFileName());
+            }
+            MimeMultipart m = new MimeMultipart();
+            m.addBodyPart(texto);
+            if (!c.getRutaArchivo().equals("")) {
+                m.addBodyPart(adjunto);
+            System.out.println("e");}
+            MimeMessage mensaje = new MimeMessage(s);
+            mensaje.setFrom(new InternetAddress(c.getUsuarioCorreo()));
+            InternetAddress[] toAddresses = { new InternetAddress(c.getDestino()) };
+            mensaje.setRecipients(Message.RecipientType.TO, toAddresses);
+           // mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(c.getDestino()));
+            mensaje.setSubject(c.getAdjunto());
+            mensaje.setContent(m);
+            System.out.println("f");
+			Transport.send(mensaje); 
+
 					/*
 							 * s.getTransport("smtp"); t.connect(c.getUsuarioCorreo(), c.getContrasena());
 							 * System.out.println("g"); t.sendMessage(mensaje, mensaje.getAllRecipients());
@@ -83,8 +81,9 @@ public class EnviarMail {
             return true;
 
         } catch (Exception e) {
-        	e.printStackTrace();
-           // System.out.println("Error " + e.getMessage());
+
+            System.out.println("Error " + e);
+
             return false;
         }
     }

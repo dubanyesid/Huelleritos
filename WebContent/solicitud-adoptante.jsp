@@ -1,5 +1,5 @@
-<%@ page language="java"
-	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="co.edu.ufps.huelleritos.entities.*"%>
 <%@page import="co.edu.ufps.huelleritos.dao.*"%>
 <!DOCTYPE html>
@@ -25,21 +25,26 @@
 	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-<link rel="stylesheet" href="assets/css/animate.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/media-queries.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/animate.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/style.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/media-queries.css">
 
 <!-- Favicon and touch icons -->
-<link rel="shortcut icon" href="assets/ico/favicon.png">
+<link rel="shortcut icon"
+	href="<%=request.getContextPath()%>/assets/ico/favicon.png">
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="assets/ico/apple-touch-icon-144-precomposed.png">
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="assets/ico/apple-touch-icon-114-precomposed.png">
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="assets/ico/apple-touch-icon-72-precomposed.png">
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
-	href="assets/ico/apple-touch-icon-57-precomposed.png">
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-57-precomposed.png">
 
 </head>
 
@@ -65,7 +70,7 @@
 
 
 			<h3>
-				<img src="assets/img/Huelleritos.png">
+				<img src="<%=request.getContextPath()%>/assets/img/Huelleritos.png">
 			</h3>
 
 
@@ -111,23 +116,26 @@
 				<div>
 					<h1>
 						SOLICITUD
-						<%=f.getIdFormulario()%>	
+						<%=f.getIdFormulario()%>
+						- Adopción
 					</h1>
 				</div>
 
 
 				<form>
-				<div>
-					<h1>
-						Animal: 
-						<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
-					</h1>
-				</div>
-				<p><strong>Fecha:</strong> <%=f.getFecha().toString().split(" ")[0]%></p>
+					<div>
+						<h1>
+							Animal:
+							<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
+						</h1>
+					</div>
+					<p>
+						<strong>Fecha:</strong>
+						<%=f.getFecha().toString().split(" ")[0]%></p>
 					<div class="form-row">
 
 						<div class="form-group col-md-3">
-						
+
 							<label for="nombre">Nombre</label> <input type="text"
 								value="<%=f.getNombre()%>" class="form-control" disabled>
 						</div>
@@ -232,9 +240,25 @@
 					<!-- cierre de form-row -->
 				</form>
 			</div>
+			
+			<form action="<%=request.getContextPath()%>/admin/generarUsuario" method="POST">
+			<%
+				if (f.getUsuarioBean() != null) {
+			%>
 
+			<a href="#" style="pointer-events: none; cursor: default;"
+				class="btn btn-secondary">Crear usuario</a>
+			<%
+				} else {
+			%>
+			<input type="hidden" name="formularioID" value="<%=f.getIdFormulario()%>">
+			<input type="hidden" name="tipo" value="Adoptante">
+			<button type="submit" name="submit" class="btn btn-dark">Crear Usuario</button>
+			<%
+				}
+			%>
+			</form>
 		</div>
-
 
 
 		<!-- Footer -->
@@ -255,8 +279,10 @@
 	<!-- End wrapper -->
 
 	<!-- Javascript -->
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery-3.3.1.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery-migrate-3.0.0.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -265,11 +291,14 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
-	<script src="assets/js/jquery.backstretch.min.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/jquery.waypoints.min.js"></script>
-	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.backstretch.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/wow.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.waypoints.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
 
 </body>
 
