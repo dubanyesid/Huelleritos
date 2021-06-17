@@ -53,9 +53,6 @@
 
 <body>
 
-
-
-
 	<div>
 		<!--Navbar-->
 		<nav class="navbar navbar-dark  bg-dark">
@@ -74,7 +71,6 @@
 			<div class="dismiss">
 				<i class="fas fa-arrow-left"></i>
 			</div>
-
 
 			<h3>
 				<img src="<%=request.getContextPath()%>/assets/img/Huelleritos.png">
@@ -127,66 +123,87 @@
 			<a class="btn btn-primary btn-customized open-menu" href="#"
 				role="button"> <i class="fas fa-align-left"></i> <span>Menu</span>
 			</a>
+
 			<div class="container">
 				<div>
 					<h1>Nueva Noticia</h1>
 				</div>
-				<form>
+				<form method="post" action="agregar/enviar">
 
-					<form>
-
-						<div class="form-group row">
-							<label for="" class="col-sm-7 col-form-label">Titulo</label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" id="">
-							</div>
+					<div class="form-group row justify-content-center">
+						<label for="" class="col-sm-12 col-form-label">Titulo</label>
+						<div class="col-sm-5">
+							<input type="text" name="titulo" class="form-control" id="">
 						</div>
-
-
-						<div class="form-group row">
-							<label for="descripcion" class="col-sm-7 col-form-label">Descripción</label>
-							<div class="col-sm-5">
-								<textarea class="form-control" id="descripcion" rows="3"></textarea>
-							</div>
-						</div>
-			</div>
-
-			<div class="form-group row">
-				<div class="container mt-5">
-					<h3 class="text-center">Subir imagen</h3>
-					<div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
-						<form method="post" enctype="multipart/form-data">
-							<div class="form-group">
-								<label><strong>Subir</strong></label>
-								<div class="custom-file">
-									<input id="in-url" hidden="true" value="" required="required">
-									<input placeholder="asdasd" type="file" name="files[]" multiple
-										class="custom-file-input form-control" id="img-uploader">
-									<label class="custom-file-label" for="customFile"
-										id="lblarchivo">Elegir archivo</label>
-								</div>
-							</div>
-							<progress id="img-upload-bar" value="0" max="100"
-								style="width: 100%"></progress>
-
-							<div class="form-group">
-								<button type="button" name="upload" value="upload" id="upload"
-									class="btn btn-block btn-dark">
-									<i class="fa fa-fw fa-upload"></i> Subir
-								</button>
-							</div>
-						</form>
 					</div>
-				</div>
-			</div>
+
+
+					<div class="form-group row justify-content-center">
+						<label for="descripcion" class="col-sm-12 col-form-label">Descripción</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" name="descripcion"
+								id="descripcion" rows="3"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group row justify-content-center">
+						<label for="descripcion" class="col-sm-12 col-form-label">Descripción</label>
+						<div class="col-sm-5">
+							<%
+								List<TipoNoticia> tipoNoticias = (List<TipoNoticia>) request.getAttribute("tipos");
+							%>
+							<select required name="tipo" class="form-control">
+								<option value="">Seleccionar</option>
+								<%
+									for (TipoNoticia tipo : tipoNoticias) {
+								%>
+								<option value="<%=tipo.getIdTipoNoticia()%>"><%=tipo.getTipo()%></option>
+								<%
+									}
+								%>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="container mt-5">
+							<h3 class="text-center">Subir imagen</h3>
+							<div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
+
+								<div class="form-group">
+									<label><strong>Subir</strong></label>
+									<div class="custom-file">
+										<input id="in-url" hidden="true" name="imagen" value=""
+											required="required"> <input placeholder="asdasd"
+											type="file" name="files[]" multiple
+											class="custom-file-input form-control" id="img-uploader">
+										<label class="custom-file-label" for="customFile"
+											id="lblarchivo">Elegir archivo</label>
+									</div>
+								</div>
+								<progress id="img-upload-bar" value="0" max="100"
+									style="width: 100%"></progress>
+
+								<div class="form-group">
+									<button type="button" name="upload" value="upload" id="upload"
+										class="btn btn-block btn-dark">
+										<i class="fa fa-fw fa-upload"></i> Subir
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
 
 
 
-			</form>
-			<!-- cierre de form-row -->
-			<!-- dejo fuera a submit -->
-			<div class="form-group">
-				<input type="submit" value="Guardar" class="btn btn-dark">
+
+					<!-- cierre de form-row -->
+					<!-- dejo fuera a submit -->
+					<div class="form-group">
+						<input type="submit" value="Guardar" class="btn btn-dark">
+					</div>
+				</form>
 			</div>
 			</form>
 		</div>
@@ -254,5 +271,6 @@
 		src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
 </body>
+
 
 </html>

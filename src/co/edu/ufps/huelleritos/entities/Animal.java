@@ -20,6 +20,7 @@ import java.util.List;
 	@NamedQuery(name="Animal.findAllAdoptado", query="SELECT a FROM animal a where a.estadoAnimalBean.descripcion='Adoptado'"),
 	@NamedQuery(name="Animal.findAllAdultos", query="SELECT a FROM animal a where a.edad>=1"),
 	@NamedQuery(name="Animal.findAllCachorros", query="SELECT a FROM animal a where a.edad<1")
+
 })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;
