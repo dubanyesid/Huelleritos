@@ -3,17 +3,22 @@ package co.edu.ufps.huelleritos.negocio;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import co.edu.ufps.huelleritos.correo.Correo;
+import co.edu.ufps.huelleritos.correo.EnviarCorreoUsuario;
 import co.edu.ufps.huelleritos.correo.EnviarMail;
 import co.edu.ufps.huelleritos.correo.GenerarPDF;
 import co.edu.ufps.huelleritos.correo.Mail;
 import co.edu.ufps.huelleritos.dao.*;
 import co.edu.ufps.huelleritos.entities.Formulario;
+import co.edu.ufps.huelleritos.entities.Usuario;
 
 public class Probando {
 
@@ -38,7 +43,7 @@ public class Probando {
 		 * @Override public int compare(Puntaje p1, Puntaje p2) { return
 		 * p1.getPuntaje().compareTo(p2.getPuntaje()); } });
 		 */
-		
+
 		/*
 		 * String[]list = new PreguntaDAO().listPreguntas(2);
 		 * 
@@ -48,27 +53,24 @@ public class Probando {
 		 * 
 		 */
 
-		Correo correo =new Correo();
-		EnviarMail em=new EnviarMail();
-		GenerarPDF gp=new GenerarPDF();
+		Correo correo = new Correo();
+		EnviarMail em = new EnviarMail();
+		GenerarPDF gp = new GenerarPDF();
+		EnviarCorreoUsuario ec=new EnviarCorreoUsuario();
 		
-		try {
-			gp.generarPDF("algo.pdf", "Prueba", "correo");
-			correo=new Correo("huelleritosfundacion@gmail.com", "algo.pdf", "Huelleritos3259", 
-					new File("algo.pdf").toString(), "juansebasprada07@gmail.com", "Adjunto pdf", "Prueba pdf");
-			em.SendMail(correo);
-		} catch (FileNotFoundException e) {
-			System.err.println("FILENOFOUND");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.err.println("IOEXCEPTION");
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			System.err.println("INTERRUPTED");
-			e.printStackTrace();
-		}
-		Mail m=new Mail();
-		//m.enviarEmail("juandavidsm@ufps.edu.co", "Que paso lk", "esto es una prueba");
-		//em.enviar("juandavidsm@ufps.edu.co", "Que paso lk", 1119323413);
+
+		System.out.println("daa");
+			Usuario us=new Usuario("admin", "1234");
+			Formulario f=new Formulario(123, "Juan", "Sanchez", "juansebasprada07@gmail.com", "3219810616", new Date());
+			System.out.println("dfdsfa");
+			ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", us, f);
+
+		//Mail m = new Mail();
+
+		// m.enviarEmail("juandavidsm@ufps.edu.co", "Que paso lk", "esto es una
+		// prueba");
+		// em.enviar("juandavidsm@ufps.edu.co", "Que paso lk", 1119323413);
+
+
 	}
 }

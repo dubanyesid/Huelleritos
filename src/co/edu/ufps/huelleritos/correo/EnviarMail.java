@@ -54,6 +54,7 @@ public class EnviarMail {
             }
             MimeMultipart m = new MimeMultipart();
             m.addBodyPart(texto);
+            
             if (!c.getRutaArchivo().equals("")) {
                 m.addBodyPart(adjunto);
             System.out.println("e");}
@@ -61,20 +62,16 @@ public class EnviarMail {
             mensaje.setFrom(new InternetAddress(c.getUsuarioCorreo()));
             InternetAddress[] toAddresses = { new InternetAddress(c.getDestino()) };
             mensaje.setRecipients(Message.RecipientType.TO, toAddresses);
-           // mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(c.getDestino()));
+           
+            // mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(c.getDestino()));
             mensaje.setSubject(c.getAdjunto());
             mensaje.setContent(m);
             System.out.println("f");
 			Transport.send(mensaje); 
-					/*
-							 * s.getTransport("smtp"); t.connect(c.getUsuarioCorreo(), c.getContrasena());
-							 * System.out.println("g"); t.sendMessage(mensaje, mensaje.getAllRecipients());
-							 */
-					/* t.close(); */
+
             return true;
 
         } catch (Exception e) {
-            System.out.println("Error " + e);
             return false;
         }
     }

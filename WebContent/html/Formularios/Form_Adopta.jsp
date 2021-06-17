@@ -175,7 +175,7 @@
 
                         <div class="form-group">
                             <label for="formGroupExampleInput">Cédula</label>
-                            <input name="cedula" type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su cédula">
+                            <input name="cedula"  type="number" required class="form-control" id="formGroupExampleInput" placeholder="Ingrese su cédula">
                         </div> 
 
                         <!-- DATOS FAMILIARES-->
@@ -682,7 +682,6 @@
                 icons: {
                  rightIcon: '<span class="fa fa-caret-down"></span>'
              }
-
          });
             var timepicker = $('#timepicker').timepicker({
              format: 'HH.MM'
@@ -690,4 +689,4 @@
      </script>
  </body>
 
- </html>
+ </html> </html>
