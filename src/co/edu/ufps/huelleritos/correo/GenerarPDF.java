@@ -27,7 +27,7 @@ public class GenerarPDF {
 
     }
 
-    public void generarPDF(String nombreArchivo) throws FileNotFoundException, IOException, InterruptedException {
+    public void generarPDF(String nombreArchivo, String titulo, String cuerpo) throws FileNotFoundException, IOException, InterruptedException {
 
         FileOutputStream f = new FileOutputStream(nombreArchivo);
         PdfWriter writer = new PdfWriter(f);
@@ -39,13 +39,9 @@ public class GenerarPDF {
         PdfFont font1 = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
 
         try {
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-            document.add(new Paragraph("<--------------------->").setFont(font1));
-
+            document.add(new Paragraph(titulo).setFont(font1));
+            document.add(new Paragraph(cuerpo).setFont(font));
+            
             document.close();
 
         } catch (Exception ex) {

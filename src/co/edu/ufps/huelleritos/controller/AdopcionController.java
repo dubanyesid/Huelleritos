@@ -73,12 +73,13 @@ public class AdopcionController extends HttpServlet {
 		if (ubicacion.contains("Adoptar")) {
 			this.showFormAdopta(request, response,ubicacion.replace("/Adoptar", ""));
 		} else if (ubicacion.contains("HogarDePaso")) {
-			this.showFormHogar(request, response, ubicacion);
+			this.showFormHogar(request, response, ubicacion.replace("/HogarDePaso", ""));
 		}
 	}
 
 	protected void insertAdopta(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {		
+			throws ServletException, IOException {
+		System.out.println("insert adoptar");
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String ocupacion = request.getParameter("ocupacion");
@@ -103,7 +104,7 @@ public class AdopcionController extends HttpServlet {
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);	
 		
-		response.sendRedirect(request.getContextPath()+"/Adoptar");
+		response.sendRedirect(request.getContextPath()+"/HogarDePaso");
 	}
 	
 	protected void insertarHogar(HttpServletRequest request, HttpServletResponse response)
@@ -132,7 +133,7 @@ public class AdopcionController extends HttpServlet {
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);	
 		
-		response.sendRedirect(request.getContextPath()+"/Adoptar");
+		response.sendRedirect(request.getContextPath()+"/HogarDePaso");
 	}
 	
 	
@@ -142,6 +143,7 @@ public class AdopcionController extends HttpServlet {
 		formularioAnimal.setAnimal(animalBuscado);
 		formulario.addFormularioAnimal(formularioAnimal);
 		//formularioAnimalDAO.insert(formularioAnimal);
+		System.out.println("final 3");
 	}
 	
 	protected void llenarFormularioPreguntaSelect(String[]preguntas,Formulario formulario) {
@@ -149,6 +151,7 @@ public class AdopcionController extends HttpServlet {
 		for (String pregunta : preguntas) {			
 			llenarFormularioPregunta(pregunta, formulario);
 		}
+		System.out.println("final 2");
 	}
 	
    protected void llenarFormularioPreguntaRadio(Enumeration<String> preguntasParametersNames,Formulario formulario, HttpServletRequest request) {
@@ -163,6 +166,7 @@ public class AdopcionController extends HttpServlet {
 			}
 			
 		}
+	   System.out.println("final 1");
 }
    
    protected void llenarFormularioPregunta(String pregunta,Formulario formulario) {
