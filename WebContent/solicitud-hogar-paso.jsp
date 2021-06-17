@@ -1,131 +1,153 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@page import="co.edu.ufps.huelleritos.entities.*"%>
 <%@page import="co.edu.ufps.huelleritos.dao.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-		<!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <title>Solicitud Hogar De Paso</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
+<title>Solicitud Hogar De Paso</title>
 
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<!-- CSS -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/media-queries.css">
 
-    </head>
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <body>
-    	<div>
-			<!--Navbar-->
-			<nav class="navbar navbar-dark  bg-dark">
-			  <a class="form-inline my-2 my-lg-0 ml-auto">
-			  	Usuario
-			  </a>
-			</nav>
-			<!--/.Navbar-->
-    	</div>    	
+</head>
 
-		<!-- Wrapper -->
-    	<div class="wrapper">
+<body>
+	<div>
+		<!--Navbar-->
+		<nav class="navbar navbar-dark  bg-dark">
+			<a class="form-inline my-2 my-lg-0 ml-auto"> Usuario </a>
+		</nav>
+		<!--/.Navbar-->
+	</div>
 
-			<!-- Sidebar -->
-			<nav class="sidebar">
-				
-				<!-- close sidebar menu -->
-				<div class="dismiss">
-					<i class="fas fa-arrow-left"></i>
-				</div>
-				
-				
-					<h3><img src="assets/img/Huelleritos.png"></h3>
-				
-				
-				<ul class="list-unstyled menu-elements" >
+	<!-- Wrapper -->
+	<div class="wrapper">
+
+		<!-- Sidebar -->
+		<nav class="sidebar">
+
+			<!-- close sidebar menu -->
+			<div class="dismiss">
+				<i class="fas fa-arrow-left"></i>
+			</div>
+
+
+			<h3>
+				<img src="<%=request.getContextPath()%>/assets/img/Huelleritos.png">
+			</h3>
+
+
+			<ul class="list-unstyled menu-elements" >
 					<li>
-						<a  href="inicioAdmin.jsp">Inicio</a>
+						<a  href="<%=request.getContextPath()%>/admin/inicio">Inicio</a>
 					</li>
 					<li>
-						<a  href="lista-animales.jsp">Animales</a>
+						<a  href="<%=request.getContextPath()%>/admin/animal/listar">Animales</a>
 					</li>
 					<li>
-						<a href="donaciones.jsp">Donaciones</a>
+						<a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
 					</li>
 					<li>
-						<a href="seguimiento-animal.jsp">Seguimiento</a>
+						<a href="<%=request.getContextPath()%>/seguimiento-animal.jsp">Seguimiento</a>
 					</li>
 					<li>
-						<a href="solicitud-adoptante.jsp">Solicitudes Adopcion</a>
+						<a href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes Adopcion</a>
 					</li>
 					<li>
-						<a  href="solicitud-hogar-paso.jsp">Solicitudes Hogares de Paso</a>
+						<a  href="<%=request.getContextPath()%>/Solicitudes/HogarDePaso">Solicitudes Hogares de Paso</a>
 					</li>
 					<li>
-						<a  href="noticia.jsp">Noticias y Eventos</a>
+						<a  href="<%=request.getContextPath()%>/Noticias">Noticias y Eventos</a>
 					</li>
-					
+					<li>
+						<a  href="<%=request.getContextPath()%>/NoticiasEvidencias">Noticias y Evidencias</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/logout">Cerrar sesion</a>
+					</li>
 				</ul>
-				
-				
-				
-				<div class="dark-light-buttons">
-					<a class="btn btn-primary btn-customized-4 btn-customized-dark" href="#" role="button">Dark</a>
-					<a class="btn btn-primary btn-customized-4 btn-customized-light" href="#" role="button">Light</a>
-				</div>
-			
-			</nav>
-			<!-- End sidebar -->
-			
-			<!-- Dark overlay -->
-    		<div class="overlay"></div>
 
-			<!-- Content -->
-			<div class="content mt-5">
-			
-				<!-- open sidebar menu -->
-				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
-                    <i class="fas fa-align-left"></i> <span>Menu</span>
-                </a>
+
+
+			<div class="dark-light-buttons">
+				<a class="btn btn-primary btn-customized-4 btn-customized-dark"
+					href="#" role="button">Dark</a> <a
+					class="btn btn-primary btn-customized-4 btn-customized-light"
+					href="#" role="button">Light</a>
+			</div>
+
+		</nav>
+		<!-- End sidebar -->
+
+		<!-- Dark overlay -->
+		<div class="overlay"></div>
+
+		<!-- Content -->
+		<div class="content mt-5">
+
+			<!-- open sidebar menu -->
+			<a class="btn btn-primary btn-customized open-menu" href="#"
+				role="button"> <i class="fas fa-align-left"></i> <span>Menu</span>
+			</a>
 			<div class="container">
 				<%
 					Formulario f = (Formulario) request.getAttribute("formulario");
 				%>
 				<div>
 					<h1>
-						SOLICITUD 
-						<%=f.getIdFormulario()%> - Hogar de Paso	
+						SOLICITUD
+						<%=f.getIdFormulario()%>
+						- Hogar de Paso
 					</h1>
 				</div>
 
 
 				<form>
-				<div>
-					<h1>
-						Animal: 
-						<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
-					</h1>
-				</div>
-				<p><strong>Fecha:</strong> <%=f.getFecha().toString().split(" ")[0]%></p>
+					<div>
+						<h1>
+							Animal:
+							<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
+						</h1>
+					</div>
+					<p>
+						<strong>Fecha:</strong>
+						<%=f.getFecha().toString().split(" ")[0]%></p>
 					<div class="form-row">
 
 						<div class="form-group col-md-3">
-						
+
 							<label for="nombre">Nombre</label> <input type="text"
 								value="<%=f.getNombre()%>" class="form-control" disabled>
 						</div>
@@ -230,7 +252,28 @@
 					<!-- cierre de form-row -->
 				</form>
 			</div>
+			<form action="<%=request.getContextPath()%>/admin/generarUsuario"
+				method="POST">
+				<%
+					if (f.getUsuarioBean() != null) {
+				%>
 
+				<a href="#" style="pointer-events: none; cursor: default;"
+					class="btn btn-secondary">Crear usuario</a>
+				<%
+					} else {
+				%>
+				<input type="hidden" name="formularioID"
+					value="<%=f.getIdFormulario()%>"> <input type="hidden"
+					name="tipo" value="Hogar"> <input type="hidden"
+					name="animal"
+					value="<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>">
+				<button type="submit" name="submit" class="btn btn-dark">Crear
+					Usuario</button>
+				<%
+					}
+				%>
+			</form>
 		</div>
 
 
@@ -248,24 +291,30 @@
 			</div>
 
 		</footer>
-	        
-	        </div>
-	        <!-- End content -->
-        
-        </div>
-        <!-- End wrapper -->
 
-        <!-- Javascript -->
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+	</div>
+	<!-- End content -->
 
-    </body>
+	</div>
+	<!-- End wrapper -->
+
+	<!-- Javascript -->
+	<script src="<%=request.getContextPath()%>/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/jquery-migrate-3.0.0.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/jquery.backstretch.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/wow.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/jquery.waypoints.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
+
+</body>
 
 </html>

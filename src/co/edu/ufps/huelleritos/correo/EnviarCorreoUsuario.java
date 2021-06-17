@@ -27,7 +27,7 @@ public class EnviarCorreoUsuario {
 		this.generarPDF = generarPDF;
 	}
 
-	public boolean enviarCorreo(String nombreArchivo, String rol, Usuario us, Formulario formulario) {
+	public boolean enviarCorreo(String nombreArchivo, String rol, String nombreAnimal,Usuario us, Formulario formulario) {
 		System.out.println("dadssada");
 		boolean creado=false;
 		boolean enviado=false;
@@ -40,7 +40,7 @@ public class EnviarCorreoUsuario {
 			correo = new Correo("huelleritosfundacion@gmail.com", nombreArchivo, "Huelleritos3259", "", formulario.getCorreo(),
 					"Se adjunta información sobre la solicitud.", "Solicitud " + rol);
 
-			creado=generarPDF.generarPDF(nombreArchivo, rol, us, formulario);
+			creado=generarPDF.generarPDF(nombreArchivo, rol, nombreAnimal,us, formulario);
 
 			correo.setRutaArchivo(new File(nombreArchivo).toString());
 

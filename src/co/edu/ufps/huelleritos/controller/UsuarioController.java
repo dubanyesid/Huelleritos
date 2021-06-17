@@ -85,8 +85,15 @@ public class UsuarioController extends HttpServlet {
 			String contrasenia=request.getParameter("password");
 			String tipo = request.getParameter("tipo");			
 			if(usuario== null || contrasenia==null || tipo== null) {
-				//ERROR
-				//return;
+				
+				System.out.println(usuario);
+				System.out.println(contrasenia);
+				System.out.println(tipo);
+				//response.sendRedirect(request.getContextPath() + "/Usuario/Login?mensaje=Datos incorrectos");
+				System.out.println("hola aca");
+				request.setAttribute("mensaje", "Datos incorrectos");
+				request.getRequestDispatcher("/administrador/login.jsp").include(request, response);
+				return;
 			}			
 			Usuario usuarioEntity=new Usuario();
 			usuarioEntity.setUsuario(usuario);
@@ -116,8 +123,8 @@ public class UsuarioController extends HttpServlet {
 	protected void enviarInicio(HttpServletRequest request, HttpServletResponse response,String tipo) throws ServletException, IOException {
 	
 		switch(tipo) {
-		case "admin":
-			response.sendRedirect(request.getContextPath()+"/admin");
+		case "admin":System.out.println("hola acas");
+			response.sendRedirect(request.getContextPath()+"/admin/inicio");
 			break;
 		default:
 			response.sendRedirect(request.getContextPath());
@@ -132,9 +139,10 @@ public class UsuarioController extends HttpServlet {
 			request.getSession().setAttribute("tipoUsuario",tipo);
 			enviarInicio(request, response, tipo);
 		}else {
-			//REENVIE E IMPRIMA ERROR
-			System.out.println("no existe");
-			response.sendRedirect(request.getContextPath()+"/Usuario/Login");
+			request.setAttribute("mensaje", "No existe");
+			System.out.println("hola acaa");
+			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
+			//response.sendRedirect(request.getContextPath() + "/Usuario/Login);
 		}
 		
 		

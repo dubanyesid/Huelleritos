@@ -74,18 +74,35 @@
 			</h3>
 
 
-			<ul class="list-unstyled menu-elements">
-				<li><a href="inicioAdmin.jsp">Inicio</a></li>
-				<li><a href="lista-animales.jsp">Animales</a></li>
-				<li><a href="donaciones.jsp">Donaciones</a></li>
-				<li><a href="seguimiento-animal.jsp">Seguimiento</a></li>
-				<li><a href="solicitud-adoptante.jsp">Solicitudes Adopcion</a>
-				</li>
-				<li><a href="solicitud-hogar-paso.jsp">Solicitudes Hogares
-						de Paso</a></li>
-				<li><a href="noticia.jsp">Noticias y Eventos</a></li>
-
-			</ul>
+			<ul class="list-unstyled menu-elements" >
+					<li>
+						<a  href="<%=request.getContextPath()%>/admin/inicio">Inicio</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/admin/animal/listar">Animales</a>
+					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
+					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/seguimiento-animal.jsp">Seguimiento</a>
+					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes Adopcion</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/Solicitudes/HogarDePaso">Solicitudes Hogares de Paso</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/Noticias">Noticias y Eventos</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/NoticiasEvidencias">Noticias y Evidencias</a>
+					</li>
+					<li>
+						<a  href="<%=request.getContextPath()%>/logout">Cerrar sesion</a>
+					</li>
+				</ul>
 
 
 
@@ -121,12 +138,12 @@
 					</h1>
 				</div>
 
-
+<%Animal animal=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()));%>
 				<form>
 					<div>
 						<h1>
 							Animal:
-							<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
+							<%=animal.getNombreAnimal()%>
 						</h1>
 					</div>
 					<p>
@@ -253,6 +270,7 @@
 			%>
 			<input type="hidden" name="formularioID" value="<%=f.getIdFormulario()%>">
 			<input type="hidden" name="tipo" value="Adoptante">
+			<input type="hidden" name="animal" value="<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>">
 			<button type="submit" name="submit" class="btn btn-dark">Crear Usuario</button>
 			<%
 				}

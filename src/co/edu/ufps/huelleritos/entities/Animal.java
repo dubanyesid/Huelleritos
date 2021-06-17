@@ -12,12 +12,14 @@ import java.util.List;
  * The persistent class for the animal database table.
  * 
  */
-@Entity
+@Entity(name="animal")
 @NamedQueries({
-	@NamedQuery(name="Animal.findAll", query="SELECT a FROM Animal a"),
-	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
-	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'"),
-	@NamedQuery(name="Animal.findAllAdoptado", query="SELECT a FROM Animal a where a.estadoAnimalBean.descripcion='Adoptado'")
+	@NamedQuery(name="Animal.findAll", query="SELECT a FROM animal a"),
+	@NamedQuery(name="Animal.findAllAdopcion", query="SELECT a FROM animal a where a.estadoAnimalBean.descripcion='Guarderia'"),
+	@NamedQuery(name="Animal.findAllPrioritario", query="SELECT a FROM animal a where a.estadoAnimalBean.descripcion='Guarderia' and a.prioridad.prioridad='Urgente'"),
+	@NamedQuery(name="Animal.findAllAdoptado", query="SELECT a FROM animal a where a.estadoAnimalBean.descripcion='Adoptado'"),
+	@NamedQuery(name="Animal.findAllAdultos", query="SELECT a FROM animal a where a.edad>=1"),
+	@NamedQuery(name="Animal.findAllCachorros", query="SELECT a FROM animal a where a.edad<1")
 })
 public class Animal implements Serializable {
 	private static final long serialVersionUID = 1L;

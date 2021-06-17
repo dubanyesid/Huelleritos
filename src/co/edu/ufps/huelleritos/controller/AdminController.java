@@ -23,6 +23,8 @@ import co.edu.ufps.huelleritos.dao.UsuarioDAO;
 import co.edu.ufps.huelleritos.dao.VacunaDAO;
 import co.edu.ufps.huelleritos.dao.VacunaHistorialDAO;
 import co.edu.ufps.huelleritos.entities.Adoptante;
+import co.edu.ufps.huelleritos.entities.Animal;
+import co.edu.ufps.huelleritos.entities.EstadoAnimal;
 import co.edu.ufps.huelleritos.entities.Formulario;
 import co.edu.ufps.huelleritos.entities.HogarDePaso;
 import co.edu.ufps.huelleritos.entities.Usuario;
@@ -31,7 +33,7 @@ import co.edu.ufps.huelleritos.entities.Usuario;
 /**
  * Servlet implementation class IndexController
  */
-@WebServlet({ "/admin","/admin/generarUsuario" })
+@WebServlet({ "/admin","/admin/inicio","/admin/generarUsuario" })
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,16 +47,12 @@ public class AdminController extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		super.init();
 		usuarioDAO = new UsuarioDAO();
 		ec= new EnviarCorreoUsuario();
-
 	}
 
 	/**
@@ -68,7 +66,9 @@ public class AdminController extends HttpServlet {
 		if (request.getSession().getAttribute("usuario") == null
 				|| request.getSession().getAttribute("tipoUsuario") == null
 				|| !request.getSession().getAttribute("tipoUsuario").equals("admin")) {
-			response.sendRedirect(request.getContextPath() + "/Usuario/Login");
+			request.setAttribute("mensaje", "Datos incorrectos");
+			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
+			//response.sendRedirect(request.getContextPath() + "/Usuario/Login");
 			return;
 		}
 
@@ -76,11 +76,13 @@ public class AdminController extends HttpServlet {
 			generarUsuario(request,response);
 			System.out.println("sa");
 			return;
+		}else if(path.contains("inicio")){
+			request.getRequestDispatcher("/inicioAdmin.jsp").forward(request, response);
 		}
 		
 		
 		// request.getRequestDispatcher("/inicioAdmin.jsp").include(request, response);
-		response.sendRedirect(request.getContextPath() + "/admin/generarUsuario");
+		//response.sendRedirect(request.getContextPath() + "/admin/generarUsuario");
 
 	}
 
@@ -106,6 +108,7 @@ public class AdminController extends HttpServlet {
 			throws ServletException, IOException {
 		Usuario us =usuarioDAO.find(usuario);
 		String tipo = String.valueOf(request.getParameter("tipo"));
+		Animal animal =new AnimalDAO().buscarAnimalPorFormulario("2");
 		System.out.println(tipo);
 		if(us==null) {
 			us= new Usuario(usuario,pass);
@@ -114,22 +117,23 @@ public class AdminController extends HttpServlet {
 			
 			switch(tipo) {
 			case "Adoptante":
-				us.setAdoptante(new Adoptante(usuario,"Espera",us));
-				//enviarCorreo();
+				us.setAdoptante(new Adoptante(usuario,"Adoptado",us));
+				animal.setEstadoAnimalBean(new EstadoAnimalDAO().find(1));
 				break;			
 			case "Hogar":
 				us.setHogarDePaso(new HogarDePaso(usuario,us));
+				animal.setEstadoAnimalBean(new EstadoAnimalDAO().find(2));
 				tipo="Hogar de paso";
-				//enviarCorreo();
 				break;
 			default:
 				response.sendRedirect(request.getContextPath() + "/Error");
 				return;
 			}
 			usuarioDAO.insert(us);
-			ec.enviarCorreo("informacionHuelleritos.pdf", tipo,us, f);
+			ec.enviarCorreo("informacionHuelleritos.pdf", tipo,request.getParameter("animal"),us, f);
 		}else {
 			request.setAttribute("mensaje", "Usuario ya existe");
+			request.getRequestDispatcher("/admin/inicio").forward(request, response);
 		}
 	}
 	

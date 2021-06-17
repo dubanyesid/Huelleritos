@@ -8,8 +8,8 @@ import javax.persistence.*;
  * The persistent class for the adoptante database table.
  * 
  */
-@Entity
-@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM Adoptante a")
+@Entity(name="adoptante")
+@NamedQuery(name="Adoptante.findAll", query="SELECT a FROM adoptante a")
 public class Adoptante implements Serializable {
 	private static final long serialVersionUID = 1L;
 

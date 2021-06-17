@@ -15,24 +15,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- <link rel="manifest" href="site.webmanifest"> -->
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/img/logocontacto.png">
 
 <!-- Place favicon.ico in the root directory -->
 
 <!-- CSS here -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/themify-icons.css">
-<link rel="stylesheet" href="css/nice-select.css">
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/gijgo.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/slicknav.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cssdenosotros.css">
-<link rel="stylesheet" href="css/huelleritos.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/magnific-popup.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/themify-icons.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/nice-select.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/gijgo.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/slicknav.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/cssdenosotros.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/huelleritos.css">
 
 <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -75,7 +75,7 @@
 					<div class="row align-items-center">
 						<div class="col-xl-2 col-lg-2">
 							<div class="logo">
-								<a href="index.html"> <img src="img/Huelleritos.png" alt="">
+								<a href="<%=request.getContextPath()%>/index"> <img src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -83,16 +83,15 @@
 							<div class="main-menu  d-none d-lg-block">
 								<nav>
 									<ul id="navigation">
-										<li><a href="index.html">Inicio</a></li>
-										<li><a href="html/Huelleritos.html">Huelleritos</a></li>
-										<li><a href="html/Adopta.html">Adopta</a></li>
-										<li><a href="html/Apadrinar.html">Apadrina</a></li>
-										<li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>
-										<li><a href="html/La_Fundacion.html">La fundación</a></li>
-										<li><a href="html/Noticias.html">Noticias</a></li>
-										<a href="html/Dona_aqui.html"
-											class="genric-btn primary circle">Dona Aqui</a>
-									</ul>
+                                        <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
+                                        <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
+                                        <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                    </ul>
 								</nav>
 							</div>
 						</div>
@@ -219,51 +218,7 @@ private String caruselAnimalHtml(List<Animal>animales){
 				List<Animal> animalesAdopcion = (List<Animal>) request.getAttribute("animalesAdopcion");
 				out.append(caruselAnimalHtml(animalesAdopcion));
 				%>
-				<!-- 
-                <div class="carousel-item active">                   
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                
--->
+				
 			</div>
 
 			<a class="carousel-control-prev" href="#carouselExampleControls"
@@ -299,53 +254,7 @@ private String caruselAnimalHtml(List<Animal>animales){
 				List<Animal> animalesAdoptados = (List<Animal>) request.getAttribute("animalesAdoptados");
 				out.append(caruselAnimalHtml(animalesAdoptados));
 				%>
-				
-				
-				<!-- 
-                <div class="carousel-item active">                   
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card centro">
-                                <img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Edad del animal</h5>
-                                    <h4>Nombre del animal</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="genric-btn primary circle">Conoce Mas</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                
--->
 			</div>
 
 			<a class="carousel-control-prev" href="#carouselExampleControls"
@@ -631,33 +540,34 @@ private String caruselAnimalHtml(List<Animal>animales){
 
 
 	<!-- JS here -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/vendor/jquery-1.12.4.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/ajax-form.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/scrollIt.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/nice-select.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/gijgo.min.js"></script>
-	<!--contact js-->
-	<script src="js/contact.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.form.js"></script>
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/mail-script.js"></script>
+	 <script src="<%=request.getContextPath()%>/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/isotope.pkgd.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/ajax-form.js"></script>
+    <script src="<%=request.getContextPath()%>/js/waypoints.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.counterup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/scrollIt.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.scrollUp.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/nice-select.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.slicknav.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/plugins.js"></script>
+    <script src="<%=request.getContextPath()%>/js/gijgo.min.js"></script>
+    <!--contact js-->
+    <script src="<%=request.getContextPath()%>/js/contact.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.ajaxchimp.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.form.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/mail-script.js"></script>
+    <script src="<%=request.getContextPath()%>/js/javascript.js"></script>
 
 
-	<script src="js/main.js"></script>
+    <script src="<%=request.getContextPath()%>/js/main.js"></script>
 	<script>
 		$('#datepicker').datepicker({
 			iconsLibrary : 'fontawesome',

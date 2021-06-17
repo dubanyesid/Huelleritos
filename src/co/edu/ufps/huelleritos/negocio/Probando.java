@@ -17,6 +17,7 @@ import co.edu.ufps.huelleritos.correo.EnviarMail;
 import co.edu.ufps.huelleritos.correo.GenerarPDF;
 import co.edu.ufps.huelleritos.correo.Mail;
 import co.edu.ufps.huelleritos.dao.*;
+import co.edu.ufps.huelleritos.entities.Animal;
 import co.edu.ufps.huelleritos.entities.Formulario;
 import co.edu.ufps.huelleritos.entities.Usuario;
 
@@ -53,24 +54,22 @@ public class Probando {
 		 * 
 		 */
 
-		Correo correo = new Correo();
-		EnviarMail em = new EnviarMail();
-		GenerarPDF gp = new GenerarPDF();
-		EnviarCorreoUsuario ec=new EnviarCorreoUsuario();
-		
+		/*
+		 * Correo correo = new Correo(); EnviarMail em = new EnviarMail(); GenerarPDF gp
+		 * = new GenerarPDF(); EnviarCorreoUsuario ec = new EnviarCorreoUsuario();
+		 * 
+		 * Usuario us = new Usuario("admin", "1234"); Formulario f = new Formulario(123,
+		 * "Yurley", "Espinel", "yurleygabrielaes@ufps.edu.co", "3219810616", new
+		 * Date()); ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", "Coco",
+		 * us, f);
+		 */
 
-		System.out.println("daa");
-			Usuario us=new Usuario("admin", "1234");
-			Formulario f=new Formulario(123, "Juan", "Sanchez", "juansebasprada07@gmail.com", "3219810616", new Date());
-			System.out.println("dfdsfa");
-			ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", us, f);
+		// Mail m = new Mail();
 
-		//Mail m = new Mail();
-
+		Animal listAnimales= new AnimalDAO().buscarAnimalPorFormulario("2");
 		// m.enviarEmail("juandavidsm@ufps.edu.co", "Que paso lk", "esto es una
 		// prueba");
 		// em.enviar("juandavidsm@ufps.edu.co", "Que paso lk", 1119323413);
-
 
 	}
 }

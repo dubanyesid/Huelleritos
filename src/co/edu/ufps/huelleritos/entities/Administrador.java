@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the administrador database table.
  * 
  */
-@Entity
-@NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a")
+@Entity(name="administrador")
+@NamedQuery(name="Administrador.findAll", query="SELECT a FROM administrador a")
 public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;
 

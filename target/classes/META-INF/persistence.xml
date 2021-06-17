@@ -15,7 +15,6 @@
 		<class>co.edu.ufps.huelleritos.entities.HistorialAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.HogarDePaso</class>
 		<class>co.edu.ufps.huelleritos.entities.Noticia</class>
-		<class>co.edu.ufps.huelleritos.entities.NoticiaEvento</class>
 		<class>co.edu.ufps.huelleritos.entities.Opcion</class>
 		<class>co.edu.ufps.huelleritos.entities.OperacionesAnimal</class>
 		<class>co.edu.ufps.huelleritos.entities.Pregunta</class>
@@ -27,10 +26,10 @@
 		<class>co.edu.ufps.huelleritos.entities.Vacuna</class>
 		<class>co.edu.ufps.huelleritos.entities.VacunaHistorial</class>
 		<properties>
-				<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/huelleritos"/>
-				<property name="javax.persistence.jdbc.user" value="root"/>
-				<property name="javax.persistence.jdbc.password" value=""/>
-				<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+				<property name="javax.persistence.jdbc.url" value="jdbc:mysql://huelleritos.cww0txl5fdse.us-east-2.rds.amazonaws.com:3306/u603952219_huelleritos"/>
+				<property name="javax.persistence.jdbc.user" value="admin"/>
+				<property name="javax.persistence.jdbc.password" value="4TC2fXHfcATBKCb9DXt6"/>
+				<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 				<property name="javax.persistence.schema-generation.database.action" value="none"/>
 				<property name="hibernate.dialect" value=" org.hibernate.dialect.MariaDB53Dialect"/>
 				<property name="hibernate.show_sql" value="true"/>

@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the enfermedad database table.
  * 
  */
-@Entity
-@NamedQuery(name="Enfermedad.findAll", query="SELECT e FROM Enfermedad e")
+@Entity(name="enfermedad")
+@NamedQuery(name="Enfermedad.findAll", query="SELECT e FROM enfermedad e")
 public class Enfermedad implements Serializable {
 	private static final long serialVersionUID = 1L;
 

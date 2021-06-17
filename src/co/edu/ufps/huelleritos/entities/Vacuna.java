@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the vacuna database table.
  * 
  */
-@Entity
-@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM Vacuna v")
+@Entity(name="vacuna")
+@NamedQuery(name="Vacuna.findAll", query="SELECT v FROM vacuna v")
 public class Vacuna implements Serializable {
 	private static final long serialVersionUID = 1L;
 

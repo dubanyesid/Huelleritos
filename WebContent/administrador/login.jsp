@@ -13,9 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>login huelleritos</title>
 
-        <link rel="stylesheet" href="../administrador/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../administrador/estilos.css">
-        <link rel="stylesheet" href="../administrador/plugins/sweetalert2/sweetalert2.min.css">        
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/administrador/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/administrador/estilos.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/administrador/plugins/sweetalert2/sweetalert2.min.css">        
        
     </head>
     
@@ -23,7 +23,7 @@
      
       <div class="login container-login ">
         <div class="wrap-login">
-            <form class="login-form validate-form" id="formLogin" action="Login/Log" method="post">
+            <form class="login-form validate-form" id="formLogin" action="<%=request.getContextPath()%>/Usuario/Login/Log" method="post">
                 <span class="login-form-title">Inicio de Sesión</span>
                 
                 <div class="wrap-input100" data-validate = "Usuario incorrecto">
@@ -43,11 +43,23 @@
                                 <option value="hogar">Hogar de paso</option>
                                 <option value="adoptante">Adoptante</option>
                             </select>
+                            
                         </div>
+                        <% 
+			String mensaje=String.valueOf(request.getAttribute("mensaje"));
+            if(request.getAttribute("mensaje")!=null) 
+            { 
+            	%>          
+                <p style="text-align: center;color:red"><%=mensaje %></p>
+        <%
+            }
+%>
                 
                 <div class="container-login-form-btn">
                     <div class="wrap-login-form-btn">
+                        
                         <div class="login-form-bgbtn"></div>
+                        
                         <button type="submit" name="submit" class="login-form-btn">Ingresar</button>
                     </div>
                 </div>
@@ -56,8 +68,8 @@
     </div>     
         
         
-     <script src="../administrador/jquery/jquery-3.3.1.min.js"></script>    
-     <script src="../administrador/bootstrap/js/bootstrap.min.js"></script>    
+     <script src="<%=request.getContextPath()%>/administrador/jquery/jquery-3.3.1.min.js"></script>    
+     <script src="<%=request.getContextPath()%>/administrador/bootstrap/js/bootstrap.min.js"></script>    
             
     </body>
 </html>

@@ -12,11 +12,11 @@ import java.util.List;
  * The persistent class for the formulario database table.
  * 
  */
-@Entity
-@NamedQueries({@NamedQuery(name="Formulario.findAll", query="SELECT f FROM Formulario f"),
-	@NamedQuery(name="Formulario.findAdopcion", query="SELECT f FROM Formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
+@Entity(name="formulario")
+@NamedQueries({@NamedQuery(name="Formulario.findAll", query="SELECT f FROM formulario f"),
+	@NamedQuery(name="Formulario.findAdopcion", query="SELECT f FROM formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
 			+ " INNER JOIN u.adoptante a ON a.usuarioBean.usuario=u.usuario"),
-	@NamedQuery(name="Formulario.findHogar", query="SELECT f FROM Formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
+	@NamedQuery(name="Formulario.findHogar", query="SELECT f FROM formulario f JOIN f.usuarioBean u ON u.usuario=f.usuarioBean"
 			+ " INNER JOIN u.hogarDePaso h ON h.usuarioBean.usuario=u.usuario")})
 
 public class Formulario implements Serializable {

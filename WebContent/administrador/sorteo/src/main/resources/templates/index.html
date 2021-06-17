@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Inicio</title>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: #38C953">
+			<div>
+				<a href="https://www.javaguides.net" class="navbar-brand"><h1>Administrar
+						Sorteos</h1></a>
+			</div>
+		</nav>
+	</header>
+	
+	<div class="container">
+		<hr>
+		<div id="botones" class="container text-left">
+			<a th:href="@{/sorteo/registroSorteo}"
+				class="btn btn-success">Registrar Sorteo</a>
+				<a th:href="@{/sorteo/listarSorteos}"
+				class="btn btn-success">Listar Sorteo</a> <a href=""
+				class="btn btn-success">Buscar Sorteo</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr>
+		<div id="botones" class="container text-left">
+			<a href="" class="btn btn-success">Registrar Boleta</a> 
+			<a th:href="@{/boleta/listarBoletas}"
+				class="btn btn-success">Listar Boletas</a>
+			<a href=""
+				class="btn btn-success">Buscar Boleta</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr>
+		<div id="botones" class="container text-left">
+			<a th:href="@{/persona/registroPersona}" class="btn btn-success">Registrar Persona</a> 
+			<a th:href="@{/persona/listarPersonas}"
+				class="btn btn-success">Listar Personas</a>
+			<a href=""
+				class="btn btn-success">Buscar Persona</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr>
+		<div id="botones" class="container text-left">
+			<a href="" class="btn btn-success">Registrar Numero</a> 
+			<a th:href="@{/numero/listarNumeros}"
+				class="btn btn-success">Listar Numeros</a>
+			<a href=""
+				class="btn btn-success">Buscar numero</a>
+		</div>
+		<hr>
+	</div>
+	
+
+</body>
+</html>

@@ -11,12 +11,12 @@ import java.util.List;
  * The persistent class for the usuario database table.
  * 
  */
-@Entity
+@Entity(name="usuario")
 @NamedQueries({
-	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u"),
-	@NamedQuery(name="Usuario.logAdmin", query="SELECT u FROM Usuario u join u.administradors admin where u.usuario=:usuario and u.contraseña=:contrasenia "),
-	@NamedQuery(name="Usuario.logAdoptante", query="SELECT u FROM Usuario u join u.adoptante adopta where u.usuario=:usuario and u.contraseña=:contrasenia "),
-	@NamedQuery(name="Usuario.logHogar", query="SELECT u FROM Usuario u join u.hogarDePaso hogar where u.usuario=:usuario and u.contraseña=:contrasenia ")
+	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM usuario u"),
+	@NamedQuery(name="Usuario.logAdmin", query="SELECT u FROM usuario u join u.administradors admin where u.usuario=:usuario and u.contraseña=:contrasenia "),
+	@NamedQuery(name="Usuario.logAdoptante", query="SELECT u FROM usuario u join u.adoptante adopta where u.usuario=:usuario and u.contraseña=:contrasenia "),
+	@NamedQuery(name="Usuario.logHogar", query="SELECT u FROM usuario u join u.hogarDePaso hogar where u.usuario=:usuario and u.contraseña=:contrasenia ")
 
 
 })

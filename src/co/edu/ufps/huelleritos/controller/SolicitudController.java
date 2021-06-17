@@ -46,6 +46,14 @@ public class SolicitudController extends HttpServlet {
 		String path = request.getServletPath();
 		List<Puntaje> puntajes = null;
 
+		if (request.getSession().getAttribute("usuario") == null
+				|| request.getSession().getAttribute("tipoUsuario") == null
+				|| !request.getSession().getAttribute("tipoUsuario").equals("admin")) {
+			response.sendRedirect(request.getContextPath() + "/Usuario/Login");
+			return;
+		}
+		
+		
 		if (path.contains("Adopcion")) {
 			puntajes = formularioDAO.listAdopcion();
 			request.setAttribute("tipo", "Adopcion");

@@ -36,22 +36,18 @@ public class GenerarPDF {
 
     }
 
-    public boolean generarPDF(String nombreArchivo, String rol ,Usuario us, Formulario formulario) throws FileNotFoundException, IOException, InterruptedException {
-    	System.out.println("dfd");
+    public boolean generarPDF(String nombreArchivo, String rol, String nombreAnimal ,Usuario us, Formulario formulario) throws FileNotFoundException, IOException, InterruptedException {
+
         FileOutputStream f = new FileOutputStream(nombreArchivo);
-        System.out.println("arc");
+
         PdfWriter writer = new PdfWriter(f);
         PdfDocument pdfDoc = new PdfDocument(writer);
-        System.out.println("fs");
-        Document document = new Document(pdfDoc, PageSize.A5);
+
+        Document document = new Document(pdfDoc, PageSize.A4);
         document.setMargins(50, 30, 20, 30);
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
         PdfFont font1 = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-        System.out.println("dd");
-        System.out.println(nombreArchivo);
-        System.out.println(rol);
-        System.out.println(us);
-        System.out.println(formulario);
+
         try {
         	System.out.println("a");
         	Paragraph hue = new Paragraph("HUELLERITOS FUNDACIÓN").setFont(font1);
@@ -61,22 +57,22 @@ public class GenerarPDF {
         	String[] fe=LocalDateTime.now().toString().split("T");
         	Paragraph fecha = new Paragraph("Fecha: "+fe[0]+" "+fe[1].substring(0,8)).setFont(font1);
         	Paragraph pTitulo = new Paragraph("Hola, "+formulario.getNombre()+"\n").setFont(font1);
-            Paragraph pCuerpo = new Paragraph("Estamos felices de que te hayas unido a esta hermosa fundación, esperemos que nuestro huellerito :nombreanimal pueda disfrutar de su presencia.\n\n"
+            Paragraph pCuerpo = new Paragraph("Estamos felices de que te hayas unido a esta hermosa fundación, esperemos que nuestro huellerito "+ nombreAnimal+" y tú sean muy felices juntos.\n\n"
             		+ "Gracias al formulario que rellenó, se pudo valorar que si es apto por lo que se le generó el siguiente usuario:\n").setFont(font);               
             Paragraph infoUsuario = new Paragraph("Nombre de usuario: "+us.getUsuario()+"\nContraseña: "+us.getContraseña()).setFont(font1);
             Paragraph rolUser = new Paragraph("También se le hace saber que el usuario y usted pertenecen al rol de "+'"'+rol+'"'+", favor tener en cuenta lo anterior.").setFont(font);
-            Paragraph despedida = new Paragraph("\nMuchas gracias por su granito de arena.\nAtt: Yurley Gabriela Espinel").setFont(font1);
+            Paragraph despedida = new Paragraph("\nMuchas gracias por su granito de arena.\nAtt: Natalia Ortiz").setFont(font1);
             ImageData data = ImageDataFactory.create(new File("Huelleritos.png").getAbsolutePath());
             Image img = new Image(data).setFontSize(28f); 
             // Adding paragraphs to document       
-            System.out.println("d");
+
             document.add(img.setTextAlignment(TextAlignment.LEFT));
             document.add(hue);       
             document.add(fecha.setTextAlignment(TextAlignment.RIGHT));
             document.add(pTitulo);
             document.add(pCuerpo.setTextAlignment(TextAlignment.JUSTIFIED));
             document.add(infoUsuario.setTextAlignment(TextAlignment.JUSTIFIED));
-            System.out.println("asa");
+
             document.add(rolUser.setTextAlignment(TextAlignment.JUSTIFIED));
             document.add(despedida.setTextAlignment(TextAlignment.JUSTIFIED));
             document.close();

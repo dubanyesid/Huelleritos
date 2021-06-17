@@ -9,10 +9,10 @@ import java.util.List;
  * The persistent class for the pregunta database table.
  * 
  */
-@Entity
-@NamedQueries({@NamedQuery(name="Pregunta.findAll", query="SELECT p FROM Pregunta p"),
-	@NamedQuery(name="Pregunta.findAdopta", query="SELECT p FROM Pregunta p WHERE p.encuesta.idEncuesta=1 "),
-	@NamedQuery(name="Pregunta.findHogar", query="SELECT p FROM Pregunta p where p.encuesta.idEncuesta=2" )})
+@Entity(name="pregunta")
+@NamedQueries({@NamedQuery(name="Pregunta.findAll", query="SELECT p FROM pregunta p"),
+	@NamedQuery(name="Pregunta.findAdopta", query="SELECT p FROM pregunta p WHERE p.encuesta.idEncuesta=1 "),
+	@NamedQuery(name="Pregunta.findHogar", query="SELECT p FROM pregunta p where p.encuesta.idEncuesta=2" )})
 public class Pregunta implements Serializable {
 	private static final long serialVersionUID = 1L;
 

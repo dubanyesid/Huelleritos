@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<title>Mostrar Sorteos</title>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: #38C953">
+			<div>
+				<a href="https://www.javaguides.net" class="navbar-brand"><h1>Listar
+						Sorteos</h1> Sorteos App </a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="row">
+		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
+
+		<div class="container">
+			<hr>
+			<div class="container text-left">
+
+				<a th:href="@{/sorteo/registroSorteo}"
+					class="btn btn-success">Registrar nuevo sorteo</a> 
+				<a th:href="@{/index}" class="btn btn-success">Volver al inicio</a>
+			</div>
+			<br>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td>SORTEO</td>
+						<td>FECHA</td>
+						<td>BOLETAS</td>
+						<td>NUMEROS</td>
+						<td>ACCIONES</td>
+
+					</tr>
+				</thead>
+				<tbody>
+					<!--   for (Todo todo: todos) {  -->
+					 
+						<tr th:each="sorteo : ${list}">
+							<td th:text="${sorteo.nombre}"/></td>
+							<td th:text="${sorteo.fecha}" /></td>
+							<td th:text="${sorteo.boletas}"></td>
+							<td th:text="${sorteo.numeros}"></td>
+							<td><a
+								href="">Registrar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+								href=""/>Sortear</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+								th:href="@{/boleta}"/>Generar</a>
+							</td>
+						</tr>
+					<!-- } -->
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the guarderia database table.
  * 
  */
-@Entity
-@NamedQuery(name="Guarderia.findAll", query="SELECT g FROM Guarderia g")
+@Entity(name="guarderia")
+@NamedQuery(name="Guarderia.findAll", query="SELECT g FROM guarderia g")
 public class Guarderia implements Serializable {
 	private static final long serialVersionUID = 1L;
 

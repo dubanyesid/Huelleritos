@@ -9,8 +9,8 @@ import java.util.List;
  * The persistent class for the encuesta database table.
  * 
  */
-@Entity
-@NamedQuery(name="Encuesta.findAll", query="SELECT e FROM Encuesta e")
+@Entity(name="encuesta")
+@NamedQuery(name="Encuesta.findAll", query="SELECT e FROM encuesta e")
 public class Encuesta implements Serializable {
 	private static final long serialVersionUID = 1L;
 

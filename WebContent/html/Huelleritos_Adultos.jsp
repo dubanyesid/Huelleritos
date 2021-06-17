@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
+<%@ page import="co.edu.ufps.huelleritos.entities.*"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -10,25 +13,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/img/favicon.png">
 
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../css/magnific-popup.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/themify-icons.css">
-    <link rel="stylesheet" href="../css/nice-select.css">
-    <link rel="stylesheet" href="../css/flaticon.css">
-    <link rel="stylesheet" href="../css/gijgo.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/slicknav.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cssdenosotros.css">
-    <link rel="stylesheet" href="../css/huelleritos.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/magnific-popup.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/themify-icons.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/nice-select.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/gijgo.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/slicknav.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/cssdenosotros.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/huelleritos.css">
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -81,15 +83,15 @@
                         <div class="col-xl-10 col-lg-10">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a  href="../index.jsp">Inicio</a></li>
-                                        <li><a href="Huelleritos.jsp">Huelleritos</a></li>
-                                        <li><a href="Adopta.jsp">Adopta</a></li>
-                                        <li><a href="Apadrinar.jsp">Apadrina</a></li>
-                                        <li><a href="Hogar_Paso.jsp">Hogar de paso</a></li>                            
-                                        <li><a href="La_Fundacion.jsp">La fundación</a></li>
-                                        <li><a href="Noticias.jsp">Noticias</a></li>
-                                        <a href="Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                   <ul id="navigation">
+                                        <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
+                                        <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
+                                        <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -128,67 +130,46 @@
 
     <h1 class="centro">Adultos<hr></h1>
     <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito1.jsp" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito2.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito3.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito4.jsp" target="_blank"><img class="card-img-top" src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito5.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card centro">
-                    <a href="../html/Huelleritos_Adultos_gallery/Huellerito6.jsp" target="_blank"><img class="card-img-top" src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del animal</h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <%
+		List<Animal> adultos = (List<Animal>) (request.getAttribute("listAdultos"));
+	Animal[] animales = new Animal[adultos.size()];
+	animales = adultos.toArray(animales);
+	%>
+	<div class="container">
+		<%
+			int c = adultos.size() < 3 ? 3 : adultos.size();
+		int j = 0;
+		if (c == 0) {
+		%>
+		<h1 class='text-center pb-5'>Sin registros</h1>
+		<%
+			} else {
+		for (int i = 0; i < animales.length / 3; i++) {
+		%>
+		<div class="row">
+			<%
+				for (; j < animales.length && j%3!=0; j++) {
+			%>
+			<div class="col-sm-4">
+				<div class="card centro">
+					<a href="<%=request.getContextPath()%>/PerfilHuellerito?codigo=<%=animales[j].getCodigoAnimal()%>"
+						target="_blank"><img class="card-img-top"
+						src="<%=animales[j].getImagenAnimal()%>" alt="Card image cap"></a>
+					<div class="card-body">
+						<h5 class="card-title"><%=animales[j].getNombreAnimal()%></h5>
+					</div>
+				</div>
+			</div>
+			<%
+				}
+			%>
+		</div>
+		<br>
+		<%
+			}
+		}
+		%>
+	</div>
     <br><br>
     
     <!-- Cuerpo Huelleritos Adultos / Final -->
@@ -309,30 +290,34 @@
 
 
     <!-- JS here -->
-    <script src="../js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="../js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/isotope.pkgd.min.js"></script>
-    <script src="../js/ajax-form.js"></script>
-    <script src="../js/waypoints.min.js"></script>
-    <script src="../js/jquery.counterup.min.js"></script>
-    <script src="../js/imagesloaded.pkgd.min.js"></script>
-    <script src="../js/scrollIt.js"></script>
-    <script src="../js/jquery.scrollUp.min.js"></script>
-    <script src="../js/wow.min.js"></script>
-    <script src="../js/nice-select.min.js"></script>
-    <script src="../js/jquery.slicknav.min.js"></script>
-    <script src="../js/jquery.magnific-popup.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/gijgo.min.js"></script>
+     <script src="<%=request.getContextPath()%>/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/isotope.pkgd.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/ajax-form.js"></script>
+    <script src="<%=request.getContextPath()%>/js/waypoints.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.counterup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/scrollIt.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.scrollUp.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/nice-select.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.slicknav.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/plugins.js"></script>
+    <script src="<%=request.getContextPath()%>/js/gijgo.min.js"></script>
     <!--contact js-->
-    <script src="../js/contact.js"></script>
-    <script src="../js/jquery.ajaxchimp.min.js"></script>
-    <script src="../js/jquery.form.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/mail-script.js"></script>
+    <script src="<%=request.getContextPath()%>/js/contact.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.ajaxchimp.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.form.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/mail-script.js"></script>
+    <script src="<%=request.getContextPath()%>/js/javascript.js"></script>
+
+
+    <script src="<%=request.getContextPath()%>/js/main.js"></script>
 
 
     <script src="../js/main.js"></script>

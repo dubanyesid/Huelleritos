@@ -1,5 +1,6 @@
 package co.edu.ufps.huelleritos.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import co.edu.ufps.huelleritos.entities.Animal;
+import co.edu.ufps.huelleritos.negocio.Puntaje;
 import co.edu.ufps.huelleritos.util.Conexion;
 
 public class AnimalDAO extends Conexion<Animal> implements GenericDAO<Animal> {
@@ -38,6 +40,20 @@ public class AnimalDAO extends Conexion<Animal> implements GenericDAO<Animal> {
 		List<Animal> lista = (List<Animal>) consulta.getResultList();
 		return lista;
 	}
+	
+	public List<Animal> listAdultos() {
+		TypedQuery<Animal> consulta = em.createNamedQuery(Animal.class.getSimpleName() + ".findAllAdultos",
+				Animal.class);
+		List<Animal> lista = (List<Animal>) consulta.getResultList();
+		return lista;
+	}
+	
+	public List<Animal> listCachorros() {
+		TypedQuery<Animal> consulta = em.createNamedQuery(Animal.class.getSimpleName() + ".findAllCachorros",
+				Animal.class);
+		List<Animal> lista = (List<Animal>) consulta.getResultList();
+		return lista;
+	}
 
 	public List<Animal> listAnimalesByUsuario(String usuario) {
 		Query query = getEm().createNativeQuery(
@@ -50,12 +66,23 @@ public class AnimalDAO extends Conexion<Animal> implements GenericDAO<Animal> {
 				.collect(Collectors.toList());
 	}
 
-	public String buscarAnimalPorFormulario(String idFormulario) {
+	public Animal buscarAnimalPorFormulario(String idFormulario) {
 		Query query = getEm().createNativeQuery(
-				"SELECT a.nombre_animal FROM formulario_animal f join animal a on a.codigo_animal=f.codigo_animal AND f.id_formulario=:idFormulario");
+				"SELECT a.codigo_animal, a.nombre_animal FROM formulario_animal f join animal a on a.codigo_animal=f.codigo_animal AND f.id_formulario=:idFormulario");
 		query.setParameter("idFormulario", idFormulario);
-		String a = query.getSingleResult().toString();
-
-		return a;
+		System.out.println(query.toString());
+		
+		List<Object []> lista = query.getResultList();
+		List<Animal> listAnimales =null;
+		Animal an=null;
+		if(lista!=null) {
+			listAnimales = new ArrayList<>();
+			for(Object [] s:lista) {
+				an=this.find(s[0].toString());
+				System.out.println("x "+an);
+			}
+		}
+		
+		return an;
 	}
 }
