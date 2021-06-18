@@ -106,7 +106,7 @@ public class AdopcionController extends HttpServlet {
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);
 
-		response.sendRedirect(request.getContextPath() + "/HogarDePaso");
+		response.sendRedirect(request.getContextPath() + "/index");
 	}
 
 	protected void insertarHogar(HttpServletRequest request, HttpServletResponse response)
@@ -129,14 +129,14 @@ public class AdopcionController extends HttpServlet {
 			// ENVIE A UN ERROR
 			// return;
 		}
-
+		System.out.println("entro aqui hogar");
 		Formulario formulario = new Formulario(apellido, cedula, celular, correo, date, nombre, telefono);
 		llenarFormularioPreguntaRadio(preguntasParametersNames, formulario, request);
 		llenarFormularioPreguntaSelect(preguntas, formulario);
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);
-
-		response.sendRedirect(request.getContextPath() + "/HogarDePaso");
+		System.out.println("entd2");
+		response.sendRedirect(request.getContextPath() + "/index");
 	}
 
 	protected void llenarFormularioAnimal(String animal, Formulario formulario) {
@@ -163,8 +163,10 @@ public class AdopcionController extends HttpServlet {
 			Pregunta p = new Pregunta();
 			FormularioPregunta fp = new FormularioPregunta();
 			String name = preguntasParametersNames.nextElement();
+			System.out.println("entro aqui sfdsafafsa2");
 			if (name.contains("radio")) {
 				String pregunta = request.getParameter(name);
+				System.out.println("entro aqui 2fsfsddsf");
 				llenarFormularioPregunta(pregunta, formulario);
 			}
 
@@ -179,7 +181,7 @@ public class AdopcionController extends HttpServlet {
 		Integer idOpcion = Integer.parseInt(split[1]);
 		Pregunta preguntaBuscada = preguntaDAO.find(idPregunta);
 		Opcion opcionBuscado = opcionDAO.find(idOpcion);
-
+		System.out.println("entro aqusadasdasdi 2");
 		FormularioPregunta formularioPregunta = new FormularioPregunta();
 		formularioPregunta.setOpcion(opcionBuscado);
 		formularioPregunta.setPregunta(preguntaBuscada);
@@ -194,7 +196,7 @@ public class AdopcionController extends HttpServlet {
 		List<Animal> animales = animalDAO.list();
 		request.setAttribute("animales", animales);
 		request.setAttribute("preguntas", preguntas);
-
+		System.out.println("entro aquwwwwww");
 		request.getRequestDispatcher("html/Formularios/Form_Hogar_Paso.jsp").forward(request, response);
 
 	}

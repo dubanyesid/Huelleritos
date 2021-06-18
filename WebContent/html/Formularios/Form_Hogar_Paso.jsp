@@ -142,7 +142,7 @@
 					DILIGENCIAR FORMULARIO
 					<hr class="potaxio">
 				</h2>
-				<form method="post" action="HogarDePaso/Enviar">
+				<form method="post" action="<%=request.getContextPath()%>/HogarDePaso/Enviar">
 					<h3 class="titulos">Datos personales:</h3>
 
 					<div class="form-group">

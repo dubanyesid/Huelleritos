@@ -36,7 +36,7 @@ public class GenerarPDF {
 
     }
 
-    public boolean generarPDF(String nombreArchivo, String rol, String nombreAnimal ,Usuario us, Formulario formulario) throws FileNotFoundException, IOException, InterruptedException {
+    public boolean generarPDF(String nombreArchivo, String rol, File img, String nombreAnimal ,Usuario us, Formulario formulario) throws FileNotFoundException, IOException, InterruptedException {
 
         FileOutputStream f = new FileOutputStream(nombreArchivo);
 
@@ -62,11 +62,12 @@ public class GenerarPDF {
             Paragraph infoUsuario = new Paragraph("Nombre de usuario: "+us.getUsuario()+"\nContraseña: "+us.getContraseña()).setFont(font1);
             Paragraph rolUser = new Paragraph("También se le hace saber que el usuario y usted pertenecen al rol de "+'"'+rol+'"'+", favor tener en cuenta lo anterior.").setFont(font);
             Paragraph despedida = new Paragraph("\nMuchas gracias por su granito de arena.\nAtt: Natalia Ortiz").setFont(font1);
-            ImageData data = ImageDataFactory.create(new File("Huelleritos.png").getAbsolutePath());
-            Image img = new Image(data).setFontSize(28f); 
+            ImageData data = ImageDataFactory.create(img.getAbsolutePath());
+            System.out.println(data.toString());
+            Image imga = new Image(data).setFontSize(28f); 
             // Adding paragraphs to document       
 
-            document.add(img.setTextAlignment(TextAlignment.LEFT));
+            document.add(imga.setTextAlignment(TextAlignment.LEFT));
             document.add(hue);       
             document.add(fecha.setTextAlignment(TextAlignment.RIGHT));
             document.add(pTitulo);

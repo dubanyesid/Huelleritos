@@ -41,7 +41,7 @@ public class Usuario implements Serializable {
 	private List<Formulario> formularios;
 
 	//bi-directional one-to-one association to HogarDePaso
-	@OneToOne(mappedBy="usuarioBean")
+	@OneToOne(mappedBy="usuarioBean",cascade=CascadeType.PERSIST)
 	private HogarDePaso hogarDePaso;
 
 	public Usuario() {

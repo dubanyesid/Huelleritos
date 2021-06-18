@@ -148,11 +148,11 @@
 		<h1 class='text-center pb-5'>Sin registros</h1>
 		<%
 			} else {
-		for (int i = 0; i < animales.length / 3; i++) {
+		for (int i = 0; i < (c / 3); i++) {
 		%>
 		<div class="row">
 			<%
-				for (; j < animales.length && j%3!=0; j++) {
+				for (int x=0; j < animales.length && x<3; j++,x++) {
 			%>
 			<div class="col-sm-4">
 				<div class="card centro">

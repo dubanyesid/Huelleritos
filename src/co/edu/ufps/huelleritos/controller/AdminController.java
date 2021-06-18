@@ -1,5 +1,6 @@
 package co.edu.ufps.huelleritos.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -130,7 +131,11 @@ public class AdminController extends HttpServlet {
 				return;
 			}
 			usuarioDAO.insert(us);
-			ec.enviarCorreo("informacionHuelleritos.pdf", tipo,request.getParameter("animal"),us, f);
+			 String path = request.getServletContext().getRealPath("/img/");
+		        File img = new File(path, "Huelleritos.png");
+			ec.enviarCorreo("informacionHuelleritos.pdf", tipo, img,request.getParameter("animal"),us, f);
+			request.setAttribute("mensaje", "Se creó correctamente");
+			request.getRequestDispatcher("/Solicitudes/Adopcion").forward(request, response);
 		}else {
 			request.setAttribute("mensaje", "Usuario ya existe");
 			request.getRequestDispatcher("/admin/inicio").forward(request, response);
@@ -141,16 +146,7 @@ public class AdminController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	
-	protected boolean enviarCorreo(HttpServletRequest request, HttpServletResponse response,
-			String nombreArchivo, String rol ,Usuario us, Formulario formulario)
-			throws ServletException, IOException {
-		
-		
-		
-		return false;
-	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

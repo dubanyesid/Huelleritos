@@ -146,7 +146,7 @@
               
                 <h4>En el siguiente formulario podras registrarte y asi empezar tu proceso para convertirte en hogar de paso para uno de nuestros animalitos.</h4><br>
                 <div class="centro">
-                    <a href="Formularios/Form_Hogar_Paso.jsp" target="blank"><button type="button" class="btn btn-dark">INSCRIPCION HOGAR DE PASO</button></a>
+                    <a href="<%=request.getContextPath()%>/HogarDePaso" target="blank"><button type="button" class="btn btn-dark">INSCRIPCION HOGAR DE PASO</button></a>
                 </div>
             </div>
             <div class="col-sm-6 centro">

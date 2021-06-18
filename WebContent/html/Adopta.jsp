@@ -159,7 +159,7 @@
 
         <h2 class="centro">¿Estas List@?</h2>
         <div class="centro">
-            <a href="Formularios/Form_Adopta.jsp" target="blank" ><button type="button" class="btn btn-dark">FORMULARIO DE ADOPCION</button></a>
+            <a href="<%=request.getContextPath()%>/Adoptar" target="blank" ><button type="button" class="btn btn-dark">FORMULARIO DE ADOPCION</button></a>
         </div>
         <br>
     </div>

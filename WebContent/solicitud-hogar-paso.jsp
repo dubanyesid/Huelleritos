@@ -25,13 +25,18 @@
 	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.mCustomScrollbar.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/animate.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/media-queries.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/animate.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/style.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/media-queries.css">
 
 <!-- Favicon and touch icons -->
-<link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/ico/favicon.png">
+<link rel="shortcut icon"
+	href="<%=request.getContextPath()%>/assets/ico/favicon.png">
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
 	href="<%=request.getContextPath()%>/assets/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -69,35 +74,29 @@
 			</h3>
 
 
-			<ul class="list-unstyled menu-elements" >
-					<li>
-						<a  href="<%=request.getContextPath()%>/admin/inicio">Inicio</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/admin/animal/listar">Animales</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/seguimiento-animal.jsp">Seguimiento</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes Adopcion</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/Solicitudes/HogarDePaso">Solicitudes Hogares de Paso</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/Noticias">Noticias y Eventos</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/NoticiasEvidencias">Noticias y Evidencias</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/logout">Cerrar sesion</a>
-					</li>
-				</ul>
+			<ul class="list-unstyled menu-elements">
+				<li><a href="<%=request.getContextPath()%>/admin/inicio">Inicio</a>
+				</li>
+				<li><a href="<%=request.getContextPath()%>/admin/animal/listar">Animales</a>
+				</li>
+				<li><a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
+				</li>
+				<li><a
+					href="<%=request.getContextPath()%>/seguimiento-animal.jsp">Seguimiento</a>
+				</li>
+				<li><a
+					href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes
+						Adopcion</a></li>
+				<li><a
+					href="<%=request.getContextPath()%>/Solicitudes/HogarDePaso">Solicitudes
+						Hogares de Paso</a></li>
+				<li><a href="<%=request.getContextPath()%>/Noticias">Noticias
+						y Eventos</a></li>
+				<li><a href="<%=request.getContextPath()%>/NoticiasEvidencias">Noticias
+						y Evidencias</a></li>
+				<li><a href="<%=request.getContextPath()%>/logout">Cerrar
+						sesion</a></li>
+			</ul>
 
 
 
@@ -137,8 +136,13 @@
 				<form>
 					<div>
 						<h1>
+
+							<%
+								Animal a = new AnimalDAO().buscarAnimalPorFormulario(f.getIdFormulario() + "");
+							%>
 							Animal:
-							<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>
+							<%=a.getNombreAnimal()%>
+
 						</h1>
 					</div>
 					<p>
@@ -238,7 +242,7 @@
 				<form>
 					<div class="form-row">
 						<%
-							for (int i = 15; i < 21; i++) {
+							for (int i = 15; i < 20; i++) {
 							datos = list[i].split(";");
 						%>
 						<div class="form-group col-md-4">
@@ -266,8 +270,7 @@
 				<input type="hidden" name="formularioID"
 					value="<%=f.getIdFormulario()%>"> <input type="hidden"
 					name="tipo" value="Hogar"> <input type="hidden"
-					name="animal"
-					value="<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>">
+					name="animal" value="<%=a.getNombreAnimal()%>">
 				<button type="submit" name="submit" class="btn btn-dark">Crear
 					Usuario</button>
 				<%
@@ -299,8 +302,10 @@
 	<!-- End wrapper -->
 
 	<!-- Javascript -->
-	<script src="<%=request.getContextPath()%>/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="<%=request.getContextPath()%>/assets/js/jquery-migrate-3.0.0.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery-3.3.1.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery-migrate-3.0.0.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -309,10 +314,13 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
-	<script src="<%=request.getContextPath()%>/assets/js/jquery.backstretch.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.backstretch.min.js"></script>
 	<script src="<%=request.getContextPath()%>/assets/js/wow.min.js"></script>
-	<script src="<%=request.getContextPath()%>/assets/js/jquery.waypoints.min.js"></script>
-	<script src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.waypoints.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
 
 </body>

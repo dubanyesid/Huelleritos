@@ -59,14 +59,14 @@ public class Probando {
 		 * = new GenerarPDF(); EnviarCorreoUsuario ec = new EnviarCorreoUsuario();
 		 * 
 		 * Usuario us = new Usuario("admin", "1234"); Formulario f = new Formulario(123,
-		 * "Yurley", "Espinel", "yurleygabrielaes@ufps.edu.co", "3219810616", new
-		 * Date()); ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", "Coco",
-		 * us, f);
+		 * "Yurley", "Espinel", "juansebasprada07@gmail.com", "3219810616", new Date());
+		 * 
+		 * ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", "Coco", us, f);
 		 */
 
 		// Mail m = new Mail();
 
-		Animal listAnimales= new AnimalDAO().buscarAnimalPorFormulario("2");
+		// Animal listAnimales= new AnimalDAO().buscarAnimalPorFormulario("2");
 		// m.enviarEmail("juandavidsm@ufps.edu.co", "Que paso lk", "esto es una
 		// prueba");
 		// em.enviar("juandavidsm@ufps.edu.co", "Que paso lk", 1119323413);

@@ -138,7 +138,7 @@
 					</h1>
 				</div>
 
-<%Animal animal=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()));%>
+<%Animal animal=new AnimalDAO().buscarAnimalPorFormulario(f.getIdFormulario()+"");%>
 				<form>
 					<div>
 						<h1>
@@ -270,7 +270,9 @@
 			%>
 			<input type="hidden" name="formularioID" value="<%=f.getIdFormulario()%>">
 			<input type="hidden" name="tipo" value="Adoptante">
-			<input type="hidden" name="animal" value="<%=new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()))%>">
+			
+			
+			<input type="hidden" name="animal" value="<%=animal.getNombreAnimal()%>">
 			<button type="submit" name="submit" class="btn btn-dark">Crear Usuario</button>
 			<%
 				}

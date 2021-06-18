@@ -89,7 +89,7 @@
 					<div class="row align-items-center">
 						<div class="col-xl-2 col-lg-2">
 							<div class="logo">
-								<a href="index.html"> <img
+								<a href="<%=request.getContextPath()%>/index"> <img
 									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
@@ -97,17 +97,16 @@
 						<div class="col-xl-10 col-lg-10">
 							<div class="main-menu  d-none d-lg-block">
 								<nav>
-									<ul id="navigation">
-										<li><a href="index.html">Inicio</a></li>
-										<li><a href="html/Huelleritos.html">Huelleritos</a></li>
-										<li><a href="html/Adopta.html">Adopta</a></li>
-										<li><a href="html/Apadrinar.html">Apadrina</a></li>
-										<li><a href="html/Hogar_Paso.html">Hogar de paso</a></li>
-										<li><a href="html/La_Fundacion.html">La fundación</a></li>
-										<li><a href="html/Noticias.html">Noticias</a></li>
-										<a href="<%=request.getContextPath()%>/html/Dona_aqui.html"
-											class="genric-btn primary circle">Dona Aqui</a>
-									</ul>
+									 <ul id="navigation">
+                                        <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
+                                        <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
+                                        <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                    </ul>
 								</nav>
 							</div>
 						</div>

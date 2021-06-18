@@ -135,7 +135,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h2 class="centro">DILIGENCIAR FORMULARIO<hr class="potaxio"></h2>
-                    <form method="post" action="Adoptar/Enviar">
+                    <form method="post" action="<%=request.getContextPath()%>/Adoptar/Enviar">
                         <h3 class="titulos">Datos personales:</h3>
 
                         <div class="form-group">

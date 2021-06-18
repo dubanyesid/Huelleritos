@@ -46,11 +46,8 @@ public class IndexController extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String path = request.getServletPath();
-
+System.out.println(path);
 		if (path.equals("/index")) {
-			System.out.println("sad");
-			System.out.println("sad");
-			System.out.println("sad");
 			request.setAttribute("animalesAdopcion", adopcion);
 			request.setAttribute("animalesPrioridad", prioridad);
 			request.setAttribute("animalesAdoptados", adoptados);
@@ -69,6 +66,7 @@ public class IndexController extends HttpServlet {
 			throws ServletException, IOException {
 
 		path = path.replace("/index/", "");
+		System.out.println("fsd"+path);
 		switch (path) {
 		case "Adopta":
 			request.setAttribute("listAdoptados", adoptados);
@@ -100,16 +98,21 @@ public class IndexController extends HttpServlet {
 			throws ServletException, IOException {
 
 		path = path.replace("/Huelleritos/", "");
+		System.out.println("sd"+path);
 		switch (path) {
 		case "Adultos":
+			System.out.println("adultos");
 			request.setAttribute("listAdultos", animalDAO.listAdultos());
+			System.out.println(animalDAO.listAdultos());
 			request.getRequestDispatcher("/html/Huelleritos_Adultos.jsp").forward(request, response);
 			break;
 		case "Cachorros":
+			System.out.println("cachorros");
 			request.setAttribute("listCachorros", animalDAO.listCachorros());
 			request.getRequestDispatcher("/html/Huelleritos_Cachorros.jsp").forward(request, response);
 			break;
 		case "Adoptados":
+			System.out.println("adoptad");
 			request.setAttribute("listAdoptados", adoptados);
 			request.getRequestDispatcher("/html/Huelleritos_Adoptados.jsp").forward(request, response);
 			break;

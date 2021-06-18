@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -132,8 +133,11 @@
     <br>
     <%
 		List<Animal> adultos = (List<Animal>) (request.getAttribute("listAdultos"));
+    System.out.println("VIERON" +adultos.size()+" "+adultos.toString());
 	Animal[] animales = new Animal[adultos.size()];
+	System.out.println("VIAAAA" +animales.length);
 	animales = adultos.toArray(animales);
+	System.out.println("VsdasdaIAAAA" +animales.length+ " dd"+animales[0].toString());
 	%>
 	<div class="container">
 		<%
@@ -144,11 +148,11 @@
 		<h1 class='text-center pb-5'>Sin registros</h1>
 		<%
 			} else {
-		for (int i = 0; i < animales.length / 3; i++) {
+		for (int i = 0; i < (c / 3); i++) {
 		%>
 		<div class="row">
 			<%
-				for (; j < animales.length && j%3!=0; j++) {
+				for (int x=0; j < animales.length && x<3; j++,x++) {
 			%>
 			<div class="col-sm-4">
 				<div class="card centro">
