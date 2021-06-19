@@ -154,6 +154,7 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
             <p><%=a.getDescripcion() %></p>
             <a href="<%=request.getContextPath()%>/Adoptar" target="blank"><button type="button" class="btn btn-dark btn-lg">Adopta</button></a><br><br>
             <a href="<%=request.getContextPath()%>/HogarDePaso" target="blank"><button type="button" class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br><br>
+<a href="<%=request.getContextPath()%>/Seguimiento" target="blank"><button type="button" class="btn btn-dark btn-lg ">Seguimiento</button></a><br><br>
         </div>
         <div class="col-sm-3"></div>
     </div>

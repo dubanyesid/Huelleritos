@@ -3,12 +3,13 @@ package co.edu.ufps.huelleritos.negocio;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
+
 import java.util.List;
 
 import co.edu.ufps.huelleritos.correo.Correo;
@@ -64,9 +65,12 @@ public class Probando {
 		 * ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", "Coco", us, f);
 		 */
 
-		List<Animal> prioridad = new AnimalDAO().listPrioridad();
+		/*
+		 * List<Animal> prioridad = new AnimalDAO().listPrioridad();
+		 * 
+		 * System.out.println(prioridad);
+		 */
 		
-		System.out.println(prioridad);
 		
 		// Mail m = new Mail();
 

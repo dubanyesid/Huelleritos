@@ -1,19 +1,16 @@
-<%@page import="co.edu.ufps.huelleritos.entities.EnfermedadHistorial"%>
-<%@page import="co.edu.ufps.huelleritos.entities.VacunaHistorial"%>
-<%@page import="co.edu.ufps.huelleritos.entities.Vacuna"%>
-<%@page import="co.edu.ufps.huelleritos.entities.HistorialAnimal"%>
-<%@page import="java.util.List"%>
-<%@page import="co.edu.ufps.huelleritos.entities.Animal"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="co.edu.ufps.huelleritos.entities.*"%>
+<%@ page import="co.edu.ufps.huelleritos.dao.*"%>
+<%@ page import="java.util.List"%>
 <!doctype html>
-<html class="no-js" lang="es">
+<html class="no-js" lang="zxx">
 
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Perfil Animal Adulto</title>
+<title>Formulario Adopta</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,7 +48,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/huelleritos.css">
 
-<!-- <link rel="stylesheet" href="css/responsive.css"> -->
+<!-- <link rel="stylesheet" href="<%=request.getContextPath()%>/css/responsive.css"> -->
 </head>
 
 <body>
@@ -92,7 +89,7 @@
 					<div class="row align-items-center">
 						<div class="col-xl-2 col-lg-2">
 							<div class="logo">
-								<a href="<%=request.getContextPath()%>/index"> <img
+								<a href="index.jsp"> <img
 									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
@@ -105,14 +102,13 @@
 										<li><a
 											href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
 										<li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
+
 										<li><a
 											href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar
 												de paso</a></li>
 										<li><a
 											href="<%=request.getContextPath()%>/index/Fundacion">La
-												fundaciÃ³n</a></li>
+												fundación</a></li>
 										<li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
 										<a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp"
 											class="genric-btn primary circle">Dona Aqui</a>
@@ -131,182 +127,119 @@
 		</div>
 	</header>
 
-
-
-	<!-- Cuerpo formulario Adoptar aqui -->
-	<br>
-	<br>
-	<br>
-	<%
-		Animal a = (Animal) request.getAttribute("perfilAnimal");
-	%>
-	<div class="row">
-		<div class="col-sm-1"></div>
-
-		<div class="col-sm-4">
-			<div class="container-fluid px-sm-1 py-5 mx-auto">
-				<div class="row justify-content-center">
-					<div class="d-flex">
-						<div class="card">
-							<div class="d-flex flex-column thumbnails">
-								<!-- imagen pequeÃƒÂ±a1 -->
-								<div id="f1" class="tb tb-active">
-									<img class="thumbnail-img fit-image"
-										src="<%=a.getImagenAnimal()%>">
-								</div>
-
-							</div>
-							<!-- imagen Grande1 -->
-							<fieldset id="f11" class="active">
-								<div class="product-pic">
-									<img class="pic0" src="<%=a.getImagenAnimal()%>">
-								</div>
-							</fieldset>
+	<!-- slider_area_start -->
+	<div class="slider_area">
+		<div class="single_slider slider_bg_1 d-flex align-items-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-6">
+						<div class="slider_text">
+							<h3>
+								<span>Formulario</span> <br>Adopta
+							</h3>
+							<p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
 
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-
-		<div class="col-sm-4">
-			<br>
-			<h2><%=a.getNombreAnimal()%></h2>
-			<p>
-				Sexo:
-				<%=a.getSexo()%></p>
-			<p><%=a.getDescripcion()%></p>
-			<a href="<%=request.getContextPath()%>/Adoptar" target="blank"><button
-					type="button" class="btn btn-dark btn-lg">Adopta</button></a><br>
-			<br> <a href="<%=request.getContextPath()%>/HogarDePaso"
-				target="blank"><button type="button"
-					class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br> <br>
-			<a href="<%=request.getContextPath()%>/Seguimiento" target="blank"><button
-					type="button" class="btn btn-dark btn-lg ">Seguimiento</button></a><br>
-			<br>
-
-			<form action="<%=request.getContextPath()%>/Seguimiento/Enviar"
-				method="POST">
-				<input name="idAnimalSeg" value="<%=a.getImagenAnimal()%>"
-					type="hidden"> <input name="nombreAnimal"
-					value="<%=a.getNombreAnimal()%>" type="hidden">
-			</form>
-		</div>
-		<div class="col-sm-3"></div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-sm-1"></div>
-		<div class="col-sm-6">
-			<div class="container">
-				<a href="#demo" data-toggle="collapse"><button type="button"
-						class="btn btn-outline-secondary btn-lg btn-block">Informacion
-						Adicional Ã¢Â†Â“</button></a>
-				<div id="demo" class="collapse">
-					<p style="margin-top: 10px; font-size: 28px">
-						<b>Vacunas:</b>
-					</p>
-					<ol>
-						<%
-							List<HistorialAnimal> historiaAnimal = a.getHistorialAnimals();
-						List<VacunaHistorial> vacunas = historiaAnimal.get(0).getVacunaHistorials();
-
-						if (vacunas != null) {
-							for (int i = 0; i < vacunas.size(); i++) {
-						%>
-						<li><p style="font-size: 24px">
-								<b><%=i + 1%>.</b>
-								<%=vacunas.get(i).getVacuna().getNombreVacuna()%>
-								- <b>Fecha</b> :
-								<%=vacunas.get(i).getFechaVacunacion()%></p></li>
-						<%
-							}
-						}
-						%>
-					</ol>
-
-
-					<p style="margin-top: 10px; font-size: 28px">
-						<b>Enfermedades:</b>
-					</p>
-					<ol>
-						<%
-							List<EnfermedadHistorial> enfermedades = historiaAnimal.get(0).getEnfermedadHistorials();
-
-						if (enfermedades != null) {
-							for (int i = 0; i < enfermedades.size(); i++) {
-						%>
-						<li><p style="font-size: 24px">
-								<b><%=i + 1%>.</b>
-								<%=enfermedades.get(i).getEnfermedad().getNombreEnfermedad()%>
-								<br> <b>Fecha inicio: </b> :
-								<%=enfermedades.get(i).getFechaInicio()%><br>
-								<%=enfermedades.get(i).getFechaFin() == null ? "" : "<b>Fecha fin: </b>" + enfermedades.get(i).getFechaFin()%></p></li>
-						<%
-							}
-						}
-						%>
-					</ol>
-				</div>
+			<div class="dog_thumb d-none d-lg-block">
+				<img src="<%=request.getContextPath()%>/img/banner/dog2.png" alt="">
 			</div>
 		</div>
 	</div>
-	<br>
-	<br>
-	<hr class="potaxio">
-	<!-- Cuerpo formulario Adoptar / Final -->
+	<!-- slider_area_end -->
 
-	<!-- otros animales / inicio -->
+	<!-- Cuerpo formulario Adoptar aqui -->
+	<br>
+	<br>
+	<br>
 
 	<div class="container">
-		<h2>Otros animales</h2>
-		<br>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
+		<div>
+			<h1>Seguimiento Animal</h1>
 		</div>
+		<form method="post" action="<%=request.getContextPath()%>/Seguimiento/Enviar">
+			<div class="col-sm-6">
+				<h2 class="centro">
+					DILIGENCIAR FORMULARIO
+					<hr class="potaxio">
+				</h2>
+
+				<h3 class="titulos">Datos personales:</h3>
+
+				<input type="hidden" name="idAnimal" value="<%=request.getParameter("idAnimalSeg")%>">
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Nombre</label> <input
+						name="nombre" type="text" required class="form-control"
+						id="formGroupExampleInput2" placeholder="<%=request.getParameter("nombreAnimal")%>" disabled>
+				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Ocupación</label>
+					<textarea name="ocupacion" required class="form-control"
+						id="formGroupExampleInput2" placeholder=""></textarea>
+				</div>
+
+			</div>
+			<div class="form-group row">
+				<div class="container mt-5">
+					<h3 class="text-center">Subir evidencia</h3>
+					<div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
+
+						<div class="form-group">
+							<label><strong>Subir</strong></label>
+							<div class="custom-file">
+								<input name='archivo' id="in-url" hidden="true" value=""
+									required="required"> <input placeholder="asdasd"
+									type="file" name="files[]" multiple
+									class="custom-file-input form-control" id="img-uploader">
+								<label class="custom-file-label" for="" id="lblArchivo">Elegir
+									archivo</label>
+							</div>
+						</div>
+						<progress id="img-upload-bar" value="0" max="100"
+							style="width: 100%"></progress>
+
+						<div class="form-group">
+							<button type="button" name="upload" value="upload" id="upload"
+								class="btn btn-block btn-dark">
+								<i class="fa fa-fw fa-upload"></i> Subir
+							</button>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Guardar" class="btn btn-dark">
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</form>
+
 	</div>
-	<br>
-	<br>
-	<!-- otros animales / final -->
+
+
+	<!-- Cuerpo formulario Adoptar / Final -->
 
 	<div class="contact_anipat anipat_bg_1">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<div class="contact_text text-center"></div>
+					<div class="contact_text text-center">
+						<div class="section_title text-center">
+							<h3>¿Por Que ir con Huelleritos?</h3>
+							<p>Dale una segunda oportunidad a esos peluditos que no
+								tienen hogar</p>
+						</div>
+						<div
+							class="contact_btn d-flex align-items-center justify-content-center">
+							<a href="<%=request.getContextPath()%>/Contacto"
+								class="boxed-btn4">Contactanos</a>
+							<p>
+								Or <a href="#">+57 3177636650</a>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -319,10 +252,7 @@
 				<div class="row">
 					<div class="col-xl-3 col-md-6 col-lg-3">
 						<div class="footer_widget">
-							<h3 class="footer_title">
-								<a href="<%=request.getContextPath()%>/Contacto"
-									class="boxed-btn4">Contactanos</a>
-							</h3>
+							<h3 class="footer_title">Contacto</h3>
 							<ul class="address_line">
 								<li>+57 3177636650</li>
 								<li>+57 3135707240</li>
@@ -354,7 +284,8 @@
 					<div class="col-xl-3 col-md-6 col-lg-3 ">
 						<div class="footer_widget">
 							<div class="footer_logo">
-								<a href="#"> <img src="img/Huelleritos.png" alt="">
+								<a href="#"> <img
+									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
 								</a>
 							</div>
 							<p class="address_text"></p>
@@ -432,7 +363,6 @@
 	<script src="<%=request.getContextPath()%>/js/jquery.form.js"></script>
 	<script src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/mail-script.js"></script>
-	<script src="<%=request.getContextPath()%>/js/javascript.js"></script>
 
 
 	<script src="<%=request.getContextPath()%>/js/main.js"></script>
@@ -449,7 +379,6 @@
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
-
 		});
 		var timepicker = $('#timepicker').timepicker({
 			format : 'HH.MM'

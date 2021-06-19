@@ -421,7 +421,7 @@ private String caruselAnimalHtml(List<Animal>animales){
 	<div class="container">
 		<div>
 			<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-			<div class="elfsight-app-c41bab9c-88c6-4408-a5a6-62b7283c0e80"></div>
+<div class="elfsight-app-c41bab9c-88c6-4408-a5a6-62b7283c0e80"></div>
 		</div>
 	</div>
 	<!-- Noticias / Final -->
