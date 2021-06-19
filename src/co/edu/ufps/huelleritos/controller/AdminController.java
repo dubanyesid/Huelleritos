@@ -78,7 +78,10 @@ public class AdminController extends HttpServlet {
 			System.out.println("sa");
 			return;
 		}else if(path.contains("inicio")){
-			request.getRequestDispatcher("/inicioAdmin.jsp").forward(request, response);
+			request.getRequestDispatcher("/admin/animal/listar").forward(request, response);
+		}else {
+			request.getRequestDispatcher("/admin/animal/listar").forward(request, response);
+			return;
 		}
 		
 		

@@ -46,53 +46,7 @@
     	<div class="wrapper">
 
 			<!-- Sidebar -->
-			<nav class="sidebar">
-				
-				<!-- close sidebar menu -->
-				<div class="dismiss">
-					<i class="fas fa-arrow-left"></i>
-				</div>
-				
-				<h3><img src="../../assets/img/Huelleritos.png"></h3>
-				
-				<ul class="list-unstyled menu-elements" >
-					<li>
-						<a  href="<%=request.getContextPath()%>/admin/inicio">Inicio</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/admin/animal/listar">Animales</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/seguimiento-animal.jsp">Seguimiento</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes Adopcion</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/Solicitudes/HogarDePaso">Solicitudes Hogares de Paso</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/Noticias">Noticias y Eventos</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/NoticiasEvidencias">Noticias y Evidencias</a>
-					</li>
-					<li>
-						<a  href="<%=request.getContextPath()%>/logout">Cerrar sesion</a>
-					</li>
-				</ul>
-				
-				
-				
-				<div class="dark-light-buttons">
-					<a class="btn btn-primary btn-customized-4 btn-customized-dark" href="#" role="button">Dark</a>
-					<a class="btn btn-primary btn-customized-4 btn-customized-light" href="#" role="button">Light</a>
-				</div>
-			
-			</nav>
+			<jsp:include page="menuAdmin.jsp" />
 			<!-- End sidebar -->
 			
 			<!-- Dark overlay -->
@@ -130,8 +84,8 @@
 								<th scope="col">EDAD</th>
 								<th scope="col">ESTADO</th>
 								<th scope="col">HISTORIA CLINICA</th>
-								<th scope="col">INFORMACIÓN</th>
-								<th scope="col">ACCIONES</th>
+								<th scope="col">SEGUIMIENTO</th>
+								<th scope="col" colspan="2">ACCIONES</th>
 							</tr>
 						</thead>
 						<tbody >
@@ -149,6 +103,7 @@
 								<td><%=animal.getEdad() %></td>
 								<td><%=animal.getEstadoAnimalBean().getDescripcion() %></td>
 								<td><button type="button" onclick="location.href='historial?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Historial</button></td>
+								<td><button type="button" onclick="location.href='seguimiento?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Seguimiento</button></td>
 								<td><button type="button" onclick="location.href='editar?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Editar</button></td>
 								<td><button type="button" onclick="location.href='eliminar?animal=<%=animal.getCodigoAnimal() %>'" class="btn btn-dark">Eliminar</button></td>
 							</tr>

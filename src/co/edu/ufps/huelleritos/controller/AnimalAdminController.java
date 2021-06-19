@@ -17,16 +17,18 @@ import co.edu.ufps.huelleritos.dao.AnimalDAO;
 import co.edu.ufps.huelleritos.dao.EstadoAnimalDAO;
 import co.edu.ufps.huelleritos.dao.GuarderiaDAO;
 import co.edu.ufps.huelleritos.dao.PrioridadDAO;
+import co.edu.ufps.huelleritos.dao.SeguimientoAnimalDAO;
 import co.edu.ufps.huelleritos.dao.TipoAnimalDAO;
 import co.edu.ufps.huelleritos.entities.Animal;
 import co.edu.ufps.huelleritos.entities.Guarderia;
 import co.edu.ufps.huelleritos.entities.Prioridad;
+import co.edu.ufps.huelleritos.entities.SeguimientoAnimal;
 import co.edu.ufps.huelleritos.entities.TipoAnimal;
 
 /**
  * Servlet implementation class AnimalAdminController
  */
-@WebServlet({"/admin/animal", "/admin/animal/listar", "/admin/animal/eliminar", "/admin/animal/editar",
+@WebServlet({"/admin/animal", "/admin/animal/listar", "/admin/animal/eliminar", "/admin/animal/editar","/admin/animal/seguimiento",
 	"/admin/animal/editar/enviar", "/admin/animal/agregar", "/admin/animal/agregar/enviar",
 	"/admin/animal/historial", "/admin/animal/historial/vacuna"})
 public class AnimalAdminController extends HttpServlet {
@@ -36,6 +38,7 @@ public class AnimalAdminController extends HttpServlet {
 	private GuarderiaDAO guarderiaDAO;
 	private PrioridadDAO prioridadDAO;
 	private EstadoAnimalDAO estadoAnimalDAO;
+	private SeguimientoAnimalDAO seguimientoAnimalDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -46,6 +49,7 @@ public class AnimalAdminController extends HttpServlet {
 		guarderiaDAO = new GuarderiaDAO();
 		prioridadDAO = new PrioridadDAO();
 		estadoAnimalDAO = new EstadoAnimalDAO();
+		seguimientoAnimalDAO = new SeguimientoAnimalDAO();
         // TODO Auto-generated constructor stub
     }
 
@@ -89,6 +93,9 @@ public class AnimalAdminController extends HttpServlet {
 			break;
 		case "/eliminar":
 			eliminarAnimal(request, response);
+			break;
+		case "/seguimiento":
+			seguimientoAnimal(request, response);
 			break;
 		case "/agregar/enviar":
 			registrarAnimal(request, response);
@@ -176,6 +183,20 @@ public class AnimalAdminController extends HttpServlet {
 		}
 		animalDAO.deleteClearCache(animal);
 		response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+
+	}
+	
+	protected void seguimientoAnimal(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String idAnimal = request.getParameter("animal");
+		
+		if(idAnimal!=null) {
+		List<SeguimientoAnimal> seg = seguimientoAnimalDAO.buscarSeguimientosPorAnimal(idAnimal);
+		request.setAttribute("seguimientos", seg);
+		// response.sendRedirect(request.getContextPath()+"/lista-animales.jsp");
+		request.getRequestDispatcher("/lista-seguimiento.jsp").forward(request, response);
+		}
 
 	}
 

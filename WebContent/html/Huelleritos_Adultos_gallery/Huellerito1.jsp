@@ -99,27 +99,7 @@
 						</div>
 						<div class="col-xl-10 col-lg-10">
 							<div class="main-menu  d-none d-lg-block">
-								<nav>
-									<ul id="navigation">
-										<li><a href="<%=request.getContextPath()%>/index">Inicio</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
-										<li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar
-												de paso</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Fundacion">La
-												fundación</a></li>
-										<li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
-										<a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp"
-											class="genric-btn primary circle">Dona Aqui</a>
-										<a href="<%=request.getContextPath()%>/Usuario/Login"
-											class="genric-btn primary circle">Ingresar</a>
-									</ul>
-								</nav>
+								<jsp:include page="../Menu.jsp" />
 							</div>
 						</div>
 						<div class="col-12">
@@ -182,15 +162,16 @@
 			<br> <a href="<%=request.getContextPath()%>/HogarDePaso"
 				target="blank"><button type="button"
 					class="btn btn-dark btn-lg ">Hogar de Paso</button></a><br> <br>
-			<a href="<%=request.getContextPath()%>/Seguimiento" target="blank"><button
-					type="button" class="btn btn-dark btn-lg ">Seguimiento</button></a><br>
-			<br>
+			
 
-			<form action="<%=request.getContextPath()%>/Seguimiento/Enviar"
+			<form action="<%=request.getContextPath()%>/Seguimiento"
 				method="POST">
-				<input name="idAnimalSeg" value="<%=a.getImagenAnimal()%>"
+				<input name="idAnimalSeg" value="<%=a.getCodigoAnimal()%>"
 					type="hidden"> <input name="nombreAnimal"
 					value="<%=a.getNombreAnimal()%>" type="hidden">
+					<a href="<%=request.getContextPath() %>/Seguimiento" target="blank"><button
+					type="submit" class="btn btn-dark btn-lg ">Seguimiento</button></a><br>
+			<br>
 			</form>
 		</div>
 		<div class="col-sm-3"></div>
@@ -259,45 +240,7 @@
 
 	<!-- otros animales / inicio -->
 
-	<div class="container">
-		<h2>Otros animales</h2>
-		<br>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.sommelierdecafe.com/2019/wp-content/uploads/2019/03/Perro-de-frente-800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.nationalgeographic.com.es/medio/2019/04/03/04-australian-shepherd_af05aa09_800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="card centro">
-					<a href="index.html"><img class="card-img-top"
-						src="https://www.nationalgeographic.com.es/medio/2019/06/18/_3a525832_800x800.jpg"
-						alt="Card image cap"></a>
-					<div class="card-body">
-						<h5 class="card-title">Nombre del animal</h5>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
+	
 	<br>
 	<br>
 	<!-- otros animales / final -->

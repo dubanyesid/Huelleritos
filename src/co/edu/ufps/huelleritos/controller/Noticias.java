@@ -20,11 +20,13 @@ import co.edu.ufps.huelleritos.entities.Noticia;
 public class Noticias extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private NoticiaDAO noticiaDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Noticias() {
         super();
+        noticiaDAO = new NoticiaDAO();
         // TODO Auto-generated constructor stub
     }
 
@@ -42,18 +44,22 @@ public class Noticias extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String direccion = request.getServletPath();
-		
+		List<Noticia> noticias =null;
 		switch(direccion) {
 		case "/Noticias":
-			NoticiaDAO noticiaDAO =new NoticiaDAO();
-			List<Noticia> noticias = noticiaDAO.list();
+			noticias=noticiaDAO.listEventos();
 			request.setAttribute("noticias", noticias);
-			request.setAttribute("titulo", new String("Nuevos Eventos"));
+			request.setAttribute("titulo", "Nuevos Eventos");
 			
 			request.getRequestDispatcher("/html/Noticias.jsp").forward(request, response);
 			
 			break;
 		case "/NoticiasEvidencias":
+			noticias = noticiaDAO.listEvidencias();
+			request.setAttribute("noticias", noticias);
+			request.setAttribute("titulo", "Nuevos Evidencias");
+			
+			request.getRequestDispatcher("/html/Noticias.jsp").forward(request, response);
 			break;
 		}
 	}

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-   <link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/img/favicon.png">
+   <link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/img/logocontacto.png">
 
     <!-- Place favicon.ico in the root directory -->
 
@@ -73,26 +73,14 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="../index.jsp">
-                                    <img src="../img/Huelleritos.png" alt="">
+                                <a href="<%=request.getContextPath()%>/index.jsp">
+                                    <img src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">
                             <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
-                                        <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
-                                        <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
-                                        
-                                        <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
-                                        <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
-                                        <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
-                                        <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
-                                        <a href="<%=request.getContextPath()%>/Usuario/Login" class="genric-btn primary circle">Ingresar</a>
-                                    </ul>
-                                </nav>
+                                <jsp:include page="Menu.jsp" />
                             </div>
                         </div>
                         <div class="col-12">

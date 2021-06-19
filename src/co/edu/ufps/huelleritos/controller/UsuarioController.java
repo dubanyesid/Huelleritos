@@ -124,10 +124,10 @@ public class UsuarioController extends HttpServlet {
 	
 		switch(tipo) {
 		case "admin":System.out.println("hola acas");
-			response.sendRedirect(request.getContextPath()+"/admin/inicio");
+			response.sendRedirect(request.getContextPath()+"/admin/animal/listar");
 			break;
 		default:
-			response.sendRedirect(request.getContextPath());
+			response.sendRedirect(request.getContextPath()+"/index/Huelleritos");
 			break;
 		}
 		

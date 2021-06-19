@@ -16,7 +16,7 @@
 
 <!-- <link rel="manifest" href="site.webmanifest"> -->
 <link rel="shortcut icon" type="image/x-icon"
-	href="<%=request.getContextPath()%>/img/favicon.png">
+	href="<%=request.getContextPath()%>/img/logocontacto.png">
 
 <!-- Place favicon.ico in the root directory -->
 
@@ -86,43 +86,24 @@
 			</div>
 			<div id="sticky-header" class="main-header-area">
 				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-xl-2 col-lg-2">
-							<div class="logo">
-								<a href="index.jsp"> <img
-									src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
-								</a>
-							</div>
-						</div>
-						<div class="col-xl-10 col-lg-10">
-							<div class="main-menu  d-none d-lg-block">
-								<nav>
-									<ul id="navigation">
-										<li><a href="<%=request.getContextPath()%>/index">Inicio</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
-										<li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
-
-										<li><a
-											href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar
-												de paso</a></li>
-										<li><a
-											href="<%=request.getContextPath()%>/index/Fundacion">La
-												fundación</a></li>
-										<li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
-										<a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp"
-											class="genric-btn primary circle">Dona Aqui</a>
-										<a href="<%=request.getContextPath()%>/Usuario/Login"
-											class="genric-btn primary circle">Ingresar</a>
-									</ul>
-								</nav>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="mobile_menu d-block d-lg-none"></div>
-						</div>
-					</div>
-				</div>
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="<%=request.getContextPath()%>/index.jsp">
+                                    <img src="<%=request.getContextPath()%>/img/Huelleritos.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="main-menu  d-none d-lg-block">
+                               <jsp:include page="Menu.jsp" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</header>
@@ -135,7 +116,7 @@
 					<div class="col-lg-5 col-md-6">
 						<div class="slider_text">
 							<h3>
-								<span>Formulario</span> <br>Adopta
+								<span>Seguimiento</span> <br>Animal
 							</h3>
 							<p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
 
@@ -162,20 +143,21 @@
 		<form method="post" action="<%=request.getContextPath()%>/Seguimiento/Enviar">
 			<div class="col-sm-6">
 				<h2 class="centro">
-					DILIGENCIAR FORMULARIO
+					DILIGENCIAR SEGUIMIENTO
 					<hr class="potaxio">
 				</h2>
 
 				<h3 class="titulos">Datos personales:</h3>
 
 				<input type="hidden" name="idAnimal" value="<%=request.getParameter("idAnimalSeg")%>">
+				<input type="hidden" name="nombreAnimal" value="<%=request.getParameter("nombreAnimal")%>">
 				<div class="form-group">
 					<label for="formGroupExampleInput2">Nombre</label> <input
 						name="nombre" type="text" required class="form-control"
 						id="formGroupExampleInput2" placeholder="<%=request.getParameter("nombreAnimal")%>" disabled>
 				</div>
 				<div class="form-group">
-					<label for="formGroupExampleInput2">Ocupación</label>
+					<label for="formGroupExampleInput2">Observación</label>
 					<textarea name="ocupacion" required class="form-control"
 						id="formGroupExampleInput2" placeholder=""></textarea>
 				</div>
@@ -334,7 +316,8 @@
 	</footer>
 	<!-- footer_Final  -->
 
-
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 	<!-- JS here -->
 	<script
 		src="<%=request.getContextPath()%>/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -363,7 +346,7 @@
 	<script src="<%=request.getContextPath()%>/js/jquery.form.js"></script>
 	<script src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/mail-script.js"></script>
-
+	<script src="<%=request.getContextPath()%>/js/cargarImagen.js "></script>
 
 	<script src="<%=request.getContextPath()%>/js/main.js"></script>
 	<script>

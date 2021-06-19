@@ -1,3 +1,8 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="co.edu.ufps.huelleritos.entities.Noticia"%>
+<%@page import="co.edu.ufps.huelleritos.entities.SeguimientoAnimal"%>
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -6,13 +11,13 @@
     <head>
 
 		<!-- Required meta tags -->
-        <meta charset="utf-8">
+        <meta charset="ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Huelleritos</title>
+        <title>Lista de Noticias</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.mCustomScrollbar.min.css">
@@ -57,16 +62,69 @@
 					<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
 	                    <i class="fas fa-align-left"></i> <span>Menu</span>
 	                </a>
-				
-			        	      <% 
-String mensaje=request.getParameter("mensaje");
-            if(mensaje!=null) 
-            { 
-            	%>          
-                <p style="text-align: center;color:red"><%=mensaje %></p>
-        <%
-            }
+				<div class="container">
+					<div class="col-md-4 m-2">
+						<h1>Lista de Noticias</h1>
+						<a href="Noticia/agregar" type="button" class="btn btn-dark">Agregar noticia</a>
+												
+					</div>
+					<div class="col-md-5 m-2 input-group">
+						
+						<label >Buscar:</label>
+						<input type="text" align="right" class="form-control pull-right" style="width:30%" id="search" placeholder="Buscar:">
+
+					</div>
+					<div class="col-xs-12 col-md-3">
+ 
+</div>
+<%
+List<SeguimientoAnimal> seguimientos = (List<SeguimientoAnimal>)request.getAttribute("seguimientos");
 %>
+					<div class="row justify-content-center justify-content-md-start">
+					<table class="table table-bordered" id="mytable">
+						<thead class="table-dark">
+							<tr role="row">
+								<th scope="col">CODIGO ANIMAL</th>
+								<th scope="col">IMAGEN</th>
+								<th scope="col">OBSERVACIÓN</th>
+								<th scope="col">FECHA</th>
+								<!--  <th scope="col">EDITAR</th>-->
+								<th scope="col">ELIMINAR</th>
+							</tr>
+						</thead>
+						<tbody >
+						
+						<%
+						if(seguimientos==null){
+							response.sendRedirect(request.getContextPath()+"/admin/animal/listar");
+							return;
+						}
+						
+						for(SeguimientoAnimal s : seguimientos){
+							
+							SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+							
+							%>
+							<tr>
+								<th scope="row"><%=s.getCodigoSeguimiento()%></th>
+							
+								<td><a target="_blank" href="<%=s.getFoto() %>"><img href="<%=s.getFoto()%>">abrir</a></td>
+								<td><%=s.getObservacion() %></td>
+								<td><%=sdf.format(s.getFecha())%></td>
+								<!--  <td><button type="button" onclick="location.href='editar?animal='" class="btn btn-dark">Editar</button></td>-->
+								<td><button type="button" onclick="location.href='Noticia/eliminar?idSeguimiento=<%=s.getCodigoSeguimiento() %>'" class="btn btn-dark">Eliminar</button></td>
+							</tr>
+							
+							<%
+							
+						}
+						%>
+						
+						</tbody>
+					</table>
+				</div>
+				</div>
+			        	
 			        <!-- Footer -->
 			        <footer class="footer-container">
 			
@@ -89,6 +147,7 @@ String mensaje=request.getParameter("mensaje");
         <!-- End wrapper -->
 
         <!-- Javascript -->
+       
 		<script src="<%=request.getContextPath()%>/assets/js/jquery-3.3.1.min.js"></script>
 		<script src="<%=request.getContextPath()%>/assets/js/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -98,7 +157,24 @@ String mensaje=request.getParameter("mensaje");
         <script src="<%=request.getContextPath()%>/assets/js/jquery.waypoints.min.js"></script>
         <script src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
-
+        
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      
+	<script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#search").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#mytable tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
     </body>
 
 </html>

@@ -50,19 +50,12 @@ public class PerfilHuellerito extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		if (request.getSession().getAttribute("usuario") == null
-				|| request.getSession().getAttribute("tipoUsuario") == null
-				|| !request.getSession().getAttribute("tipoUsuario").equals("admin")) {
-			request.setAttribute("mensaje", "Datos incorrectos");
-			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
-			// response.sendRedirect(request.getContextPath() + "/Usuario/Login");
-			return;
-		}
+		
 
 		String path = request.getServletPath();
-
+System.out.println(path);System.out.println("sasaasano");
 		if (path.contains("/Perfil")) {
-
+			System.out.println("aS");
 			String codigo = request.getParameter("codigo");
 			if (codigo == null) {
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -71,12 +64,24 @@ public class PerfilHuellerito extends HttpServlet {
 				mostrarPerfil(request, response, codigo);
 			}
 		}else if(path.equals("/Seguimiento")) {
-			irASeguimiento(request,response);
+			validarMostrarSeguimiento(request, response);
 		}else {
 			insertarSeguimiento(request, response);
 		}
 	}
 
+	private void validarMostrarSeguimiento(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (request.getSession().getAttribute("usuario") == null
+				|| request.getSession().getAttribute("tipoUsuario") == null) {
+			request.setAttribute("mensaje", "Datos incorrectos");
+			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
+			// response.sendRedirect(request.getContextPath() + "/Usuario/Login");
+			return;
+		}
+		irASeguimiento(request,response);
+	}
+	
 	private boolean validarImagen(String archivo) {
 		return archivo.endsWith(".jpg") || archivo.endsWith(".jpeg") || archivo.endsWith(".png")
 				|| archivo.endsWith(".svg") || archivo.endsWith(".jiff");
@@ -103,10 +108,12 @@ public class PerfilHuellerito extends HttpServlet {
 			throws ServletException, IOException {
 		String id = request.getParameter("idAnimalSeg");
 		String nombre = request.getParameter("nombreAnimal");
+		System.out.println(id);
+		System.out.println(nombre);
 		if (id != null && nombre != null) {
 			request.setAttribute("idAnimalSeg", id);
 			request.setAttribute("nombreAnimal", nombre);
-			request.getRequestDispatcher("/html/SeguimientoAnimal.jsp").include(request, response);
+			request.getRequestDispatcher("/html/SeguimientoAnimal.jsp").forward(request, response);
 			return;
 		} else {
 			request.setAttribute("mensaje", "Parametros del animal no válidos");
@@ -119,6 +126,8 @@ public class PerfilHuellerito extends HttpServlet {
 			throws ServletException, IOException {
 		String id=request.getParameter("idAnimalSeg");
 		String nombre=request.getParameter("nombreAnimal");
+		System.out.println(id);
+		System.out.println(nombre);
 		if(id!=null && nombre !=null) {
 			Animal a =animalDAO.find(id);
 			SeguimientoAnimal sa= new SeguimientoAnimal();
@@ -126,13 +135,16 @@ public class PerfilHuellerito extends HttpServlet {
 			String archivo = request.getParameter("archivo");
 
 			if(validarImagen(archivo)){
+				sa.setVideo("/");
 				sa.setFoto(archivo);
 			}else if(validarVideo(archivo)) {
 				sa.setVideo(archivo);
+				sa.setFoto("/");
 			}
 			sa.setObservacion(observacion);
 			sa.setFecha(new java.util.Date());
-			
+			String uuid = java.util.UUID.randomUUID().toString();
+			sa.setCodigoSeguimiento(uuid.split("-")[0]);
 			a.addSeguimientoAnimal(sa);
 			animalDAO.update(a);
 			request.getRequestDispatcher(request.getContextPath()+"/index/Huelleritos").forward(request, response);

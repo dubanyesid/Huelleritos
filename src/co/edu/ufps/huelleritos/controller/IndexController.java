@@ -15,7 +15,7 @@ import co.edu.ufps.huelleritos.entities.Animal;
 /**
  * Servlet implementation class IndexController
  */
-@WebServlet({ "/index", "/Huelleritos/Adultos", "/Huelleritos/Cachorros", "/Huelleritos/Adoptados",
+@WebServlet({ "/index.jsp", "/Huelleritos/Adultos", "/Huelleritos/Cachorros", "/Huelleritos/Adoptados",
 		"/index/Huelleritos", "/index/Apadrina", "/index/Adopta", "/index/HogarDePaso", "/index/Fundacion",
 		"/Contacto" })
 public class IndexController extends HttpServlet {
@@ -48,7 +48,7 @@ public class IndexController extends HttpServlet {
 
 		String path = request.getServletPath();
 		System.out.println(path);
-		if (path.equals("/index")) {
+		if (path.equals("/index.jsp")) {
 			request.setAttribute("animalesAdopcion", adopcion);
 			request.setAttribute("animalesPrioridad", prioridad);
 			request.setAttribute("animalesAdoptados", adoptados);
