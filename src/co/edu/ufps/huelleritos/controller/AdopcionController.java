@@ -185,7 +185,7 @@ public class AdopcionController extends HttpServlet {
 	protected void mostrarFormHogar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<Pregunta> preguntas = preguntaDAO.listarFormHogarPaso();
-		List<Animal> animales = animalDAO.list();
+		List<Animal> animales = animalDAO.listAdopcion();
 		request.setAttribute("animales", animales);
 		request.setAttribute("preguntas", preguntas);
 		request.getRequestDispatcher("html/Formularios/Form_Hogar_Paso.jsp").forward(request, response);
@@ -195,7 +195,7 @@ public class AdopcionController extends HttpServlet {
 	protected void mostrarFormAdopta(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<Pregunta> preguntas = preguntaDAO.listarFormAdopta();
-		List<Animal> animales = animalDAO.list();
+		List<Animal> animales = animalDAO.listAdopcion();
 		request.setAttribute("animales", animales);
 		request.setAttribute("preguntas", preguntas);
 

@@ -128,8 +128,9 @@ public class AdminController extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/Error");
 				return;
 			}
-			animalDAO.update(animal);
 			usuarioDAO.insert(us);
+			animalDAO.update(animal);
+			
 			 String path = request.getServletContext().getRealPath("/img/");
 		        File img = new File(path, "Huelleritos.png");
 			ec.enviarCorreo("informacionHuelleritos.pdf", tipo, img,request.getParameter("animal"),us, f);

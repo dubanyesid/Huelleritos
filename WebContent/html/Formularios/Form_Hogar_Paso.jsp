@@ -189,9 +189,9 @@
 					<h3 class="titulos">Datos familiares y de Vivienda:</h3>
 
 					<%
-						List<Pregunta> preguntas = (ArrayList<Pregunta>) new PreguntaDAO().listarFormHogarPaso();
-					Pregunta[] p = (Pregunta[]) preguntas.toArray(new Pregunta[preguntas.size()]);
-					List<Animal> animales = (ArrayList<Animal>) new AnimalDAO().list();
+					List<Pregunta> preguntas = (ArrayList<Pregunta>)request.getAttribute("preguntas");
+						Pregunta[] p = (Pregunta[])preguntas.toArray(new Pregunta[preguntas.size()]);
+						List<Animal> animales = (ArrayList<Animal>)request.getAttribute("animales");
 					for (int i = 0; i < 6; i++) {
 					%>
 					<div class="single-element-widget mt-30">
