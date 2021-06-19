@@ -86,15 +86,16 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a  href="index.jsp">Inicio</a></li>
-                                            <li><a href="html/Huelleritos.jsp">Huelleritos</a></li>
-                                            <li><a href="html/Adopta.jsp">Adopta</a></li>
-                                            <li><a href="html/Apadrinar.jsp">Apadrina</a></li>
-                                            <li><a href="html/Hogar_Paso.jsp">Hogar de paso</a></li>                            
-                                            <li><a href="html/La_Fundacion.jsp">La fundación</a></li>
-                                            <li><a href="html/Noticias.jsp">Noticias</a></li>
-                                            <a href="html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
-                                        </ul>
+                                       <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
+                                        
+                                        <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
+                                        <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
+                                        <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
+                                        <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                        <a href="<%=request.getContextPath()%>/Usuario/Login" class="genric-btn primary circle">Ingresar</a>
+                                    </ul>
                                     </nav>
                                 </div>
                             </div>
@@ -536,7 +537,7 @@
                                 <p>Dale una segunda oportunidad a esos peluditos que no tienen hogar</p>
                             </div>
                             <div class="contact_btn d-flex align-items-center justify-content-center">
-                                <a href="html/Contacto.jsp" class="boxed-btn4">Contactanos</a>
+                                <a href="<%=request.getContextPath()%>/Contacto" class="boxed-btn4">Contactanos</a>
                                 <p>Or  <a href="#">+57 3177636650</a></p>
                             </div>
                         </div>

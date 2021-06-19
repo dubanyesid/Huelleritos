@@ -157,7 +157,7 @@
 				<div class="row">
 					<div class="col-xl-3 col-md-6 col-lg-3">
 						<div class="footer_widget">
-							<h3 class="footer_title">Contacto</h3>
+							<h3 class="footer_title"><a href="<%=request.getContextPath()%>/Contacto" class="boxed-btn4">Contactanos</a></h3>
 							<ul class="address_line">
 								<li>+57 3177636650</li>
 								<li>+57 3135707240</li>

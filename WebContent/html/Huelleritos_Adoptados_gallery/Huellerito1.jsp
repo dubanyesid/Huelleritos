@@ -97,6 +97,7 @@
                                         <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
                                         <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
                                         <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                     <a href="<%=request.getContextPath()%>/Usuario/Login" class="genric-btn primary circle">Ingresar</a>
                                     </ul>
                                 </nav>
                             </div>
@@ -262,7 +263,7 @@ Animal a = (Animal)request.getAttribute("perfilAnimal");
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Contacto
+                                <a href="<%=request.getContextPath()%>/Contacto" class="boxed-btn4">Contactanos</a>
                             </h3>
                             <ul class="address_line">
                                 <li>+57 3177636650</li>

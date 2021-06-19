@@ -90,6 +90,7 @@
                                         <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
                                         <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
                                         <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                        <a href="<%=request.getContextPath()%>/Usuario/Login" class="genric-btn primary circle">Ingresar</a>
                                     </ul>
                                 </nav>
                             </div>

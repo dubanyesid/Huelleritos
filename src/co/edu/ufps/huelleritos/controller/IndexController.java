@@ -16,7 +16,8 @@ import co.edu.ufps.huelleritos.entities.Animal;
  * Servlet implementation class IndexController
  */
 @WebServlet({ "/index", "/Huelleritos/Adultos", "/Huelleritos/Cachorros", "/Huelleritos/Adoptados",
-		"/index/Huelleritos", "/index/Apadrina", "/index/Adopta", "/index/HogarDePaso", "/index/Fundacion" })
+		"/index/Huelleritos", "/index/Apadrina", "/index/Adopta", "/index/HogarDePaso", "/index/Fundacion",
+		"/Contacto" })
 public class IndexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -46,7 +47,7 @@ public class IndexController extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String path = request.getServletPath();
-System.out.println(path);
+		System.out.println(path);
 		if (path.equals("/index")) {
 			request.setAttribute("animalesAdopcion", adopcion);
 			request.setAttribute("animalesPrioridad", prioridad);
@@ -58,15 +59,17 @@ System.out.println(path);
 		} else if (path.contains("/Huelleritos")) {
 			verHuelleritos(request, response, path);
 			return;
+		} else if (path.contains("/Contacto")) {
+			request.getRequestDispatcher("/html/Contacto.jsp").forward(request, response);
+			return;
 		}
-
 	}
 
 	protected void verIndex(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
 
 		path = path.replace("/index/", "");
-		System.out.println("fsd"+path);
+		System.out.println("fsd" + path);
 		switch (path) {
 		case "Adopta":
 			request.setAttribute("listAdoptados", adoptados);
@@ -98,7 +101,7 @@ System.out.println(path);
 			throws ServletException, IOException {
 
 		path = path.replace("/Huelleritos/", "");
-		System.out.println("sd"+path);
+		System.out.println("sd" + path);
 		switch (path) {
 		case "Adultos":
 			System.out.println("adultos");

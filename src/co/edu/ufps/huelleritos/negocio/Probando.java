@@ -64,6 +64,10 @@ public class Probando {
 		 * ec.enviarCorreo("informacionHuelleritos.pdf", "Adoptante", "Coco", us, f);
 		 */
 
+		List<Animal> prioridad = new AnimalDAO().listPrioridad();
+		
+		System.out.println(prioridad);
+		
 		// Mail m = new Mail();
 
 		// Animal listAnimales= new AnimalDAO().buscarAnimalPorFormulario("2");

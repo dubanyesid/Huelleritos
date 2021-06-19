@@ -86,11 +86,11 @@
                                         <li><a  href="<%=request.getContextPath()%>/index">Inicio</a></li>
                                         <li><a href="<%=request.getContextPath()%>/index/Huelleritos">Huelleritos</a></li>
                                         <li><a href="<%=request.getContextPath()%>/index/Adopta">Adopta</a></li>
-                                        <li><a href="<%=request.getContextPath()%>/index/Apadrina">Apadrina</a></li>
                                         <li><a href="<%=request.getContextPath()%>/index/HogarDePaso">Hogar de paso</a></li>                            
                                         <li><a href="<%=request.getContextPath()%>/index/Fundacion">La fundación</a></li>
                                         <li><a href="<%=request.getContextPath()%>/Noticias">Noticias</a></li>
                                         <a href="<%=request.getContextPath()%>/html/Dona_aqui.jsp" class="genric-btn primary circle">Dona Aqui</a>
+                                        <a href="<%=request.getContextPath()%>/Usuario/Login" class="genric-btn primary circle">Ingresar</a>
                                     </ul>
 								</nav>
 							</div>
@@ -115,7 +115,7 @@
 								<span>Huelleritos</span> <br> Cúcuta
 							</h3>
 							<p>¡Ayudanos a ayudar! Comprometidos con el cuidado animal.</p>
-							<a href="html/Contacto.html" class="boxed-btn4">Contactanos</a>
+							<a href="<%=request.getContextPath()%>/Contacto" class="boxed-btn4">Contactanos</a>
 						</div>
 					</div>
 				</div>
@@ -439,7 +439,7 @@ private String caruselAnimalHtml(List<Animal>animales){
 						</div>
 						<div
 							class="contact_btn d-flex align-items-center justify-content-center">
-							<a href="html/Contacto.html" class="boxed-btn4">Contactanos</a>
+							<a href="<%=request.getContextPath()%>/Contacto" class="boxed-btn4">Contactanos</a>
 							<p>
 								Or <a href="#">+57 3177636650</a>
 							</p>
