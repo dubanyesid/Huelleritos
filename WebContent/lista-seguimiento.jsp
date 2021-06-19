@@ -64,8 +64,7 @@
 	                </a>
 				<div class="container">
 					<div class="col-md-4 m-2">
-						<h1>Lista de Noticias</h1>
-						<a href="Noticia/agregar" type="button" class="btn btn-dark">Agregar noticia</a>
+						<h1>Lista de Seguimientos</h1>
 												
 					</div>
 					<div class="col-md-5 m-2 input-group">

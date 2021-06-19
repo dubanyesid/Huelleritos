@@ -61,8 +61,10 @@
                         <div class="login-form-bgbtn"></div>
                         
                         <button type="submit" name="submit" class="login-form-btn">Ingresar</button>
+                   
                     </div>
                 </div>
+                <a href="<%=request.getContextPath()%>" style="text-align: center">Soy visitante</a>
             </form>
         </div>
     </div>     

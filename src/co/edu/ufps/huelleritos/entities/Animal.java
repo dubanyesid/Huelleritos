@@ -81,7 +81,7 @@ public class Animal implements Serializable {
 	private List<HistorialAnimal> historialAnimals;
 
 	//bi-directional many-to-one association to SeguimientoAnimal
-	@OneToMany(mappedBy="animal",cascade = {CascadeType.REMOVE,CascadeType.PERSIST})
+	@OneToMany(mappedBy="animal",cascade = {CascadeType.REMOVE,CascadeType.PERSIST,CascadeType.MERGE})
 	private List<SeguimientoAnimal> seguimientoAnimals;
 
 	public Animal() {

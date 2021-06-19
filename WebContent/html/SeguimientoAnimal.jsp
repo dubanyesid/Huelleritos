@@ -158,7 +158,7 @@
 				</div>
 				<div class="form-group">
 					<label for="formGroupExampleInput2">Observación</label>
-					<textarea name="ocupacion" required class="form-control"
+					<textarea name="observacion" required class="form-control"
 						id="formGroupExampleInput2" placeholder=""></textarea>
 				</div>
 

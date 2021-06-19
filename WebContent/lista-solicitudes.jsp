@@ -88,9 +88,15 @@
                 <p style="text-align: center;color:green"><%=mensaje %></p>
         <%
             }
-%>
+%><div class="col-md-5 m-2 input-group">
+						
+						<label >Buscar:</label>
+						<input type="text" align="right" class="form-control pull-right" style="width:30%" id="search" placeholder="Buscar:">
+
+					</div>
+					<div class="col-xs-12 col-md-3">
 				<div class="row justify-content-center justify-content-md-start">
-					<table class="table table-bordered">
+					<table class="table table-bordered" id="mytable">
 						<thead class="table-dark">
 							<tr>
 								<th scope="col">Nombre</th>
@@ -186,7 +192,21 @@
 	<script
 		src="<%=request.getContextPath()%>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="<%=request.getContextPath()%>/assets/js/scripts.js"></script>
-
+<script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#search").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#mytable tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
 </body>
 
 </html>

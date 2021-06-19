@@ -100,13 +100,15 @@ public class EnfermedadController extends HttpServlet {
 		String idVacuna = request.getParameter("enfermedad");
 
 		if (idVacuna == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		EnfermedadHistorial historialEnfermedad = enfermedadHistorialDAO.find(Integer.parseInt(idVacuna));
 		if (historialEnfermedad == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		String codigoAnimal = historialEnfermedad.getHistorialAnimal().getAnimal().getCodigoAnimal();
 		enfermedadHistorialDAO.deleteClearCache(historialEnfermedad);
@@ -121,12 +123,14 @@ public class EnfermedadController extends HttpServlet {
 		String fechaFin = request.getParameter("fechaFin");
 		String enfermedad = request.getParameter("enfermedad");
 		if (codigo == null || fechaInicio == null || fechaFin == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		if (codigo.equals("") || fechaInicio.equals("") || fechaFin.equals("")) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		Animal animalBuscado = animalDAO.find(codigo);
 		Enfermedad enfermedadBuscada = enfermedadDAO.find(enfermedad);
@@ -158,11 +162,13 @@ public class EnfermedadController extends HttpServlet {
 			throws ServletException, IOException {
 		String codigoAnimal = request.getParameter("animal");
 		if (codigoAnimal == null) {
+			request.setAttribute("mensaje", "No existe el recurso");
 			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
 			return;
 		}
 		Animal animal = animalDAO.find(codigoAnimal);
 		if (animal == null) {
+			request.setAttribute("mensaje", "No existe el recurso");
 			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
 			return;
 		}
@@ -201,13 +207,13 @@ public class EnfermedadController extends HttpServlet {
 		String enfermedad = request.getParameter("enfermedad");
 
 		if (idEnfermedad == null || fechaInicio == null || fechaFin == null || enfermedad == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.getRequestDispatcher("/admin/inicio").forward(request, response);
+			return;
 		}
 		EnfermedadHistorial enfermedadHistorial = enfermedadHistorialDAO.find(Integer.parseInt(idEnfermedad));
 		if (enfermedadHistorial == null) {
-			// ERROR
-			// return;
+			request.getRequestDispatcher("/admin/inicio").forward(request, response);
+			return;
 		}
 		Enfermedad enfermedadBuscada = enfermedadDAO.find(enfermedad);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

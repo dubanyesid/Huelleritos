@@ -69,7 +69,6 @@ public class AdopcionController extends HttpServlet {
 			throws ServletException, IOException {
 
 		String ubicacion = request.getServletPath();
-		System.out.println(ubicacion);
 
 		if (ubicacion.contains("Adoptar")) {
 			this.showFormAdopta(request, response, ubicacion.replace("/Adoptar", ""));
@@ -80,7 +79,7 @@ public class AdopcionController extends HttpServlet {
 
 	protected void insertAdopta(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("insert adoptar");
+
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String ocupacion = request.getParameter("ocupacion");
@@ -96,8 +95,9 @@ public class AdopcionController extends HttpServlet {
 		if (nombre == null || apellido == null || ocupacion == null || direccion == null || correo == null
 				|| telefono == null || celular == null || cedula == null || preguntasParametersNames == null
 				|| preguntas == null || animal == null) {
-			// ENVIE A UN ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath());
+			return;
 		}
 
 		Formulario formulario = new Formulario(apellido, cedula, celular, correo, date, nombre, telefono);
@@ -106,7 +106,7 @@ public class AdopcionController extends HttpServlet {
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);
 
-		response.sendRedirect(request.getContextPath() + "/index");
+		response.sendRedirect(request.getContextPath());
 	}
 
 	protected void insertarHogar(HttpServletRequest request, HttpServletResponse response)
@@ -126,17 +126,16 @@ public class AdopcionController extends HttpServlet {
 		if (nombre == null || apellido == null || ocupacion == null || direccion == null || correo == null
 				|| telefono == null || celular == null || cedula == null || preguntasParametersNames == null
 				|| preguntas == null || animal == null) {
-			// ENVIE A UN ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath());
+			return;
 		}
-		System.out.println("entro aqui hogar");
 		Formulario formulario = new Formulario(apellido, cedula, celular, correo, date, nombre, telefono);
 		llenarFormularioPreguntaRadio(preguntasParametersNames, formulario, request);
 		llenarFormularioPreguntaSelect(preguntas, formulario);
 		llenarFormularioAnimal(animal, formulario);
 		formularioDAO.insert(formulario);
-		System.out.println("entd2");
-		response.sendRedirect(request.getContextPath() + "/index");
+		response.sendRedirect(request.getContextPath());
 	}
 
 	protected void llenarFormularioAnimal(String animal, Formulario formulario) {
@@ -144,8 +143,7 @@ public class AdopcionController extends HttpServlet {
 		FormularioAnimal formularioAnimal = new FormularioAnimal();
 		formularioAnimal.setAnimal(animalBuscado);
 		formulario.addFormularioAnimal(formularioAnimal);
-		// formularioAnimalDAO.insert(formularioAnimal);
-		System.out.println("final 3");
+
 	}
 
 	protected void llenarFormularioPreguntaSelect(String[] preguntas, Formulario formulario) {
@@ -153,29 +151,23 @@ public class AdopcionController extends HttpServlet {
 		for (String pregunta : preguntas) {
 			llenarFormularioPregunta(pregunta, formulario);
 		}
-		System.out.println("final 2");
 	}
 
 	protected void llenarFormularioPreguntaRadio(Enumeration<String> preguntasParametersNames, Formulario formulario,
 			HttpServletRequest request) {
-		System.out.println("entro aqui 2");
 		while (preguntasParametersNames.hasMoreElements()) {
 			Pregunta p = new Pregunta();
 			FormularioPregunta fp = new FormularioPregunta();
 			String name = preguntasParametersNames.nextElement();
-			System.out.println("entro aqui sfdsafafsa2");
 			if (name.contains("radio")) {
 				String pregunta = request.getParameter(name);
-				System.out.println("entro aqui 2fsfsddsf");
 				llenarFormularioPregunta(pregunta, formulario);
 			}
 
 		}
-		System.out.println("final 1");
 	}
 
 	protected void llenarFormularioPregunta(String pregunta, Formulario formulario) {
-		System.out.println("entro aqui");
 		String split[] = pregunta.split("-");
 		Integer idPregunta = Integer.parseInt(split[0]);
 		Integer idOpcion = Integer.parseInt(split[1]);
@@ -196,7 +188,6 @@ public class AdopcionController extends HttpServlet {
 		List<Animal> animales = animalDAO.list();
 		request.setAttribute("animales", animales);
 		request.setAttribute("preguntas", preguntas);
-		System.out.println("entro aquwwwwww");
 		request.getRequestDispatcher("html/Formularios/Form_Hogar_Paso.jsp").forward(request, response);
 
 	}

@@ -124,7 +124,7 @@ System.out.println(path);System.out.println("sasaasano");
 	
 	protected void insertarSeguimiento(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String id=request.getParameter("idAnimalSeg");
+		String id=request.getParameter("idAnimal");
 		String nombre=request.getParameter("nombreAnimal");
 		System.out.println(id);
 		System.out.println(nombre);
@@ -147,7 +147,7 @@ System.out.println(path);System.out.println("sasaasano");
 			sa.setCodigoSeguimiento(uuid.split("-")[0]);
 			a.addSeguimientoAnimal(sa);
 			animalDAO.update(a);
-			request.getRequestDispatcher(request.getContextPath()+"/index/Huelleritos").forward(request, response);
+			response.sendRedirect(request.getContextPath()+"/index/Huelleritos");
 		}else {
 			request.setAttribute("mensaje", "Parametros del animal no válidos");
 			request.getRequestDispatcher("/Error").forward(request, response);

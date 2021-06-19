@@ -85,12 +85,7 @@ public class UsuarioController extends HttpServlet {
 			String contrasenia=request.getParameter("password");
 			String tipo = request.getParameter("tipo");			
 			if(usuario== null || contrasenia==null || tipo== null) {
-				
-				System.out.println(usuario);
-				System.out.println(contrasenia);
-				System.out.println(tipo);
-				//response.sendRedirect(request.getContextPath() + "/Usuario/Login?mensaje=Datos incorrectos");
-				System.out.println("hola aca");
+
 				request.setAttribute("mensaje", "Datos incorrectos");
 				request.getRequestDispatcher("/administrador/login.jsp").include(request, response);
 				return;
@@ -140,7 +135,6 @@ public class UsuarioController extends HttpServlet {
 			enviarInicio(request, response, tipo);
 		}else {
 			request.setAttribute("mensaje", "No existe");
-			System.out.println("hola acaa");
 			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
 			//response.sendRedirect(request.getContextPath() + "/Usuario/Login);
 		}

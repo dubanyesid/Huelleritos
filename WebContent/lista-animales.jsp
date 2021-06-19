@@ -71,6 +71,15 @@
 						<input type="text" align="right" class="form-control pull-right" style="width:30%" id="search" placeholder="Buscar:">
 
 					</div>
+					<% 
+			String mensaje=String.valueOf(request.getAttribute("mensaje"));
+            if(request.getAttribute("mensaje")!=null) 
+            { 
+            	%>          
+                <p style="text-align: center;color:red"><%=mensaje %></p>
+        <%
+            }
+%>
 					<div class="col-xs-12 col-md-3">
  
 </div>

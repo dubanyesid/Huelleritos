@@ -20,9 +20,6 @@
 		</li>
 		<li><a href="<%=request.getContextPath()%>/donaciones.jsp">Donaciones</a>
 		</li>
-		<li><a
-			href="<%=request.getContextPath()%>/admin/animal/seguimiento">Seguimientos</a>
-		</li>
 		<li><a href="<%=request.getContextPath()%>/Solicitudes/Adopcion">Solicitudes
 				Adopcion</a></li>
 		<li><a

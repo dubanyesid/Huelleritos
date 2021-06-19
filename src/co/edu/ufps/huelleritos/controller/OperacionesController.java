@@ -93,13 +93,15 @@ public class OperacionesController extends HttpServlet {
 		String idOperacion = request.getParameter("operacion");
 
 		if (idOperacion == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		OperacionesAnimal operacion = operacionAnimalDAO.find(Integer.parseInt(idOperacion));
 		if (operacion == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		String codigoAnimal = operacion.getHistorialAnimal().getAnimal().getCodigoAnimal();
 		operacionAnimalDAO.deleteClearCache(operacion);
@@ -116,8 +118,9 @@ public class OperacionesController extends HttpServlet {
 		String observacion = request.getParameter("observacion");
 
 		if (codigo == null || fechaInicio == null || fechaFin == null || nombre == null || observacion == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		Animal animalBuscado = animalDAO.find(codigo);
 
@@ -190,13 +193,15 @@ public class OperacionesController extends HttpServlet {
 		String observacion = request.getParameter("observacion");
 
 		if (idOperacion == null || fechaInicio == null || fechaFin == null || nombre == null || observacion == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		OperacionesAnimal operacion = operacionAnimalDAO.find(Integer.parseInt(idOperacion));
 		if (operacion == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date fechaUno = null;

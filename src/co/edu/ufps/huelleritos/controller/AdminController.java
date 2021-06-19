@@ -40,6 +40,7 @@ public class AdminController extends HttpServlet {
 
 	private EnviarCorreoUsuario ec;
 	private UsuarioDAO usuarioDAO;
+	private AnimalDAO animalDAO;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -54,6 +55,7 @@ public class AdminController extends HttpServlet {
 		super.init();
 		usuarioDAO = new UsuarioDAO();
 		ec= new EnviarCorreoUsuario();
+		animalDAO = new AnimalDAO();
 	}
 
 	/**
@@ -69,13 +71,11 @@ public class AdminController extends HttpServlet {
 				|| !request.getSession().getAttribute("tipoUsuario").equals("admin")) {
 			request.setAttribute("mensaje", "Datos incorrectos");
 			request.getRequestDispatcher("/Usuario/Login").forward(request, response);
-			//response.sendRedirect(request.getContextPath() + "/Usuario/Login");
 			return;
 		}
 
 		if(path.contains("generarUsuario")) {
 			generarUsuario(request,response);
-			System.out.println("sa");
 			return;
 		}else if(path.contains("inicio")){
 			request.getRequestDispatcher("/admin/animal/listar").forward(request, response);
@@ -83,10 +83,6 @@ public class AdminController extends HttpServlet {
 			request.getRequestDispatcher("/admin/animal/listar").forward(request, response);
 			return;
 		}
-		
-		
-		// request.getRequestDispatcher("/inicioAdmin.jsp").include(request, response);
-		//response.sendRedirect(request.getContextPath() + "/admin/generarUsuario");
 
 	}
 
@@ -97,7 +93,6 @@ public class AdminController extends HttpServlet {
 		
 		if(f!=null) {
 			UUID uuid = UUID.randomUUID();
-			System.out.println("si");
 			String usuario=f.getCorreo().split("@")[0];
 			String uuid2=uuid.toString().split("-")[1].substring(0,4);
 			usuario=usuario.length()>6? usuario.substring(0,6)+uuid2:usuario+uuid2;
@@ -112,8 +107,8 @@ public class AdminController extends HttpServlet {
 			throws ServletException, IOException {
 		Usuario us =usuarioDAO.find(usuario);
 		String tipo = String.valueOf(request.getParameter("tipo"));
-		Animal animal =new AnimalDAO().buscarAnimalPorFormulario("2");
-		System.out.println(tipo);
+		Animal animal =new AnimalDAO().buscarAnimalPorFormulario(String.valueOf(f.getIdFormulario()));
+
 		if(us==null) {
 			us= new Usuario(usuario,pass);
 			us.iniciarFormularios();
@@ -133,6 +128,7 @@ public class AdminController extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/Error");
 				return;
 			}
+			animalDAO.update(animal);
 			usuarioDAO.insert(us);
 			 String path = request.getServletContext().getRealPath("/img/");
 		        File img = new File(path, "Huelleritos.png");

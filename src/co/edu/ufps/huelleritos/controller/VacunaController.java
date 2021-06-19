@@ -98,14 +98,16 @@ public class VacunaController extends HttpServlet {
 		String idVacuna = request.getParameter("vacuna");
 
 		if (idVacuna == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		
 		VacunaHistorial vacunaHistorial = vacunaHistorialDAO.find(Integer.parseInt(idVacuna));
 		if (vacunaHistorial == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		String codigoAnimal = vacunaHistorial.getHistorialAnimal().getAnimal().getCodigoAnimal();
 		vacunaHistorialDAO.deleteClearCache(vacunaHistorial);
@@ -120,12 +122,14 @@ public class VacunaController extends HttpServlet {
 		String vacuna = request.getParameter("vacuna");
 
 		if (codigo == null || fecha == null || vacuna == vacuna) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		if (codigo.equals("") || fecha.equals("") || vacuna.equals("")) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		Animal animalBuscado = animalDAO.find(codigo);
 		Vacuna vacunaBuscada = vacunaDAO.find(vacuna);
@@ -198,13 +202,15 @@ public class VacunaController extends HttpServlet {
 		String fecha = request.getParameter("fecha");
 		String vacuna = request.getParameter("vacuna");
 		if (idVacuna == null || fecha == null || vacuna == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		VacunaHistorial vacunaHistorial = vacunaHistorialDAO.find(Integer.parseInt(idVacuna));
 		if (vacunaHistorial == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		Vacuna vacunaBuscada = vacunaDAO.find(vacuna);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

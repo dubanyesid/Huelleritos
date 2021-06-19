@@ -115,8 +115,9 @@ public class AnimalAdminController extends HttpServlet {
 
 		String codigoAnimal = request.getParameter("animal");
 		if (codigoAnimal == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 
 		Animal animalBuscado = animalDAO.find(codigoAnimal);
@@ -173,13 +174,15 @@ public class AnimalAdminController extends HttpServlet {
 		String codigoanimal = request.getParameter("animal");
 
 		if (codigoanimal == null) {
-			// ERROR response.sendredired();
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		Animal animal = animalDAO.find(codigoanimal);
 		if (animal == null) {
-			// ERROR
-			// return;
+			request.setAttribute("mensaje", "No existe el recurso");
+			response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
+			return;
 		}
 		animalDAO.deleteClearCache(animal);
 		response.sendRedirect(request.getContextPath() + "/admin/animal/listar");
@@ -194,7 +197,6 @@ public class AnimalAdminController extends HttpServlet {
 		if(idAnimal!=null) {
 		List<SeguimientoAnimal> seg = seguimientoAnimalDAO.buscarSeguimientosPorAnimal(idAnimal);
 		request.setAttribute("seguimientos", seg);
-		// response.sendRedirect(request.getContextPath()+"/lista-animales.jsp");
 		request.getRequestDispatcher("/lista-seguimiento.jsp").forward(request, response);
 		}
 
@@ -209,7 +211,7 @@ public class AnimalAdminController extends HttpServlet {
 				color = request.getParameter("color"), guarderia = request.getParameter("guarderia"),
 				prioridad = request.getParameter("prioridad"), descripcion = request.getParameter("descripcion"),
 				foto = request.getParameter("archivo");
-		System.out.println(fecha);
+
 		boolean validos = validarParametros(request, response, codigo, nombre, tipo, fecha, sexo, raza, edad, peso,
 				color, guarderia, prioridad, descripcion, foto);
 
@@ -283,7 +285,7 @@ public class AnimalAdminController extends HttpServlet {
 				color = request.getParameter("color"), guarderia = request.getParameter("guarderia"),
 				prioridad = request.getParameter("prioridad"), descripcion = request.getParameter("descripcion"),
 				foto = request.getParameter("archivo");
-		System.out.println(fecha);
+
 		boolean validos = validarParametros(request, response, codigo, nombre, tipo, fecha, sexo, raza, edad, peso,
 				color, guarderia, prioridad, descripcion, foto);
 
